@@ -1,0 +1,19 @@
+TODO:
+
+1. storybook installiern
+2. npm i -D react react-dom
+3. tailwind installieren
+4. components bauen
+5. npm package bauen 
+
+
+classroom 
+reposmr.tv/cr-ds-22
+
+
+API (if too easy)
+smr.tv/cas-api-repo
+
+design
+
+smr.tv/mumble-figma
