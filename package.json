@@ -11,7 +11,9 @@
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@babel/core": "^7.20.2",
     "@storybook/addon-actions": "^6.5.13",
