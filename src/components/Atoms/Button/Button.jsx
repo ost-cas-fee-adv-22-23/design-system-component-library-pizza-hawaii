@@ -5,46 +5,60 @@ import './button.css';
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
+export const Button = ({ color = "slate", size = "M", label, ...props }) => {
+
+	const colorStyle = {
+		slate: ["bg-gray-700"],
+		violet: ["bg-purple-600"],
+		gradient: ["bg-gradient-to-r", "from-pink-600", "to-purple-600"],
+	};
+
+	const sizeStyle = {
+		M: ["p-3"],
+		L: ["pt-4", "pb-4", "pl-6", "pr-6"],
+	};
+
+	const style = [
+		...(colorStyle[color] || colorStyle.slate),
+		...(sizeStyle[size] || sizeStyle.M),
+		"rounded-lg",
+		"font-semibold",
+		"text-base",
+		"text-white",
+	];
+
+	return (
+		<button
+			type="button"
+			className={["Button", `Button--${size}`, ...style].join(" ")}
+			{...props}
+		>
+			{label}
+		</button>
+	);
 };
 
 Button.propTypes = {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary: PropTypes.bool,
-  /**
-   * What background color to use
-   */
-  backgroundColor: PropTypes.string,
-  /**
-   * How large should the button be?
-   */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /**
-   * Button contents
-   */
-  label: PropTypes.string.isRequired,
-  /**
-   * Optional click handler
-   */
-  onClick: PropTypes.func,
+	/**
+	 * What background color to use
+	 */
+	color: PropTypes.oneOf(["slate", "violet", "gradient"]),
+	/**
+	 * How large should the button be?
+	 */
+	size: PropTypes.oneOf(["M", "L"]),
+	/**
+	 * Button contents
+	 */
+	label: PropTypes.string.isRequired,
+	/**
+	 * Optional click handler
+	 */
+	onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  size: 'medium',
-  onClick: undefined,
+	color: null,
+	size: "M",
+	onClick: undefined,
 };

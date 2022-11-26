@@ -1,34 +1,27 @@
-/* tailwind components directive */
-@tailwind components;
-.wrapper {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.Header--inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	max-width: 744px; /* 680px + 2 * 32px = 744px */
+	margin: 0 auto;
+	padding: 12px 32px;
 }
 
-svg {
-  display: inline-block;
-  vertical-align: top;
+.Header--logo {
+	display: inline-block;
+	max-width: 209px;
 }
 
-h1 {
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 1;
-  margin: 6px 0 6px 10px;
-  display: inline-block;
-  vertical-align: top;
-}
-
-button + button {
-  margin-left: 10px;
-}
-
-.welcome {
-  color: #333;
-  font-size: 14px;
-  margin-right: 10px;
+.visuallyhidden {
+	position: absolute;
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	width: 1px;
+	white-space: nowrap;
 }
