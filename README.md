@@ -7,8 +7,28 @@ GitHub package registry.
 
 ## Getting started
 
-After creating your assignment from this template, you'll need to install
-storybook and the base of your component library by yourself.
+install it my `npm install` or `npm ci`.
+
+this should install
+- storybook 
+- tailwind-css
+- React and ReactDom Library (for fun and for storybook)
+- TypeScript (because its the future)
+
+<b>-> all source-files have been moved to /src</b>
+
+## Run to get started
+
+to run a local server on Port 6006 and compile your components with a 'story' to the storybook collection 
+
+`npm run storybook`
+
+to build all components for browsers type
+
+`npm run build`
+
+-> this should create / overwrite the sets to the dist-directory. 
+
 
 ## Deployment
 
