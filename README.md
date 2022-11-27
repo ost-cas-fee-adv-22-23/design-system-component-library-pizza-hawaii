@@ -30,6 +30,13 @@ to build all components for browsers type
 -> this should create / overwrite the sets to the dist-directory. 
 
 
+## tailwind
+
+start on a filewhatcher on the console with
+
+`npx tailwindcss -i ./src/styles/common.css -o ./dist/output.css --watch`
+
+
 ## Deployment
 
 This repository is configured to automatically deploy your design system

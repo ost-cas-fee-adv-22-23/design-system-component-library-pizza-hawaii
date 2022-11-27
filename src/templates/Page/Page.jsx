@@ -16,7 +16,7 @@ export const Page = () => {
       />
 
       <section>
-        <h2>Pages in Storybook</h2>
+        <h2 className='text-2xl font-bold underline'>Pages in Storybook</h2>
         <p>
           We recommend building UIs with a{' '}
           <a href="https://componentdriven.org" target="_blank" rel="noopener noreferrer">
