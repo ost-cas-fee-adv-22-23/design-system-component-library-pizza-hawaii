@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { UserProfile } from '../../Atoms/UserProfile/UserProfile'
 import { Button } from "/src/components/Atoms/Button/Button";
 import './header.css';
 console.log(Button);
@@ -71,10 +71,11 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 				<h1 className="visuallyhidden">Mumble</h1>
 			</div>
 			<nav className="Header--nav">
+				<UserProfile imagePath="../../../assets/img/testimages/testuser.png" />
 				{user ? (
 					<>
 						<span className="welcome">
-							Welcome, <b>{user.name}</b>!
+							Hi Dude, <b>{user.name}</b>!
 						</span>
 						<Button onClick={onLogout} label="Log out" />
 					</>

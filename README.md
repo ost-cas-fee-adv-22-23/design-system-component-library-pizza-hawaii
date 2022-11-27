@@ -19,6 +19,8 @@ this should install
 
 ## Run to get started
 
+make sure your node-version is `v16.14` or higher.
+
 to run a local server on Port 6006 and compile your components with a 'story' to the storybook collection 
 
 `npm run storybook`
