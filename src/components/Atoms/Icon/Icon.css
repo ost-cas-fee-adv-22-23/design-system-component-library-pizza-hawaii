@@ -1,0 +1,9 @@
+
+.Icon,
+.Icon svg {
+	color: currentColor;
+}
+
+.Icon svg path {
+	fill: currentColor;
+}

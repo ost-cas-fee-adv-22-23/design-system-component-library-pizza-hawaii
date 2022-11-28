@@ -1,21 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './button.css';
+import { Icon, IconNames } from "/src/components/Atoms/Icon/Icon";
+import './Button.css';
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ color = "slate", size = "M", label, ...props }) => {
+export const Button = ({ color, size, label, icon, ...props }) => {
 
 	const colorStyle = {
-		slate: ["bg-gray-700"],
-		violet: ["bg-purple-600"],
+		slate: ["bg-gray-700", "hover:bg-gray-800"],
+		violet: ["bg-purple-600", "hover:bg-purple-700"],
 		gradient: ["bg-gradient-to-r", "from-pink-600", "to-purple-600"],
 	};
 
 	const sizeStyle = {
-		M: ["p-3"],
-		L: ["pt-4", "pb-4", "pl-6", "pr-6"],
+		M: ["Button-m", "p-3"],
+		L: ["Button-l", "pt-4", "pb-4", "pl-6", "pr-6"],
+		round: ["Button-round", "p-3"],
 	};
 
 	const style = [
@@ -30,10 +32,11 @@ export const Button = ({ color = "slate", size = "M", label, ...props }) => {
 	return (
 		<button
 			type="button"
-			className={["Button", `Button--${size}`, ...style].join(" ")}
+			className={["Button", ...style].join(" ")}
 			{...props}
 		>
-			{label}
+			<div className="Button--inner">{label}</div>
+			{icon ? <Icon name={icon} /> : null}
 		</button>
 	);
 };
@@ -46,7 +49,11 @@ Button.propTypes = {
 	/**
 	 * How large should the button be?
 	 */
-	size: PropTypes.oneOf(["M", "L"]),
+	size: PropTypes.oneOf(["M", "L", "round"]),
+	/**
+	 * How large should the button be?
+	 */
+	//icon: PropTypes.oneOf(["mumble", "edit"]),
 	/**
 	 * Button contents
 	 */
@@ -58,7 +65,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-	color: null,
+	color: 'slate',
 	size: "M",
 	onClick: undefined,
 };
