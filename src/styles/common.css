@@ -2,3 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import './fonts.css';
+
+/*
+	No need, but good to know
+
+	.visuallyhidden {
+		@apply sr-only;
+	}
+*/

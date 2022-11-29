@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { UserProfile } from '../../Atoms/UserProfile/UserProfile'
 import { Button } from "/src/components/Atoms/Button/Button";
+import { IconLink } from "/src/components/Atoms/IconLink/IconLink";
+
 import './header.css';
-console.log(Button);
+
 export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
-	<header className="Header bg-purple-600">
+	<header className="Header bg-purple-600 text-white">
 		<div className="Header--inner">
 			<div className="Header--logo">
 				<svg
@@ -15,7 +17,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g clip-path="url(#clip0_457_905)">
+					<g>
 						<path
 							d="M23.3332 24.9999H16.6666C15.7128 24.9999 14.8567 25.5305 14.4303 26.3833C14.0038 27.2346 14.095 28.2388 14.6663 28.9989L17.9996 33.4455C18.4765 34.0803 19.2056 34.4448 19.9999 34.4448C20.7942 34.4448 21.5233 34.0803 22.0002 33.4439L25.3336 29.0005C25.9048 28.2388 25.996 27.2346 25.5696 26.3833C25.1431 25.5305 24.287 24.9999 23.3332 24.9999Z"
 							fill="white"
@@ -57,38 +59,19 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 						d="M209 23.1198C209 23.7598 208.96 24.4265 208.88 25.1198H193.4C193.507 26.5065 193.947 27.5732 194.72 28.3198C195.52 29.0398 196.494 29.3998 197.64 29.3998C199.347 29.3998 200.534 28.6798 201.2 27.2398H208.48C208.107 28.7065 207.427 30.0265 206.44 31.1998C205.48 32.3731 204.267 33.2931 202.8 33.9598C201.334 34.6265 199.694 34.9598 197.88 34.9598C195.694 34.9598 193.747 34.4931 192.04 33.5598C190.334 32.6265 189 31.2931 188.04 29.5598C187.08 27.8265 186.6 25.7998 186.6 23.4798C186.6 21.1598 187.067 19.1332 188 17.3999C188.96 15.6665 190.294 14.3332 192 13.3999C193.707 12.4665 195.667 11.9999 197.88 11.9999C200.04 11.9999 201.96 12.4532 203.64 13.3599C205.32 14.2665 206.627 15.5599 207.56 17.2399C208.52 18.9199 209 20.8798 209 23.1198ZM202 21.3198C202 20.1465 201.6 19.2132 200.8 18.5199C200 17.8265 199 17.4799 197.8 17.4799C196.654 17.4799 195.68 17.8132 194.88 18.4799C194.107 19.1465 193.627 20.0932 193.44 21.3198H202Z"
 						fill="white"
 					/>
-					<defs>
-						<clipPath id="clip0_457_905">
-							<rect
-								width="39.9998"
-								height="39.9998"
-								fill="white"
-							/>
-						</clipPath>
-					</defs>
 				</svg>
 
-				<h1 className="visuallyhidden">Mumble</h1>
+				<h1 className="sr-only">Mumble</h1>
 			</div>
 			<nav className="Header--nav">
-				<UserProfile imagePath="../../../assets/img/testimages/testuser.png" />
-				{user ? (
-					<>
-						<span className="welcome">
-							Hi Dude, <b>{user.name}</b>!
-						</span>
-						<Button onClick={onLogout} label="Log out" />
-					</>
-				) : (
-					<>
-						<Button onClick={onLogin} label="Log in" />
-						<Button
-							color="gradient"
-							onClick={onCreateAccount}
-							label="Sign up"
-						/>
-					</>
-				)}
+				<ul className="flex">
+					<li className="">
+						<IconLink icon="settings" label="Settings" link="#" />
+					</li>
+					<li className="">
+						<IconLink icon="logout" label="Log out" link="#" />
+					</li>
+				</ul>
 			</nav>
 		</div>
 	</header>
