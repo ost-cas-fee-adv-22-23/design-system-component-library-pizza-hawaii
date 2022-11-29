@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Button } from "/src/components/Atoms/Button/Button";
+import { IconLink } from "/src/components/Atoms/IconLink/IconLink";
+
 import './header.css';
-console.log(Button);
+
 export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
-	<header className="Header bg-purple-600">
+	<header className="Header bg-purple-600 text-white">
 		<div className="Header--inner">
 			<div className="Header--logo">
 				<svg
@@ -62,23 +64,14 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 				<h1 className="sr-only">Mumble</h1>
 			</div>
 			<nav className="Header--nav">
-				{user ? (
-					<>
-						<span className="welcome">
-							Welcome, <b>{user.name}</b>!
-						</span>
-						<Button onClick={onLogout} label="Log out" />
-					</>
-				) : (
-					<>
-						<Button onClick={onLogin} label="Log in" />
-						<Button
-							color="gradient"
-							onClick={onCreateAccount}
-							label="Sign up"
-						/>
-					</>
-				)}
+				<ul className="flex">
+					<li className="">
+						<IconLink icon="settings" label="Settings" link="#" />
+					</li>
+					<li className="">
+						<IconLink icon="logout" label="Log out" link="#" />
+					</li>
+				</ul>
 			</nav>
 		</div>
 	</header>
