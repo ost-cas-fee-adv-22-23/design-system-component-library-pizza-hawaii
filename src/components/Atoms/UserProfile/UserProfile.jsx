@@ -1,22 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './UserProfile.css'
-
+import imageFile from './img/testuser.png'
 /**
  * User Icon with image from loged in user
  */
-export const UserProfile = (imgPath) => {
-  console.log('hey there!')
+export const UserProfile = () => {
 
-  const style = [
+  const baseStyle = [
     "rounded-lg",
-    "self-center"
+    "self-center",
+    "p-10"
   ]
 
+  // TODO: two variants of sizes, 
+  const sizeStyle = {
+    M: ["h-10", "w- 10"],
+    L: ["h-40", "w-40"]
+  }
+
+  const userImage = {
+    src: imageFile,
+    userName: 'alt text: TODO: here username'
+  }
+
   return (
-    <div className={[ ...style]}>
-      <h3>user profile</h3>
-      <img className='profileImage' src={imgPath} alt='userimage' />
+    <div className={[ ...baseStyle]}>
+      <img className='profileImage' src={userImage.src} alt={userImage.userName}/>
     </div>
   )
 }
@@ -25,9 +35,11 @@ UserProfile.PropTypes = {
   /**
    * image path string
    */
-  imgPath: PropTypes.string
+  src: PropTypes.string,
+  userName: PropTypes.string
 }
 
 UserProfile.defaultProps = {
-  imgPath: '../../../assets/img/testimages/testuser.png'
+  src: imageFile,
+  userName: 'alt text: TODO: here username'
 }

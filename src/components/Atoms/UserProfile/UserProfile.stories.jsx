@@ -8,7 +8,8 @@ export default {
   component: UserProfile,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    imagePath: '../../../assets/img/testimages/testuser.png'
+    src: './img/testuser.png',
+    userName: 'user name comes here as alt text'
   },
 };
 

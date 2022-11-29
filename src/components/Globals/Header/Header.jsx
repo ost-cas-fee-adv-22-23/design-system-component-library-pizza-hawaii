@@ -65,6 +65,9 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 			</div>
 			<nav className="Header--nav">
 				<ul className="flex">
+					<li>
+						<UserProfile />
+					</li>
 					<li className="">
 						<IconLink icon="settings" label="Settings" link="#" />
 					</li>
