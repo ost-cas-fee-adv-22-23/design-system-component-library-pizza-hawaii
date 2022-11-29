@@ -1,5 +1,3 @@
-import "../../../assets/img/icons/Arrow.svg";
-
 export type IconsLibType = { [index: string]: string };
 let Icons: IconsLibType = {
 	mumble: `
@@ -36,14 +34,6 @@ let Icons: IconsLibType = {
 		</svg>
 	`,
 };
-
-fetch(
-	"./src/assets/img/icons/Arrow.svg"
-)
-	.then((response) => response.text())
-	.then((svg) => {
-		Icons["arrow"] = svg;
-	});
 
 export default Icons;
 export const IconNames = Object.keys(Icons);
