@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from "/src/components/Atoms/Icon/Icon";
-import './Button.css';
+import "./Button.css";
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ color, size, label, icon, ...props }) => {
-
+export const Button = ({ type, color, size, label, icon, ...props }) => {
 	const colorStyle = {
 		slate: ["bg-gray-700", "hover:bg-gray-800"],
 		violet: ["bg-purple-600", "hover:bg-purple-700"],
@@ -21,13 +20,12 @@ export const Button = ({ color, size, label, icon, ...props }) => {
 	};
 
 	const sizeStyle = {
-		M: ["Button-m", "p-3"],
-		L: ["Button-l", "pt-4", "pb-4", "pl-6", "pr-6"],
+		M: ["Button-m", "p-3", "rounded-lg"],
+		L: ["Button-l", "pt-4", "pb-4", "pl-6", "pr-6", "rounded-lg"],
 		round: ["Button-round", "p-3", "rounded-full"],
 	};
 
 	const style = [
-		"rounded-lg",
 		...(colorStyle[color] || colorStyle.slate),
 		...(sizeStyle[size] || sizeStyle.M),
 		"font-semibold",
@@ -35,19 +33,37 @@ export const Button = ({ color, size, label, icon, ...props }) => {
 		"text-white",
 	];
 
+	const CustomTag = `${type}`;
+
+
+	const typeAttr = {
+		button: {
+			type: "button",
+		},
+		a: {
+			href: "#",
+		},
+		...props
+	};
+
+
+
 	return (
-		<button
-			type="button"
+		<CustomTag
 			className={["Button", ...style].join(" ")}
-			{...props}
+			{...typeAttr[type]}
 		>
 			<div className="Button--inner">{label}</div>
 			{icon ? <Icon name={icon} /> : null}
-		</button>
+		</CustomTag>
 	);
 };
 
 Button.propTypes = {
+	/**
+	 * Button type
+	 */
+	type: PropTypes.oneOf(["button", "a"]),
 	/**
 	 * What background color to use
 	 */
@@ -71,7 +87,9 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-	color: 'slate',
+	type: "button",
 	size: "M",
+	color: 'slate',
+	icon: "mumble",
 	onClick: undefined,
 };
