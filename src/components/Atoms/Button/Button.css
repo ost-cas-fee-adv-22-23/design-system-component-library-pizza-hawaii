@@ -1,21 +1,3 @@
-.Button {
-	display: flex;
-	align-items: center;
-}
-.Button.Button-m {
-	gap: 8px;
-}
-.Button.Button-l {
-	gap: 12px;
-}
-.Button.Button-l {
-	gap: 12px;
-}
-.Button.Button-round .Button--inner {
+.Button.M-Button-round .Button--inner {
 	@apply sr-only;
-}
-.Button--inner {
-}
-.Button .Icon {
-
 }

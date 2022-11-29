@@ -64,15 +64,25 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 				<h1 className="sr-only">Mumble</h1>
 			</div>
 			<nav className="Header--nav">
-				<ul className="flex">
+				<ul className="flex gap-4">
 					<li>
 						<UserProfile />
 					</li>
-					<li className="">
-						<IconLink icon="settings" label="Settings" link="#" />
+					<li>
+						<IconLink
+							className="M-Button-violet M-Button-s"
+							icon="settings"
+							label="Settings"
+							link="#"
+						/>
 					</li>
-					<li className="">
-						<IconLink icon="logout" label="Log out" link="#" />
+					<li>
+						<IconLink
+							className="M-Button-violet M-Button-s"
+							icon="logout"
+							label="Log out"
+							link="#"
+						/>
 					</li>
 				</ul>
 			</nav>

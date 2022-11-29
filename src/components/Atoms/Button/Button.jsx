@@ -1,36 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from "/src/components/Atoms/Icon/Icon";
+import "/src/components/Components-base.css";
 import "./Button.css";
 
 /**
  * Primary UI component for user interaction
  */
 export const Button = ({ type, color, size, label, icon, ...props }) => {
-	const colorStyle = {
-		slate: ["bg-gray-700", "hover:bg-gray-800"],
-		violet: ["bg-purple-600", "hover:bg-purple-700"],
-		gradient: [
-			"bg-gradient-to-r",
-			"from-pink-600",
-			"to-purple-600",
-			"hover:from-pink-700",
-			"hover:to-purple-700",
-		],
-	};
-
-	const sizeStyle = {
-		M: ["Button-m", "p-3", "rounded-lg"],
-		L: ["Button-l", "pt-4", "pb-4", "pl-6", "pr-6", "rounded-lg"],
-		round: ["Button-round", "p-3", "rounded-full"],
-	};
 
 	const style = [
-		...(colorStyle[color] || colorStyle.slate),
-		...(sizeStyle[size] || sizeStyle.M),
-		"font-semibold",
-		"text-base",
-		"text-white",
+		"flex",
+		"items-center",
+		`M-Button-${size}`,
+		`M-Button-${color}`,
 	];
 
 	const CustomTag = `${type}`;
@@ -53,7 +36,9 @@ export const Button = ({ type, color, size, label, icon, ...props }) => {
 			className={["Button", ...style].join(" ")}
 			{...typeAttr[type]}
 		>
-			<div className="Button--inner">{label}</div>
+			<div className="Button--inner group-hover:text-green-300">
+				{label}
+			</div>
 			{icon ? <Icon name={icon} /> : null}
 		</CustomTag>
 	);
@@ -71,7 +56,7 @@ Button.propTypes = {
 	/**
 	 * How large should the button be?
 	 */
-	size: PropTypes.oneOf(["M", "L", "round"]),
+	size: PropTypes.oneOf(["s", "m", "l", "round"]),
 	/**
 	 * How large should the button be?
 	 */
@@ -88,8 +73,8 @@ Button.propTypes = {
 
 Button.defaultProps = {
 	type: "button",
-	size: "M",
-	color: 'slate',
+	size: "m",
+	color: 'violet',
 	icon: "mumble",
 	onClick: undefined,
 };

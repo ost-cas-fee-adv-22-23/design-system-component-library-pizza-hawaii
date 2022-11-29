@@ -1,0 +1,27 @@
+
+/*
+ * Button
+ */
+
+.M-Button-l {
+	@apply pt-4 pb-4 pl-6 pr-6 rounded-lg gap-y-1 gap-x-3 text-base font-semibold;
+}
+.M-Button-m {
+	@apply p-3 rounded-lg gap-y-0 gap-x-2 text-base font-semibold;
+}
+.M-Button-s {
+	@apply p-2 rounded-lg gap-y-0 gap-x-2 text-sm font-semibold;
+}
+.M-Button-round {
+	@apply p-3 rounded-full;
+}
+
+.M-Button-slate {
+	@apply bg-gray-700 hover:bg-gray-800 text-white;
+}
+.M-Button-violet {
+	@apply bg-purple-600 hover:bg-purple-700 text-white;
+}
+.M-Button-gradient {
+	@apply bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white;
+}

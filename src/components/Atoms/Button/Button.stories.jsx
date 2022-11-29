@@ -19,7 +19,7 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Button {...args} />;
 
-const Buttons = ["M", "L", "round"].reduce((acc, size) => {
+const Buttons = ["s", "m", "l", "round"].reduce((acc, size) => {
 	const Btn = Template.bind({});
 	Btn.args = {
 		size: size,
@@ -29,7 +29,8 @@ const Buttons = ["M", "L", "round"].reduce((acc, size) => {
 	return acc;
 }, {});
 
-export const Medium = Buttons['M'];
-export const Large = Buttons["L"];
+export const Small = Buttons["s"];
+export const Medium = Buttons["m"];
+export const Large = Buttons["l"];
 export const Round = Buttons["round"];
 
