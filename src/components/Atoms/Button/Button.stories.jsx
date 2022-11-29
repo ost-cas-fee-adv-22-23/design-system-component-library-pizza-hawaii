@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { default as IconLib, IconNames } from "../Icon/IconLib";
+import { IconNames } from "../Icon/IconLib";
 import { Button } from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

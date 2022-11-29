@@ -1,10 +1,16 @@
 import React from 'react';
 import { Icon as Component } from './Icon';
-import { default as IconLib, IconNames as IcoNames } from "./IconLib";
+import { default as IconLib, IconNames } from "./IconLib";
 
 export default {
 	title: "Example/Components/Icon",
 	component: Component,
+	argTypes: {
+		name: {
+			options: IconNames,
+			control: { type: "select" },
+		},
+	},
 };
 
 const Template = (args) => <Component {...args} />;
