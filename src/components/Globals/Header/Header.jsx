@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { UserProfile } from '../../Atoms/UserProfile/UserProfile'
 import { Button } from "/src/components/Atoms/Button/Button";
 import { IconLink } from "/src/components/Atoms/IconLink/IconLink";
 
@@ -65,6 +65,9 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 			</div>
 			<nav className="Header--nav">
 				<ul className="flex">
+					<li>
+						<UserProfile />
+					</li>
 					<li className="">
 						<IconLink icon="settings" label="Settings" link="#" />
 					</li>
