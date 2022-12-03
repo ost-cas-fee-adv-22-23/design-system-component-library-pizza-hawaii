@@ -6,11 +6,11 @@ export default {
   title: 'Example/Components/ContentCard',
   component: ContentCard,
   argTypes: {
-    text: 'Display Name'
+    text: 'Card Title'
   }
 }
 
-export const Text = () => <ContentCard text={'Display Name'} />
+export const Text = () => <ContentCard text={'Card Title'} />
 
 // export const Text = () => Template.bind({});
 // Text.args = {

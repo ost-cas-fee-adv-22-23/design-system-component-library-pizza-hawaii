@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  color: #7C3AED;
+}
+
+.username {
+  font-size: 14px;
+  line-height: 18px;
+}

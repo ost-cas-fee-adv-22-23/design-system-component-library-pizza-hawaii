@@ -11,6 +11,11 @@
   line-height: 36px;
 }
 
+.metainfo {
+  display: flex;
+  flex-direction: row;
+}
+
 .message {
   padding-top: 24px;
   font-size: 24px;
