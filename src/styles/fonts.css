@@ -1,13 +1,12 @@
 /* load local font Poppins  */
 @font-face {
   font-family: 'Poppins';
-    font-weight: 100;
-    font-display: block;
-    font-style: normal;
-    src: url('../../src/assets/fonts/Poppins/Poppins-Regular.ttf') format('ttf');
+  font-weight: 100;
+  font-display: block;
+  font-style: normal;
+  src: url('../../src/assets/fonts/Poppins/Poppins-Regular.ttf') format('ttf');
 }
 
 body {
   font-family: 'Poppins';
-  color: aqua;
 }
