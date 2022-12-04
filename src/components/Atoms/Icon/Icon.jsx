@@ -6,7 +6,7 @@ import './Icon.css';
 export const IconNames = IcoNames;
 export const Icon = ({ size, name, className, ...props }) => {
 	const sizeStyle = {
-		s: ["w-2"],
+		s: ["w-3"],
 		m: ["w-4"],
 		l: ["w-8"],
 	};

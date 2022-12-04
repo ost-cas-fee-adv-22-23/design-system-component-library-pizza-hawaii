@@ -1,5 +1,7 @@
-.root {
+.contentCard {
   border-radius: 16px;
+  position: relative;
+  border: 1px solid gray;
 }
 
 .title {
@@ -22,11 +24,23 @@
   line-height: 35px;
   font-family: 'Poppins', sans-serif;
   font-weight: 100;
-  color: #0F172A;
+  color: #0F172A;  
 }
+
 
 .image {
   height: 300px;
   border-radius: 5px;
   background-color: #DDD6FE;
+}
+
+
+.-variantSmall {
+  display: flex;
+  flex-direction: row;
+}
+
+.-variantLarge img{
+  position: absolute;
+  left: -10px;
 }

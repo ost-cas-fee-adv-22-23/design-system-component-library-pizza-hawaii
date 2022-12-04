@@ -6,13 +6,9 @@ import "./UserName.css"
 
 const UserName = (props, icon) => {
 
-  console.log('username props', props)
   return(
     <span className='root'>
-      { icon
-        ? <Icon className={`mr-2`} name={icon} />
-        : null
-      }
+      <Icon className={`mr-2`} name='profile' size='s' /> 
       <span className='username'>{props.username}</span>
     </span>
   )
