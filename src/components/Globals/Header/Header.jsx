@@ -64,7 +64,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 				<h1 className="sr-only">Mumble</h1>
 			</div>
 			<nav className="Header--nav">
-				<ul className="flex gap-4">
+				<ul className="flex items-center gap-4">
 					<li>
 						<UserProfile />
 					</li>

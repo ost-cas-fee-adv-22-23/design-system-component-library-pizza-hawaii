@@ -9,10 +9,10 @@ const UserName = (props, icon) => {
   console.log('username props', props)
   return(
     <span className='root'>
-      { icon 
-        ? <Icon className={`mr-2`} icon={icon} />
+      { icon
+        ? <Icon className={`mr-2`} name={icon} />
         : null
-      } 
+      }
       <span className='username'>{props.username}</span>
     </span>
   )

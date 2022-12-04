@@ -17,7 +17,7 @@ export const IconLink = ({ icon, label, oneline, className, ...props }) => (
 		].join(" ")}
 		{...props}
 	>
-		{icon ? <Icon className={`ml-2 mr-2 mt-1 mb-1`} icon={icon} /> : null}
+		{icon ? <Icon className={`ml-2 mr-2 mt-1 mb-1`} name={icon} /> : null}
 		{label}
 	</a>
 );
