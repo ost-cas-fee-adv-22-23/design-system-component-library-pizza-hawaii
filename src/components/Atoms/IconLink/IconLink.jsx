@@ -5,15 +5,16 @@ import { Icon } from "/src/components/Atoms/Icon/Icon";
 
 import './IconLink.css';
 
-export const IconLink = ({ icon, label, oneline, className, ...props }) => (
+export const IconLink = ({ icon, label, href, color, oneline, className, ...props }) => (
 	<a
-		href={props.href || "#"}
+		href={href || "#"}
 		className={[
 			className,
 			"IconLink",
 			"flex",
 			"items-center",
 			oneline ? "flex-row" : "flex-col",
+			`M-Link-${color}`,
 		].join(" ")}
 		{...props}
 	>
@@ -25,11 +26,14 @@ export const IconLink = ({ icon, label, oneline, className, ...props }) => (
 IconLink.propTypes = {
 	icon: PropTypes.string,
 	label: PropTypes.string.isRequired,
-	link: PropTypes.string.isRequired,
+	href: PropTypes.string.isRequired,
+	color: PropTypes.oneOf(["slate", "violet"]),
 };
 
 IconLink.defaultProps = {
 	icon: "edit",
 	label: "Edit Something",
-	oneline: false,
+	href: "",
+	color: "slate",
+	oneline: true,
 };
