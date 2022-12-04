@@ -17,11 +17,11 @@
 }
 
 .M-Button-slate {
-	@apply bg-gray-700 hover:bg-gray-800 text-white;
+	@apply bg-gray-700 hover:bg-gray-800 
 }
 .M-Button-violet {
-	@apply bg-purple-600 hover:bg-purple-700 text-white;
+	@apply bg-violet-600 hover:bg-violet-700;
 }
 .M-Button-gradient {
-	@apply bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white;
+	@apply bg-gradient-to-r from-pink-600 to-violet-600 hover:from-pink-700 hover:to-violet-700;
 }

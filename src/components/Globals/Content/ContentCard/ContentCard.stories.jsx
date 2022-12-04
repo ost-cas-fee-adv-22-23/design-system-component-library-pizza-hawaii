@@ -10,10 +10,20 @@ export default {
   }
 }
 
-export const Text = () => <ContentCard text={'Card Title'} />
+const Template = (args) => <ContentCard {...args} />
+
+
+export const Large = Template.bind()
+Large.args = {
+  text: 'Hi I am a Large template',
+  size: 'l'
+}
+
+export const Small = Template.bind()
+Small.args = {
+  text: 'Hi I am a Small template',
+  size: 's'
+}
 
 // export const Text = () => Template.bind({});
-// Text.args = {
-  // title: 'hoi'
-// }
 

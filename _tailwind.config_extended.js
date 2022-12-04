@@ -10,6 +10,11 @@ module.exports = {
 			pink: colors.pink,
 			violet: colors.violet,
 		},
+		fontSize: {
+			sm: '0.8rem',
+			base: '1rem',
+			xl: '1.25rem',
+		},
 		extend: {
 			fontFamily: {
 				sans: ['Poppins', ...defaultTheme.fontFamily.sans],
