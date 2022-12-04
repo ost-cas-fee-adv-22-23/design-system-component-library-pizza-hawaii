@@ -5,10 +5,14 @@ module.exports = {
 	content: ["./src/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		extend: {
+			colors: {
+				transparent: "transparent",
+				current: "currentColor",
+			},
 			fontFamily: {
-				sans: ['Poppins', ...defaultTheme.fontFamily.sans],
-			}
-		}
+				sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+			},
+		},
 	},
 	plugins: [],
 };
