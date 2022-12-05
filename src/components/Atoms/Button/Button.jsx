@@ -10,14 +10,12 @@ import "./Button.css";
 export const Button = ({ tag, color, size, label, icon, ...props }) => {
 
 	const style = [
-		"flex",
-		"items-center",
+		`M-Button-base`,
 		`M-Button-${size}`,
 		`M-Button-${color}`,
 	];
 
 	const CustomTag = `${tag}`;
-
 
 	const typeAttr = {
 		button: {
@@ -36,7 +34,7 @@ export const Button = ({ tag, color, size, label, icon, ...props }) => {
 			className={["Button", ...style].join(" ")}
 			{...typeAttr[tag]}
 		>
-			<div className="Button--inner group-hover:text-green-300">
+			<div className="Button--inner">
 				{label}
 			</div>
 			{icon ? <Icon name={icon} /> : null}
@@ -45,33 +43,11 @@ export const Button = ({ tag, color, size, label, icon, ...props }) => {
 };
 
 Button.propTypes = {
-	/**
-	 * Button tag
-	 */
 	tag: PropTypes.oneOf(["button", "a"]),
-	/**
-	 * What background color to use
-	 */
 	color: PropTypes.oneOf(["slate", "violet", "gradient"]),
-	/**
-	 * How large should the button be?
-	 */
 	size: PropTypes.oneOf(["s", "m", "l"]),
-	/**
-	 * How should the button be?
-	 */
 	variant: PropTypes.oneOf(["", "round"]),
-	/**
-	 * How large should the button be?
-	 */
-	//icon: PropTypes.oneOf(["mumble", "edit"]),
-	/**
-	 * Button contents
-	 */
 	label: PropTypes.string.isRequired,
-	/**
-	 * Optional click handler
-	 */
 	onClick: PropTypes.func,
 };
 
