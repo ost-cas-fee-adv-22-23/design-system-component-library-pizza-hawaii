@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from "/src/components/Atoms/Icon/Icon";
+import Icon from "/src/components/Atoms/Icon/Icon";
 import "/src/components/Components-base.css";
 import "./ContentCard.css"
-import UserName from '../../../Atoms/UserName/UserName';
+import {UserName} from '../../../Atoms/UserName/UserName';
 import TimeStamp  from '../../../Atoms/TimeStamp/TimeStamp'
 import { UserProfile } from '../../../Atoms/UserProfile/UserProfile'
 import { IconLink } from '../../../Atoms/IconLink/IconLink';
 
 
 export const ContentCard = (props) => {
-  console.log('contentCard props', props)
   const cardStyle = ["flex flex-start justify-center items-start bg-white py-8 px-12 rounded-full"]
   const { size } = props 
   const socialInteraction = ["pt-4 flex flex-row items-center"]
@@ -25,8 +24,8 @@ export const ContentCard = (props) => {
           <h1 className={['title', ...textSize].join(' ')}>{props.text}</h1>
         </div>
             <span className='metainfo'>
-             <UserName username={'Display Name'} />
-              <TimeStamp time={'13:32'} />
+             <UserName username={'Pineapple Peter'} />
+             <TimeStamp time={'13:32'} />
             </span>
         <div>
           <p className={['message', ...textSize].join(' ')}>Paragraph: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
@@ -34,7 +33,6 @@ export const ContentCard = (props) => {
           <figure className='image' >
             <span>here is the image component</span>
           </figure>
-        {/* <div className='socialInteraction'> */}
         <div className={socialInteraction}>
           <IconLink 
             oneline={true}
@@ -57,13 +55,13 @@ export const ContentCard = (props) => {
         </div>
       </div>
     </article>
-    )
+  )
 }
 
 ContentCard.PropTypes = {
   text: PropTypes.string,
   size: PropTypes.oneOf(['s', 'm', 'l']),
-  // corners: PropTypes.string('round' || 'square')
+  corners: PropTypes.string
 }
 
 
