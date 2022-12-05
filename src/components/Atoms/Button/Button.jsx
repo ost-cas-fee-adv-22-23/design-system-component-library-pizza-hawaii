@@ -7,7 +7,7 @@ import "./Button.css";
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ type, color, size, label, icon, ...props }) => {
+export const Button = ({ tag, color, size, label, icon, ...props }) => {
 
 	const style = [
 		"flex",
@@ -16,7 +16,7 @@ export const Button = ({ type, color, size, label, icon, ...props }) => {
 		`M-Button-${color}`,
 	];
 
-	const CustomTag = `${type}`;
+	const CustomTag = `${tag}`;
 
 
 	const typeAttr = {
@@ -46,9 +46,9 @@ export const Button = ({ type, color, size, label, icon, ...props }) => {
 
 Button.propTypes = {
 	/**
-	 * Button type
+	 * Button tag
 	 */
-	type: PropTypes.oneOf(["button", "a"]),
+	tag: PropTypes.oneOf(["button", "a"]),
 	/**
 	 * What background color to use
 	 */
@@ -56,7 +56,11 @@ Button.propTypes = {
 	/**
 	 * How large should the button be?
 	 */
-	size: PropTypes.oneOf(["s", "m", "l", "round"]),
+	size: PropTypes.oneOf(["s", "m", "l"]),
+	/**
+	 * How should the button be?
+	 */
+	variant: PropTypes.oneOf(["", "round"]),
 	/**
 	 * How large should the button be?
 	 */
@@ -72,9 +76,9 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-	type: "button",
+	tag: "button",
 	size: "m",
-	color: 'violet',
+	color: "violet",
 	icon: "mumble",
 	onClick: undefined,
 };

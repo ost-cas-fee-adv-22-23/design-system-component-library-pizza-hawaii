@@ -1,19 +1,14 @@
 import React from 'react';
 
-import UserName from './UserName'
+import { UserName as Component } from "./UserName";
 
 export default {
-  title: 'Example/Components/UserName',
-  component: UserName,
-  argTypes: {
-    username: 'Bruce Willis'
-  }
-}
+	title: "Example/Components/UserName",
+	component: Component,
+	argTypes: {},
+};
 
-export const CardDisplay = () => <UserName username={'Display Name'} />
-
-// export const CardDisplay = () => Template.bind({});
-
-// CardDisplay.args = {
-  // username: 'Kleopatra' 
-// }
+export const UserName = (args) => <Component {...args} />;
+UserName.args = {
+	username: "Pinapple Peter",
+};
