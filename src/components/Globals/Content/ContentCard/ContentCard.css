@@ -24,13 +24,18 @@
   color: #0F172A;  
 }
 
-
 .image {
   height: 300px;
   border-radius: 5px;
   background-color: #DDD6FE;
 }
 
+.socialInteraction {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 .-variantSmall {
   display: flex;

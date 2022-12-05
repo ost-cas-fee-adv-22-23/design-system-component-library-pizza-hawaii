@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Icon } from "/src/components/Atoms/Icon/Icon";
+import { Icon } from "/src/components/Atoms/Icon/Icon";
 import "/src/components/Components-base.css";
 import "./ContentCard.css"
 import UserName from '../../../Atoms/UserName/UserName';
 import TimeStamp  from '../../../Atoms/TimeStamp/TimeStamp'
 import { UserProfile } from '../../../Atoms/UserProfile/UserProfile'
+import { IconLink } from '../../../Atoms/IconLink/IconLink';
 
 
 export const ContentCard = (props) => {
   console.log('contentCard props', props)
-  const cardStyle = [
-    "flex flex-start justify-center items-start bg-white py-8 px-12 rounded-full "
-  ]
+  const cardStyle = ["flex flex-start justify-center items-start bg-white py-8 px-12 rounded-full"]
   const { size } = props 
-
+  const socialInteraction = ["pt-4 flex flex-row items-center"]
   const sizeStyle = size === 's' ? '-variantSmall' : '-variantLarge'
   const textSize = [`M-text-size-${size}`]
 
@@ -35,10 +34,26 @@ export const ContentCard = (props) => {
           <figure className='image' >
             <span>here is the image component</span>
           </figure>
-        <div className='socialInteraction'>
-          <span>Comment-icon</span> |
-          <span>Like-icon</span> |
-          <span>CopyLink-icon</span>
+        {/* <div className='socialInteraction'> */}
+        <div className={socialInteraction}>
+          <IconLink 
+            oneline={true}
+            icon='comment' 
+            label='Comment'
+            link='#' 
+          />
+          <IconLink 
+            oneline={true}
+            icon='heart' 
+            label='Like'
+            link='#' 
+          />
+          <IconLink 
+            oneline={true}
+            icon='share' 
+            label='Share Link'
+            link='#' 
+          />
         </div>
       </div>
     </article>
@@ -47,7 +62,8 @@ export const ContentCard = (props) => {
 
 ContentCard.PropTypes = {
   text: PropTypes.string,
-  size: PropTypes.oneOf(['s', 'm', 'l'])
+  size: PropTypes.oneOf(['s', 'm', 'l']),
+  // corners: PropTypes.string('round' || 'square')
 }
 
 
