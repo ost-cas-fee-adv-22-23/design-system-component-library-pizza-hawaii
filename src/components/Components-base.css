@@ -46,3 +46,20 @@
 .M-size-s img {
 	@apply h-10 w-10;
 }
+
+
+/*
+ * ContentCard
+ */
+
+ .M-text-size-l {
+	@apply text-xl
+ }
+
+ .M-text-size-m {
+	@apply text-base
+ }
+ 
+ .M-text-size-s {
+	@apply text-sm
+ }
