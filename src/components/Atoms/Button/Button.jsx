@@ -34,7 +34,7 @@ export const Button = ({ tag, color, size, label, icon, ...props }) => {
 	return (
 		<CustomTag
 			className={["Button", ...style].join(" ")}
-			{...typeAttr[type]}
+			{...typeAttr[tag]}
 		>
 			<div className="Button--inner group-hover:text-green-300">
 				{label}

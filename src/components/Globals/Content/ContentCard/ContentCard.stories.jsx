@@ -16,13 +16,22 @@ const Template = (args) => <ContentCard {...args} />
 export const Large = Template.bind()
 Large.args = {
   text: 'Hi I am a Large template',
-  size: 'l'
+  size: 'l',
+  corners: 'round'
+}
+
+export const Medium = Template.bind()
+Medium.args = {
+  text: 'Medium- rare, mostly we well use that one',
+  size: 'm',
+  corners: 'square'
 }
 
 export const Small = Template.bind()
 Small.args = {
-  text: 'Hi I am a Small template',
-  size: 's'
+  text: 'Hi I am a Small template - the profile image is smaller here',
+  size: 's',
+  corners: 'square'
 }
 
 // export const Text = () => Template.bind({});

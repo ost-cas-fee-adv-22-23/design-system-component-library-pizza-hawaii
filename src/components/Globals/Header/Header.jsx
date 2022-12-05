@@ -66,7 +66,9 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 			<nav className="Header--nav">
 				<ul className="flex items-center gap-4">
 					<li>
-						<UserProfile />
+						<UserProfile 
+							size="s"
+						/>
 					</li>
 					<li>
 						<IconLink

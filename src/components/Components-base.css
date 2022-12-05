@@ -60,3 +60,41 @@
 .M-FormItem-Error {
 	@apply text-red-700 text-xs font-medium;
 }
+
+
+/*
+ * UserProfile - Image Dimensions
+ */
+
+.M-size-big img {
+	@apply h-40 w-40 border-4 rounded-full border-white;
+}
+
+.M-size-l img {
+	@apply h-24 w-24 border-4 rounded-full border-white;
+}
+
+.M-size-m img {
+	@apply h-16 w-16 border-4 rounded-full border-white;
+}
+
+.M-size-s img {
+	@apply h-10 w-10;
+}
+
+
+/*
+ * ContentCard
+ */
+
+ .M-text-size-l {
+	@apply text-xl
+ }
+
+ .M-text-size-m {
+	@apply text-base
+ }
+ 
+ .M-text-size-s {
+	@apply text-sm
+ }
