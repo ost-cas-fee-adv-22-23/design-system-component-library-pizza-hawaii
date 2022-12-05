@@ -16,13 +16,12 @@ export const ContentCard = (props) => {
   const { size } = props 
 
   const sizeStyle = size === 's' ? '-variantSmall' : '-variantLarge'
-  console.log('contentCard size', size)
 
   return (
     <article className={['contentCard', ...cardStyle].join(' ')}>
       <div>
         <div className={sizeStyle} >
-          <UserProfile />
+          <UserProfile size='m' />
           <h1 className='title'>{props.text}</h1>
         </div>
             <span className='metainfo'>
