@@ -1,13 +1,22 @@
 
 /*
- * Button
+ * Typography
  */
 
+
+
+/*
+ * Button
+ */
+.M-Button-base {
+	@apply flex items-center text-white text-base font-semibold;
+}
+
 .M-Button-l {
-	@apply pt-4 pb-4 pl-6 pr-6 rounded-lg gap-y-1 gap-x-3 text-base font-semibold;
+	@apply pt-4 pb-4 pl-6 pr-6 rounded-lg gap-y-1 gap-x-3;
 }
 .M-Button-m {
-	@apply p-3 rounded-lg gap-y-0 gap-x-2 text-base font-semibold;
+	@apply p-3 rounded-lg gap-y-0 gap-x-2;
 }
 .M-Button-s {
 	@apply p-2 rounded-lg gap-y-0 gap-x-2 text-sm font-semibold;
@@ -88,13 +97,23 @@
  */
 
  .M-text-size-l {
-	@apply text-xl
+	@apply text-xl md:text-lg;
  }
 
  .M-text-size-m {
 	@apply text-base
  }
- 
+
  .M-text-size-s {
 	@apply text-sm
  }
+
+
+
+.M-text-h1 {
+	@apply M-text-size-l;
+}
+
+.M-text-h1 {
+	@apply M-text-size-m;
+}

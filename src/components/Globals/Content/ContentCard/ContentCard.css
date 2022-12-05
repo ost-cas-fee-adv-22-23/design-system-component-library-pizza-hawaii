@@ -1,5 +1,5 @@
 .contentCard {
-  border-radius: 16px;
+  /*border-radius: 16px;*/
   position: relative;
   border: 1px solid gray;
 }
@@ -21,7 +21,7 @@
   padding-bottom: 2rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  color: #0F172A;  
+  color: #0F172A;
 }
 
 .image {
@@ -42,7 +42,7 @@
   flex-direction: row;
 }
 
-.-variantLarge img{
+.-variantLarge img {
   position: absolute;
   left: -20px;
 }
