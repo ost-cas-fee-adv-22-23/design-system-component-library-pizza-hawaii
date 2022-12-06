@@ -10,9 +10,9 @@ import { IconLink } from '../../../Atoms/IconLink/IconLink';
 
 
 export const ContentCard = (props) => {
-	const cardStyle = "flex flex-start justify-center items-start bg-white py-8 px-12"
+	const cardStyle = "flex flex-start justify-center items-start bg-white py-xl px-xxl"
 	const { variant } = props
-	const socialInteraction = ["pt-4 flex flex-row items-center"];
+	const socialInteraction = ["pt-s flex flex-row items-center"];
 
 
 	const preset = {
@@ -28,7 +28,7 @@ export const ContentCard = (props) => {
 			headlineSize: "m",
 			textSize: "s",
 			cardStyle:
-				"border-2 border-solid border-white hover:border-gray-300",
+				"border-xs border-solid border-white hover:border-gray-300",
 			sizeStyle: "-variantSmall",
 		},
 	};

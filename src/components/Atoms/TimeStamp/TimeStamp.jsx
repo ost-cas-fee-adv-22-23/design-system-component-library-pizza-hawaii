@@ -12,7 +12,7 @@ const TimeStamp = (props) => {
   const styles = ["flex flex-end justify-center mx-3 text-gray-400"]
   return (
     <span className={[root, ...styles].join(' ')}>
-      <Icon className={`mr-2`} name={'time'} size='s' />
+      <Icon className={`mr-xs`} name={'time'} size='s' />
 
       <time className='px-0 align-baseline'>{props.time}</time>
     </span>
