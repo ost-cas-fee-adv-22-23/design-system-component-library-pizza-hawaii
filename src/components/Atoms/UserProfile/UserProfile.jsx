@@ -1,42 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import './UserProfile.css'
 import imageFile from './img/testuser.png'
 /**
  * User Icon with image from loged in user
  */
 export const UserProfile = ({size}) => {
-  const baseStyle = [
-    "rounded-lg",
-    "self-center",
-    "p-2"
-  ]
+	const baseStyle = [
+		"rounded-lg",
+		"self-center",
+		"p-2"
+	]
 
-  const sizeStyle = [ `M-size-${size}`]
+	const sizeStyle = [ `M-size-${size}`]
 
 
-  const userImage = {
-    src: imageFile,
-    userName: 'alt text: TODO: here username'
-  }
+	const userImage = {
+		src: imageFile,
+		userName: 'alt text: TODO: here username'
+	}
 
-  return (
-    <div className={[...sizeStyle, ...baseStyle].join(' ')}>
-      <img  src={userImage.src} alt={userImage.userName}/>
-    </div>
-  )
+	return (
+		<div className={[...sizeStyle, ...baseStyle].join(' ')}>
+			<img  src={userImage.src} alt={userImage.userName}/>
+		</div>
+	)
 }
 
 UserProfile.PropTypes = {
-  /**
-   * image path string
-   */
-  src: PropTypes.string,
-  userName: PropTypes.string,
-  size: PropTypes.oneOf(['s', 'm', 'l', 'big'])
+	/**
+	 * image path string
+	 */
+	src: PropTypes.string,
+	userName: PropTypes.string,
+	size: PropTypes.oneOf(['s', 'm', 'l', 'big'])
 }
 
 UserProfile.defaultProps = {
-  src: imageFile,
-  userName: 'alt text: TODO: here username'
+	src: imageFile,
+	userName: 'Cherry Chris'
 }
