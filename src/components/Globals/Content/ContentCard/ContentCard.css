@@ -16,13 +16,6 @@
   flex-direction: row;
 }
 
-.message {
-  padding-top: 24px;
-  padding-bottom: 2rem;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  color: #0F172A;
-}
 
 .image {
   height: 300px;
@@ -35,14 +28,4 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.-variantSmall {
-  display: flex;
-  flex-direction: row;
-}
-
-.-variantLarge img {
-  position: absolute;
-  left: -20px;
 }

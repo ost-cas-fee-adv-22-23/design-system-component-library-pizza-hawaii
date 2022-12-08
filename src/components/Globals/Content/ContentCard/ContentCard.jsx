@@ -8,7 +8,7 @@ import TimeStamp  from '../../../Atoms/TimeStamp/TimeStamp'
 import { UserProfile } from '../../../Atoms/UserProfile/UserProfile'
 import { IconLink } from '../../../Atoms/IconLink/IconLink';
 
-
+// TODO: apply  font size of h1 to our new font-size mechanism
 export const ContentCard = (props) => {
 	const cardStyle = "flex flex-start justify-center items-start bg-white py-8 px-12"
 	const { variant } = props
@@ -17,20 +17,26 @@ export const ContentCard = (props) => {
 
 	const preset = {
 		detailpage: {
-			userprofile: "l",
+			userprofile: "m",
 			headlineSize: "l",
-			textSize: "m",
-			cardStyle: "rounded-3xl",
-			sizeStyle: "-variantLarge",
+			textSize: "l",
+			sizeStyle: "-variantDetail",
+			cardStyle:"border-2 border-solid border-white hover:border-gray-300",
 		},
 		timeline: {
 			userprofile: "m",
 			headlineSize: "m",
-			textSize: "s",
-			cardStyle:
-				"border-2 border-solid border-white hover:border-gray-300",
-			sizeStyle: "-variantSmall",
+			textSize: "m",
+			cardStyle: "rounded-3xl",
+			sizeStyle: "-variantTimeline",
 		},
+		responsive: {
+			userprofile: "s",
+			headlineSize: "m",
+			textSize: "m",
+			cardStyle: "border-2 border-solid border-white hover:border-gray-200",
+			sizeStyle: "-variantResponsive",
+		}
 	};
 
 	const setting = preset[variant] || preset.detailpage;
@@ -40,25 +46,28 @@ export const ContentCard = (props) => {
 			className={["contentCard", cardStyle, setting.cardStyle].join(" ")}
 		>
 			<div>
-				<div className={setting.sizeStyle}>
-					<UserProfile size={setting.userprofile} />
-					<h1
-						className={[
-							"title",
-							`M-text-size-${setting.headlineSize}`,
-						].join(" ")}
-					>
-						{props.text}
-					</h1>
-				</div>
-				<span className="metainfo">
-					<UserName username={"Pineapple Peter"} />
-					<TimeStamp time={"13:32"} />
-				</span>
+					<div className={setting.sizeStyle}>
+						<UserProfile size={setting.userprofile} />
+						<div>
+							<h1
+								className={[
+									"title",
+									`M-text-size-${setting.headlineSize}`,
+								].join(" ")}
+								>
+								{props.text}
+							</h1>
+							<span className={["flex flex-row align-baseline"]}>
+								<UserName username={"Pineapple Peter"} />
+								<TimeStamp time={"13:32"} />
+							</span>
+						</div>
+					</div>
 				<div>
 					<p
 						className={[
-							"message",
+							"py-6",
+							"font-sans",
 							`M-text-size-${setting.textSize}`,
 						].join(" ")}
 					>

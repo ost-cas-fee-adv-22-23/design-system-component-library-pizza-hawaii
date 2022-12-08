@@ -76,15 +76,15 @@
  */
 
 .M-size-big img {
-	@apply h-40 w-40 border-4 rounded-full border-white;
+	@apply h-40 w-40 border-4 rounded-full bg-slate-100;
 }
 
 .M-size-l img {
-	@apply h-24 w-24 border-4 rounded-full border-white;
+	@apply h-24 w-24 border-4 rounded-full bg-slate-100;
 }
 
 .M-size-m img {
-	@apply h-16 w-16 border-4 rounded-full border-white;
+	@apply h-16 w-16 border-4 rounded-full bg-slate-100;
 }
 
 .M-size-s img {
@@ -93,8 +93,28 @@
 
 
 /*
- * ContentCard
+ * ContentCard - a mumbel view
  */
+
+/*
+ * layout variants
+ */
+ 
+.-variantDetail img {
+	position: absolute;
+	left: -32px;
+}
+	
+.-variantTimeline img {
+	position: absolute;
+	left: -32px;
+}
+
+.-variantResponsive {	
+	display: flex;
+	flex-direction: row;
+}
+
 
  .M-text-size-l {
 	@apply text-xl md:text-lg;
