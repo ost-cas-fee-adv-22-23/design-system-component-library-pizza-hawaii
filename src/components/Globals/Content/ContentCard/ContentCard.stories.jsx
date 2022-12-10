@@ -6,7 +6,8 @@ export default {
 	title: 'Example/Components/ContentCard',
 	component: ContentCard,
 	argTypes: {
-		text: 'Card Title'
+		text: 'Card Title',
+		variant: "detailpage"
 	}
 }
 
