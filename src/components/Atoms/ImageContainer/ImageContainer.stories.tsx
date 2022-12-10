@@ -9,10 +9,17 @@ export default {
 };
 
 
-export const Default = (args) => <ImageContainer {...args} />;
+export const MumblePost = (args) => <ImageContainer {...args} />;
 
-Default.args = {
+MumblePost.args = {
   imgSrc: '/testimage/testimage_01.jpg',
-  altText: 'meaningfull image description alt text'
+  altText: 'meaningfull image description alt text',
+  sizeStyle: 'mumblePost'
 }
 
+export const ProfileBanner = MumblePost.bind({})
+ProfileBanner.args = {
+  imgSrc: '/testimage/testimage_01.jpg',
+  altText: 'Profile Banner meaningfull image',
+  sizeStyle: 'profileBanner'
+};
