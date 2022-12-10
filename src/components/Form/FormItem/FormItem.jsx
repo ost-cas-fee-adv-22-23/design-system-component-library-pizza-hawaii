@@ -12,12 +12,12 @@ export const FormItem = ({
 }) => {
 	return (
 		<div className={["FormItem flex flex-col", className].join(" ")}>
-			<label className="FormItem--label M-FormItem-Label mb-1" htmlFor={id}>
+			<label className="FormItem--label M-FormItem-Label mb-xxs" htmlFor={id}>
 				{label}
 			</label>
 			{inputField}
 			{errorMessage ? (
-				<span className="FormItem--error M-FormItem-Error mt-1 self-end">
+				<span className="FormItem--error M-FormItem-Error mt-xxs self-end">
 					{errorMessage}
 				</span>
 			) : null}

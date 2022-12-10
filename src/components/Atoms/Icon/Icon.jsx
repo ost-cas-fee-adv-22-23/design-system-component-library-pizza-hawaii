@@ -7,8 +7,8 @@ export const IconNames = IcoNames;
 export const Icon = ({ size, name, className, ...props }) => {
 	const sizeStyle = {
 		s: ["w-3"],
-		m: ["w-4"],
-		l: ["w-8"],
+		m: ["w-s"],
+		l: ["w-xl"],
 	};
 
 	const style = [...(sizeStyle[size] || sizeStyle.M)];

@@ -10,9 +10,9 @@ import { IconLink } from '../../../Atoms/IconLink/IconLink';
 
 // TODO: apply  font size of h1 to our new font-size mechanism
 export const ContentCard = (props) => {
-	const cardStyle = "flex flex-start justify-center items-start bg-white py-8 px-12"
+	const cardStyle = "flex flex-start justify-center items-start bg-white py-xl px-xxl"
 	const { variant } = props
-	const socialInteraction = ["pt-4 flex flex-row items-center"];
+	const socialInteraction = ["pt-s flex flex-row items-center"];
 
 
 	const preset = {
