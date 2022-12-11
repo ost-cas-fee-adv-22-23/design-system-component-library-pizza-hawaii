@@ -22,7 +22,7 @@
 	@apply p-2 rounded-lg gap-y-0 gap-x-2 text-sm font-semibold;
 }
 .M-Button-round {
-	@apply p-3 rounded-full;
+	@apply p-4 rounded-full;
 }
 
 .M-Button-slate {
@@ -97,7 +97,7 @@
  */
 
  .M-text-size-l {
-	@apply text-xl md:text-lg;
+	@apply text-xl;
  }
 
  .M-text-size-m {

@@ -6,6 +6,9 @@ import { UserName } from "../../Molecules/UserName/UserName";
 import TimeStamp from "../../Molecules/TimeStamp/TimeStamp";
 import { UserProfile } from '../../Molecules/UserProfile/UserProfile'
 import { IconLink } from "../../Molecules/IconLink/IconLink";
+import { Image } from "../../Atoms/Image/Image"
+import { Richtext } from "../../Atoms/Richtext/Richtext";
+import { Label } from '../../Atoms/Label/Label';
 
 
 
@@ -18,16 +21,16 @@ export const ContentCard = (props) => {
 
 	const preset = {
 		detailpage: {
-			userprofile: "l",
-			headlineSize: "l",
-			textSize: "m",
+			userprofile: "L",
+			headlineSize: "XL",
+			textSize: "L",
 			cardStyle: "rounded-3xl",
 			sizeStyle: "-variantLarge",
 		},
 		timeline: {
-			userprofile: "m",
-			headlineSize: "m",
-			textSize: "s",
+			userprofile: "M",
+			headlineSize: "L",
+			textSize: "M",
 			cardStyle:
 				"border-xs border-solid border-white hover:border-gray-300",
 			sizeStyle: "-variantSmall",
@@ -43,26 +46,14 @@ export const ContentCard = (props) => {
 			<div>
 				<div className={setting.sizeStyle}>
 					<UserProfile size={setting.userprofile} />
-					<h1
-						className={[
-							"title",
-							`M-text-size-${setting.headlineSize}`,
-						].join(" ")}
-					>
-						{props.text}
-					</h1>
+					<Label size={setting.headlineSize}>{props.text}</Label>
 				</div>
 				<span className="metainfo">
 					<UserName username={"Pineapple Peter"} />
 					<TimeStamp time={"13:32"} />
 				</span>
-				<div>
-					<p
-						className={[
-							"message",
-							`M-text-size-${setting.textSize}`,
-						].join(" ")}
-					>
+				<Richtext size={setting.textSize}>
+					<p>
 						Paragraph: Sed ut perspiciatis unde omnis iste natus
 						error sit voluptatem accusantium doloremque laudantium,
 						totam rem aperiam, eaque ipsa quae ab illo inventore
@@ -71,10 +62,8 @@ export const ContentCard = (props) => {
 						aspernatur aut odit aut fugit, sed quia consequuntur
 						magni dolores eos qui ratione voluptatem sequi nesciunt.
 					</p>
-				</div>
-				<figure className="image">
-					<span>here is the image component</span>
-				</figure>
+				</Richtext>
+				<Image preset="post" />
 				<div className={socialInteraction}>
 					<IconLink
 						oneline={true}

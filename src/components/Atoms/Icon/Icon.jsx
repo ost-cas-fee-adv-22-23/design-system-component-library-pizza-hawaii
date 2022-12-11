@@ -6,9 +6,9 @@ import './Icon.css';
 export const IconNames = IcoNames;
 export const Icon = ({ size, name, className, ...props }) => {
 	const sizeStyle = {
-		s: ["w-3"],
-		m: ["w-s"],
-		l: ["w-xl"],
+		S: ["w-3"],
+		M: ["w-s"],
+		L: ["w-xl"],
 	};
 
 	const style = [...(sizeStyle[size] || sizeStyle.M)];
@@ -21,18 +21,18 @@ export const Icon = ({ size, name, className, ...props }) => {
 		></span>
 	);
 };
-Icon.propTypes = {
-	/**
-	 * How large should the Icon be?
-	 */
-	size: PropTypes.oneOf(["s", "m", "l"]),
-	/**
-	 * Name of the icon
-	 */
-	//name: PropTypes.oneOf(["mumble", "edit"]).isRequired,
-};
+// Icon.propTypes = {
+// 	/**
+// 	 * How large should the Icon be?
+// 	 */
+// 	size: PropTypes.oneOf(["S", "M", "L"]),
+// 	/**
+// 	 * Name of the icon
+// 	 */
+// 	//name: PropTypes.oneOf(["mumble", "edit"]).isRequired,
+// };
 
 Icon.defaultProps = {
-	size: "m",
+	size: "M",
 	name: IconNames[0],
 };

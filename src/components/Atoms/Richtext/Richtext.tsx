@@ -2,7 +2,7 @@ import React, { FC, Children, ReactNode } from "react";
 
 type BaseProps = {
 	as?: "div";
-	size: "M" | "L"
+	size: "M" | "L";
 	className?: string;
 	children: ReactNode;
 };
@@ -19,21 +19,18 @@ export const Richtext: FC<BaseProps> = ({
 	className = "",
 	...props
 }) => {
-
 	const style = [
-		"inline-block leading-none font-semibold",
+		"inline-block leading-none font-medium text-lg text-gray-900",
 		sizeMap[size],
 		className,
 	].join(" ");
 
 	const content =
-		Children.count(children) === 1 &&
-		typeof children === "string" ?
-			(
-			<p>
-				{children}
-			</p>
-			) : children;
+		Children.count(children) === 1 && typeof children === "string" ? (
+			<p>{children}</p>
+		) : (
+			children
+		);
 
 	return (
 		<Tag className={style} {...props}>
@@ -41,4 +38,3 @@ export const Richtext: FC<BaseProps> = ({
 		</Tag>
 	);
 };
-
