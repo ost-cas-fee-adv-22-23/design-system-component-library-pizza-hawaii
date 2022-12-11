@@ -1,32 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FormItem } from "/src/components/Form/FormItem/FormItem";
+import { FormItem } from "/src/components/Molecules/Form/FormItem/FormItem";
 
 import uid from "/utils/uid";
 
 
-export const FormTextarea = ({
+export const FormInput = ({
 	type,
 	name,
 	label,
 	errorMessage,
-	id = uid("FormTextarea"),
+	id = uid("FormInput"),
 	className,
 	...props
 }) => {
 	return (
 		<FormItem
-			className="FormTextarea"
+			className="FormInput"
 			id={id}
 			label={label}
 			errorMessage={errorMessage}
 			inputField={
-				<textarea
+				<input
 					className={[
-						"FormTextarea",
+						"FormInput",
 						"M-FormItem-Input",
-						errorMessage && "M-FormItem-Input-error",
+						(errorMessage &&
+							"M-FormItem-Input-error"),
 					].join(" ")}
+					type={type}
 					name={name}
 					id={id}
 					{...props}
@@ -36,16 +38,16 @@ export const FormTextarea = ({
 	);
 };
 
-FormTextarea.propTypes = {
+FormInput.propTypes = {
 	type: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	label: PropTypes.string.isRequired,
 	errorMessage: PropTypes.string,
 };
 
-FormTextarea.defaultProps = {
+FormInput.defaultProps = {
 	type: "text",
 	name: "text-input",
-	label: "Text Input"
+	label: "Text Input",
 };
 

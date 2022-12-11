@@ -3,10 +3,9 @@ import React from 'react';
 import { FormSelect as Component } from "./FormSelect";
 
 export default {
-	title: "Example/Components/Form/FormSelect",
+	title: "Example/Molecules/Form/FormSelect",
 	component: Component,
-	argTypes: {
-	},
+	argTypes: {},
 };
 export const FormSelect = (args) => <Component {...args} />;
 FormSelect.args = {

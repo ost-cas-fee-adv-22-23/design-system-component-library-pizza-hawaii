@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FormItem } from "/src/components/Form/FormItem/FormItem";
+import { FormItem } from "/src/components/Molecules/Form/FormItem/FormItem";
 
 import uid from "/utils/uid";
 

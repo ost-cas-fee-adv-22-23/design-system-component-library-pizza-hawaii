@@ -3,7 +3,7 @@ import { Icon as Component } from './Icon';
 import { default as IconLib, IconNames } from "./IconLib";
 
 export default {
-	title: "Example/Components/Icon",
+	title: "Example/Atoms/Icon",
 	component: Component,
 	argTypes: {
 		name: {

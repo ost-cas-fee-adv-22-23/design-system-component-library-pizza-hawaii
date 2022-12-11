@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Header } from "../../components/Globals/Header/Header";
+import { Header } from "../../components/Organisms/Header/Header";
 import "./page.css";
 
 export const Page = () => {

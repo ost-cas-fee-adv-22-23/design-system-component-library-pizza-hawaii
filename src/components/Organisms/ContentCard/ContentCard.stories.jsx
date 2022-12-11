@@ -3,12 +3,12 @@ import React from 'react';
 import  ContentCard  from  './ContentCard'
 
 export default {
-	title: 'Example/Components/ContentCard',
+	title: "Example/Organisms/ContentCard",
 	component: ContentCard,
 	argTypes: {
-		text: 'Card Title'
-	}
-}
+		text: "Card Title",
+	},
+};
 
 const Template = (args) => <ContentCard {...args} />
 

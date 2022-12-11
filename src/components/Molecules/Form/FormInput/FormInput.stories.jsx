@@ -3,7 +3,7 @@ import React from 'react';
 import { FormInput as Component } from "./FormInput";
 
 export default {
-	title: "Example/Components/Form/FormInput",
+	title: "Example/Molecules/Form/FormInput",
 	component: Component,
 	argTypes: {},
 };

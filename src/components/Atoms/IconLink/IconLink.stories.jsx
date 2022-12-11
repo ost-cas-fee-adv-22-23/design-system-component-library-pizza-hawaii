@@ -4,7 +4,7 @@ import { IconLink as IcoLink } from "./IconLink";
 import { IconNames } from "../Icon/IconLib";
 
 export default {
-	title: "Example/Components/IconLink",
+	title: "Example/Atoms/IconLink",
 	component: IcoLink,
 	parameters: {
 		icon: {

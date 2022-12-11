@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Icon from "/src/components/Atoms/Icon/Icon";
 import "/src/components/Components-base.css";
 import "./ContentCard.css"
-import {UserName} from '../../../Atoms/UserName/UserName';
-import TimeStamp  from '../../../Atoms/TimeStamp/TimeStamp'
-import { UserProfile } from '../../../Atoms/UserProfile/UserProfile'
-import { IconLink } from '../../../Atoms/IconLink/IconLink';
+import {UserName} from '../../Atoms/UserName/UserName';
+import TimeStamp  from '../../Atoms/TimeStamp/TimeStamp'
+import { UserProfile } from '../../Atoms/UserProfile/UserProfile'
+import { IconLink } from '../../Atoms/IconLink/IconLink';
 
 
 export const ContentCard = (props) => {

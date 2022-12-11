@@ -3,7 +3,7 @@ import React from 'react';
 import { FormTextarea as Component } from "./FormTextarea";
 
 export default {
-	title: "Example/Components/Form/FormTextarea",
+	title: "Example/Molecules/Form/FormTextarea",
 	component: Component,
 	argTypes: {},
 };
