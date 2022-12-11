@@ -1,19 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from "/src/components/Atoms/Icon/Icon";
+import { Icon } from "../../Atoms/Icon/Icon";
+import { Label } from "../../Atoms/Label/Label";
 import "/src/components/Components-base.css";
 import "./Button.css";
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ tag, color, size, label, icon, ...props }) => {
-
-	const style = [
-		`M-Button-base`,
-		`M-Button-${size}`,
-		`M-Button-${color}`,
-	];
+export const Button = ({ tag, color, size, children, icon, ...props }) => {
+	const style = [`M-Button-base`, `M-Button-${size}`, `M-Button-${color}`];
 
 	const CustomTag = `${tag}`;
 
@@ -24,19 +20,15 @@ export const Button = ({ tag, color, size, label, icon, ...props }) => {
 		a: {
 			href: "#",
 		},
-		...props
+		...props,
 	};
-
-
 
 	return (
 		<CustomTag
 			className={["Button", ...style].join(" ")}
 			{...typeAttr[tag]}
 		>
-			<div className="Button--inner">
-				{label}
-			</div>
+			<Label size="M">{children}</Label>
 			{icon ? <Icon name={icon} /> : null}
 		</CustomTag>
 	);
@@ -47,7 +39,7 @@ Button.propTypes = {
 	color: PropTypes.oneOf(["slate", "violet", "gradient"]),
 	size: PropTypes.oneOf(["s", "m", "l"]),
 	variant: PropTypes.oneOf(["", "round"]),
-	label: PropTypes.string.isRequired,
+	children: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
 };
 

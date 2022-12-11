@@ -5,7 +5,7 @@ import { Button } from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-	title: "Example/Atoms/Button",
+	title: "Example/Molecules/Button",
 
 	component: Button,
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
@@ -24,7 +24,7 @@ const Buttons = ["s", "m", "l", "round"].reduce((acc, size) => {
 	const Btn = Template.bind({});
 	Btn.args = {
 		size: size,
-		label: `Button ${size}`,
+		children: `Button ${size}`,
 	};
 	acc[size] = Btn;
 	return acc;

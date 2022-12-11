@@ -3,7 +3,7 @@ import React from 'react';
 import { UserName as Component } from "./UserName";
 
 export default {
-	title: "Example/Atoms/UserName",
+	title: "Example/Molecules/UserName",
 	component: Component,
 	argTypes: {},
 };
