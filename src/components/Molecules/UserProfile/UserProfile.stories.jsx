@@ -4,13 +4,13 @@ import { UserProfile } from './UserProfile';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Atoms/UserProfile',
-  component: UserProfile,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    src: './img/testuser.png',
-    userName: 'user name comes here as alt text'
-  },
+	title: "Example/Molecules/UserProfile",
+	component: UserProfile,
+	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+	argTypes: {
+		src: "./img/testuser.png",
+		userName: "user name comes here as alt text",
+	},
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

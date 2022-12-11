@@ -4,31 +4,12 @@
   border: 1px solid gray;
 }
 
-.title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  color: #0F172A;
-  line-height: 36px;
-}
 
 .metainfo {
   display: flex;
   flex-direction: row;
 }
 
-.message {
-  padding-top: 24px;
-  padding-bottom: 2rem;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  color: #0F172A;
-}
-
-.image {
-  height: 300px;
-  border-radius: 5px;
-  background-color: #DDD6FE;
-}
 
 .socialInteraction {
   padding-top: 1rem;
