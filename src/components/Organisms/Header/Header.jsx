@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { UserProfile } from '../../Atoms/UserProfile/UserProfile'
-import { Button } from "/src/components/Atoms/Button/Button";
-import { IconLink } from "/src/components/Atoms/IconLink/IconLink";
+import { UserProfile } from '../../Molecules/UserProfile/UserProfile'
+import { IconLink } from "../../Molecules/IconLink/IconLink";
 
 import './header.css';
 

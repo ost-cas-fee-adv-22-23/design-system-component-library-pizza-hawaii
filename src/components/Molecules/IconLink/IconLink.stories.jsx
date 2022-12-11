@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { IconLink as IcoLink } from "./IconLink";
-import { IconNames } from "../Icon/IconLib";
+import { IconNames } from "../../Atoms/Icon/IconLib";;
 
 export default {
 	title: "Example/Atoms/IconLink",

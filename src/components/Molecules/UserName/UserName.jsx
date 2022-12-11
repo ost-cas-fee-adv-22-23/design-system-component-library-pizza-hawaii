@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IconLink } from "/src/components/Atoms/IconLink/IconLink";
+import { IconLink } from "../../Molecules/IconLink/IconLink";
 
 
 

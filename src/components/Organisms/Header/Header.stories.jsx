@@ -3,7 +3,7 @@ import React from 'react';
 import { Header } from './Header';
 
 export default {
-	title: "Example/Atoms/Organisms/Header",
+	title: "Example/Organisms/Header",
 	component: Header,
 	parameters: {
 		// More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
