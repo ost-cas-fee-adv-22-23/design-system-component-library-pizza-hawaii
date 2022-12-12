@@ -9,7 +9,7 @@
  * Button
  */
 .M-Button-base {
-	@apply flex items-center text-white text-base font-semibold;
+	@apply flex items-center justify-center text-white text-base font-semibold;
 }
 
 .M-Button-l {
@@ -91,29 +91,3 @@
 	@apply h-10 w-10;
 }
 
-
-/*
- * ContentCard
- */
-
- .M-text-size-l {
-	@apply text-xl;
- }
-
- .M-text-size-m {
-	@apply text-base
- }
-
- .M-text-size-s {
-	@apply text-sm
- }
-
-
-
-.M-text-h1 {
-	@apply M-text-size-l;
-}
-
-.M-text-h1 {
-	@apply M-text-size-m;
-}
