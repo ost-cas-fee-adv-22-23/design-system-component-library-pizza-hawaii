@@ -32,7 +32,7 @@
 	@apply bg-violet-600 hover:bg-violet-700;
 }
 .M-Button-gradient {
-	@apply bg-gradient-to-r from-pink-600 to-violet-600 hover:from-pink-700 hover:to-violet-700;
+	@apply bg-gradient-to-r transition-all duration-500 bg-pos-0 bg-size-200 from-pink-600 to-violet-600  hover:from-pink-600 hover:via-pink-700 hover:to-violet-600 hover:bg-pos-100;
 }
 
 /*
