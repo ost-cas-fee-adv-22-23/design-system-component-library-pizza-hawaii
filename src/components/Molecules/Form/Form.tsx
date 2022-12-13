@@ -19,7 +19,6 @@ export const Form: FC<BaseProps> = ({ children, cta="Absenden", ...props }) => {
 				type="submit"
 				label={cta}
 				color="gradient"
-				className="w-full"
 			/>
 		</form>
 	);

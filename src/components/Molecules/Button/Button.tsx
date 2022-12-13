@@ -13,7 +13,6 @@ type ButtonProps = {
 	color: "slate" | "violet" | "gradient";
 	icon?: string;
 	onClick: () => void;
-	className?: string;
 };
 
 type ButtonPreset = {
@@ -36,14 +35,12 @@ export const Button: FC<ButtonProps> = ({
 	color,
 	size,
 	icon,
-	className,
 	...props
 }) => {
 	const style = [
 		`M-Button-base`,
 		`M-Button-${size.toLowerCase()}`,
-		`M-Button-${color.toLowerCase()}`,
-		className
+		`M-Button-${color.toLowerCase()}`
 	];
 
 	const typeAttr = {

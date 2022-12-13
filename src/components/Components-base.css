@@ -9,7 +9,7 @@
  * Button
  */
 .M-Button-base {
-	@apply flex items-center justify-center text-white text-base font-semibold;
+	@apply flex items-center justify-center text-white text-base font-semibold w-full;
 }
 
 .M-Button-l {
@@ -22,7 +22,7 @@
 	@apply p-2 rounded-lg gap-y-0 gap-x-2 text-sm font-semibold;
 }
 .M-Button-round {
-	@apply p-4 rounded-full;
+	@apply p-4 rounded-full w-auto;
 }
 
 .M-Button-slate {
