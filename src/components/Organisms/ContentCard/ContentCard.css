@@ -1,0 +1,29 @@
+.contentCard {
+  /*border-radius: 16px;*/
+  position: relative;
+  border: 1px solid gray;
+}
+
+
+.metainfo {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.socialInteraction {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.-variantSmall {
+  display: flex;
+  flex-direction: row;
+}
+
+.-variantLarge img {
+  position: absolute;
+  left: -20px;
+}

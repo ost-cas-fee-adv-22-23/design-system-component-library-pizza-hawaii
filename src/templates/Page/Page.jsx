@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Header } from "../../components/Globals/Header/Header";
+import { Header } from "../../components/Organisms/Header/Header";
+import { Headline } from "../../components/Atoms/Headline/Headline";
 import "./page.css";
 
 export const Page = () => {
@@ -16,7 +17,7 @@ export const Page = () => {
       />
 
       <section>
-        <h2 className='text-2xl font-bold underline'>Pages in Storybook</h2>
+		<Headline level="2">Welcome to Storybook</Headline>
         <p>
           We recommend building UIs with a{' '}
           <a href="https://componentdriven.org" target="_blank" rel="noopener noreferrer">
