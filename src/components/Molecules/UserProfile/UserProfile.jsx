@@ -26,7 +26,7 @@ export const UserProfile = ({size}) => {
 	)
 }
 
-UserProfile.PropTypes = {
+UserProfile.propTypes = {
 	/**
 	 * image path string
 	 */

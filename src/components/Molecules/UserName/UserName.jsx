@@ -8,7 +8,7 @@ export const UserName = ({ username, ...props }) => {
 	return <IconLink icon="profile" color="violet" label={username} href={`/${username}`} />;
 };
 
-UserName.PropTypes = {
+UserName.propTypes = {
 	username: PropTypes.string,
 };
 

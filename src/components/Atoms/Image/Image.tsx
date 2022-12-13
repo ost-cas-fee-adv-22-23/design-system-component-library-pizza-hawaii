@@ -1,7 +1,5 @@
 import React, { FC } from "react";
-import PropTypes from "prop-types";
 import { ImageService } from "./ImageServiceMock";
-
 
 type ImageProps = {
 	src: string;

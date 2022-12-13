@@ -12,6 +12,5 @@ const Template = (args) => <Component {...args} />;
 
 export const Form = Template.bind({});
 Form.args = {
-	size: size,
-	children: `Form ${size}`,
+	children: `Form Content`,
 };

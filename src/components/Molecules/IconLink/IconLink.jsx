@@ -5,7 +5,15 @@ import { Icon } from "/src/components/Atoms/Icon/Icon";
 
 import './IconLink.css';
 
-export const IconLink = ({ icon, label, href, color, oneline, className, ...props }) => (
+export const IconLink = ({
+	icon,
+	label,
+	href,
+	color,
+	oneline,
+	className,
+	...props
+}) => (
 	<a
 		href={href || "#"}
 		className={[
@@ -18,7 +26,11 @@ export const IconLink = ({ icon, label, href, color, oneline, className, ...prop
 		].join(" ")}
 		{...props}
 	>
-		{icon ? <Icon className={`ml-xs mr-xs mt-xxs mb-xxs`} name={icon} /> : null}
+		{icon ? (
+			<span className="ml-xs mr-xs mt-xxs mb-xxs">
+				<Icon name={icon} />
+			</span>
+		) : null}
 		{label}
 	</a>
 );
