@@ -20,7 +20,15 @@ smr.tv/mumble-figma
 
 
 
+- content card: 
+1. typescript
+2. variant ohne bild. 
+3. header
 
-- content image components
-- tailwind refactor
-- radiobutto component meine mubles / meine likes
+- tailwind refactor (-> button gradient)
+- cleanup css. 
+- eslint (1.st: smartive config -> adapt for our needs, with justify in written form in readme)
+- https://prettier.io/
+- radiobutton (2x) component meine mubles / meine likes
+
+-> merge to develop when clean state. 

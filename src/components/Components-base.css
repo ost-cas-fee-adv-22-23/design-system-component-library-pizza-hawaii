@@ -117,6 +117,7 @@
 }
 
 
+
  .M-text-size-l {
 	@apply text-xl md:text-lg;
  }
@@ -139,18 +140,3 @@
 	@apply M-text-size-m;
 }
 
-
-
-/*
-* image variants
-*/
-
-/* 296 x 225 px*/
-.mumblePost img {
-	@apply max-h-64 aspect-auto;
-}
-
-/* 680px x 320 px*/
-.profileBanner img {
-	@apply max-h-80 aspect-video;
-}
