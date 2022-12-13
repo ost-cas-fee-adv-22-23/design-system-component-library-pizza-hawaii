@@ -11,7 +11,7 @@ export const UserProfile = ({size}) => {
 		"p-xs"
 	]
 
-	const sizeStyle = [ `M-size-${size}`]
+	const sizeStyle = [ `M-size-${size.toLowerCase()}`]
 
 
 	const userImage = {
@@ -32,7 +32,7 @@ UserProfile.PropTypes = {
 	 */
 	src: PropTypes.string,
 	userName: PropTypes.string,
-	size: PropTypes.oneOf(['s', 'm', 'l', 'big'])
+	size: PropTypes.oneOf(['S', 'M', 'L', 'big'])
 }
 
 UserProfile.defaultProps = {

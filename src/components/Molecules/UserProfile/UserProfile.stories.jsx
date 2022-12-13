@@ -19,7 +19,7 @@ const Template = (args) => <UserProfile {...args} />;
 
 // export const UserProfileImg = Template.bind({size: 'm'});
 
-const UserProfileImages = ['s', 'm', 'l', 'big'].reduce((acc, size) => {
+const UserProfileImages = ['S', 'M', 'L', 'big'].reduce((acc, size) => {
   const UserProfile = Template.bind({})
   UserProfile.args = {
     size: size
@@ -29,7 +29,7 @@ const UserProfileImages = ['s', 'm', 'l', 'big'].reduce((acc, size) => {
 }, {})
 
 
-export const Small = UserProfileImages['s'];
-export const Medium = UserProfileImages['m'];
-export const Large = UserProfileImages['l'];
+export const Small = UserProfileImages['S'];
+export const Medium = UserProfileImages['M'];
+export const Large = UserProfileImages['L'];
 export const Big = UserProfileImages['big'];
