@@ -3,7 +3,6 @@
 	align-items: center;
 	justify-content: space-between;
 
-	max-width: 744px; /* 680px + 2 * 32px = 744px */
 	margin: 0 auto;
 	padding: 12px 32px;
 }

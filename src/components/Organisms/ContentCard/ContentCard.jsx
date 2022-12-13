@@ -99,7 +99,7 @@ export const ContentCard = (props) => {
 }
 
 ContentCard.propTypes = {
-	variant: PropTypes.oneOf(['detailpage', 'timeline']),
+	variant: PropTypes.oneOf(['detailpage', 'timeline', 'responsive']),
 	text: PropTypes.string,
 	size: PropTypes.oneOf(['s', 'm', 'l']),
 	//corners: PropTypes.string

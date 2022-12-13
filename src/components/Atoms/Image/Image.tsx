@@ -1,5 +1,7 @@
 import React, { FC } from "react";
+import ProjectSettings from "../../../utils/ProjectSettings.json";
 import { ImageService } from "./ImageServiceMock";
+
 
 type ImageProps = {
 	src: string;
@@ -24,11 +26,19 @@ const ImagePreset: ImagePresetListType = {
 		styleClasses: "rounded-full",
 	},
 	header: {
-		img: ImageService.exampleImg(680, 320),
+		img: ImageService.exampleImg(
+			ProjectSettings.content.width,
+			ProjectSettings.content.width / 16 * 9
+		),
 		styleClasses: "rounded-2xl",
 	},
 	post: {
-		img: ImageService.exampleImg(584, 329),
+		img: ImageService.exampleImg(
+			ProjectSettings.content.width - ProjectSettings.content.padding * 2,
+			(ProjectSettings.content.width -
+				ProjectSettings.content.padding * 2) / 16 *
+				9
+		),
 		styleClasses: "rounded-2xl",
 	},
 };

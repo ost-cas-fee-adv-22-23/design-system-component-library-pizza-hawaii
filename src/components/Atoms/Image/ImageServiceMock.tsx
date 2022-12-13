@@ -1,14 +1,14 @@
+import uid from "../../../utils/uid";
 
 type ImageServiceType = {
 	[fn: string]: Function;
 };
 
-
 export const ImageService: ImageServiceType = {
 	exampleImg(
 		width: number,
 		height: number,
-		id: number = Math.floor(Math.random() * 100)
+		id: string = uid()
 	): { src: string; srcset: string } {
 		const images = {
 			x1: `//picsum.photos/id/${id}/${width}/${height}/`,
@@ -17,7 +17,7 @@ export const ImageService: ImageServiceType = {
 
 		return {
 			src: images.x1,
-			srcset: `${images.x1} 1x, ${images.x2} 2x`,
+			srcSet: `${images.x1} 1x, ${images.x2} 2x`,
 		};
 	},
 };
