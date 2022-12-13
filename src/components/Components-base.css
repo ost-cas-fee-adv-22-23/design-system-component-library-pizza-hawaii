@@ -96,21 +96,22 @@
  * ContentCard - a mumbel view
  */
 
+
 /*
  * layout variants
  */
- 
+
 .-variantDetail img {
 	position: absolute;
 	left: -32px;
 }
-	
+
 .-variantTimeline img {
 	position: absolute;
 	left: -32px;
 }
 
-.-variantResponsive {	
+.-variantResponsive {
 	display: flex;
 	flex-direction: row;
 }
