@@ -21,20 +21,27 @@ export const ContentCard = (props) => {
 
 	const preset = {
 		detailpage: {
-			userprofile: "L",
-			headlineSize: "XL",
-			textSize: "L",
-			cardStyle: "rounded-3xl",
-			sizeStyle: "-variantLarge",
+			userprofile: "m",
+			headlineSize: "l",
+			textSize: "l",
+			sizeStyle: "-variantDetail",
+			cardStyle: "border-2 border-solid border-white hover:border-gray-300",
 		},
 		timeline: {
-			userprofile: "M",
-			headlineSize: "L",
-			textSize: "M",
-			cardStyle:
-				"border-xs border-solid border-white hover:border-gray-300",
-			sizeStyle: "-variantSmall",
+			userprofile: "m",
+			headlineSize: "m",
+			textSize: "m",
+			cardStyle: "rounded-3xl",
+			sizeStyle: "-variantTimeline",
 		},
+		responsive: {
+			userprofile: "s",
+			headlineSize: "m",
+			textSize: "m",
+			cardStyle: "border-2 border-solid border-white hover:border-gray-200",
+			sizeStyle: "-variantResponsive",
+			headerStyle: "flex-col"
+		}
 	};
 
 	const setting = preset[variant] || preset.detailpage;
@@ -46,12 +53,14 @@ export const ContentCard = (props) => {
 			<div>
 				<div className={setting.sizeStyle}>
 					<UserProfile size={setting.userprofile} />
-					<Label size={setting.headlineSize}>{props.text}</Label>
+					<div className={setting.headerStyle}>
+						<Label className={[]} size={setting.headlineSize}>{props.text}</Label>
+						<span className={["flex flex-row align-baseline"]}>
+							<UserName username={"Pineapple Peter"} />
+							<TimeStamp time={"13:32"} />
+						</span>
+					</div>
 				</div>
-				<span className="metainfo">
-					<UserName username={"Pineapple Peter"} />
-					<TimeStamp time={"13:32"} />
-				</span>
 				<Richtext size={setting.textSize}>
 					<p>
 						Paragraph: Sed ut perspiciatis unde omnis iste natus
@@ -92,7 +101,7 @@ export const ContentCard = (props) => {
 ContentCard.propTypes = {
 	variant: PropTypes.oneOf(['detailpage', 'timeline']),
 	text: PropTypes.string,
-	//size: PropTypes.oneOf(['s', 'm', 'l']),
+	size: PropTypes.oneOf(['s', 'm', 'l']),
 	//corners: PropTypes.string
 }
 

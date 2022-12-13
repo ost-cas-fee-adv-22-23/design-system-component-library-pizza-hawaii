@@ -11,8 +11,8 @@ export const ImageService: ImageServiceType = {
 		id: number = Math.floor(Math.random() * 100)
 	): { src: string; srcset: string } {
 		const images = {
-			x1: `//images.weserv.nl/?url=picsum.photos/id/${id}/${width}/${height}/`,
-			x2: `//images.weserv.nl/?url=picsum.photos/id/${id}/${width * 2}/${height * 2}/`,
+			x1: `//picsum.photos/id/${id}/${width}/${height}/`,
+			x2: `//picsum.photos/id/${id}/${width * 2}/${height * 2}/`,
 		};
 
 		return {
