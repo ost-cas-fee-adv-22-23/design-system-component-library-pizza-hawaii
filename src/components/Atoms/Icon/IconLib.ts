@@ -49,14 +49,14 @@ let Icons: IconsLibType = {
 	`,
 	comment: `
 		<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<g clip-path="url(#clip0_413_277)">
+			<g clipPath="url(#clip0_413_277)">
 			<path d="M8 0C3.6 0 0 3.1 0 7C0 10.9 3.6 14 8 14C8.4 14 8.8 14 9.1 13.9L14 16V11.6C15.2 10.4 16 8.8 16 7C16 3.1 12.4 0 8 0Z" fill="#475569"/>
 		</g>
 		</svg>
 	`,
 	heart: `
 	<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<g clip-path="url(#clip0_413_275)">
+		<g clipPath="url(#clip0_413_275)">
 			<path d="M11.6 0C10.1 0 8.8 0.8 8 2C7.2 0.8 5.9 0 4.4 0C2 0 0 2 0 4.4C0 8.8 8 15.3 8 15.3C8 15.3 16 8.8 16 4.4C16 2 14 0 11.6 0Z" fill="#475569"/>
 		</g>
 	</svg>

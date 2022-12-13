@@ -89,7 +89,7 @@ export const ContentCard = (props) => {
 	);
 }
 
-ContentCard.PropTypes = {
+ContentCard.propTypes = {
 	variant: PropTypes.oneOf(['detailpage', 'timeline']),
 	text: PropTypes.string,
 	//size: PropTypes.oneOf(['s', 'm', 'l']),

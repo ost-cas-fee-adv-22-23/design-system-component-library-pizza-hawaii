@@ -1,7 +1,7 @@
 import React, { FC, Children, ReactNode } from "react";
 
 type BaseProps = {
-	as?: "div";
+	as?: "div" | "section"
 	size: "M" | "L";
 	className?: string;
 	children: ReactNode;

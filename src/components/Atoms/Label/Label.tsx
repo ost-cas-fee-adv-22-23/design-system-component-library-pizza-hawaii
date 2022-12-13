@@ -7,14 +7,8 @@ type BaseProps = {
 	children: ReactNode;
 };
 
-type LabelProps = BaseProps & {
-	as: "label";
-} & LabelHTMLAttributes<HTMLLabelElement>;
 
-type Props = BaseProps | LabelProps;
-
-const sizeMap: Record<Props["size"], string> = {
-	XS: "text-sm",
+const sizeMap: Record<BaseProps["size"], string> = {
 	S: "text-sm",
 	M: "text-base",
 	L: "text-xl",
@@ -22,8 +16,8 @@ const sizeMap: Record<Props["size"], string> = {
 };
 
 
-export const Label: FC<Props> = ({
-	children,
+export const Label: FC<BaseProps> = ({
+	children = "Label",
 	as: Tag = "span",
 	size = "M",
 	className = "",

@@ -8,17 +8,15 @@ import { symbolName } from 'typescript';
 
 
 const TimeStamp = (props) => {
-
-  const styles = ["flex flex-end justify-center mx-3 text-gray-400"]
   return (
-    <span className={[root, ...styles].join(' ')}>
-      <Icon className={`mr-xs`} name={'time'} size='S' />
+    <span className="flex flex-end justify-center mx-3 text-gray-400 gap-xs">
+      <Icon name="time" size='S' />
 
       <time className='px-0 align-baseline'>{props.time}</time>
     </span>
   )
 
-  TimeStamp.PropTypes = {
+  TimeStamp.propTypes = {
     time: PropTypes.time,
 
   }

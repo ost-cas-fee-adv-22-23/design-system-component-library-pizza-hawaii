@@ -8,21 +8,17 @@ import "./Button.css";
 
 type ButtonProps = {
 	label: string;
-	tag: "button" | "a";
+	as: "button" | "a";
 	size: "round" | "M" | "L";
 	color: "slate" | "violet" | "gradient";
 	icon?: string;
-	onClick: () => void;
-};
-
-type ButtonPreset = {
-	base: string;
-	label: string;
-	icon: string;
+	type?: "button" | "submit";
+	href?: string;
+	onClick?: () => void;
 };
 
 const defaultProps: Partial<ButtonProps> = {
-	tag: "button",
+	as: "button",
 	size: "M",
 	color: "violet",
 	icon: "mumble",
@@ -31,7 +27,7 @@ const defaultProps: Partial<ButtonProps> = {
 
 export const Button: FC<ButtonProps> = ({
 	label,
-	tag,
+	as: Tag = "a",
 	color,
 	size,
 	icon,
@@ -53,15 +49,14 @@ export const Button: FC<ButtonProps> = ({
 		...props,
 	};
 
-	const CustomTag = `${tag}`;
 	return (
-		<CustomTag
+		<Tag
 			className={ ["Button", ...style].join(" ") }
-			{ ...typeAttr[tag] }
+			{ ...typeAttr[Tag] }
 		>
 			<Label className="Button--inner" size="M">{label}</Label>
 			{icon ? <Icon name={ icon } /> : null}
-		</CustomTag>
+		</Tag>
 	);
 };
 
