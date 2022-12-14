@@ -10,11 +10,9 @@ export const Timeline: FC<BaseProps> = () => {
 	const [user, setUser] = React.useState();
 	return (
 		<article>
-			<Header
-				user={user}
-			/>
+			<Header user={user} />
 
-			<section className="mx-auto w-content px-content">
+			<section className="mx-auto w-full max-w-content px-content">
 				<div className="mb-2 text-violet-600">
 					<Headline level="2">Welcome to Storybook</Headline>
 				</div>

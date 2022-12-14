@@ -8,7 +8,6 @@ export const UserProfile = ({size}) => {
 	const baseStyle = [
 		"rounded-lg",
 		"self-center",
-		"p-xs"
 	]
 
 	const sizeStyle = [ `M-size-${size.toLowerCase()}`]

@@ -28,16 +28,14 @@ const ImagePreset: ImagePresetListType = {
 	header: {
 		img: ImageService.exampleImg(
 			ProjectSettings.content.width,
-			ProjectSettings.content.width / 16 * 9
+			Math.floor(ProjectSettings.content.width / 16 * 9)
 		),
 		styleClasses: "rounded-2xl",
 	},
 	post: {
 		img: ImageService.exampleImg(
 			ProjectSettings.content.width - ProjectSettings.content.padding * 2,
-			(ProjectSettings.content.width -
-				ProjectSettings.content.padding * 2) / 16 *
-				9
+			Math.floor((ProjectSettings.content.width - ProjectSettings.content.padding * 2) / 16 * 9)
 		),
 		styleClasses: "rounded-2xl",
 	},

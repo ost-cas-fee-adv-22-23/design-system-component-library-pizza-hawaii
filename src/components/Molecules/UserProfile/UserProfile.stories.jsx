@@ -17,8 +17,6 @@ export default {
 const Template = (args) => <UserProfile {...args} />;
 
 
-// export const UserProfileImg = Template.bind({size: 'm'});
-
 const UserProfileImages = ['S', 'M', 'L', 'big'].reduce((acc, size) => {
   const UserProfile = Template.bind({})
   UserProfile.args = {

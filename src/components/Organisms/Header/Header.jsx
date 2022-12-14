@@ -7,7 +7,7 @@ import './header.css';
 
 export const Header = ({ user }) => (
 	<header className="Header mb-8 bg-purple-600 text-white">
-		<div className="Header--inner w-content px-content">
+		<div className="Header--inner w-full max-w-content px-content">
 			<div className="Header--logo">
 				<svg
 					width="209"
