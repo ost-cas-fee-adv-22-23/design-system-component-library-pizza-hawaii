@@ -1,5 +1,5 @@
 export type IconsLibType = { [index: string]: string };
-let Icons: IconsLibType = {
+const Icons: IconsLibType = {
 	mumble: `
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none">
 		<g fill="#475569" >
