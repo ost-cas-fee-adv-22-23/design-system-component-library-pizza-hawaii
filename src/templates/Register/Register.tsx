@@ -12,7 +12,7 @@ type BaseProps = {};
 export const Register: FC<BaseProps> = () => {
 	return (
 		<SplitScreen>
-			<Headline level="2">Anmelden</Headline>
+			<Headline level="2">Registrieren</Headline>
 			<Form cta="Let’s mumble">
 				<FormInput label="Vorname Name" type="text" />
 				<FormInput label="User Name" type="text" />

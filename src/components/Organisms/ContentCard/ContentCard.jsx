@@ -14,30 +14,29 @@ import { Label } from '../../Atoms/Label/Label';
 
 
 export const ContentCard = (props) => {
-	const cardStyle = "flex flex-start justify-center items-start bg-white py-xl px-xxl"
+	const cardStyle = "flex flex-start justify-center items-start bg-white py-l px-xl"
 	const { variant } = props
-	const socialInteraction = ["pt-s flex flex-row items-center"];
 
 
 	const preset = {
 		detailpage: {
-			userprofile: "m",
-			headlineSize: "l",
-			textSize: "l",
+			userprofile: "M",
+			headlineSize: "L",
+			textSize: "L",
 			sizeStyle: "-variantDetail",
 			cardStyle: "border-2 border-solid border-white hover:border-gray-300",
 		},
 		timeline: {
-			userprofile: "m",
-			headlineSize: "m",
-			textSize: "m",
+			userprofile: "M",
+			headlineSize: "M",
+			textSize: "M",
 			cardStyle: "rounded-3xl",
 			sizeStyle: "-variantTimeline",
 		},
 		responsive: {
-			userprofile: "s",
-			headlineSize: "m",
-			textSize: "m",
+			userprofile: "S",
+			headlineSize: "M",
+			textSize: "M",
 			cardStyle: "border-2 border-solid border-white hover:border-gray-200",
 			sizeStyle: "-variantResponsive",
 			headerStyle: "flex-col"
@@ -54,26 +53,33 @@ export const ContentCard = (props) => {
 				<div className={setting.sizeStyle}>
 					<UserProfile size={setting.userprofile} />
 					<div className={setting.headerStyle}>
-						<Label className={[]} size={setting.headlineSize}>{props.text}</Label>
+						<Label className={[]} size={setting.headlineSize}>
+							{props.text}
+						</Label>
 						<span className={["flex flex-row align-baseline"]}>
 							<UserName username={"Pineapple Peter"} />
 							<TimeStamp time={"13:32"} />
 						</span>
 					</div>
 				</div>
-				<Richtext size={setting.textSize}>
-					<p>
-						Paragraph: Sed ut perspiciatis unde omnis iste natus
-						error sit voluptatem accusantium doloremque laudantium,
-						totam rem aperiam, eaque ipsa quae ab illo inventore
-						veritatis et quasi architecto beatae vitae dicta sunt
-						explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-						aspernatur aut odit aut fugit, sed quia consequuntur
-						magni dolores eos qui ratione voluptatem sequi nesciunt.
-					</p>
-				</Richtext>
-				<Image preset="post" />
-				<div className={socialInteraction}>
+				<div className="mb-6">
+					<Richtext size={setting.textSize}>
+						<p>
+							Paragraph: Sed ut perspiciatis unde omnis iste natus
+							error sit voluptatem accusantium doloremque
+							laudantium, totam rem aperiam, eaque ipsa quae ab
+							illo inventore veritatis et quasi architecto beatae
+							vitae dicta sunt explicabo. Nemo enim ipsam
+							voluptatem quia voluptas sit aspernatur aut odit aut
+							fugit, sed quia consequuntur magni dolores eos qui
+							ratione voluptatem sequi nesciunt.
+						</p>
+					</Richtext>
+				</div>
+				<div className="mb-6">
+					<Image preset="post" />
+				</div>
+				<div className="flex flex-row items-center gap-12">
 					<IconLink
 						oneline={true}
 						icon="comment"
@@ -99,9 +105,9 @@ export const ContentCard = (props) => {
 }
 
 ContentCard.propTypes = {
-	variant: PropTypes.oneOf(['detailpage', 'timeline']),
+	variant: PropTypes.oneOf(['detailpage', 'timeline', 'responsive']),
 	text: PropTypes.string,
-	size: PropTypes.oneOf(['s', 'm', 'l']),
+	size: PropTypes.oneOf(['S', 'M', 'L']),
 	//corners: PropTypes.string
 }
 

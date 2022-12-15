@@ -1,6 +1,18 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const ProjectSettings = require("./src/utils/ProjectSettings.json");
 
-const baseFontSize = 16;
+const toRem = (px) => `${px / ProjectSettings.baseFontSize}rem`;
+
+let spacing = Object.keys(ProjectSettings.spaces).reduce((acc, spacing) => {
+	acc[spacing] = toRem(ProjectSettings.spaces[spacing]);
+	return acc;
+}, {});
+
+spacing = {
+	...spacing,
+	content: toRem(ProjectSettings.content.padding),
+};
+
 
 module.exports = {
 	content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -14,22 +26,20 @@ module.exports = {
 				transparent: "transparent",
 				current: "currentColor",
 			},
-			spacing: {
-				xxs: `${4 / baseFontSize}rem`, // 0.25rem
-				xs: `${8 / baseFontSize}rem`,
-				s: `${16 / baseFontSize}rem`, // 1rem
-				m: `${24 / baseFontSize}rem`,
-				l: `${32 / baseFontSize}rem`,
-				xl: `${48 / baseFontSize}rem`,
-				xxl: `${64 / baseFontSize}rem`,
+			spacing,
+			width: {
+				content: toRem(ProjectSettings.content.width),
+			},
+			maxWidth: {
+				content: toRem(ProjectSettings.content.width),
 			},
 			backgroundSize: {
-				'size-200': '200% 200%',
+				"size-200": "200% 200%",
 			},
 			backgroundPosition: {
-				'pos-0': '0% 0%',
-				'pos-100': '100% 100%',
-			}
+				"pos-0": "0% 0%",
+				"pos-100": "100% 100%",
+			},
 		},
 	},
 	plugins: [],

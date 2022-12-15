@@ -5,9 +5,9 @@ import { IconLink } from "../../Molecules/IconLink/IconLink";
 
 import './header.css';
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
-	<header className="Header bg-purple-600 text-white">
-		<div className="Header--inner">
+export const Header = ({ user }) => (
+	<header className="Header mb-8 bg-purple-600 text-white">
+		<div className="Header--inner w-full max-w-content px-content">
 			<div className="Header--logo">
 				<svg
 					width="209"
@@ -65,9 +65,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 			<nav className="Header--nav">
 				<ul className="flex items-center gap-s">
 					<li>
-						<UserProfile
-							size="S"
-						/>
+						<UserProfile size="S" />
 					</li>
 					<li>
 						<IconLink
@@ -93,9 +91,6 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
 
 Header.propTypes = {
 	user: PropTypes.shape({}),
-	onLogin: PropTypes.func.isRequired,
-	onLogout: PropTypes.func.isRequired,
-	onCreateAccount: PropTypes.func.isRequired,
 };
 
 Header.defaultProps = {

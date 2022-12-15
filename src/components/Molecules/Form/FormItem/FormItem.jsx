@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import uid from '/utils/uid';
+import uid from "/src/utils/uid";
 
 export const FormItem = ({
 	label,
