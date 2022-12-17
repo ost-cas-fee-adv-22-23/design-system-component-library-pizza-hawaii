@@ -9,6 +9,7 @@
 	"scripts": {
 		"build": "tsc",
 		"build-storybook": "build-storybook",
+		"lint": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
 		"storybook": "start-storybook -p 6006"
 	},
 	"files": [

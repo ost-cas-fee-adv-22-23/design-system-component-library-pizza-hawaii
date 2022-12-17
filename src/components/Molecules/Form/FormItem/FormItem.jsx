@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import uid from '/src/utils/uid';
+import uid from '../../../../utils/uid';
 
 export const FormItem = ({ label, inputField, errorMessage, className, id = uid('FormItem'), ...props }) => {
 	return (
-		<div className={['FormItem flex flex-col', className].join(' ')}>
+		<div className={['FormItem flex flex-col', className].join(' ')} {...props}>
 			<label className="FormItem--label M-FormItem-Label mb-xxs" htmlFor={id}>
 				{label}
 			</label>

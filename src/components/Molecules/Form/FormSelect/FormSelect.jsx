@@ -5,7 +5,7 @@ import { FormItem } from '/src/components/Molecules/Form/FormItem/FormItem';
 
 import uid from '/src/utils/uid';
 
-export const FormSelect = ({ type, name, label, options, errorMessage, id = uid('FormSelect'), className, ...props }) => {
+export const FormSelect = ({ type, name, label, options, errorMessage, id = uid('FormSelect'), ...props }) => {
 	return (
 		<FormItem
 			className="FormSelect"

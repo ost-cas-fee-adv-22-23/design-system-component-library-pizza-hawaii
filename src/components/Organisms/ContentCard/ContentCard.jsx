@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import '/src/components/Components-base.css';
 import './ContentCard.css';
 import { UserName } from '../../Molecules/UserName/UserName';
-import TimeStamp from '../../Molecules/TimeStamp/TimeStamp';
+import { TimeStamp } from '../../Molecules/TimeStamp/TimeStamp';
 import { UserProfile } from '../../Molecules/UserProfile/UserProfile';
 import { IconLink } from '../../Molecules/IconLink/IconLink';
 import { Image } from '../../Atoms/Image/Image';
@@ -86,5 +86,3 @@ ContentCard.propTypes = {
 	size: PropTypes.oneOf(['S', 'M', 'L']),
 	//corners: PropTypes.string
 };
-
-export default ContentCard;

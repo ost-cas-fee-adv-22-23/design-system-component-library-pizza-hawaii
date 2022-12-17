@@ -56,7 +56,7 @@ export const Header = ({ user }) => (
 			<nav className="Header--nav">
 				<ul className="flex items-center gap-s">
 					<li>
-						<UserProfile size="S" />
+						<UserProfile size="S" user={user} />
 					</li>
 					<li>
 						<IconLink className="M-Button-violet M-Button-s" icon="settings" label="Settings" link="#" />

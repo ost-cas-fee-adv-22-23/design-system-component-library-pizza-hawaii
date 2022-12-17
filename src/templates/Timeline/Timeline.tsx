@@ -2,12 +2,19 @@ import React, { FC } from 'react';
 
 import { Header } from '../../components/Organisms/Header/Header';
 import { Headline } from '../../components/Atoms/Headline/Headline';
-import ContentCard from '../../components/Organisms/ContentCard/ContentCard';
+import { ContentCard } from '../../components/Organisms/ContentCard/ContentCard';
 
-type BaseProps = {};
+import { Post as PostType } from '../../types/Post';
+import { User as UserType } from '../../types/User';
 
-export const Timeline: FC<BaseProps> = () => {
-	const [user, setUser] = React.useState();
+type BaseProps = {
+	user: UserType;
+	posts: PostType[];
+};
+
+export const Timeline: FC<BaseProps> = (user /*, posts = []*/) => {
+	// for testing purposes
+
 	return (
 		<article>
 			<Header user={user} />
@@ -23,7 +30,9 @@ export const Timeline: FC<BaseProps> = () => {
 					</Headline>
 				</div>
 				<div className="flex gap-4 flex-col mt-8">
-					<ContentCard variant="timeline" />
+					{/* {posts.map((post) => {
+						return <ContentCard variant="timeline" {...post} />;
+					})} */}
 					<ContentCard variant="timeline" />
 					<ContentCard variant="timeline" />
 					<ContentCard variant="timeline" />

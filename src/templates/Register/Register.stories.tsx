@@ -1,5 +1,4 @@
 import React from 'react';
-import { within, userEvent } from '@storybook/testing-library';
 
 import { Register as Component } from './Register';
 

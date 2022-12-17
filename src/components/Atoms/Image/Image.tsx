@@ -1,16 +1,14 @@
-import React, { FC } from 'react';
+import React, { FC, ImgHTMLAttributes } from 'react';
 import ProjectSettings from '../../../utils/ProjectSettings.json';
-import { ImageService } from './ImageServiceMock';
+import { ImageService, ImageServiceResult } from './ImageServiceMock';
 
-type ImageProps = {
-	src: string;
-	alt: string;
+type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
 	preset: string;
 	caption: string;
 };
 
 type ImagePresetType = {
-	img: any;
+	img: () => ImageServiceResult;
 	styleClasses: string;
 };
 
@@ -20,18 +18,20 @@ type ImagePresetListType = {
 
 const ImagePreset: ImagePresetListType = {
 	profile: {
-		img: ImageService.exampleImg(64, 64),
+		img: () => ImageService.exampleImg(64, 64),
 		styleClasses: 'rounded-full',
 	},
 	header: {
-		img: ImageService.exampleImg(ProjectSettings.content.width, Math.floor((ProjectSettings.content.width / 16) * 9)),
+		img: () =>
+			ImageService.exampleImg(ProjectSettings.content.width, Math.floor((ProjectSettings.content.width / 16) * 9)),
 		styleClasses: 'rounded-2xl',
 	},
 	post: {
-		img: ImageService.exampleImg(
-			ProjectSettings.content.width - ProjectSettings.content.padding * 2,
-			Math.floor(((ProjectSettings.content.width - ProjectSettings.content.padding * 2) / 16) * 9)
-		),
+		img: () =>
+			ImageService.exampleImg(
+				ProjectSettings.content.width - ProjectSettings.content.padding * 2,
+				Math.floor(((ProjectSettings.content.width - ProjectSettings.content.padding * 2) / 16) * 9)
+			),
 		styleClasses: 'rounded-2xl',
 	},
 };
@@ -40,7 +40,7 @@ export const Image: FC<ImageProps> = ({ src, alt = '', caption, preset, ...props
 	let styleClasses = '';
 	if (preset) {
 		const imageSettings = ImagePreset[preset];
-		const { srcFromPreset, ...imgAttr } = imageSettings.img;
+		const { srcFromPreset, ...imgAttr } = imageSettings.img();
 		props = {
 			...imgAttr,
 		};

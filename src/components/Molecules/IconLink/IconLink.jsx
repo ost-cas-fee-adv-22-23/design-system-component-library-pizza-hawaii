@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Icon } from '/src/components/Atoms/Icon/Icon';
+import { Icon } from '../../Atoms/Icon/Icon';
 
 import './IconLink.css';
 

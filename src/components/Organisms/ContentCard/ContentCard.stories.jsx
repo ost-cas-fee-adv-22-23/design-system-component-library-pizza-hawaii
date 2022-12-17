@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ContentCard from './ContentCard';
+import { ContentCard } from './ContentCard';
 
 export default {
 	title: 'Example/Organisms/ContentCard',

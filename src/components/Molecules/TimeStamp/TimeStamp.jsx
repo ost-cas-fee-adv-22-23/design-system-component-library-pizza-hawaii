@@ -3,10 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '/src/components/Atoms/Icon/Icon';
 import '/src/components/Components-base.css';
-import './TimeStamp.css';
-import { symbolName } from 'typescript';
 
-const TimeStamp = (props) => {
+export const TimeStamp = (props) => {
 	return (
 		<span className="flex flex-end justify-center mx-3 text-gray-400 gap-xs">
 			<Icon name="time" size="S" />
@@ -19,5 +17,3 @@ const TimeStamp = (props) => {
 TimeStamp.propTypes = {
 	time: PropTypes.time,
 };
-
-export default TimeStamp;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon as Component } from './Icon';
-import { default as IconLib, IconNames } from './IconLib';
+import { IconNames } from './IconLib';
 
 export default {
 	title: 'Example/Atoms/Icon',

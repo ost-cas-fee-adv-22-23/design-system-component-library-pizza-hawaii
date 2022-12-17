@@ -12,7 +12,5 @@ export default {
 	},
 };
 
-const Template = (args) => <Image {...args} />;
-
 export const Image = (args) => <Component {...args} />;
 Image.args = {};

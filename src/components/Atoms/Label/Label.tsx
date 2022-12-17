@@ -7,6 +7,8 @@ type BaseProps = {
 	children: ReactNode;
 };
 
+type LabelType = (BaseProps & LabelHTMLAttributes<HTMLLabelElement>) | BaseProps;
+
 const sizeMap: Record<BaseProps['size'], string> = {
 	S: 'text-sm',
 	M: 'text-base',
@@ -14,7 +16,7 @@ const sizeMap: Record<BaseProps['size'], string> = {
 	XL: 'text-2xl ',
 };
 
-export const Label: FC<BaseProps> = ({ children = 'Label', as: Tag = 'span', size = 'M', className = '', ...props }) => {
+export const Label: FC<LabelType> = ({ children = 'Label', as: Tag = 'span', size = 'M', className = '', ...props }) => {
 	const style = ['inline-block leading-none font-semibold', sizeMap[size], className].join(' ');
 
 	return (

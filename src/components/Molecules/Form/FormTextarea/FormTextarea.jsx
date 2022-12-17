@@ -5,7 +5,7 @@ import { FormItem } from '/src/components/Molecules/Form/FormItem/FormItem';
 
 import uid from '/src/utils/uid';
 
-export const FormTextarea = ({ type, name, label, errorMessage, id = uid('FormTextarea'), className, ...props }) => {
+export const FormTextarea = ({ name, label, errorMessage, id = uid('FormTextarea'), ...props }) => {
 	return (
 		<FormItem
 			className="FormTextarea"
@@ -25,14 +25,12 @@ export const FormTextarea = ({ type, name, label, errorMessage, id = uid('FormTe
 };
 
 FormTextarea.propTypes = {
-	type: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	label: PropTypes.string.isRequired,
 	errorMessage: PropTypes.string,
 };
 
 FormTextarea.defaultProps = {
-	type: 'text',
 	name: 'text-input',
 	label: 'Text Input',
 };

@@ -6,7 +6,7 @@ type BaseProps = {
 	children: ReactNode;
 };
 
-export const SplitScreen: FC<BaseProps> = ({ children, ...props }) => {
+export const SplitScreen: FC<BaseProps> = ({ children }) => {
 	return (
 		<article className="SplitScreen grid grid-cols-1 grid-rows-1 md:grid-cols-2 w-screen min-h-screen">
 			<header className="column-start-1 column-span-1 row-start-1 row-span-1 flex items-center justify-center">
