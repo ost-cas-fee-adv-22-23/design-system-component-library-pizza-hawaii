@@ -7,7 +7,7 @@ import { Form } from '../../components/Molecules/Form/Form';
 import { FormInput } from '../../components/Molecules/Form/FormInput/FormInput';
 import { SplitScreen } from '../../components/Organisms/SplitScreen/SplitScreen';
 
-type BaseProps = {};
+type BaseProps = object;
 
 export const Register: FC<BaseProps> = () => {
 	return (
