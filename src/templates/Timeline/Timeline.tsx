@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import { Header } from "../../components/Organisms/Header/Header";
-import { Headline } from "../../components/Atoms/Headline/Headline";
-import ContentCard from "../../components/Organisms/ContentCard/ContentCard";
+import { Header } from '../../components/Organisms/Header/Header';
+import { Headline } from '../../components/Atoms/Headline/Headline';
+import ContentCard from '../../components/Organisms/ContentCard/ContentCard';
 
 type BaseProps = {};
 
@@ -19,8 +19,7 @@ export const Timeline: FC<BaseProps> = () => {
 
 				<div className="text-slate-500">
 					<Headline level="4" as="p">
-						Voluptatem qui cumque voluptatem quia tempora dolores
-						distinctio vel repellat dicta.
+						Voluptatem qui cumque voluptatem quia tempora dolores distinctio vel repellat dicta.
 					</Headline>
 				</div>
 				<div className="flex gap-4 flex-col mt-8">
