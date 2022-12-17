@@ -1,18 +1,16 @@
 import React from 'react';
 
-import { FormInput as Component } from "./FormInput";
+import { FormInput as Component } from './FormInput';
 
 export default {
-	title: "Example/Molecules/Form/FormInput",
+	title: 'Example/Molecules/Form/FormInput',
 	component: Component,
 	argTypes: {},
 };
 export const FormInput = (args) => <Component {...args} />;
-FormInput.args = {
-};
+FormInput.args = {};
 
 export const FormInputError = (args) => <Component {...args} />;
 FormInputError.args = {
-	errorMessage: "Error-Message",
+	errorMessage: 'Error-Message',
 };
-

@@ -1,29 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import imageFile from './img/testuser.png'
+import imageFile from './img/testuser.png';
 /**
  * User Icon with image from loged in user
  */
-export const UserProfile = ({size}) => {
-	const baseStyle = [
-		"rounded-lg",
-		"self-center",
-	]
+export const UserProfile = ({ size }) => {
+	const baseStyle = ['rounded-lg', 'self-center'];
 
-	const sizeStyle = [ `M-size-${size.toLowerCase()}`]
-
+	const sizeStyle = [`M-size-${size.toLowerCase()}`];
 
 	const userImage = {
 		src: imageFile,
-		userName: 'alt text: TODO: here username'
-	}
+		userName: 'alt text: TODO: here username',
+	};
 
 	return (
 		<div className={[...sizeStyle, ...baseStyle].join(' ')}>
-			<img  src={userImage.src} alt={userImage.userName}/>
+			<img src={userImage.src} alt={userImage.userName} />
 		</div>
-	)
-}
+	);
+};
 
 UserProfile.propTypes = {
 	/**
@@ -31,10 +27,10 @@ UserProfile.propTypes = {
 	 */
 	src: PropTypes.string,
 	userName: PropTypes.string,
-	size: PropTypes.oneOf(['S', 'M', 'L', 'big'])
-}
+	size: PropTypes.oneOf(['S', 'M', 'L', 'big']),
+};
 
 UserProfile.defaultProps = {
 	src: imageFile,
-	userName: 'Cherry Chris'
-}
+	userName: 'Cherry Chris',
+};

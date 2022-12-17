@@ -25,6 +25,10 @@
 	@apply p-4 rounded-full w-auto;
 }
 
+.Button.M-Button-round .Button--inner {
+	@apply sr-only;
+}
+
 .M-Button-slate {
 	@apply bg-gray-700 hover:bg-gray-800
 }
