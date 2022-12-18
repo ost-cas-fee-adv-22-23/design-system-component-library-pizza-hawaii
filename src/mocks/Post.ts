@@ -1,11 +1,7 @@
-import { getRandomValues } from 'crypto';
 import { Post as PostType } from '../types/Post';
 import { All as UserList } from './User';
 
-
 const getRandUser = () => UserList[Math.floor(Math.random() * UserList.length)];
-
-console.log(getRandUser());
 
 export const All: PostType[] = [
 	{

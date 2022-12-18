@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { Timeline as Component } from './Timeline';
-import { Post as PostType } from '../../types/Post';
-import { User as UserType } from '../../types/User';
 
 import { All as examplePosts } from '../../mocks/Post';
 import { Current as exampleUser } from '../../mocks/User';
