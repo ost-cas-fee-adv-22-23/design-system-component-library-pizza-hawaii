@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { IconLink as IcoLink } from "./IconLink";
-import { IconNames } from "../../Atoms/Icon/IconLib";
+import { IconLink as IcoLink } from './IconLink';
+import { IconNames } from '../../Atoms/Icon/IconLib';
 
 export default {
-	title: "Example/Molecules/IconLink",
+	title: 'Example/Molecules/IconLink',
 	component: IcoLink,
 	parameters: {
 		icon: {
 			options: IconNames,
-			control: { type: "select" },
+			control: { type: 'select' },
 		},
 	},
 };

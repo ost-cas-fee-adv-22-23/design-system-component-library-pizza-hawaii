@@ -1,13 +1,18 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import { Header } from "../../components/Organisms/Header/Header";
-import { Headline } from "../../components/Atoms/Headline/Headline";
-import ContentCard from "../../components/Organisms/ContentCard/ContentCard";
+import { Header } from '../../components/Organisms/Header/Header';
+import { Headline } from '../../components/Atoms/Headline/Headline';
+import { ContentCard } from '../../components/Organisms/ContentCard/ContentCard';
 
-type BaseProps = {};
+import { Post as PostType } from '../../types/Post';
+import { User as UserType } from '../../types/User';
 
-export const Timeline: FC<BaseProps> = () => {
-	const [user, setUser] = React.useState();
+type BaseProps = {
+	user: UserType;
+	posts: PostType[];
+};
+
+export const Timeline: FC<BaseProps> = ({ user, posts = [] }) => {
 	return (
 		<article>
 			<Header user={user} />
@@ -19,16 +24,14 @@ export const Timeline: FC<BaseProps> = () => {
 
 				<div className="text-slate-500">
 					<Headline level="4" as="p">
-						Voluptatem qui cumque voluptatem quia tempora dolores
-						distinctio vel repellat dicta.
+						Voluptatem qui cumque voluptatem quia tempora dolores distinctio vel repellat dicta.
 					</Headline>
 				</div>
 				<div className="flex gap-4 flex-col mt-8">
-					<ContentCard variant="timeline" />
-					<ContentCard variant="timeline" />
-					<ContentCard variant="timeline" />
-					<ContentCard variant="timeline" />
-					<ContentCard variant="timeline" />
+					{posts &&
+						posts.map((post) => {
+							return <ContentCard key={post.id} variant="timeline" {...post} />;
+						})}
 				</div>
 			</section>
 		</article>

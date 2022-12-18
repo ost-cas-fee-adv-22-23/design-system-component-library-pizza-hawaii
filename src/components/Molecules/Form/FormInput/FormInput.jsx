@@ -1,19 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { FormItem } from "/src/components/Molecules/Form/FormItem/FormItem";
+/* eslint-disable import/no-unresolved */
+import React from 'react';
+import PropTypes from 'prop-types';
+import { FormItem } from '/src/components/Molecules/Form/FormItem/FormItem';
 
-import uid from "/src/utils/uid";
+import uid from '/src/utils/uid';
 
-
-export const FormInput = ({
-	type,
-	name,
-	label,
-	errorMessage,
-	id = uid("FormInput"),
-	className,
-	...props
-}) => {
+export const FormInput = ({ type, name, label, errorMessage, id = uid('FormInput'), ...props }) => {
 	return (
 		<FormItem
 			className="FormInput"
@@ -22,12 +14,7 @@ export const FormInput = ({
 			errorMessage={errorMessage}
 			inputField={
 				<input
-					className={[
-						"FormInput",
-						"M-FormItem-Input",
-						(errorMessage &&
-							"M-FormItem-Input-error"),
-					].join(" ")}
+					className={['FormInput', 'M-FormItem-Input', errorMessage && 'M-FormItem-Input-error'].join(' ')}
 					type={type}
 					name={name}
 					id={id}
@@ -46,8 +33,7 @@ FormInput.propTypes = {
 };
 
 FormInput.defaultProps = {
-	type: "text",
-	name: "text-input",
-	label: "Text Input",
+	type: 'text',
+	name: 'text-input',
+	label: 'Text Input',
 };
-

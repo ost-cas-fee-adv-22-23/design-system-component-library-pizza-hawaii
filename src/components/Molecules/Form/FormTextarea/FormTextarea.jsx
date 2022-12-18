@@ -1,19 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { FormItem } from "/src/components/Molecules/Form/FormItem/FormItem";
+/* eslint-disable import/no-unresolved */
+import React from 'react';
+import PropTypes from 'prop-types';
+import { FormItem } from '/src/components/Molecules/Form/FormItem/FormItem';
 
-import uid from "/src/utils/uid";
+import uid from '/src/utils/uid';
 
-
-export const FormTextarea = ({
-	type,
-	name,
-	label,
-	errorMessage,
-	id = uid("FormTextarea"),
-	className,
-	...props
-}) => {
+export const FormTextarea = ({ name, label, errorMessage, id = uid('FormTextarea'), ...props }) => {
 	return (
 		<FormItem
 			className="FormTextarea"
@@ -22,11 +14,7 @@ export const FormTextarea = ({
 			errorMessage={errorMessage}
 			inputField={
 				<textarea
-					className={[
-						"FormTextarea",
-						"M-FormItem-Input",
-						errorMessage && "M-FormItem-Input-error",
-					].join(" ")}
+					className={['FormTextarea', 'M-FormItem-Input', errorMessage && 'M-FormItem-Input-error'].join(' ')}
 					name={name}
 					id={id}
 					{...props}
@@ -37,15 +25,12 @@ export const FormTextarea = ({
 };
 
 FormTextarea.propTypes = {
-	type: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	label: PropTypes.string.isRequired,
 	errorMessage: PropTypes.string,
 };
 
 FormTextarea.defaultProps = {
-	type: "text",
-	name: "text-input",
-	label: "Text Input"
+	name: 'text-input',
+	label: 'Text Input',
 };
-

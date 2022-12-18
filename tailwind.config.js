@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const defaultTheme = require('tailwindcss/defaultTheme');
-const ProjectSettings = require("./src/utils/ProjectSettings.json");
+const ProjectSettings = require('./src/utils/ProjectSettings.json');
 
 const toRem = (px) => `${px / ProjectSettings.baseFontSize}rem`;
 
@@ -13,18 +14,17 @@ spacing = {
 	content: toRem(ProjectSettings.content.padding),
 };
 
-
 module.exports = {
-	content: ["./src/**/*.{js,jsx,ts,tsx}"],
+	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	theme: {
 		fontFamily: {
-			sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+			sans: ['Poppins', ...defaultTheme.fontFamily.sans],
 		},
 
 		extend: {
 			colors: {
-				transparent: "transparent",
-				current: "currentColor",
+				transparent: 'transparent',
+				current: 'currentColor',
 			},
 			spacing,
 			width: {
@@ -34,11 +34,11 @@ module.exports = {
 				content: toRem(ProjectSettings.content.width),
 			},
 			backgroundSize: {
-				"size-200": "200% 200%",
+				'size-200': '200% 200%',
 			},
 			backgroundPosition: {
-				"pos-0": "0% 0%",
-				"pos-100": "100% 100%",
+				'pos-0': '0% 0%',
+				'pos-100': '100% 100%',
 			},
 		},
 	},

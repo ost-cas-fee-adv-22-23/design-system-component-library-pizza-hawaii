@@ -1,15 +1,20 @@
-import uid from "../../../utils/uid";
+import uid from '../../../utils/uid';
 
-type ImageServiceType = {
-	[fn: string]: Function;
+export type ImageServiceType = {
+	[fn: string]: (ImageServiceInterface) => ImageServiceResult;
+};
+export type ImageServiceInterface = {
+	width: number;
+	height: number;
+	id?: string;
+};
+export type ImageServiceResult = {
+	src: string;
+	srcSet: string;
 };
 
 export const ImageService: ImageServiceType = {
-	exampleImg(
-		width: number,
-		height: number,
-		id: string = uid()
-	): { src: string; srcset: string } {
+	exampleImg(width: number, height: number, id: string = uid()): ImageServiceResult {
 		const images = {
 			x1: `//picsum.photos/id/${id}/${width}/${height}/`,
 			x2: `//picsum.photos/id/${id}/${width * 2}/${height * 2}/`,
@@ -21,6 +26,3 @@ export const ImageService: ImageServiceType = {
 		};
 	},
 };
-
-
-
