@@ -153,3 +153,32 @@
 	@apply M-text-size-m;
 }
 
+/*
+* switch
+*/
+
+.M-switch-field {
+	@apply flex overflow-hidden bg-slate-200 rounded-lg p-1 w-fit;
+}
+
+.M-switch-field input {
+	@apply absolute overflow-hidden h-0 w-0;
+}
+
+.M-switch-field label {
+	@apply bg-slate-200 text-slate-600 M-text-size-m font-semibold text-center py-2 px-4 border-gray-600 transition-all ease-in duration-150;
+}
+
+.M-switch-field input:checked+label {
+	@apply bg-white text-violet-600;
+}
+
+.M-switch-field label:first-of-type {
+	@apply rounded-tl-md rounded-bl-md
+}
+
+.M-switch-field label:last-of-type {
+	@apply rounded-tr-md rounded-br-md
+}
+
+
