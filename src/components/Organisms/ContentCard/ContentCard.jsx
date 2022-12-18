@@ -10,9 +10,8 @@ import { Image } from '../../Atoms/Image/Image';
 import { Richtext } from '../../Atoms/Richtext/Richtext';
 import { Label } from '../../Atoms/Label/Label';
 
-export const ContentCard = (props) => {
+export const ContentCard = ({ variant, ...props }) => {
 	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl border border-gray-400 relative';
-	const { variant } = props;
 
 	const preset = {
 		detailpage: {
@@ -48,7 +47,7 @@ export const ContentCard = (props) => {
 					<UserProfile size={setting.userprofile} />
 					<div className={setting.headerStyle}>
 						<Label className="mx-2" size={setting.headlineSize}>
-							{props.author}
+							{props.author.fullName}
 						</Label>
 						<span className={['flex flex-row align-baseline']}>
 							<UserName username={props.author.userName} />
