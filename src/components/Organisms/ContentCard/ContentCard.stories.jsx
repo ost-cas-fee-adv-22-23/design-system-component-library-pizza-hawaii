@@ -23,12 +23,12 @@ export const Timeline = Template.bind();
 Timeline.args = {
 	text: 'Medium - rare, mostly we well use that one. Quia aut et aut. Sunt et eligendi similique enim qui quo minus. error magni.',
 	variant: 'timeline',
-	author: 'Jon Doe',
+	author: 'Jane Done',
 };
 
 export const Responsive = Template.bind();
 Responsive.args = {
 	text: 'Responsive - all mobiles see me that way. Quia aut et aut. Sunt et eligendi similique enim qui quo minus. Aut aut error velit voluptatum optio sed quis cumque error magni.',
 	variant: 'responsive',
-	author: 'Jon Doe',
+	author: 'Jonny Donny',
 };

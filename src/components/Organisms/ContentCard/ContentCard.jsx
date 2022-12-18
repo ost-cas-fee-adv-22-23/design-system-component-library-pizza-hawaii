@@ -2,7 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '/src/components/Components-base.css';
-import './ContentCard.css';
 import { UserName } from '../../Molecules/UserName/UserName';
 import { TimeStamp } from '../../Molecules/TimeStamp/TimeStamp';
 import { UserProfile } from '../../Molecules/UserProfile/UserProfile';
@@ -12,8 +11,7 @@ import { Richtext } from '../../Atoms/Richtext/Richtext';
 import { Label } from '../../Atoms/Label/Label';
 
 export const ContentCard = (props) => {
-	console.log('CC props', props);
-	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl';
+	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl border border-gray-400 relative';
 	const { variant } = props;
 
 	const preset = {
@@ -44,13 +42,13 @@ export const ContentCard = (props) => {
 	const setting = preset[variant] || preset.detailpage;
 
 	return (
-		<article className={['contentCard', cardStyle, setting.cardStyle].join(' ')}>
+		<article className={[cardStyle, setting.cardStyle].join(' ')}>
 			<div>
 				<div className={setting.sizeStyle}>
 					<UserProfile size={setting.userprofile} />
 					<div className={setting.headerStyle}>
-						<Label className={[]} size={setting.headlineSize}>
-							{props.text}
+						<Label className="mx-2" size={setting.headlineSize}>
+							{props.author}
 						</Label>
 						<span className={['flex flex-row align-baseline']}>
 							<UserName username={props.author.userName} />
