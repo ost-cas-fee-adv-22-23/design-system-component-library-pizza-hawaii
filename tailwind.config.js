@@ -1,4 +1,4 @@
-// eslint-disable @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const defaultTheme = require('tailwindcss/defaultTheme');
 const ProjectSettings = require('./src/utils/ProjectSettings.json');
 

@@ -12,6 +12,7 @@ import { Richtext } from '../../Atoms/Richtext/Richtext';
 import { Label } from '../../Atoms/Label/Label';
 
 export const ContentCard = (props) => {
+	console.log('CC props', props);
 	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl';
 	const { variant } = props;
 
@@ -49,7 +50,7 @@ export const ContentCard = (props) => {
 					<UserProfile size={setting.userprofile} />
 					<div className={setting.headerStyle}>
 						<Label className={[]} size={setting.headlineSize}>
-							{props.author.fullName}
+							{props.text}
 						</Label>
 						<span className={['flex flex-row align-baseline']}>
 							<UserName username={props.author.userName} />
