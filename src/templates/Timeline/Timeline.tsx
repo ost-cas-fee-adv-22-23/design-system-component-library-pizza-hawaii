@@ -12,9 +12,7 @@ type BaseProps = {
 	posts: PostType[];
 };
 
-export const Timeline: FC<BaseProps> = (user /*, posts = []*/) => {
-	// for testing purposes
-
+export const Timeline: FC<BaseProps> = ({ user, posts = [] }) => {
 	return (
 		<article>
 			<Header user={user} />
@@ -30,13 +28,10 @@ export const Timeline: FC<BaseProps> = (user /*, posts = []*/) => {
 					</Headline>
 				</div>
 				<div className="flex gap-4 flex-col mt-8">
-					{/* {posts.map((post) => {
-						return <ContentCard variant="timeline" {...post} />;
-					})} */}
-					<ContentCard variant="timeline" />
-					<ContentCard variant="timeline" />
-					<ContentCard variant="timeline" />
-					<ContentCard variant="timeline" />
+					{posts &&
+						posts.map((post) => {
+							return <ContentCard key={post.id} variant="timeline" {...post} />;
+						})}
 				</div>
 			</section>
 		</article>

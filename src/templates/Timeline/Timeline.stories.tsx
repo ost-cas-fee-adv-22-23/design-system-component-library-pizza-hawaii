@@ -4,6 +4,9 @@ import { Timeline as Component } from './Timeline';
 import { Post as PostType } from '../../types/Post';
 import { User as UserType } from '../../types/User';
 
+import { All as examplePosts } from '../../mocks/Post';
+import { Current as exampleUser } from '../../mocks/User';
+
 export default {
 	title: 'Example/Template',
 	component: Component,
@@ -12,56 +15,6 @@ export default {
 		layout: 'fullscreen',
 	},
 };
-
-const exampleUser: UserType = {
-	name: 'john.doe',
-	displayName: 'John Doe',
-	avatar: 'https://picsum.photos/200/300',
-	email: 'doe@john.com',
-};
-
-const examplePosts: PostType[] = [
-	{
-		id: 1,
-		createdAt: new Date('2022-12-04'),
-		content: {
-			title: 'Lorem ipsum dolor sit amet',
-			body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.',
-			image: 'https://picsum.photos/200/300',
-		},
-		author: exampleUser,
-	},
-	{
-		id: 2,
-		createdAt: new Date('2022-12-03'),
-		content: {
-			title: 'Lorem ipsum dolor sit amet',
-			body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.',
-			image: 'https://picsum.photos/200/300',
-		},
-		author: exampleUser,
-	},
-	{
-		id: 3,
-		createdAt: new Date('2022-12-02'),
-		content: {
-			title: 'Lorem ipsum dolor sit amet',
-			body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.',
-			image: 'https://picsum.photos/200/300',
-		},
-		author: exampleUser,
-	},
-	{
-		id: 4,
-		createdAt: new Date('2022-12-01'),
-		content: {
-			title: 'Lorem ipsum dolor sit amet',
-			body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.',
-			image: 'https://picsum.photos/200/300',
-		},
-		author: exampleUser,
-	},
-];
 
 const Template = (args) => <Component {...args} />;
 
