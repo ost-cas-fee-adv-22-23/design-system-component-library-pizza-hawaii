@@ -4,8 +4,13 @@ const ProjectSettings = require('./src/utils/ProjectSettings.json');
 
 const toRem = (px) => `${px / ProjectSettings.baseFontSize}rem`;
 
-let spacing = Object.keys(ProjectSettings.spaces).reduce((acc, spacing) => {
-	acc[spacing] = toRem(ProjectSettings.spaces[spacing]);
+let fontSizes = Object.keys(ProjectSettings.fontSizes).reduce((acc, size) => {
+	acc[size] = toRem(ProjectSettings.fontSizes[size]);
+	return acc;
+}, {});
+
+let spacing = Object.keys(ProjectSettings.spaces).reduce((acc, size) => {
+	acc[size] = toRem(ProjectSettings.spaces[size]);
 	return acc;
 }, {});
 
@@ -26,6 +31,7 @@ module.exports = {
 				transparent: 'transparent',
 				current: 'currentColor',
 			},
+			fontSize: fontSizes,
 			spacing,
 			width: {
 				content: toRem(ProjectSettings.content.width),

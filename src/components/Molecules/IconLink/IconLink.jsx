@@ -19,7 +19,7 @@ export const IconLink = ({ icon, label, href, color, oneline, className, ...prop
 		{...props}
 	>
 		{icon ? (
-			<span className="ml-xs mr-xs mt-xxs mb-xxs">
+			<span className="mr-xs">
 				<Icon name={icon} />
 			</span>
 		) : null}

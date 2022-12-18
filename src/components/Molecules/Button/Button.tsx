@@ -6,7 +6,6 @@ import { Label } from '../../Atoms/Label/Label';
 // TODO resolve that or get rid of that rule
 // eslint-disable-next-line import/no-unresolved
 import '/src/components/Components-base.css';
-import './Button.css';
 
 type ButtonProps = {
 	label: string;

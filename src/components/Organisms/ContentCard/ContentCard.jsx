@@ -43,15 +43,13 @@ export const ContentCard = ({ variant, ...props }) => {
 	return (
 		<article className={[cardStyle, setting.cardStyle].join(' ')}>
 			<div>
-				<div className={setting.sizeStyle}>
+				<div className={setting.sizeStyle + ' mb-4'}>
 					<UserProfile size={setting.userprofile} />
 					<div className={setting.headerStyle}>
-						<Label className="mx-2" size={setting.headlineSize}>
-							{props.author.fullName}
-						</Label>
-						<span className={['flex flex-row align-baseline']}>
+						<Label size={setting.headlineSize}>{props.author.fullName}</Label>
+						<span className="flex flex-row align-baseline mt-1">
 							<UserName username={props.author.userName} />
-							<TimeStamp time={'13:32'} />
+							<TimeStamp time={props.createdAt} />
 						</span>
 					</div>
 				</div>

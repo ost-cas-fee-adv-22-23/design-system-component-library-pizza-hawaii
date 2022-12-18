@@ -40,11 +40,9 @@ export const Image: FC<ImageProps> = ({ src, alt = '', caption, preset, ...props
 	let styleClasses = '';
 	if (preset) {
 		const imageSettings = ImagePreset[preset];
-		const { srcFromPreset, ...imgAttr } = imageSettings.img();
 		props = {
-			...imgAttr,
+			...imageSettings.img(),
 		};
-		src = srcFromPreset;
 		styleClasses = imageSettings.styleClasses;
 	}
 	return (

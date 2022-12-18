@@ -8,14 +8,14 @@ type HeadlineProps = {
 };
 
 const sizeMap: Record<HeadlineProps['level'], string> = {
-	'1': 'text-5xl',
-	'2': 'text-4xl',
-	'3': 'text-3xl',
-	'4': 'text-xl',
+	'1': 'text-4xl font-bold',
+	'2': 'text-3xl font-bold',
+	'3': 'text-2xl font-semibold',
+	'4': 'text-xl font-semibold',
 };
 
 export const Headline: FC<HeadlineProps> = ({ children, level = '1', as: Tag = `h${level}`, className = '', ...props }) => {
-	const style = ['leading-tight font-bold', sizeMap[level], className].join(' ');
+	const style = ['leading-tight', sizeMap[level], className].join(' ');
 
 	return (
 		<Tag className={style} {...props}>
