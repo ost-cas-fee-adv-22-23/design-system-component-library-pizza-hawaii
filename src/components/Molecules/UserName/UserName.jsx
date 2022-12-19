@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IconLink } from '../../Molecules/IconLink/IconLink';
+import { IconLink } from '../IconLink/IconLink';
 
 export const UserName = ({ username }) => {
-	return <IconLink icon="profile" className="text-violet-600 text-sm" label={username} href={`/${username}`} />;
+	return (
+		<IconLink href={`/${username}`} icon="profile" color="violet" size="S">
+			{username}
+		</IconLink>
+	);
 };
 
 UserName.propTypes = {

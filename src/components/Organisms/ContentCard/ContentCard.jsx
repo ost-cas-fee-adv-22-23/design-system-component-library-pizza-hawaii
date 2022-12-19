@@ -47,7 +47,7 @@ export const ContentCard = ({ variant, ...props }) => {
 					<UserProfile size={setting.userprofile} />
 					<div className={setting.headerStyle}>
 						<Label size={setting.headlineSize}>{props.author.fullName}</Label>
-						<span className="flex flex-row align-baseline mt-1">
+						<span className="flex flex-row align-baseline mt-1 gap-3">
 							<UserName username={props.author.userName} />
 							<TimeStamp time={props.createdAt} />
 						</span>
@@ -60,9 +60,15 @@ export const ContentCard = ({ variant, ...props }) => {
 					<Image preset="post" />
 				</div>
 				<div className="flex flex-row items-center gap-12">
-					<IconLink oneline={true} icon="comment" label="Comment" link="#" />
-					<IconLink oneline={true} icon="heart" label="Like" link="#" />
-					<IconLink oneline={true} icon="share" label="Share Link" link="#" />
+					<IconLink href="#" icon="comment">
+						Comment
+					</IconLink>
+					<IconLink href="#" icon="heart">
+						Like
+					</IconLink>
+					<IconLink href="#" icon="share">
+						Share Link
+					</IconLink>
 				</div>
 			</div>
 		</article>

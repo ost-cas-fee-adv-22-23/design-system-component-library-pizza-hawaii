@@ -13,7 +13,6 @@ type ButtonProps = {
 	size: 'round' | 'M' | 'L';
 	color: 'slate' | 'violet' | 'gradient';
 	icon?: string;
-	type?: 'button' | 'submit';
 	href?: string;
 	onClick?: () => void;
 };

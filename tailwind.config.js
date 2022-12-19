@@ -31,6 +31,9 @@ module.exports = {
 				transparent: 'transparent',
 				current: 'currentColor',
 			},
+			lineHeight: {
+				'normal': '1.4',
+			},
 			fontSize: fontSizes,
 			spacing,
 			width: {
