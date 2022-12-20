@@ -9,16 +9,17 @@ import '/src/components/Components-base.css';
 
 type ButtonProps = {
 	label: string;
-	as: 'button' | 'a';
+	as?: 'button' | 'a';
 	size: 'round' | 'M' | 'L';
 	color: 'slate' | 'violet' | 'gradient';
 	icon?: string;
 	href?: string;
+	type?: string;
 	onClick?: () => void;
 };
 
 const defaultProps: Partial<ButtonProps> = {
-	as: 'button',
+	as: 'a',
 	size: 'M',
 	color: 'violet',
 	icon: 'mumble',
@@ -30,10 +31,10 @@ export const Button: FC<ButtonProps> = ({ label, as: Tag = 'a', color, size, ico
 
 	const typeAttr = {
 		button: {
-			type: 'button',
+			type: props.type || 'button',
 		},
 		a: {
-			href: '#',
+			href: props.href || '#',
 		},
 		...props,
 	};

@@ -1,28 +1,37 @@
 import React, { FC, ReactNode } from 'react';
-import PropTypes from 'prop-types';
 
 import { Icon } from '../../Atoms/Icon/Icon';
 
 import './IconLink.css';
 
-type BaseProps = {
+interface IconLinkProps {
 	children: ReactNode;
-	as: 'button' | 'a';
+	as?: 'button' | 'a' | 'span';
 	size: 'S' | 'M' | 'L';
 	color: 'slate' | 'violet';
 	icon: string;
 	href?: string;
-};
+	type?: string;
+}
 
-const defaultProps: Partial<BaseProps> = {
+const defaultProps: Partial<IconLinkProps> = {
 	as: 'a',
 	size: 'M',
 	color: 'violet',
 	icon: 'mumble',
 };
 
-export const IconLink: FC<BaseProps> = ({ children = 'NaviButton', as: Tag = 'a', color, size, icon, ...props }) => {
-	const sizeMap: Record<BaseProps['size'], string> = {
+export const IconLink: FC<IconLinkProps> = ({
+	children = 'NaviButton',
+	as: Tag = 'a',
+	color,
+	size,
+	icon,
+	type,
+	href,
+	...props
+}) => {
+	const sizeMap: Record<IconLinkProps['size'], string> = {
 		S: 'text-sm gap-1',
 		M: 'text-base gap-2',
 		L: 'text-xl gap-2',
@@ -30,10 +39,10 @@ export const IconLink: FC<BaseProps> = ({ children = 'NaviButton', as: Tag = 'a'
 
 	const typeAttr = {
 		button: {
-			type: 'button',
+			type: type || 'button',
 		},
 		a: {
-			href: '#',
+			href: href || '#',
 		},
 		...props,
 	};

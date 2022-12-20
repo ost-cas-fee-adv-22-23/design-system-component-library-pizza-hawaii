@@ -16,4 +16,5 @@ export const Modal = (args) => <Component {...args} />;
 Modal.args = {
 	title: 'Modal Title',
 	children: 'Modal Content',
+	isVisible: true,
 };

@@ -11,7 +11,8 @@ import { Richtext } from '../../Atoms/Richtext/Richtext';
 import { Label } from '../../Atoms/Label/Label';
 
 export const ContentCard = ({ variant, ...props }) => {
-	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl border border-gray-400 relative';
+	const cardStyle =
+		'flex flex-start justify-center items-start bg-white py-l px-xl border border-slate-400 relative text-slate-900';
 
 	const preset = {
 		detailpage: {
@@ -19,7 +20,7 @@ export const ContentCard = ({ variant, ...props }) => {
 			headlineSize: 'L',
 			textSize: 'L',
 			sizeStyle: '-variantDetail',
-			cardStyle: 'border-2 border-solid border-white hover:border-gray-300',
+			cardStyle: 'border-2 border-solid border-white hover:border-slate-300',
 		},
 		timeline: {
 			userprofile: 'M',
@@ -32,7 +33,7 @@ export const ContentCard = ({ variant, ...props }) => {
 			userprofile: 'S',
 			headlineSize: 'M',
 			textSize: 'M',
-			cardStyle: 'border-2 border-solid border-white hover:border-gray-200',
+			cardStyle: 'border-2 border-solid border-white hover:border-slate-200',
 			sizeStyle: '-variantResponsive',
 			headerStyle: 'flex-col',
 		},
@@ -60,13 +61,13 @@ export const ContentCard = ({ variant, ...props }) => {
 					<Image preset="post" />
 				</div>
 				<div className="flex flex-row items-center gap-12">
-					<IconLink href="#" icon="comment">
+					<IconLink href="#" icon="comment" color="slate">
 						Comment
 					</IconLink>
-					<IconLink href="#" icon="heart">
+					<IconLink href="#" icon="heart" color="slate">
 						Like
 					</IconLink>
-					<IconLink href="#" icon="share">
+					<IconLink href="#" icon="share" color="slate">
 						Share Link
 					</IconLink>
 				</div>

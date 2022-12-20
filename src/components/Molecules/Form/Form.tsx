@@ -1,17 +1,15 @@
-import React, { FC, ReactNode } from 'react';
-
-import { Button } from '../../Molecules/Button/Button';
+import React, { FC, ReactNode, FormHTMLAttributes } from 'react';
 
 type BaseProps = {
-	cta?: string;
 	children: ReactNode;
 };
 
-export const Form: FC<BaseProps> = ({ children, cta = 'Absenden', ...props }) => {
+type FormType = (BaseProps & FormHTMLAttributes<HTMLFormElement>) | BaseProps;
+
+export const Form: FC<FormType> = ({ children, ...props }) => {
 	return (
-		<form {...props}>
-			<div className="flex flex-col gap-3 mb-8">{children}</div>
-			<Button as="button" size="L" type="submit" label={cta} color="gradient" />
+		<form className="flex flex-col gap-3 mb-8 text-slate-700" {...props}>
+			{children}
 		</form>
 	);
 };
