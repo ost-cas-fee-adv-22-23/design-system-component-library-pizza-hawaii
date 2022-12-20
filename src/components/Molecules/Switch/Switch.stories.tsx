@@ -14,8 +14,3 @@ export const Variant1 = Template.bind({});
 Variant1.args = {
 	isActive: 'mumbles',
 };
-
-export const Variant2 = Template.bind({});
-Variant2.args = {
-	isActive: 'likes',
-};

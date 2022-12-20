@@ -11,12 +11,16 @@ export const Switch = () => {
 		console.log('active state view is now:', event.target.value);
 	};
 
-	const switchStyles = ['M-switch-field'];
+	const fieldStyles = 'flex overflow-hidden bg-slate-200 rounded-lg p-1 w-fit';
+	const inputStyles = 'absolute overflow-hidden h-0 w-0';
+	const labelStyles =
+		'hover:cursor-pointer bg-slate-200  first-of-type:rounded-tl-md first-of-type:rounded-bl-md last:rounded-tr-md last:rounded-br-md text-slate-600 text-base font-semibold text-center py-2 px-4 border-slate-600 transition-all ease-in duration-150 ';
 	return (
 		<>
 			<form className="p-2">
-				<div className={switchStyles}>
+				<div className={[fieldStyles, 'M-input-checked'].join(' ')}>
 					<input
+						className={inputStyles}
 						type="radio"
 						id="mumbles"
 						name="switchview"
@@ -24,8 +28,11 @@ export const Switch = () => {
 						checked={isActive === 'mumbles'}
 						onChange={changeView}
 					/>
-					<label htmlFor="mumbles">Deine Mumbles</label>
+					<label className={labelStyles} htmlFor="mumbles">
+						Deine Mumbles
+					</label>
 					<input
+						className={inputStyles}
 						type="radio"
 						id="likes"
 						name="switchview"
@@ -33,7 +40,9 @@ export const Switch = () => {
 						checked={isActive === 'likes'}
 						onChange={changeView}
 					/>
-					<label htmlFor="likes">Deine Likes</label>
+					<label className={labelStyles} htmlFor="likes">
+						Deine Likes
+					</label>
 				</div>
 			</form>
 		</>
