@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { IconLink as IcoLink } from './IconLink';
 import { IconNames } from '../../Atoms/Icon/IconLib';
+import { IconLink as IcoLink } from './IconLink';
 
 export default {
 	title: 'Example/Molecules/IconLink',
 	component: IcoLink,
-	parameters: {
+	argTypes: {
 		icon: {
 			options: IconNames,
 			control: { type: 'select' },
@@ -17,11 +17,4 @@ export default {
 const Template = (args) => <IcoLink {...args} />;
 
 export const IconLink = Template.bind({});
-IconLink.args = {
-	oneline: true,
-};
-
-export const IconLink2 = Template.bind({});
-IconLink2.args = {
-	oneline: false,
-};
+IconLink.args = {};

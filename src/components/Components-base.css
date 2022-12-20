@@ -1,9 +1,6 @@
-
 /*
  * Typography
  */
-
-
 
 /*
  * Button
@@ -30,59 +27,53 @@
 }
 
 .M-Button-slate {
-	@apply bg-gray-700 hover:bg-gray-800
+	@apply bg-slate-700 hover:bg-slate-800;
 }
 .M-Button-violet {
 	@apply bg-violet-600 hover:bg-violet-700;
 }
 .M-Button-gradient {
-	@apply bg-gradient-to-r 
-					transition-all 
-					ease-out
-					duration-200
-					bg-pos-0 
-					bg-size-200
-					from-violet-600
-					via-pink-600
-					to-violet-700 
-					hover:bg-pos-100;
+	@apply bg-gradient-to-r
+		transition-all
+		ease-out
+		duration-200
+		bg-pos-0
+		bg-size-200
+		from-violet-600
+		via-pink-600
+		to-violet-700
+		hover:bg-pos-100;
 }
 
 /*
  * Link
  */
 
-
 .M-Link-slate {
-	@apply text-gray-400 hover:text-gray-600;
+	@apply text-slate-400 hover:text-slate-600;
 }
 .M-Link-violet {
 	@apply text-violet-600 hover:text-violet-900;
 }
-
-
-
 
 /*
  * Form
  */
 
 .M-FormItem-Input {
-	@apply text-black text-base bg-gray-100 hover:border-purple-600 focus:border-purple-600 focus:outline-1 focus:outline-purple-600 rounded-lg p-4 border border-solid border-gray-300;
+	@apply text-black text-base bg-slate-100 hover:border-purple-600 focus:border-purple-600 focus:outline-1 focus:outline-purple-600 rounded-lg p-4 border border-solid border-slate-300;
 }
 
 .M-FormItem-Input-error {
 	@apply border-2 border-solid border-red-700;
 }
 
-
 .M-FormItem-Label {
-	@apply text-gray-800 font-semibold text-base;
+	@apply text-slate-800 font-semibold text-base;
 }
 .M-FormItem-Error {
 	@apply text-red-700 text-xs font-medium;
 }
-
 
 /*
  * UserProfile - Image Dimensions
@@ -104,11 +95,9 @@
 	@apply h-10 w-10;
 }
 
-
 /*
  * ContentCard - a mumbel view
  */
-
 
 /*
  * layout variants
@@ -129,30 +118,6 @@
 	flex-direction: row;
 }
 
-
-
- .M-text-size-l {
-	@apply text-xl md:text-lg;
- }
-
- .M-text-size-m {
-	@apply text-base
- }
-
- .M-text-size-s {
-	@apply text-sm
- }
-
-
-
-.M-text-h1 {
-	@apply M-text-size-l;
-}
-
-.M-text-h1 {
-	@apply M-text-size-m;
-}
-
 /*
 * switch
 */
@@ -166,19 +131,17 @@
 }
 
 .M-switch-field label {
-	@apply bg-slate-200 text-slate-600 M-text-size-m font-semibold text-center py-2 px-4 border-gray-600 transition-all ease-in duration-150;
+	@apply bg-slate-200 text-slate-600 text-base font-semibold text-center py-2 px-4 border-slate-600 transition-all ease-in duration-150;
 }
 
-.M-switch-field input:checked+label {
+.M-switch-field input:checked + label {
 	@apply bg-white text-violet-600;
 }
 
 .M-switch-field label:first-of-type {
-	@apply rounded-tl-md rounded-bl-md
+	@apply rounded-tl-md rounded-bl-md;
 }
 
 .M-switch-field label:last-of-type {
-	@apply rounded-tr-md rounded-br-md
+	@apply rounded-tr-md rounded-br-md;
 }
-
-

@@ -1,5 +1,11 @@
 {
 	"baseFontSize": 16,
+	"fontSizes": {
+		"xl": 24,
+		"2xl": 32,
+		"3xl": 40,
+		"4xl": 48
+	},
 	"spaces": {
 		"xxs": 4,
 		"xs": 8,

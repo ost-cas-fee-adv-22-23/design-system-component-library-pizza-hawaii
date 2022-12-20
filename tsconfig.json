@@ -1,5 +1,5 @@
 {
-  "compilerOptions": {
+	"compilerOptions": {
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"strict": true,
 		"esModuleInterop": true,
@@ -16,9 +16,7 @@
 		"jsx": "react",
 		"module": "esnext",
 		"target": "esnext",
-		"resolveJsonModule": true,
-  },
-  "include": [
-    "src/index.ts"
-  ]
+		"resolveJsonModule": true
+	},
+	"include": ["src/index.ts"]
 }

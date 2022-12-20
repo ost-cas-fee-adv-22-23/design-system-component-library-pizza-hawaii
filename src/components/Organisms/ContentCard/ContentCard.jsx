@@ -11,7 +11,8 @@ import { Richtext } from '../../Atoms/Richtext/Richtext';
 import { Label } from '../../Atoms/Label/Label';
 
 export const ContentCard = ({ variant, ...props }) => {
-	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl border border-gray-400 relative';
+	const cardStyle =
+		'flex flex-start justify-center items-start bg-white py-l px-xl border border-slate-400 relative text-slate-900';
 
 	const preset = {
 		detailpage: {
@@ -19,7 +20,7 @@ export const ContentCard = ({ variant, ...props }) => {
 			headlineSize: 'L',
 			textSize: 'L',
 			sizeStyle: '-variantDetail',
-			cardStyle: 'border-2 border-solid border-white hover:border-gray-300',
+			cardStyle: 'border-2 border-solid border-white hover:border-slate-300',
 		},
 		timeline: {
 			userprofile: 'M',
@@ -32,7 +33,7 @@ export const ContentCard = ({ variant, ...props }) => {
 			userprofile: 'S',
 			headlineSize: 'M',
 			textSize: 'M',
-			cardStyle: 'border-2 border-solid border-white hover:border-gray-200',
+			cardStyle: 'border-2 border-solid border-white hover:border-slate-200',
 			sizeStyle: '-variantResponsive',
 			headerStyle: 'flex-col',
 		},
@@ -43,15 +44,13 @@ export const ContentCard = ({ variant, ...props }) => {
 	return (
 		<article className={[cardStyle, setting.cardStyle].join(' ')}>
 			<div>
-				<div className={setting.sizeStyle}>
+				<div className={setting.sizeStyle + ' mb-4'}>
 					<UserProfile size={setting.userprofile} />
 					<div className={setting.headerStyle}>
-						<Label className="mx-2" size={setting.headlineSize}>
-							{props.author.fullName}
-						</Label>
-						<span className={['flex flex-row align-baseline']}>
+						<Label size={setting.headlineSize}>{props.author.fullName}</Label>
+						<span className="flex flex-row align-baseline mt-1 gap-3">
 							<UserName username={props.author.userName} />
-							<TimeStamp time={'13:32'} />
+							<TimeStamp time={props.createdAt} />
 						</span>
 					</div>
 				</div>
@@ -62,9 +61,15 @@ export const ContentCard = ({ variant, ...props }) => {
 					<Image preset="post" />
 				</div>
 				<div className="flex flex-row items-center gap-12">
-					<IconLink oneline={true} icon="comment" label="Comment" link="#" />
-					<IconLink oneline={true} icon="heart" label="Like" link="#" />
-					<IconLink oneline={true} icon="share" label="Share Link" link="#" />
+					<IconLink href="#" icon="comment" color="slate">
+						Comment
+					</IconLink>
+					<IconLink href="#" icon="heart" color="slate">
+						Like
+					</IconLink>
+					<IconLink href="#" icon="share" color="slate">
+						Share Link
+					</IconLink>
 				</div>
 			</div>
 		</article>
