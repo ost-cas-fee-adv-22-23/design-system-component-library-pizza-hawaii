@@ -32,7 +32,7 @@ module.exports = {
 				current: 'currentColor',
 			},
 			lineHeight: {
-				'normal': '1.4',
+				normal: '1.4',
 			},
 			fontSize: fontSizes,
 			spacing,

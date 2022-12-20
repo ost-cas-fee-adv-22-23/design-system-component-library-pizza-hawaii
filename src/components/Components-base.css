@@ -1,9 +1,6 @@
-
 /*
  * Typography
  */
-
-
 
 /*
  * Button
@@ -30,7 +27,7 @@
 }
 
 .M-Button-slate {
-	@apply bg-slate-700 hover:bg-slate-800
+	@apply bg-slate-700 hover:bg-slate-800;
 }
 .M-Button-violet {
 	@apply bg-violet-600 hover:bg-violet-700;
@@ -52,16 +49,12 @@
  * Link
  */
 
-
 .M-Link-slate {
 	@apply text-slate-400 hover:text-slate-600;
 }
 .M-Link-violet {
 	@apply text-violet-600 hover:text-violet-900;
 }
-
-
-
 
 /*
  * Form
@@ -75,14 +68,12 @@
 	@apply border-2 border-solid border-red-700;
 }
 
-
 .M-FormItem-Label {
 	@apply text-slate-800 font-semibold text-base;
 }
 .M-FormItem-Error {
 	@apply text-red-700 text-xs font-medium;
 }
-
 
 /*
  * UserProfile - Image Dimensions
@@ -104,11 +95,9 @@
 	@apply h-10 w-10;
 }
 
-
 /*
  * ContentCard - a mumbel view
  */
-
 
 /*
  * layout variants
@@ -129,8 +118,6 @@
 	flex-direction: row;
 }
 
-
-
 /*
 * switch
 */
@@ -147,16 +134,14 @@
 	@apply bg-slate-200 text-slate-600 text-base font-semibold text-center py-2 px-4 border-slate-600 transition-all ease-in duration-150;
 }
 
-.M-switch-field input:checked+label {
+.M-switch-field input:checked + label {
 	@apply bg-white text-violet-600;
 }
 
 .M-switch-field label:first-of-type {
-	@apply rounded-tl-md rounded-bl-md
+	@apply rounded-tl-md rounded-bl-md;
 }
 
 .M-switch-field label:last-of-type {
-	@apply rounded-tr-md rounded-br-md
+	@apply rounded-tr-md rounded-br-md;
 }
-
-
