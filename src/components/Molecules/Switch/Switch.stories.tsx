@@ -12,12 +12,10 @@ const Template = (args) => <Component {...args} />;
 
 export const Variant1 = Template.bind({});
 Variant1.args = {
-	mumblesIsChecked: 'checked',
-	likedIsChecked: false,
+	isActive: 'mumbles',
 };
 
 export const Variant2 = Template.bind({});
 Variant2.args = {
-	mumblesIsChecked: false,
-	likedIsChecked: 'checked',
+	isActive: 'likes',
 };

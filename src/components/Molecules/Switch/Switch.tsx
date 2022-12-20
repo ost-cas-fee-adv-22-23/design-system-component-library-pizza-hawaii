@@ -1,24 +1,45 @@
 /* eslint-disable import/no-unresolved */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import '/src/components/Components-base.css';
 
-export const Switch = (props) => {
-	const { mumblesIsChecked, likedIsChecked } = props;
+export const Switch = () => {
+	const [isActive, setIsActive] = useState('mumbles');
+
+	const changeView = (event) => {
+		setIsActive(event.target.value);
+		console.log('active state view is now:', event.target.value);
+	};
+
 	const switchStyles = ['M-switch-field'];
 	return (
-		<form className="p-2">
-			<div className={[switchStyles]}>
-				<input type="radio" id="mumbles" name="viewchooser" value="mumbles" checked={mumblesIsChecked} />
-				<label for="mumbles">Deine Mumbles</label>
-				<input type="radio" id="likes" name="viewchooser" value="likes" checked={likedIsChecked} />
-				<label for="likes">Deine Likes</label>
-			</div>
-		</form>
+		<>
+			<form className="p-2">
+				<div className={switchStyles}>
+					<input
+						type="radio"
+						id="mumbles"
+						name="switchview"
+						value="mumbles"
+						checked={isActive === 'mumbles'}
+						onChange={changeView}
+					/>
+					<label htmlFor="mumbles">Deine Mumbles</label>
+					<input
+						type="radio"
+						id="likes"
+						name="switchview"
+						value="likes"
+						checked={isActive === 'likes'}
+						onChange={changeView}
+					/>
+					<label htmlFor="likes">Deine Likes</label>
+				</div>
+			</form>
+		</>
 	);
 };
 
 Switch.propTypes = {
-	mumblesIsChecked: PropTypes?.string,
-	likedIsChecked: PropTypes?.string,
+	isActive: PropTypes.oneOf(['mumbles', 'likes']),
 };
