@@ -12,5 +12,20 @@ const Template = (args) => <Component {...args} />;
 
 export const Variant1 = Template.bind({});
 Variant1.args = {
-	isActive: 'mumbles',
+	value: 'mumbles',
+	name: 'switch',
+	options: [
+		{
+			label: 'Meine Mumbles',
+			value: 'mumbles',
+		},
+		{
+			label: 'Meine Likes',
+			value: 'likes',
+		},
+		{
+			label: 'Meine pferd',
+			value: 'pferd',
+		},
+	],
 };
