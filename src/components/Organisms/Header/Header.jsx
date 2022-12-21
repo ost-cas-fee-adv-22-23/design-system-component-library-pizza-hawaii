@@ -84,10 +84,10 @@ export const Header = ({ user }) => {
 					</a>
 					<nav className="Header--nav">
 						<Navi>
-							<NaviButton icon="" href="#">
+							<NaviButton icon="" href={"/" + user.userName}>
 								<UserProfile size="S" user={user} />
 							</NaviButton>
-							<NaviButton icon="settings" onClick={handleSettingsModalClick}>
+							<NaviButton icon="settings" onClick={handleSettingsModalClick} as="button">
 								Settings
 							</NaviButton>
 							<NaviButton icon="logout" as="a" href="/logout">
