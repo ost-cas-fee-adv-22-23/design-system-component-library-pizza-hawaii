@@ -15,7 +15,7 @@ export default {
 	},
 };
 
-export const Navi = (args) => <Component {...args} />;
+export const Navi = (args): JSX.Element => <Component {...args} />;
 Navi.args = {
 	children: (
 		<>

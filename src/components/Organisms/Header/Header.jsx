@@ -8,6 +8,7 @@ import { Modal } from '../../Organisms/Modal/Modal';
 import { Label } from '../../Atoms/Label/Label';
 import { Form } from '../../Molecules/Form/Form';
 import { FormInput } from '../../Molecules/Form/FormInput/FormInput';
+import { FormTextarea } from '../../Molecules/Form/FormTextarea/FormTextarea';
 
 import './header.css';
 
@@ -106,8 +107,8 @@ export const Header = ({ user }) => {
 							</Label>
 						</div>
 						<FormInput label="Vorname Name" type="text" value={state.user.fullName} onChange={onFieldChange} />
-						<FormInput label="User Name" type="text" value={state.user.userName} onChange={onFieldChange} />
 						<FormInput label="E-Mail" type="email" value={state.user.email} onChange={onFieldChange} />
+						<FormTextarea label="Bio" value={state.user.bio} onChange={onFieldChange} />
 					</fieldset>
 					<fieldset className="flex flex-col gap-4 mb-8">
 						<div className="mb-4">

@@ -15,7 +15,7 @@ export default {
 	},
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args): JSX.Element => <Button {...args} />;
 
 const Buttons = ['M', 'L', 'round'].reduce((acc, size) => {
 	const Btn = Template.bind({});

@@ -8,7 +8,7 @@ export default {
 	parameters: {},
 };
 
-const Template = (args) => <Component {...args} />;
+const Template = (args): JSX.Element => <Component {...args} />;
 
 export const Variant1 = Template.bind({});
 Variant1.args = {

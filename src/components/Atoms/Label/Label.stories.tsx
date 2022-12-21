@@ -7,7 +7,7 @@ export default {
 	argTypes: {},
 };
 
-const Template = (args) => <Label {...args} />;
+const Template = (args): JSX.Element => <Label {...args} />;
 
 const Buttons = ['S', 'M', 'L', 'XL'].reduce((acc, size) => {
 	const LabelTemplate = Template.bind({});

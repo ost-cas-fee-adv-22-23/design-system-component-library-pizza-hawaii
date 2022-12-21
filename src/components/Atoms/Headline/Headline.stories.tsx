@@ -7,7 +7,7 @@ export default {
 	argTypes: {},
 };
 
-const Template = (args) => <Headline {...args} />;
+const Template = (args): JSX.Element => <Headline {...args} />;
 
 const Buttons = ['1', '2', '3', '4'].reduce((acc, level) => {
 	const HeadlineTemplate = Template.bind({});

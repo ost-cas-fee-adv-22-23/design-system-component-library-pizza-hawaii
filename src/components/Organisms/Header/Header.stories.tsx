@@ -11,7 +11,7 @@ export default {
 	},
 };
 
-const Template = (args) => <Header {...args} />;
+const Template = (args): JSX.Element => <Header {...args} />;
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {};

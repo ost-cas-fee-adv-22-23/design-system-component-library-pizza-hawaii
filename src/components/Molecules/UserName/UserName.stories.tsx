@@ -8,7 +8,7 @@ export default {
 	argTypes: {},
 };
 
-export const UserName = (args) => <Component {...args} />;
+export const UserName = (args): JSX.Element => <Component {...args} />;
 UserName.args = {
 	username: 'Pinapple Peter',
 };

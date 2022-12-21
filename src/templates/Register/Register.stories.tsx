@@ -11,7 +11,7 @@ export default {
 	},
 };
 
-const Template = (args) => <Component {...args} />;
+const Template = (args): JSX.Element => <Component {...args} />;
 
 // More on interaction testing: https://storybook.js.org/docs/react/writing-tests/interaction-testing
 export const Register = Template.bind({});

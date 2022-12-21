@@ -7,10 +7,10 @@ export default {
 	component: Component,
 	argTypes: {},
 };
-export const FormTextarea = (args) => <Component {...args} />;
+export const FormTextarea = (args): JSX.Element => <Component {...args} />;
 FormTextarea.args = {};
 
-export const FormTextareaError = (args) => <Component {...args} />;
+export const FormTextareaError = (args): JSX.Element => <Component {...args} />;
 FormTextareaError.args = {
 	errorMessage: 'Error-Message',
 };
