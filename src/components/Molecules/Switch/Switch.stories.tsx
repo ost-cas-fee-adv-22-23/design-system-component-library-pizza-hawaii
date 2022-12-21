@@ -23,9 +23,5 @@ Variant1.args = {
 			label: 'Meine Likes',
 			value: 'likes',
 		},
-		{
-			label: 'Meine pferd',
-			value: 'pferd',
-		},
 	],
 };

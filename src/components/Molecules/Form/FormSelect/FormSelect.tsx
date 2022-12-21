@@ -4,9 +4,14 @@ import { FormItem } from '../FormItem/FormItem';
 
 import uid from '../../../../utils/uid';
 
+type OptionType = {
+	label: string;
+	value: string;
+};
+
 type BaseProps = {
 	label: string;
-	options: Array<{ label: string; value: string }>;
+	options: OptionType[];
 	errorMessage?: string;
 	id?: string;
 };
