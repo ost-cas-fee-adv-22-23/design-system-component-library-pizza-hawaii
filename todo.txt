@@ -32,3 +32,23 @@ smr.tv/mumble-figma
 - radiobutton (2x) component meine mubles / meine likes
 
 -> merge to develop when clean state. 
+
+
+
+Todos for X-mas
+
+- jsx-> ts-conversion
+- ts: Types or interfaces ? (example form Select types)
+
+- typescript ->  components.base lint 
+- automatic type check with our ES lint / configure that shit to our needs.
+
+- missing components: mumblepost-text-field form, image hover (lightbox )
+- change profile image edit button.
+- user-card
+- wrapper component
+- write component ()
+
+
+bring semantic commit message at readme. 
+chore: no production code change - environment changes.. 
