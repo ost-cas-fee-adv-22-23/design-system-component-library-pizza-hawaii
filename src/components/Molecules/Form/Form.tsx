@@ -4,7 +4,7 @@ type BaseProps = {
 	children: ReactNode;
 };
 
-type FormType = (BaseProps & FormHTMLAttributes<HTMLFormElement>) | BaseProps;
+type FormType = BaseProps & FormHTMLAttributes<HTMLFormElement>;
 
 export const Form: FC<FormType> = ({ children, ...props }) => {
 	return (

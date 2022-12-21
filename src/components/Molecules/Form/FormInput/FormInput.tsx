@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import React, { FC, InputHTMLAttributes } from 'react';
 import { FormItem } from '../FormItem/FormItem';
 
@@ -10,7 +9,7 @@ type BaseProps = {
 	id?: string;
 };
 
-type FormInputType = (BaseProps & InputHTMLAttributes<HTMLInputElement>) | BaseProps;
+type FormInputType = BaseProps & InputHTMLAttributes<HTMLInputElement>;
 
 export const FormInput: FC<FormInputType> = ({ label, errorMessage, id = uid('FormInput'), ...props }) => {
 	return (

@@ -10,7 +10,7 @@
 		"build": "tsc",
 		"build-storybook": "build-storybook",
 		"lint": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
-		"prettier": "prettier --write .",
+		"pretty": "prettier --write .",
 		"storybook": "start-storybook -p 6006"
 	},
 	"files": [

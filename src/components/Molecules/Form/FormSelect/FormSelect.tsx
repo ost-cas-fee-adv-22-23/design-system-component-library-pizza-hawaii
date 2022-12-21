@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import React, { FC, SelectHTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
 import { FormItem } from '../FormItem/FormItem';
@@ -12,7 +11,7 @@ type BaseProps = {
 	id?: string;
 };
 
-type FormSelectType = (BaseProps & SelectHTMLAttributes<HTMLSelectElement>) | BaseProps;
+type FormSelectType = BaseProps & SelectHTMLAttributes<HTMLSelectElement>;
 
 export const FormSelect: FC<FormSelectType> = ({ label, options, errorMessage, id = uid('FormSelect'), ...props }) => {
 	return (

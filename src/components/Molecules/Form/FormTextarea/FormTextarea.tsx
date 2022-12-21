@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import React, { FC, TextareaHTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
 import { FormItem } from '../FormItem/FormItem';
@@ -11,7 +10,7 @@ type BaseProps = {
 	id?: string;
 };
 
-type FormTextareaType = (BaseProps & TextareaHTMLAttributes<HTMLTextAreaElement>) | BaseProps;
+type FormTextareaType = BaseProps & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 export const FormTextarea: FC<FormTextareaType> = ({ label, errorMessage, id = uid('FormTextarea'), ...props }) => {
 	return (
