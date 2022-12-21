@@ -7,7 +7,7 @@ export default {
 	argTypes: {},
 };
 
-export const Link = (args) => <Component {...args} />;
+export const Link = (args): JSX.Element => <Component {...args} />;
 Link.args = {
 	children: 'Link Label',
 };

@@ -12,7 +12,7 @@ export default {
 	},
 };
 
-export const Modal = (args) => <Component {...args} />;
+export const Modal = (args): JSX.Element => <Component {...args} />;
 Modal.args = {
 	title: 'Modal Title',
 	children: 'Modal Content',

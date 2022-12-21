@@ -14,7 +14,7 @@ export default {
 	},
 };
 
-const Template = (args) => <IcoLink {...args} />;
+const Template = (args): JSX.Element => <IcoLink {...args} />;
 
 export const IconLink = Template.bind({});
 IconLink.args = {};

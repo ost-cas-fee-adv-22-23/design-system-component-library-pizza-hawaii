@@ -7,7 +7,7 @@ export default {
 	argTypes: {},
 };
 
-const Template = (args) => <Component {...args} />;
+const Template = (args): JSX.Element => <Component {...args} />;
 
 export const Form = Template.bind({});
 Form.args = {

@@ -11,7 +11,7 @@ export default {
 	},
 };
 
-const Template = (args) => <ContentCard {...args} />;
+const Template = (args): JSX.Element => <ContentCard {...args} />;
 
 export const Detailpage = Template.bind();
 Detailpage.args = {

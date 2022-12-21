@@ -7,7 +7,7 @@ export default {
 	argTypes: {},
 };
 
-const Template = (args) => <Component {...args} />;
+const Template = (args): JSX.Element => <Component {...args} />;
 
 export const SplitScreen = Template.bind({});
 SplitScreen.args = {

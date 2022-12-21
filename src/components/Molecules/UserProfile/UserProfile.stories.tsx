@@ -14,7 +14,7 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <UserProfile {...args} />;
+const Template = (args): JSX.Element => <UserProfile {...args} />;
 
 const UserProfileImages = ['S', 'M', 'L', 'big'].reduce((acc, size) => {
 	const UserProfile = Template.bind({});

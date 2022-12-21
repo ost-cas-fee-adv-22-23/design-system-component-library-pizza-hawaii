@@ -31,10 +31,7 @@ export const Modal: FC<BaseProps> = ({ title, children = 'Modal Content', isVisi
 								<Headline level="3" as="h1">
 									{title}
 								</Headline>
-								<button
-									className="inline-flex p-4 -m-4 transition hover:rotate-90"
-									onClick={() => onClose()}
-								>
+								<button className="inline-flex p-4 -m-4 transition hover:rotate-90" onClick={onClose}>
 									<Icon name="cancel" />
 									<span className="sr-only">Close</span>
 								</button>

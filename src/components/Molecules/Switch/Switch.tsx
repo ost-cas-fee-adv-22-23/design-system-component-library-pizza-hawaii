@@ -1,10 +1,9 @@
-/* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import uid from '../../../utils/uid';
 
-import '/src/components/Components-base.css';
+import '../../../components/Components-base.css';
 
 export const Switch = ({ options, value, name }) => {
 	const [activeValue, setActiveValue] = useState('mumbles');

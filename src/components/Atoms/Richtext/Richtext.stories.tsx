@@ -7,7 +7,7 @@ export default {
 	argTypes: {},
 };
 
-const Template = (args) => <Richtext {...args} />;
+const Template = (args): JSX.Element => <Richtext {...args} />;
 
 const Buttons = ['M', 'L'].reduce((acc, size) => {
 	const RichtextTemplate = Template.bind({});
