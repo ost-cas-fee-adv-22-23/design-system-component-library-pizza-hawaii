@@ -61,10 +61,10 @@ export const ContentCard = ({ variant, ...props }) => {
 					<Image preset="post" />
 				</div>
 				<div className="flex flex-row items-center gap-12">
-					<IconLink href="#" icon="comment" color="slate">
+					<IconLink href="#" icon="comment" color="slate" iconState="empty">
 						Comment
 					</IconLink>
-					<IconLink href="#" icon="heart" color="slate">
+					<IconLink href="#" icon="heart" color="slate" iconState="empty">
 						Like
 					</IconLink>
 					<IconLink href="#" icon="share" color="slate">

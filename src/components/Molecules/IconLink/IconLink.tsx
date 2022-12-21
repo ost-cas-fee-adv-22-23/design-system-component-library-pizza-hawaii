@@ -12,6 +12,7 @@ interface IconLinkProps {
 	icon: string;
 	href?: string;
 	type?: string;
+	iconState?: string;
 }
 
 const defaultProps: Partial<IconLinkProps> = {
@@ -29,6 +30,7 @@ export const IconLink: FC<IconLinkProps> = ({
 	icon,
 	type,
 	href,
+	iconState,
 	...props
 }) => {
 	const sizeMap: Record<IconLinkProps['size'], string> = {
@@ -50,6 +52,7 @@ export const IconLink: FC<IconLinkProps> = ({
 		<Tag
 			className={['IconLink', 'flex', 'items-center', sizeMap[size] || sizeMap.M, `M-Link-${color}`].join(' ')}
 			{...typeAttr[Tag]}
+			data-ico-state={iconState}
 		>
 			<Icon name={icon} size={size} />
 			{children}
