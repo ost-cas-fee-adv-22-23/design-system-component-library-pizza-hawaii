@@ -1,7 +1,7 @@
 {
 	"rules": {
-		"@typescript-eslint/explicit-function-return-type": "off",
-		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"@typescript-eslint/explicit-function-return-type": "error",
+		"@typescript-eslint/explicit-module-boundary-types": "warn",
 		"@typescript-eslint/no-var-requires": "warn",
 		"prettier/prettier": [
 			"error",
