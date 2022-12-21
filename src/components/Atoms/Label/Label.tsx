@@ -7,7 +7,7 @@ type BaseProps = {
 	children: ReactNode;
 };
 
-type LabelType = (BaseProps & LabelHTMLAttributes<HTMLLabelElement>) | BaseProps;
+type LabelType = BaseProps & LabelHTMLAttributes<HTMLLabelElement>;
 
 const sizeMap: Record<BaseProps['size'], string> = {
 	S: 'text-sm',
