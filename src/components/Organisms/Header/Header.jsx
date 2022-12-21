@@ -84,7 +84,7 @@ export const Header = ({ user }) => {
 					</a>
 					<nav className="Header--nav">
 						<Navi>
-							<NaviButton icon="" href={"/" + user.userName}>
+							<NaviButton icon="" href={'/' + user.userName}>
 								<UserProfile size="S" user={user} />
 							</NaviButton>
 							<NaviButton icon="settings" onClick={handleSettingsModalClick} as="button">

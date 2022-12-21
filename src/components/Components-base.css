@@ -125,4 +125,3 @@
 .M-input-checked input:checked + label {
 	@apply bg-white text-violet-600;
 }
-
