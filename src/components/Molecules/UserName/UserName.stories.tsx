@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { UserName as Component } from './UserName';
+import { Current } from '../../../mocks/User';
 
 export default {
 	title: 'Example/Molecules/UserName',
@@ -8,7 +9,9 @@ export default {
 	argTypes: {},
 };
 
-export const UserName = (args): JSX.Element => <Component {...args} />;
+const Template = (args): JSX.Element => <Component {...args} />;
+
+export const UserName = Template.bind({});
 UserName.args = {
-	username: 'Pinapple Peter',
+	user: Current,
 };

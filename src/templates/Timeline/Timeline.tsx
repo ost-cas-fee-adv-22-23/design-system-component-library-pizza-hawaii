@@ -14,7 +14,7 @@ type BaseProps = {
 
 export const Timeline: FC<BaseProps> = ({ user, posts = [] }) => {
 	return (
-		<article>
+		<article className="bg-slate-100">
 			<Header user={user} />
 
 			<main className="px-content">

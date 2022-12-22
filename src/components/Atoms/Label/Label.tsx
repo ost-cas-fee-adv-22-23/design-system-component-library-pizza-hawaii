@@ -1,15 +1,23 @@
-import React, { FC, LabelHTMLAttributes, ReactNode } from 'react';
+import React, { FC, LabelHTMLAttributes, HTMLAttributes, ReactNode } from 'react';
 
-type BaseProps = {
-	as?: 'span' | 'label';
+type BaseLabelProps = {
+	as?: 'span' | 'label' | 'p' | 'legend';
 	size: 'S' | 'M' | 'L' | 'XL';
 	className?: string;
 	children: ReactNode;
 };
 
-type LabelType = BaseProps & LabelHTMLAttributes<HTMLLabelElement>;
+type HTMLSpanProps = BaseLabelProps & {
+	as: 'span' | 'p' | 'legend';
+} & HTMLAttributes<HTMLButtonElement>;
 
-const sizeMap: Record<BaseProps['size'], string> = {
+type HTMLLabelProps = BaseLabelProps & {
+	as: 'label';
+} & LabelHTMLAttributes<HTMLLabelElement>;
+
+type LabelType = HTMLSpanProps | HTMLLabelProps;
+
+const sizeMap: Record<BaseLabelProps['size'], string> = {
 	S: 'text-sm',
 	M: 'text-base',
 	L: 'text-xl',

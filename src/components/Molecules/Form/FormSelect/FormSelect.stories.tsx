@@ -7,10 +7,12 @@ export default {
 	component: Component,
 	argTypes: {},
 };
-export const FormSelect = (args): JSX.Element => <Component {...args} />;
+
+const Template = (args): JSX.Element => <Component {...args} />;
+export const FormSelect = Template.bind({});
 FormSelect.args = {};
 
-export const FormSelectError = (args): JSX.Element => <Component {...args} />;
+export const FormSelectError = Template.bind({});
 FormSelectError.args = {
 	errorMessage: 'Error-Message',
 };

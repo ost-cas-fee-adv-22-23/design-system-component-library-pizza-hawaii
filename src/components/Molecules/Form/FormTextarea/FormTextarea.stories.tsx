@@ -7,10 +7,12 @@ export default {
 	component: Component,
 	argTypes: {},
 };
-export const FormTextarea = (args): JSX.Element => <Component {...args} />;
+
+const Template = (args): JSX.Element => <Component {...args} />;
+export const FormTextarea = Template.bind({});
 FormTextarea.args = {};
 
-export const FormTextareaError = (args): JSX.Element => <Component {...args} />;
+export const FormTextareaError = Template.bind({});
 FormTextareaError.args = {
 	errorMessage: 'Error-Message',
 };

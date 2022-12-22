@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 
 import { Icon } from '../../Atoms/Icon/Icon';
 import { Label } from '../../Atoms/Label/Label';
@@ -7,16 +7,24 @@ import { Label } from '../../Atoms/Label/Label';
 // eslint-disable-next-line import/no-unresolved
 import '/src/components/Components-base.css';
 
-type ButtonProps = {
+type BaseButtonProps = {
 	label: string;
-	as?: 'button' | 'a';
+	as: 'button' | 'a';
 	size: 'round' | 'M' | 'L';
 	color: 'slate' | 'violet' | 'gradient';
 	icon?: string;
-	href?: string;
-	type?: string;
-	onClick?: () => void;
+	onClick?: (e: MouseEvent) => void;
 };
+
+type HTMLButtonProps = BaseButtonProps & {
+	as: 'button';
+} & ButtonHTMLAttributes<HTMLButtonElement>;
+
+type LinkButtonProps = BaseButtonProps & {
+	as: 'a';
+} & AnchorHTMLAttributes<HTMLAnchorElement>;
+
+type ButtonProps = HTMLButtonProps | LinkButtonProps;
 
 const defaultProps: Partial<ButtonProps> = {
 	as: 'a',
@@ -29,19 +37,9 @@ const defaultProps: Partial<ButtonProps> = {
 export const Button: FC<ButtonProps> = ({ label, as: Tag = 'a', color, size, icon, ...props }) => {
 	const style = [`M-Button-base`, `M-Button-${size.toLowerCase()}`, `M-Button-${color.toLowerCase()}`];
 
-	const typeAttr = {
-		button: {
-			type: props.type || 'button',
-		},
-		a: {
-			href: props.href || '#',
-		},
-		...props,
-	};
-
 	return (
-		<Tag className={['Button', ...style].join(' ')} {...typeAttr[Tag]}>
-			<Label className="Button--inner" size="M">
+		<Tag className={['Button', ...style].join(' ')} {...props}>
+			<Label as="span" className="Button--inner" size="M">
 				{label}
 			</Label>
 			{icon ? <Icon name={icon} /> : null}

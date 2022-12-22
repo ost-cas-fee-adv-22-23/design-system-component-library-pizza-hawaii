@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-
+import React, { FC, useState } from 'react';
 import uid from '../../../utils/uid';
 
 import '../../../components/Components-base.css';
 
-export const Switch = ({ options, value, name }) => {
+type BaseProps = {
+	options: Array<{ value: string; label: string }>;
+	value: string;
+	name: string;
+};
+
+export const Switch: FC<BaseProps> = ({ options, value, name }) => {
 	const [activeValue, setActiveValue] = useState('mumbles');
-
 	console.log(value);
-
-	const changeValue = (event) => {
+	const changeValue = (event): void => {
 		setActiveValue(event.target.value);
 		console.log('active state view is now:', activeValue);
 	};
+
 	const fieldName = name || uid('switch');
 	const fieldStyles = 'flex overflow-hidden bg-slate-200 rounded-lg p-1 w-fit';
 	const inputStyles = ' absolute overflow-hidden h-0 w-0';
@@ -46,9 +49,4 @@ export const Switch = ({ options, value, name }) => {
 			</div>
 		</div>
 	);
-};
-
-Switch.propTypes = {
-	value: PropTypes.string,
-	name: PropTypes.string,
 };

@@ -3,8 +3,8 @@ import { User } from './User';
 export type Post = {
 	id: number;
 	body: string;
-	image: string;
+	image: string | null;
 	author: User;
-	createdAt: Date;
-	updatedAt?: Date;
+	createdAt: string;
+	updatedAt?: string | null;
 };

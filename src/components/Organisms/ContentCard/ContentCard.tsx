@@ -1,6 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import '/src/components/Components-base.css';
 import { UserName } from '../../Molecules/UserName/UserName';
 import { TimeStamp } from '../../Molecules/TimeStamp/TimeStamp';
@@ -10,9 +9,16 @@ import { Image } from '../../Atoms/Image/Image';
 import { Richtext } from '../../Atoms/Richtext/Richtext';
 import { Label } from '../../Atoms/Label/Label';
 
-export const ContentCard = ({ variant, ...props }) => {
-	const cardStyle =
-		'flex flex-start justify-center items-start bg-white py-l px-xl border border-slate-400 relative text-slate-900';
+import { Post } from '../../../types/Post';
+
+type BaseProps = {
+	variant: string;
+};
+
+type ContentCardType = BaseProps & Post;
+
+export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, body }) => {
+	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl relative text-slate-900';
 
 	const preset = {
 		detailpage: {
@@ -45,40 +51,35 @@ export const ContentCard = ({ variant, ...props }) => {
 		<article className={[cardStyle, setting.cardStyle].join(' ')}>
 			<div>
 				<div className={setting.sizeStyle + ' mb-4'}>
-					<UserProfile size={setting.userprofile} />
+					<UserProfile size={setting.userprofile} user={author} />
 					<div className={setting.headerStyle}>
-						<Label size={setting.headlineSize}>{props.author.fullName}</Label>
+						<Label as="span" size={setting.headlineSize}>
+							{author.fullName}
+						</Label>
 						<span className="flex flex-row align-baseline mt-1 gap-3">
-							<UserName username={props.author.userName} />
-							<TimeStamp time={props.createdAt} />
+							<UserName user={author} />
+							<TimeStamp time={createdAt} />
 						</span>
 					</div>
 				</div>
 				<div className="mb-6">
-					<Richtext size={setting.textSize}>{props.text}</Richtext>
+					<Richtext size={setting.textSize}>{body}</Richtext>
 				</div>
 				<div className="mb-6">
 					<Image preset="post" />
 				</div>
 				<div className="flex flex-row items-center gap-12">
-					<IconLink href="#" icon="comment" color="slate" iconState="empty">
+					<IconLink as="a" href="#" icon="comment" color="slate" iconState="empty" size="M">
 						Comment
 					</IconLink>
-					<IconLink href="#" icon="heart" color="slate" iconState="empty">
+					<IconLink as="a" href="#" icon="heart" color="slate" iconState="empty" size="M">
 						Like
 					</IconLink>
-					<IconLink href="#" icon="share" color="slate">
+					<IconLink as="a" href="#" icon="share" color="slate" size="M">
 						Share Link
 					</IconLink>
 				</div>
 			</div>
 		</article>
 	);
-};
-
-ContentCard.propTypes = {
-	variant: PropTypes.oneOf(['detailpage', 'timeline', 'responsive']),
-	text: PropTypes.string,
-	size: PropTypes.oneOf(['S', 'M', 'L']),
-	//corners: PropTypes.string
 };

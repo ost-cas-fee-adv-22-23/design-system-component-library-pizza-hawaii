@@ -13,7 +13,7 @@ export type ImageServiceResult = {
 	srcSet: string;
 };
 
-export const ImageService: ImageServiceType = {
+export const ImageService = {
 	exampleImg(width: number, height: number, id: string = uid()): ImageServiceResult {
 		const images = {
 			x1: `//picsum.photos/id/${id}/${width}/${height}/`,

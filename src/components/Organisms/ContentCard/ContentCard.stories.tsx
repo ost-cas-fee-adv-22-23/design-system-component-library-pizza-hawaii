@@ -13,19 +13,19 @@ export default {
 
 const Template = (args): JSX.Element => <ContentCard {...args} />;
 
-export const Detailpage = Template.bind();
+export const Detailpage = Template.bind({});
 Detailpage.args = {
 	variant: 'detailpage',
 	...posts[0],
 };
 
-export const Timeline = Template.bind();
+export const Timeline = Template.bind({});
 Timeline.args = {
 	variant: 'timeline',
 	...posts[0],
 };
 
-export const Responsive = Template.bind();
+export const Responsive = Template.bind({});
 Responsive.args = {
 	variant: 'responsive',
 	...posts[0],

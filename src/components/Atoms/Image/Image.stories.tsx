@@ -12,5 +12,6 @@ export default {
 	},
 };
 
-export const Image = (args): JSX.Element => <Component {...args} />;
+const Template = (args): JSX.Element => <Component {...args} />;
+export const Image = Template.bind({});
 Image.args = {};

@@ -20,7 +20,7 @@ export const SignIn: FC<BaseProps> = () => {
 				<Button as="button" size="L" type="submit" label="Let’s mumble" color="gradient" />
 			</Form>
 			<div className="mt-3 text-center">
-				<Label size="M">
+				<Label as="span" size="M">
 					Noch kein Account? <Link href="/">Jetzt registrieren</Link>
 				</Label>
 			</div>

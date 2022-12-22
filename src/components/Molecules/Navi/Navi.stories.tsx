@@ -15,13 +15,22 @@ export default {
 	},
 };
 
-export const Navi = (args): JSX.Element => <Component {...args} />;
+const Template = (args): JSX.Element => <Navi {...args} />;
+
+export const Navi = Template.bind({});
+
 Navi.args = {
 	children: (
 		<>
-			<NaviButton icon="settings">Settings</NaviButton>
-			<NaviButton icon="settings">Settings</NaviButton>
-			<NaviButton icon="settings">Settings</NaviButton>
+			<NaviButton as="a" href="/" icon="settings">
+				Settings
+			</NaviButton>
+			<NaviButton as="a" href="/" icon="settings">
+				Settings
+			</NaviButton>
+			<NaviButton as="a" href="/" icon="settings">
+				Settings
+			</NaviButton>
 		</>
 	),
 };

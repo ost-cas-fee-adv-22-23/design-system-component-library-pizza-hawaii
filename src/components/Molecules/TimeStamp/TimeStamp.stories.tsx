@@ -7,8 +7,9 @@ export default {
 	component: Component,
 };
 
-export const TimeStamp = (args): JSX.Element => <Component {...args} />;
+const Template = (args): JSX.Element => <Component {...args} />;
+
+export const TimeStamp = Template.bind({});
 TimeStamp.args = {
-	time: '13:32',
+	time: '2021-12-26T08:50:23Z',
 };
-// TODO: add UTC timestamp and calculate local time

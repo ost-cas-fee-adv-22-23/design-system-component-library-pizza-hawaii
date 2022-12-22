@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes } from 'react';
+import React, { FC, InputHTMLAttributes, ChangeEvent } from 'react';
 import { FormItem } from '../FormItem/FormItem';
 
 import uid from '../../../../utils/uid';
@@ -7,6 +7,7 @@ type BaseProps = {
 	label: string;
 	errorMessage?: string;
 	id?: string;
+	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 type FormInputType = BaseProps & InputHTMLAttributes<HTMLInputElement>;

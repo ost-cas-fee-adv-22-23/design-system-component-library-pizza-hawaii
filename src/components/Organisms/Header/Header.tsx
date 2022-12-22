@@ -1,29 +1,35 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, useState } from 'react';
+
 import { UserProfile } from '../../Molecules/UserProfile/UserProfile';
 import { Navi } from '../../Molecules/Navi/Navi';
 import { NaviButton } from '../../Molecules/Navi/NaviButton';
-
-import { Modal } from '../../Organisms/Modal/Modal';
+import { Modal } from '../Modal/Modal';
 import { Label } from '../../Atoms/Label/Label';
 import { Form } from '../../Molecules/Form/Form';
 import { FormInput } from '../../Molecules/Form/FormInput/FormInput';
 import { FormTextarea } from '../../Molecules/Form/FormTextarea/FormTextarea';
 
+import { User } from '../../../types/User';
+
 import './header.css';
 
-export const Header = ({ user }) => {
+type BaseProps = {
+	user: User;
+};
+
+export const Header: FC<BaseProps> = ({ user }) => {
 	const [state, setState] = useState({
 		showSettingsModal: false,
 		user: user,
 	});
 
-	const handleSettingsModalClick = () => {
+	const handleSettingsModalClick = (): void => {
 		setState({ ...state, showSettingsModal: !state.showSettingsModal });
 		console.log(state);
 	};
 
-	const onFieldChange = (field, value) => {
+	const onFieldChange: any = (e: any): void => {
+		const { field, value } = e.target;
 		setState({
 			...state,
 			user: {
@@ -85,13 +91,13 @@ export const Header = ({ user }) => {
 					</a>
 					<nav className="Header--nav">
 						<Navi>
-							<NaviButton icon="" href={'/' + user.userName}>
+							<NaviButton as="a" icon="" href={`/${user.userName}`}>
 								<UserProfile size="S" user={user} />
 							</NaviButton>
-							<NaviButton icon="settings" onClick={handleSettingsModalClick} as="button">
+							<NaviButton as="button" icon="settings" onClick={handleSettingsModalClick}>
 								Settings
 							</NaviButton>
-							<NaviButton icon="logout" as="a" href="/logout">
+							<NaviButton as="a" icon="logout" href="/logout">
 								Log out
 							</NaviButton>
 						</Navi>
@@ -106,8 +112,8 @@ export const Header = ({ user }) => {
 								Persönliche Einstellungen
 							</Label>
 						</div>
-						<FormInput label="Vorname Name" type="text" value={state.user.fullName} onChange={onFieldChange} />
-						<FormInput label="E-Mail" type="email" value={state.user.email} onChange={onFieldChange} />
+						<FormInput type="text" label="Vorname Name" value={state.user.fullName} onChange={onFieldChange} />
+						<FormInput type="email" label="E-Mail" value={state.user.email} onChange={onFieldChange} />
 						<FormTextarea label="Bio" value={state.user.bio} onChange={onFieldChange} />
 					</fieldset>
 					<fieldset className="flex flex-col gap-4 mb-8">
@@ -116,19 +122,11 @@ export const Header = ({ user }) => {
 								Passwort ändern
 							</Label>
 						</div>
-						<FormInput label="Altes Passwort" type="password" />
-						<FormInput label="Neues Passwort" type="password" />
+						<FormInput type="password" label="Altes Passwort" />
+						<FormInput type="password" label="Neues Passwort" />
 					</fieldset>
 				</Form>
 			</Modal>
 		</header>
 	);
-};
-
-Header.propTypes = {
-	user: PropTypes.shape({}),
-};
-
-Header.defaultProps = {
-	user: null,
 };

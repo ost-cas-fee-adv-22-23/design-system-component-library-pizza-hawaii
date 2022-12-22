@@ -4,7 +4,7 @@ import { ImageService, ImageServiceResult } from './ImageServiceMock';
 
 type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
 	preset: string;
-	caption: string;
+	caption?: string;
 };
 
 type ImagePresetType = {
