@@ -17,7 +17,7 @@ type BaseProps = {
 
 type ContentCardType = BaseProps & Post;
 
-export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, body, image }) => {
+export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, body, image, comments, likes }) => {
 	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl relative text-slate-900';
 
 	const preset = {
@@ -71,16 +71,38 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 					</div>
 				)}
 				<div className="flex flex-row items-center gap-12">
-					<IconLink as="a" href="#" icon="comment" color="slate" iconState="empty" size="M">
-						Comment
+					<IconLink
+						as="a"
+						href="#"
+						icon="comment"
+						color="slate"
+						iconState={comments && comments.length > 0 ? 'filled' : 'empty'}
+						title={comments && comments.length > 0 ? `${comments.length} comments` : 'No comments'}
+						size="M"
+					>
+						{comments && comments.length > 0 ? `${comments.length} comments` : 'Comment'}
 					</IconLink>
-					<IconLink as="a" href="#" icon="heart" color="slate" iconState="empty" size="M">
-						Like
+
+					<IconLink
+						as="a"
+						href="#"
+						icon="heart"
+						color="slate"
+						iconState={likes && likes.length > 0 ? 'filled' : 'empty'}
+						title={likes && likes.length > 0 ? `${likes.length} likes` : 'No likes'}
+						size="M"
+					>
+						{likes && likes.length > 0 ? `${likes.length} likes` : 'Like'}
 					</IconLink>
 					<IconLink as="a" href="#" icon="share" color="slate" size="M">
 						Share Link
 					</IconLink>
 				</div>
+				{/* {comments && comments.length > 0 && (<div className="mt-6">
+					{comments.map((comment) => (
+						<ContentCard variant="responsive" {...comment} />
+					)}
+				</div>)} */}
 			</div>
 		</article>
 	);

@@ -1,0 +1,6 @@
+.Richtext p {
+	@apply block mb-2;
+}
+.Richtext a {
+	@apply inline-block text-violet-600 hover:text-violet-700;
+}
