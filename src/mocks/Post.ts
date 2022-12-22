@@ -8,7 +8,7 @@ export const All: PostType[] = [
 	{
 		id: 1,
 		body: 'Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
-		image: 'http://dummyimage.com/1600x1281.png/cc0000/ffffff',
+		image: '//picsum.photos/id/20/1600/1281/',
 		author: getRandUser(),
 		createdAt: '2022-08-05T02:41:51Z',
 		updatedAt: null,
@@ -24,7 +24,7 @@ export const All: PostType[] = [
 	{
 		id: 3,
 		body: 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.',
-		image: 'http://dummyimage.com/1600x1031.png/ff4444/ffffff',
+		image: '//picsum.photos/id/22/1600/1031/',
 		author: getRandUser(),
 		createdAt: '2022-07-04T23:13:55Z',
 		updatedAt: null,
@@ -32,7 +32,7 @@ export const All: PostType[] = [
 	{
 		id: 4,
 		body: 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.',
-		image: 'http://dummyimage.com/1600x1161.png/cc0000/ffffff',
+		image: '//picsum.photos/id/23/1600/1161/',
 		author: getRandUser(),
 		createdAt: '2022-07-07T14:33:06Z',
 		updatedAt: '2022-08-05T17:04:45Z',
@@ -56,7 +56,7 @@ export const All: PostType[] = [
 	{
 		id: 7,
 		body: 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.',
-		image: 'http://dummyimage.com/1600x1154.png/5fa2dd/ffffff',
+		image: '//picsum.photos/id/24/1600/1154/',
 		author: getRandUser(),
 		createdAt: '2022-03-29T12:19:10Z',
 		updatedAt: '2022-05-03T10:00:06Z',
@@ -64,7 +64,7 @@ export const All: PostType[] = [
 	{
 		id: 8,
 		body: 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
-		image: 'http://dummyimage.com/1600x1539.png/5fa2dd/ffffff',
+		image: '//picsum.photos/id/25/1600/1539/',
 		author: getRandUser(),
 		createdAt: '2022-09-07T18:19:08Z',
 		updatedAt: null,
@@ -80,7 +80,7 @@ export const All: PostType[] = [
 	{
 		id: 10,
 		body: 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.',
-		image: 'http://dummyimage.com/1600x1157.png/cc0000/ffffff',
+		image: '//picsum.photos/id/26/1600/1157/',
 		author: getRandUser(),
 		createdAt: '2022-09-01T05:09:01Z',
 		updatedAt: null,
@@ -88,7 +88,7 @@ export const All: PostType[] = [
 	{
 		id: 11,
 		body: 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.',
-		image: 'http://dummyimage.com/1600x1132.png/ff4444/ffffff',
+		image: '//picsum.photos/id/27/1600/1132/',
 		author: getRandUser(),
 		createdAt: '2022-04-03T08:46:51Z',
 		updatedAt: null,
@@ -96,7 +96,7 @@ export const All: PostType[] = [
 	{
 		id: 12,
 		body: 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
-		image: 'http://dummyimage.com/1600x938.png/5fa2dd/ffffff',
+		image: '//picsum.photos/id/28/1600/938/',
 		author: getRandUser(),
 		createdAt: '2022-09-23T06:02:20Z',
 		updatedAt: null,
@@ -104,7 +104,7 @@ export const All: PostType[] = [
 	{
 		id: 13,
 		body: 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.',
-		image: 'http://dummyimage.com/1600x1001.png/dddddd/000000',
+		image: '//picsum.photos/id/29/1600/1001/',
 		author: getRandUser(),
 		createdAt: '2022-10-12T02:12:07Z',
 		updatedAt: null,
@@ -120,7 +120,7 @@ export const All: PostType[] = [
 	{
 		id: 15,
 		body: 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.',
-		image: 'http://dummyimage.com/1600x1587.png/cc0000/ffffff',
+		image: '//picsum.photos/id/30/1600/1587/',
 		author: getRandUser(),
 		createdAt: '2022-01-28T17:00:28Z',
 		updatedAt: '2022-07-02T01:34:50Z',

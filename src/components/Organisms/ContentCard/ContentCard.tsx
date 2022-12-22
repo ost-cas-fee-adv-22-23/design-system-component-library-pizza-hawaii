@@ -17,7 +17,7 @@ type BaseProps = {
 
 type ContentCardType = BaseProps & Post;
 
-export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, body }) => {
+export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, body, image }) => {
 	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl relative text-slate-900';
 
 	const preset = {
@@ -65,9 +65,11 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 				<div className="mb-6">
 					<Richtext size={setting.textSize}>{body}</Richtext>
 				</div>
-				<div className="mb-6">
-					<Image preset="post" />
-				</div>
+				{image && (
+					<div className="mb-6">
+						<Image preset="post" src={image} />
+					</div>
+				)}
 				<div className="flex flex-row items-center gap-12">
 					<IconLink as="a" href="#" icon="comment" color="slate" iconState="empty" size="M">
 						Comment

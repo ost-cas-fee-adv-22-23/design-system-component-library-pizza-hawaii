@@ -6,7 +6,7 @@ export const All: UserType[] = [
 		fullName: 'John Doe',
 		email: 'john@ost.ch',
 		city: 'Rapperswil',
-		avatar: 'https://robohash.org/johndoe.jpg?size=300x300&set=set5',
+		avatar: 'https://faces-img.xcdn.link/image-lorem-face-1.jpg',
 		bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 	},
 	{
@@ -14,7 +14,7 @@ export const All: UserType[] = [
 		fullName: 'Damaris Levinge',
 		email: 'dlevinge0@upenn.edu',
 		city: 'Maanĭt',
-		avatar: 'https://robohash.org/sintdebitisdeserunt.jpg?size=300x300&set=set5',
+		avatar: 'https://faces-img.xcdn.link/image-lorem-face-2.jpg',
 		bio: 'Adaptive impactful synergy',
 	},
 	{
@@ -22,7 +22,7 @@ export const All: UserType[] = [
 		fullName: 'Kaila Girke',
 		email: 'kgirke1@github.com',
 		city: 'Ladysmith',
-		avatar: 'https://robohash.org/quiaesseaut.jpg?size=300x300&set=set5',
+		avatar: 'https://faces-img.xcdn.link/image-lorem-face-3.jpg',
 		bio: 'Optimized logistical flexibility',
 	},
 	{
@@ -30,7 +30,7 @@ export const All: UserType[] = [
 		fullName: 'Elfrida Igo',
 		email: 'eigo2@webeden.co.uk',
 		city: 'Noemuti',
-		avatar: 'https://robohash.org/beataelaboreharum.jpg?size=300x300&set=set5',
+		avatar: 'https://faces-img.xcdn.link/image-lorem-face-4.jpg',
 		bio: 'Cross-platform bi-directional attitude',
 	},
 	{
@@ -38,7 +38,7 @@ export const All: UserType[] = [
 		fullName: 'Joyan Backshill',
 		email: 'jbackshill3@webs.com',
 		city: 'Klisura',
-		avatar: 'https://robohash.org/remquiaveritatis.jpg?size=300x300&set=set5',
+		avatar: 'https://faces-img.xcdn.link/image-lorem-face-5.jpg',
 		bio: 'Robust modular circuit',
 	},
 	{
@@ -46,7 +46,7 @@ export const All: UserType[] = [
 		fullName: 'Hilton Limming',
 		email: 'hlimming4@howstuffworks.com',
 		city: 'Kesamben',
-		avatar: 'https://robohash.org/nihilutsuscipit.jpg?size=300x300&set=set5',
+		avatar: 'https://faces-img.xcdn.link/image-lorem-face-6.jpg',
 		bio: 'Quality-focused composite process improvement',
 	},
 ];

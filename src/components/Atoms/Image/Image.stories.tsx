@@ -14,4 +14,6 @@ export default {
 
 const Template = (args): JSX.Element => <Component {...args} />;
 export const Image = Template.bind({});
-Image.args = {};
+Image.args = {
+	src: '//picsum.photos/id/28/1600/1587/',
+};

@@ -1,20 +1,20 @@
 import uid from '../../../utils/uid';
 
 export type ImageServiceType = {
-	[fn: string]: (ImageServiceInterface) => ImageServiceResult;
+	[fn: string]: (ImageServiceInterface) => ImageServiceMockResult;
 };
-export type ImageServiceInterface = {
+export type ImageServiceMockInterface = {
 	width: number;
 	height: number;
 	id?: string;
 };
-export type ImageServiceResult = {
+export type ImageServiceMockResult = {
 	src: string;
 	srcSet: string;
 };
 
-export const ImageService = {
-	exampleImg(width: number, height: number, id: string = uid()): ImageServiceResult {
+export const ImageServiceMock = {
+	imgAttr(width: number, height: number, id: string = uid()): ImageServiceMockResult {
 		const images = {
 			x1: `//picsum.photos/id/${id}/${width}/${height}/`,
 			x2: `//picsum.photos/id/${id}/${width * 2}/${height * 2}/`,
