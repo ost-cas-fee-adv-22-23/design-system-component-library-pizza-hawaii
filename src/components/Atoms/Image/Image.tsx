@@ -1,6 +1,5 @@
 import React, { FC, ImgHTMLAttributes } from 'react';
 import ProjectSettings from '../../../utils/ProjectSettings.json';
-import { ImageServiceMock, ImageServiceMockResult } from './ImageServiceMock';
 import { ImageService, ImageServiceResult } from './ImageService';
 
 type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
@@ -9,7 +8,7 @@ type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
 };
 
 type ImagePresetType = {
-	img: () => ImageServiceMockResult | ImageServiceResult;
+	img: () => ImageServiceResult;
 	styleClasses: string;
 };
 

@@ -1,5 +1,3 @@
-import uid from '../../../utils/uid';
-
 export type ImageServiceType = {
 	[fn: string]: (ImageServiceInterface) => ImageServiceResult;
 };
