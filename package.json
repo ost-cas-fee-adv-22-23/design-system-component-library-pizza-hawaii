@@ -9,8 +9,10 @@
 	"scripts": {
 		"build": "tsc",
 		"build-storybook": "build-storybook",
-		"lint": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
-		"pretty": "prettier --write .",
+		"lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
+		"lint-fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
+		"pretty": "prettier src/",
+		"pretty-fix": "prettier --write src/",
 		"storybook": "start-storybook -p 6006"
 	},
 	"files": [
