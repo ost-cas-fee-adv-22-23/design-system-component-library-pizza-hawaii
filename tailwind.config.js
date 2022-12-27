@@ -4,7 +4,7 @@ const ProjectSettings = require('./src/utils/ProjectSettings.json');
 
 const toRem = (px) => `${px / ProjectSettings.baseFontSize}rem`;
 
-let fontSizes = Object.keys(ProjectSettings.fontSizes).reduce((acc, size) => {
+const fontSizes = Object.keys(ProjectSettings.fontSizes).reduce((acc, size) => {
 	acc[size] = toRem(ProjectSettings.fontSizes[size]);
 	return acc;
 }, {});
