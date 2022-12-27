@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
+
 import { IconLink } from '../IconLink/IconLink';
 
 type BaseProps = {
@@ -7,25 +9,13 @@ type BaseProps = {
 };
 
 export const TimeStamp: FC<BaseProps> = ({ time }) => {
-	let localTime = time;
-	let displayTime = time;
+	const dateTimeAgo = moment(new Date(time)).locale('de').fromNow();
+	const dateTime = moment(new Date(time)).locale('de').format('LLLL');
 
-	const isToday = (d): boolean => {
-		const today = new Date();
-		return (
-			d.getFullYear() === today.getFullYear() && d.getMonth() === today.getMonth() && d.getDate() === today.getDate()
-		);
-	};
-	try {
-		localTime = new Date(time).toLocaleString();
-		displayTime = isToday(new Date(time)) ? new Date(time).toLocaleTimeString() : new Date(time).toLocaleDateString();
-	} catch (error) {
-		console.log(error);
-	}
 	return (
 		<IconLink as="span" icon="time" color="slate" size="S">
-			<time dateTime={time} title={localTime}>
-				{displayTime}
+			<time dateTime={time} title={dateTime}>
+				{dateTimeAgo}
 			</time>
 		</IconLink>
 	);
