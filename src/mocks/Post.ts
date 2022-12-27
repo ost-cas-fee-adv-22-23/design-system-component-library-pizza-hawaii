@@ -26,7 +26,7 @@ export const All: PostType[] = [
 				author: getRandUser(),
 				likes: getRandUsers(),
 				comments: [],
-				createdAt: '2021-12-26T08:50:23Z',
+				createdAt: '2022-12-26T08:50:23Z',
 				updatedAt: null,
 			},
 			{
@@ -60,7 +60,7 @@ export const All: PostType[] = [
 		author: getRandUser(),
 		likes: getRandUsers(),
 		comments: [],
-		createdAt: '2021-12-26T08:50:23Z',
+		createdAt: '2022-12-26T08:50:23Z',
 		updatedAt: null,
 	},
 	{
@@ -77,7 +77,7 @@ export const All: PostType[] = [
 				author: getRandUser(),
 				likes: getRandUsers(),
 				comments: [],
-				createdAt: '2021-12-26T08:50:23Z',
+				createdAt: '2022-12-26T08:50:23Z',
 				updatedAt: null,
 			},
 			{
@@ -128,7 +128,7 @@ export const All: PostType[] = [
 				author: getRandUser(),
 				likes: getRandUsers(),
 				comments: [],
-				createdAt: '2021-12-26T08:50:23Z',
+				createdAt: '2022-12-26T08:50:23Z',
 				updatedAt: null,
 			},
 			{
@@ -199,11 +199,11 @@ export const All: PostType[] = [
 				author: getRandUser(),
 				likes: getRandUsers(),
 				comments: [],
-				createdAt: '2021-12-26T08:50:23Z',
+				createdAt: '2022-12-26T08:50:23Z',
 				updatedAt: null,
 			},
 		],
-		createdAt: '2022-09-01T05:09:01Z',
+		createdAt: '2023-01-01T05:09:01Z',
 		updatedAt: null,
 	},
 	{
@@ -250,7 +250,7 @@ export const All: PostType[] = [
 				author: getRandUser(),
 				likes: getRandUsers(),
 				comments: [],
-				createdAt: '2021-12-26T08:50:23Z',
+				createdAt: '2022-12-26T08:50:23Z',
 				updatedAt: null,
 			},
 			{
