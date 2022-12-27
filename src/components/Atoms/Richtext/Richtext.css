@@ -1,4 +1,4 @@
-.Richtext p {
+.Richtext p:not(:last-child) {
 	@apply block mb-2;
 }
 .Richtext a {
