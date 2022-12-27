@@ -7,12 +7,12 @@ import { ContentCard } from '../../components/Organisms/ContentCard/ContentCard'
 import { Post as PostType } from '../../types/Post';
 import { User as UserType } from '../../types/User';
 
-type BaseProps = {
+type TimelineType = {
 	user: UserType;
 	posts: PostType[];
 };
 
-export const Timeline: FC<BaseProps> = ({ user, posts = [] }) => {
+export const Timeline: FC<TimelineType> = ({ user, posts = [] }) => {
 	return (
 		<article className="bg-slate-100">
 			<Header user={user} />
@@ -20,11 +20,11 @@ export const Timeline: FC<BaseProps> = ({ user, posts = [] }) => {
 			<main className="px-content">
 				<section className="mx-auto w-full max-w-content">
 					<div className="mb-2 text-violet-600">
-						<Headline level="2">Welcome to Storybook</Headline>
+						<Headline level={2}>Welcome to Storybook</Headline>
 					</div>
 
 					<div className="text-slate-500">
-						<Headline level="4" as="p">
+						<Headline level={4} as="p">
 							Voluptatem qui cumque voluptatem quia tempora dolores distinctio vel repellat dicta.
 						</Headline>
 					</div>

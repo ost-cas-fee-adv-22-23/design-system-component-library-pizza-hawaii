@@ -1,11 +1,9 @@
-export type ImageServiceType = {
-	[fn: string]: (ImageServiceInterface) => ImageServiceResult;
-};
 export type ImageServiceInterface = {
 	width: number;
 	height?: number;
 	src: string;
 };
+
 export type ImageServiceResult = {
 	src: string;
 	srcSet: string;

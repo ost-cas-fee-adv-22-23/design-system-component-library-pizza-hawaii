@@ -1,30 +1,37 @@
 import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { UserProfile as Component } from './UserProfile';
 import { Current } from '../../../mocks/User';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
 	title: 'Example/Molecules/UserProfile',
 	component: Component,
-	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 	argTypes: {},
+} as ComponentMeta<typeof Component>;
+
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
+
+export const Small = Template.bind({});
+Small.args = {
+	size: 'S',
+	user: Current,
 };
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args): JSX.Element => <Component {...args} />;
+export const Medium = Template.bind({});
+Medium.args = {
+	size: 'M',
+	user: Current,
+};
 
-const UserProfileImages = ['S', 'M', 'L', 'big'].reduce((acc, size) => {
-	const UserProfile = Template.bind({});
-	UserProfile.args = {
-		size: size,
-		user: Current,
-	};
-	acc[size] = UserProfile;
-	return acc;
-}, {});
+export const Large = Template.bind({});
+Large.args = {
+	size: 'L',
+	user: Current,
+};
 
-export const Small = UserProfileImages['S'];
-export const Medium = UserProfileImages['M'];
-export const Large = UserProfileImages['L'];
-export const Big = UserProfileImages['big'];
+export const ExtraLarge = Template.bind({});
+ExtraLarge.args = {
+	size: 'XL',
+	user: Current,
+};

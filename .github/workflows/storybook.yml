@@ -29,11 +29,11 @@ jobs:
             - run: npm run build-storybook
             - uses: actions/upload-pages-artifact@v1
               with:
-                  path: storybook-static
+                  path: ComponentStory<typeof Component>book-static
 
     deploy:
         environment:
-            name: Storybook
+            name: ComponentStory<typeof Component>book
             url: ${{ steps.deployment.outputs.page_url }}
         name: Deploy storybook to pages
         needs: build

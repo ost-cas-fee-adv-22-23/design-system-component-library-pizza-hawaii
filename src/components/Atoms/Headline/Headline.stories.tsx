@@ -1,25 +1,35 @@
 import React from 'react';
-import { Headline } from './Headline';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Headline as Component } from './Headline';
 
 export default {
 	title: 'Example/Atoms/Headline',
-	component: Headline,
+	component: Component,
 	argTypes: {},
+} as ComponentMeta<typeof Component>;
+
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
+
+export const H1 = Template.bind({});
+H1.args = {
+	level: 1,
+	children: 'Lorem imsum dolor sit amet',
 };
 
-const Template = (args): JSX.Element => <Headline {...args} />;
+export const H2 = Template.bind({});
+H2.args = {
+	level: 2,
+	children: 'Lorem imsum dolor sit amet',
+};
 
-const Buttons = ['1', '2', '3', '4'].reduce((acc, level) => {
-	const HeadlineTemplate = Template.bind({});
-	HeadlineTemplate.args = {
-		level,
-		children: `Headline ${level}`,
-	};
-	acc[level] = HeadlineTemplate;
-	return acc;
-}, {});
+export const H3 = Template.bind({});
+H3.args = {
+	level: 3,
+	children: 'Lorem imsum dolor sit amet',
+};
 
-export const H1 = Buttons['1'];
-export const H2 = Buttons['2'];
-export const H3 = Buttons['3'];
-export const H4 = Buttons['4'];
+export const H4 = Template.bind({});
+H4.args = {
+	level: 4,
+	children: 'Lorem imsum dolor sit amet',
+};

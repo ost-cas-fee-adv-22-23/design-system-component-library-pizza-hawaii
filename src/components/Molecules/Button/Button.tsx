@@ -3,14 +3,12 @@ import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 import { Icon } from '../../Atoms/Icon/Icon';
 import { Label } from '../../Atoms/Label/Label';
 
-// TODO resolve that or get rid of that rule
-// eslint-disable-next-line import/no-unresolved
-import '/src/components/Components-base.css';
+import '../../../components/Components-base.css';
 
 type BaseButtonProps = {
 	label: string;
 	as: 'button' | 'a';
-	size: 'round' | 'M' | 'L';
+	size: 'M' | 'L' | 'round';
 	color: 'slate' | 'violet' | 'gradient';
 	icon?: string;
 	onClick?: (e: MouseEvent) => void;
@@ -24,17 +22,9 @@ type LinkButtonProps = BaseButtonProps & {
 	as: 'a';
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-type ButtonProps = HTMLButtonProps | LinkButtonProps;
+type ButtonProps = HTMLButtonProps | LinkButtonProps | any; // Todo: remove any
 
-const defaultProps: Partial<ButtonProps> = {
-	as: 'a',
-	size: 'M',
-	color: 'violet',
-	icon: 'mumble',
-	onClick: undefined,
-};
-
-export const Button: FC<ButtonProps> = ({ label, as: Tag = 'a', color, size, icon, ...props }) => {
+export const Button: FC<ButtonProps> = ({ label, as: Tag = 'a', color, size, icon = 'mumble', ...props }) => {
 	const style = [`M-Button-base`, `M-Button-${size.toLowerCase()}`, `M-Button-${color.toLowerCase()}`];
 
 	return (
@@ -46,5 +36,3 @@ export const Button: FC<ButtonProps> = ({ label, as: Tag = 'a', color, size, ico
 		</Tag>
 	);
 };
-
-Button.defaultProps = defaultProps;

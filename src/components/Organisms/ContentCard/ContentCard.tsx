@@ -11,8 +11,17 @@ import { Label } from '../../Atoms/Label/Label';
 
 import { Post } from '../../../types/Post';
 
+type ContentCardPreset = {
+	userprofile: 'S' | 'M' | 'L' | 'XL';
+	headlineSize: 'S' | 'M' | 'L' | 'XL';
+	textSize: 'M' | 'L';
+	cardStyle?: string;
+	sizeStyle?: string;
+	headerStyle?: string;
+};
+
 type BaseProps = {
-	variant: string;
+	variant: 'detailpage' | 'timeline' | 'responsive';
 };
 
 type ContentCardType = BaseProps & Post;
@@ -20,7 +29,7 @@ type ContentCardType = BaseProps & Post;
 export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, body, image, comments, likes }) => {
 	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl relative text-slate-900';
 
-	const preset = {
+	const preset: Record<ContentCardType['variant'], ContentCardPreset> = {
 		detailpage: {
 			userprofile: 'M',
 			headlineSize: 'L',

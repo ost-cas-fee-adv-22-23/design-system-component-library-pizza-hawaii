@@ -5,6 +5,7 @@ import { ImageService, ImageServiceResult } from './ImageService';
 type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
 	preset: string;
 	caption?: string;
+	src: string;
 };
 
 type ImagePresetType = {
@@ -56,10 +57,4 @@ export const Image: FC<ImageProps> = ({ src, alt = '', caption, preset, ...props
 			{caption ? <figcaption>{caption}</figcaption> : null}
 		</figure>
 	);
-};
-
-Image.defaultProps = {
-	src: '',
-	preset: 'profile',
-	alt: 'A good description in needed!',
 };

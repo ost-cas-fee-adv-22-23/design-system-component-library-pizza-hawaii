@@ -1,31 +1,31 @@
 import React, { FC, LabelHTMLAttributes, HTMLAttributes, ReactNode } from 'react';
 
-type BaseLabelProps = {
-	as?: 'span' | 'label' | 'p' | 'legend';
-	size: 'S' | 'M' | 'L' | 'XL';
-	className?: string;
-	children: ReactNode;
-};
-
-type HTMLSpanProps = BaseLabelProps & {
-	as: 'span' | 'p' | 'legend';
-} & HTMLAttributes<HTMLButtonElement>;
-
-type HTMLLabelProps = BaseLabelProps & {
-	as: 'label';
-} & LabelHTMLAttributes<HTMLLabelElement>;
-
-type LabelType = HTMLSpanProps | HTMLLabelProps;
-
-const sizeMap: Record<BaseLabelProps['size'], string> = {
+const sizeMap: Record<string, string> = {
 	S: 'text-sm',
 	M: 'text-base',
 	L: 'text-xl',
 	XL: 'text-2xl ',
 };
 
-export const Label: FC<LabelType> = ({ children = 'Label', as: Tag = 'span', size = 'M', className = '', ...props }) => {
-	const style = ['inline-block leading-none font-semibold', sizeMap[size], className].join(' ');
+type BaseLabelProps = {
+	as?: 'span' | 'label' | 'p' | 'legend';
+	size: keyof typeof sizeMap;
+	className?: string;
+	children: ReactNode;
+};
+
+type HTMLSpanProps = BaseLabelProps & {
+	as: 'span' | 'p' | 'legend';
+} & HTMLAttributes<HTMLElement>;
+
+type HTMLLabelProps = BaseLabelProps & {
+	as: 'label';
+} & LabelHTMLAttributes<HTMLLabelElement>;
+
+type LabelType = HTMLSpanProps | HTMLLabelProps | any; // Todo: remove any;
+
+export const Label: FC<LabelType> = ({ children = 'Label', as: Tag = 'span', size, ...props }) => {
+	const style = ['inline-block leading-none font-semibold', sizeMap[size]].join(' ');
 
 	return (
 		<Tag className={style} {...props}>

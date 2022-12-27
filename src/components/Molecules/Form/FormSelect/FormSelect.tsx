@@ -1,5 +1,4 @@
 import React, { FC, SelectHTMLAttributes } from 'react';
-import PropTypes from 'prop-types';
 import { FormItem } from '../FormItem/FormItem';
 
 import uid from '../../../../utils/uid';
@@ -32,23 +31,4 @@ export const FormSelect: FC<FormSelectType> = ({ label, options, errorMessage, i
 			</select>
 		</FormItem>
 	);
-};
-
-FormSelect.propTypes = {
-	name: PropTypes.string.isRequired,
-	label: PropTypes.string.isRequired,
-	options: PropTypes.array.isRequired,
-	errorMessage: PropTypes.string,
-};
-
-FormSelect.defaultProps = {
-	name: 'text-input',
-	label: 'Text Input',
-	options: [
-		{ label: 'Option 1', value: '1' },
-		{ label: 'Option 2', value: '2' },
-		{ label: 'Option 3', value: '3' },
-		{ label: 'Option 4', value: '4' },
-		{ label: 'Option 5', value: '5' },
-	],
 };

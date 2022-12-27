@@ -1,17 +1,15 @@
 import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ContentCard } from './ContentCard';
+import { ContentCard as Component } from './ContentCard';
 import { All as posts } from '../../../mocks/Post';
 
 export default {
 	title: 'Example/Organisms/ContentCard',
-	component: ContentCard,
-	argTypes: {
-		text: 'Card Title',
-	},
-};
+	component: Component,
+} as ComponentMeta<typeof Component>;
 
-const Template = (args): JSX.Element => <ContentCard {...args} />;
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
 export const Detailpage = Template.bind({});
 Detailpage.args = {

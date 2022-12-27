@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, ChangeEvent } from 'react';
 import uid from '../../../utils/uid';
 
 import '../../../components/Components-base.css';
@@ -7,14 +7,16 @@ type BaseProps = {
 	options: Array<{ value: string; label: string }>;
 	value: string;
 	name: string;
+	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const Switch: FC<BaseProps> = ({ options, value, name }) => {
+export const Switch: FC<BaseProps> = ({ options, value, name, onChange }) => {
 	const [activeValue, setActiveValue] = useState('mumbles');
 	console.log(value);
-	const changeValue = (event): void => {
-		setActiveValue(event.target.value);
-		console.log('active state view is now:', activeValue);
+	const changeValue = (event: ChangeEvent): void => {
+		const target = event.target as HTMLInputElement;
+		setActiveValue(target.value);
+		onChange(event as ChangeEvent<HTMLInputElement>);
 	};
 
 	const fieldName = name || uid('switch');
