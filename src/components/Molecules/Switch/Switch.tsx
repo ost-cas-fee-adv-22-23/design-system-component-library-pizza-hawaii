@@ -11,10 +11,8 @@ type BaseProps = {
 
 export const Switch: FC<BaseProps> = ({ options, value, name }) => {
 	const [activeValue, setActiveValue] = useState('mumbles');
-	console.log(value);
 	const changeValue = (event): void => {
 		setActiveValue(event.target.value);
-		console.log('active state view is now:', activeValue);
 	};
 
 	const fieldName = name || uid('switch');
