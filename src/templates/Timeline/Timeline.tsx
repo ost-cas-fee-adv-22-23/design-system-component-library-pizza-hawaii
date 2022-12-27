@@ -30,9 +30,13 @@ export const Timeline: FC<BaseProps> = ({ user, posts = [] }) => {
 					</div>
 					<div className="flex gap-4 flex-col mt-8">
 						{posts &&
-							posts.map((post) => {
-								return <ContentCard key={post.id} variant="timeline" {...post} />;
-							})}
+							posts
+								.sort((a: PostType, b: PostType) => {
+									return new Date(b.createdAt) > new Date(a.createdAt) ? 1 : -1;
+								})
+								.map((post) => {
+									return <ContentCard key={post.id} variant="timeline" {...post} />;
+								})}
 					</div>
 				</section>
 			</main>
