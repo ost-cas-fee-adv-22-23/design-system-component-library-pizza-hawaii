@@ -1,7 +1,7 @@
 export type ImageServiceInterface = {
 	width: number;
 	height?: number;
-	src: string;
+	src?: string;
 };
 
 export type ImageServiceResult = {
@@ -10,7 +10,7 @@ export type ImageServiceResult = {
 };
 
 export const ImageService = {
-	imgAttr(width: number, height: number, src: string): ImageServiceResult {
+	imgAttr(width: number, height: number, src = '//picsum.photos/1600/1281/'): ImageServiceResult {
 		src = src.replace('https://', '').replace('http://', '').replace('//', '');
 		const options: string[] = [`url=${src}`, `w=${width}`, 'fit=cover'];
 
@@ -20,7 +20,7 @@ export const ImageService = {
 
 		const images = {
 			x1: `//images.weserv.nl/?${options.join('&')}`,
-			x2: `, //images.weserv.nl/?${options.join('&')}&dpr=2`,
+			x2: `//images.weserv.nl/?${options.join('&')}&dpr=2`,
 		};
 
 		return {
