@@ -8,6 +8,7 @@ import { TimeStamp } from '../../Molecules/TimeStamp/TimeStamp';
 import { Headline } from '../../Atoms/Headline/Headline';
 import { Label } from '../../Atoms/Label/Label';
 import { User } from '../../../types/User';
+import { Button } from '../../Molecules/Button/Button';
 
 type BaseProps = {
 	variant: string;
@@ -18,9 +19,8 @@ type BaseProps = {
 };
 
 const ContentInput: FC<BaseProps> = (props) => {
-	console.log('content input props', props);
 	const { headline, variant, placeHolderText, author, createdAt } = props;
-	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl relative text-slate-900';
+	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl w-full relative text-slate-900';
 	const inputFieldStyles = 'h-40';
 
 	const preset = {
@@ -47,7 +47,7 @@ const ContentInput: FC<BaseProps> = (props) => {
 
 	return (
 		<div className={[cardStyle, setting.cardStyle].join(' ')}>
-			<div>
+			<div className="w-full">
 				<div className={setting.sizeStyle + ' mb-4'}>
 					<UserProfile size={setting.userprofile} user={author} />
 					{setting.showUserdetails && (
@@ -69,6 +69,10 @@ const ContentInput: FC<BaseProps> = (props) => {
 				</div>
 				<div className="inputStyles">
 					<FormInput label={placeHolderText} placeholder={placeHolderText} addStyles={inputFieldStyles} />
+				</div>
+				<div className="flex flex-row py-4 space-x-8">
+					<Button as="button" size="M" color="slate" icon="upload" label="Bild Hochladen" />
+					<Button as="button" size="M" color="violet" icon="send" label="Absenden" />
 				</div>
 			</div>
 		</div>

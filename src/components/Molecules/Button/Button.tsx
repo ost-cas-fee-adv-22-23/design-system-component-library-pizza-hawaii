@@ -2,10 +2,7 @@ import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 
 import { Icon } from '../../Atoms/Icon/Icon';
 import { Label } from '../../Atoms/Label/Label';
-
-// TODO resolve that or get rid of that rule
-// eslint-disable-next-line import/no-unresolved
-import '/src/components/Components-base.css';
+import '../../../../src/components/Components-base.css';
 
 type BaseButtonProps = {
 	label: string;
