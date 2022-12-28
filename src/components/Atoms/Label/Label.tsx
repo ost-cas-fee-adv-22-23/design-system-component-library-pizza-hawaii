@@ -3,8 +3,8 @@ import React, { FC, LabelHTMLAttributes, HTMLAttributes, ReactNode } from 'react
 const sizeMap: Record<string, string> = {
 	S: 'text-sm',
 	M: 'text-base',
-	L: 'text-xl',
-	XL: 'text-2xl ',
+	L: 'text-lg',
+	XL: 'text-xl ',
 };
 
 type BaseLabelProps = {

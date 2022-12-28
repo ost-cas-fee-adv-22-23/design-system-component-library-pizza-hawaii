@@ -49,6 +49,9 @@ module.exports = {
 				'pos-0': '0% 0%',
 				'pos-100': '100% 100%',
 			},
+			borderWidth: {
+				6: '6px',
+			},
 		},
 	},
 	plugins: [],
