@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import '/src/components/Components-base.css';
 import { UserName } from '../../Molecules/UserName/UserName';
 import { TimeStamp } from '../../Molecules/TimeStamp/TimeStamp';
-import { UserProfile } from '../../Molecules/UserProfile/UserProfile';
+import { UserProfile, BaseProps as UserProfileProps } from '../../Molecules/UserProfile/UserProfile';
 import { IconLink } from '../../Molecules/IconLink/IconLink';
 import { Image } from '../../Atoms/Image/Image';
 import { Richtext } from '../../Atoms/Richtext/Richtext';
@@ -12,12 +12,11 @@ import { Label } from '../../Atoms/Label/Label';
 import { Post } from '../../../types/Post';
 
 type ContentCardPreset = {
-	userprofile: 'S' | 'M' | 'L' | 'XL';
+	userprofile: UserProfileProps;
 	headlineSize: 'S' | 'M' | 'L' | 'XL';
 	textSize: 'M' | 'L';
 	cardStyle?: string;
-	sizeStyle?: string;
-	headerStyle?: string;
+	profileStyle?: string;
 };
 
 type BaseProps = {
@@ -31,26 +30,25 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 
 	const preset: Record<ContentCardType['variant'], ContentCardPreset> = {
 		detailpage: {
-			userprofile: 'M',
-			headlineSize: 'L',
+			userprofile: { size: 'M', border: true, user: author, href: `/user/${author.userName}` },
+			headlineSize: 'XL',
 			textSize: 'L',
-			sizeStyle: '-variantDetail',
+			profileStyle: '',
 			cardStyle: 'border-2 border-solid border-white hover:border-slate-300',
 		},
 		timeline: {
-			userprofile: 'M',
-			headlineSize: 'M',
+			userprofile: { size: 'M', border: true, user: author, href: `/user/${author.userName}` },
+			headlineSize: 'L',
 			textSize: 'M',
+			profileStyle: 'inline-flex absolute left-0 transform -translate-x-1/2',
 			cardStyle: 'rounded-3xl',
-			sizeStyle: '-variantTimeline',
 		},
 		responsive: {
-			userprofile: 'S',
+			userprofile: { size: 'S', border: false, user: author, href: `/user/${author.userName}` },
 			headlineSize: 'M',
 			textSize: 'M',
 			cardStyle: 'border-2 border-solid border-white hover:border-slate-200',
-			sizeStyle: '-variantResponsive',
-			headerStyle: 'flex-col',
+			profileStyle: 'inline-flex',
 		},
 	};
 
@@ -59,13 +57,15 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 	return (
 		<article className={[cardStyle, setting.cardStyle].join(' ')}>
 			<div>
-				<div className={setting.sizeStyle + ' mb-4'}>
-					<UserProfile size={setting.userprofile} user={author} />
-					<div className={setting.headerStyle}>
+				<div className="mb-4 flex items-center gap-2">
+					<div className={setting.profileStyle}>
+						<UserProfile {...setting.userprofile} />
+					</div>
+					<div className="flex flex-col gap-2">
 						<Label as="span" size={setting.headlineSize}>
 							{author.fullName}
 						</Label>
-						<span className="flex flex-row align-baseline mt-1 gap-3">
+						<span className="flex flex-row align-baseline gap-3">
 							<UserName user={author} />
 							<TimeStamp time={createdAt} />
 						</span>

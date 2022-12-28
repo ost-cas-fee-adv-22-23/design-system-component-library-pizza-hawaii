@@ -75,47 +75,6 @@
 	@apply text-red-700 text-xs font-medium;
 }
 
-/*
- * UserProfile - Image Dimensions
- */
-
-.M-size-xl img {
-	@apply border-4 rounded-full bg-slate-100;
-}
-
-.M-size-l img {
-	@apply border-4 rounded-full bg-slate-100;
-}
-
-.M-size-m img {
-	@apply border-4 rounded-full bg-slate-100;
-}
-
-.M-size-s img {
-}
-
-/*
- * ContentCard - a mumbel view
- */
-
-/*
- * layout variants
- */
-
-.-variantDetail img {
-	position: absolute;
-	left: -32px;
-}
-
-.-variantTimeline img {
-	position: absolute;
-	left: -32px;
-}
-
-.-variantResponsive {
-	display: flex;
-	flex-direction: row;
-}
 
 /*
 * switch

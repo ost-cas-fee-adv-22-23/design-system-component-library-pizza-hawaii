@@ -1,6 +1,8 @@
 {
 	"baseFontSize": 16,
 	"fontSizes": {
+		"l": 18,
+		"lg": 20,
 		"xl": 24,
 		"2xl": 32,
 		"3xl": 40,
