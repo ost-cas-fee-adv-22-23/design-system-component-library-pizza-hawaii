@@ -25,7 +25,7 @@ type LinkButtonProps = BaseButtonProps & {
 type ButtonProps = HTMLButtonProps | LinkButtonProps | any; // Todo: remove any
 
 export const Button: FC<ButtonProps> = ({ label, as: Tag = 'a', color, size, icon = 'mumble', ...props }) => {
-	const style = [`M-Button-base`, `M-Button-${size.toLowerCase()}`, `M-Button-${color.toLowerCase()}`];
+	const style = [`M-Button-base`, `M-Button-${size?.toLowerCase()}`, `M-Button-${color?.toLowerCase()}`];
 
 	return (
 		<Tag className={['Button', ...style].join(' ')} {...props}>

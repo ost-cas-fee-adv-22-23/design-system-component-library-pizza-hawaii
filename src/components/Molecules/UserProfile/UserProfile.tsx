@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 
 import { User } from '../../../types/User';
 import { Image } from '../../Atoms/Image/Image';
+import { Button } from '../Button/Button';
 
 /**
  * User Icon with image from loged in user
@@ -32,19 +33,38 @@ export const UserProfile: FC<BaseProps> = ({ size = 'M', border, href, user }) =
 		'inline-flex',
 		'rounded-full',
 		'self-center',
-		'overflow-hidden',
 		'bg-purple-200',
 		border && 'border-6',
 	];
 
+	if (href) {
+		if (size !== 'XL') {
+			return (
+				<div className={[...baseStyle, 'overflow-hidden', sizeMap[size]].join(' ')}>
+					<a href={href} className="transition duration-300 ease-in-out hover:scale-110">
+						<Image src={user.avatar} alt={user.userName} width={imgMap[size]} height={imgMap[size]} />
+					</a>
+				</div>
+			);
+		} else {
+			return (
+				<div className={[...baseStyle, sizeMap[size], 'relative'].join(' ')}>
+					<div className="rounded-full overflow-hidden">
+						<Image src={user.avatar} alt={user.userName} width={imgMap[size]} height={imgMap[size]} />
+					</div>
+					<div className="absolute bottom-0 right-0">
+						<Button as="a" size="round" icon="edit" color="slate">
+							Edit User Image
+						</Button>
+					</div>
+				</div>
+			);
+		}
+	}
+
 	return (
-		<div className={[...baseStyle, sizeMap[size]].join(' ')}>
-			{href && (
-				<a href={href} className="transition duration-300 ease-in-out hover:scale-110">
-					<Image src={user.avatar} alt={user.userName} width={imgMap[size]} height={imgMap[size]} />
-				</a>
-			)}
-			{!href && <Image src={user.avatar} alt={user.userName} width={imgMap[size]} height={imgMap[size]} />}
+		<div className={[...baseStyle, 'overflow-hidden', sizeMap[size]].join(' ')}>
+			<Image src={user.avatar} alt={user.userName} width={imgMap[size]} height={imgMap[size]} />
 		</div>
 	);
 };
