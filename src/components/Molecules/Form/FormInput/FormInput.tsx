@@ -7,6 +7,7 @@ type BaseProps = {
 	label: string;
 	errorMessage?: string;
 	id?: string;
+	addStyles?: string;
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -16,7 +17,9 @@ export const FormInput: FC<FormInputType> = ({ label, errorMessage, id = uid('Fo
 	return (
 		<FormItem className="FormInput" id={id} label={label} errorMessage={errorMessage}>
 			<input
-				className={['FormInput', 'M-FormItem-Input', errorMessage && 'M-FormItem-Input-error'].join(' ')}
+				className={['FormInput', 'M-FormItem-Input', props.addStyles, errorMessage && 'M-FormItem-Input-error'].join(
+					' '
+				)}
 				id={id}
 				{...props}
 			/>

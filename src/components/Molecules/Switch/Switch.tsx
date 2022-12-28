@@ -9,6 +9,7 @@ type BaseProps = {
 	name: string;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const Switch: FC<BaseProps> = ({ options, value, name }) => {
 	const [activeValue, setActiveValue] = useState('mumbles');
 	const changeValue = (event): void => {

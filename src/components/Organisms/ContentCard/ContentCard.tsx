@@ -98,11 +98,6 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 						Share Link
 					</IconLink>
 				</div>
-				{/* {comments && comments.length > 0 && (<div className="mt-6">
-					{comments.map((comment) => (
-						<ContentCard variant="responsive" {...comment} />
-					)}
-				</div>)} */}
 			</div>
 		</article>
 	);
