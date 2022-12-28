@@ -8,7 +8,7 @@ type BaseProps = {
 
 export const UserName: FC<BaseProps> = ({ user }) => {
 	return (
-		<IconLink as="a" href={`/${user.userName}`} icon="profile" color="violet" size="S">
+		<IconLink as="a" href={`/user/${user.userName}`} icon="profile" color="violet" size="S">
 			{user.userName}
 		</IconLink>
 	);
