@@ -83,17 +83,3 @@
 	@apply bg-white text-violet-600;
 }
 
-
-/*
- * Content Input Card - layout variants
- */
-
-.-variantNewPost img {
-	position: absolute;
-	left: -32px;
-}
-
-.-variantAnswerPost {
-	display: flex;
-	flex-direction: row;
-}

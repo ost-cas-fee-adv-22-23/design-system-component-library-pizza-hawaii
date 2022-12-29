@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
-// import PropTypes from 'prop-types';
 import { FormInput } from '../../Molecules/Form/FormInput/FormInput';
 import '../../../components/Components-base.css';
-import { UserProfile } from '../../Molecules/UserProfile/UserProfile';
+import { UserProfile, BaseProps as UserProfileProps } from '../../Molecules/UserProfile/UserProfile';
 import { UserName } from '../../Molecules/UserName/UserName';
 import { TimeStamp } from '../../Molecules/TimeStamp/TimeStamp';
 import { Headline } from '../../Atoms/Headline/Headline';
@@ -10,37 +9,52 @@ import { Label } from '../../Atoms/Label/Label';
 import { User } from '../../../types/User';
 import { Button } from '../../Molecules/Button/Button';
 
+type ContentInputPreset = {
+	headlineLevel: 1 | 2 | 3 | 4;
+	userprofile: UserProfileProps;
+	textSize: 'M' | 'L';
+	showUserdetails: boolean;
+	cardStyle: string;
+	profileStyle: string;
+	headerStyle?: string;
+	sizeStyle?: string;
+	headlineSize?: 'M' | 'L';
+};
+
 type BaseProps = {
-	variant: string;
+	variant: 'newPost' | 'answerPost';
 	headline: string;
 	author: User;
 	createdAt: string;
 	placeHolderText: string;
 };
 
-const ContentInput: FC<BaseProps> = (props) => {
+type InputCardType = BaseProps;
+
+const ContentInput: FC<InputCardType> = (props) => {
 	const { headline, variant, placeHolderText, author, createdAt } = props;
 	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl w-full relative text-slate-900';
 	const inputFieldStyles = 'h-40';
 
-	const preset = {
+	const preset: Record<InputCardType['variant'], ContentInputPreset> = {
 		newPost: {
-			userprofile: 'M',
 			headlineLevel: 4,
+			userprofile: { size: 'M', border: true, user: author, href: `/user/${author.userName}` },
+			profileStyle: 'inline-flex absolute left-0 transform -translate-x-1/2',
 			textSize: 'L',
 			showUserdetails: false,
 			cardStyle: 'rounded-3xl border-2 border-solid border-white hover:border-slate-300',
-			sizeStyle: '-variantNewPost',
 		},
 		answerPost: {
-			userprofile: 'S',
-			headlineLevel: 6,
-			headlineSize: 'M',
+			headlineLevel: 2,
+			userprofile: { size: 'S', border: false, user: author, href: `/user/${author.userName}` },
+			profileStyle: 'flex flex-row',
 			textSize: 'M',
 			showUserdetails: true,
-			cardStyle: '',
-			sizeStyle: '-variantAnswerPost border-2 border-solid border-white hover:border-slate-300',
 			headerStyle: 'flex-col px-2',
+			headlineSize: 'M',
+			cardStyle: '',
+			sizeStyle: 'flex flex-row border-2 border-solid border-white hover:border-slate-300',
 		},
 	};
 	const setting = preset[variant] || preset.newPost;
@@ -49,7 +63,7 @@ const ContentInput: FC<BaseProps> = (props) => {
 		<div className={[cardStyle, setting.cardStyle].join(' ')}>
 			<div className="w-full">
 				<div className={setting.sizeStyle + ' mb-4'}>
-					<UserProfile size={setting.userprofile} user={author} />
+					<UserProfile {...setting.userprofile} />
 					{setting.showUserdetails && (
 						<div className={setting.headerStyle}>
 							<Label as="span" size={setting.headlineSize}>
