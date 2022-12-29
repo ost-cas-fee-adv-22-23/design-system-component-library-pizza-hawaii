@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React, { FC } from 'react';
-import '/src/components/Components-base.css';
+
+import { Card } from '../../Molecules/Card/Card';
 import { UserName } from '../../Molecules/UserName/UserName';
 import { TimeStamp } from '../../Molecules/TimeStamp/TimeStamp';
 import { UserProfile, BaseProps as UserProfileProps } from '../../Molecules/UserProfile/UserProfile';
@@ -10,6 +11,8 @@ import { Richtext } from '../../Atoms/Richtext/Richtext';
 import { Label } from '../../Atoms/Label/Label';
 
 import { Post } from '../../../types/Post';
+
+import '/src/components/Components-base.css';
 
 type ContentCardPreset = {
 	userprofile: UserProfileProps;
@@ -26,8 +29,6 @@ type BaseProps = {
 type ContentCardType = BaseProps & Post;
 
 export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, body, image, comments, likes }) => {
-	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl relative text-slate-900';
-
 	const preset: Record<ContentCardType['variant'], ContentCardPreset> = {
 		detailpage: {
 			userprofile: { size: 'M', border: true, user: author, href: `/user/${author.userName}` },
@@ -55,7 +56,7 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 	const setting = preset[variant] || preset.detailpage;
 
 	return (
-		<article className={[cardStyle, setting.cardStyle].join(' ')}>
+		<Card as="article" rounded={variant !== 'responsive'} size="M">
 			<div>
 				<div className="mb-4 flex items-center gap-2">
 					<div className={setting.profileStyle}>
@@ -113,6 +114,6 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 					)}
 				</div>)} */}
 			</div>
-		</article>
+		</Card>
 	);
 };
