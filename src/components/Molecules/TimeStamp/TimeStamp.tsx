@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import { IconLink } from '../IconLink/IconLink';
@@ -19,8 +18,4 @@ export const TimeStamp: FC<BaseProps> = ({ time }) => {
 			</time>
 		</IconLink>
 	);
-};
-
-TimeStamp.propTypes = {
-	time: PropTypes.string.isRequired,
 };

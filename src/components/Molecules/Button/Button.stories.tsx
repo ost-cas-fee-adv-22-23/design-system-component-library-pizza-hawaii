@@ -1,32 +1,37 @@
 import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { IconNames } from '../../Atoms/Icon/IconLib';
-import { Button } from './Button';
+import { Button as Component } from './Button';
 
 export default {
 	title: 'Example/Molecules/Button',
 
-	component: Button,
+	component: Component,
 	argTypes: {
 		icon: {
 			options: IconNames,
 			control: { type: 'select' },
 		},
 	},
+} as ComponentMeta<typeof Component>;
+
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
+
+export const Medium = Template.bind({});
+Medium.args = {
+	size: 'M',
+	children: 'Button Medium',
 };
 
-const Template = (args): JSX.Element => <Button {...args} />;
+export const Large = Template.bind({});
+Large.args = {
+	size: 'L',
+	children: 'Button Large',
+};
 
-const Buttons = ['M', 'L', 'round'].reduce((acc, size) => {
-	const Btn = Template.bind({});
-	Btn.args = {
-		size: size,
-		label: `Button ${size}`,
-	};
-	acc[size] = Btn;
-	return acc;
-}, {});
-
-export const Medium = Buttons['M'];
-export const Large = Buttons['L'];
-export const Round = Buttons['round'];
+export const Round = Template.bind({});
+Round.args = {
+	size: 'round',
+	children: 'Button Round',
+};

@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"declarationDir": "dist/types",
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"strict": true,
 		"esModuleInterop": true,
@@ -18,5 +19,5 @@
 		"target": "esnext",
 		"resolveJsonModule": true
 	},
-	"include": ["src/index.ts"]
+	"include": ["src/**/*"]
 }

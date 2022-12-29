@@ -1,25 +1,42 @@
 import React from 'react';
-import { Label } from './Label';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Label as Component } from './Label';
 
 export default {
 	title: 'Example/Atoms/Label',
-	component: Label,
-	argTypes: {},
+	component: Component,
+	argTypes: {
+		size: {
+			control: {
+				type: 'select',
+				options: ['S', 'M', 'L', 'XL'],
+			},
+		},
+	},
+} as ComponentMeta<typeof Component>;
+
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
+
+export const Small = Template.bind({});
+Small.args = {
+	size: 'S',
+	children: 'Label Small',
 };
 
-const Template = (args): JSX.Element => <Label {...args} />;
+export const Medium = Template.bind({});
+Medium.args = {
+	size: 'M',
+	children: 'Label Medium',
+};
 
-const Buttons = ['S', 'M', 'L', 'XL'].reduce((acc, size) => {
-	const LabelTemplate = Template.bind({});
-	LabelTemplate.args = {
-		size: size,
-		children: `Label ${size}`,
-	};
-	acc[size] = LabelTemplate;
-	return acc;
-}, {});
+export const Large = Template.bind({});
+Large.args = {
+	size: 'L',
+	children: 'Label Large',
+};
 
-export const Small = Buttons['S'];
-export const Medium = Buttons['M'];
-export const Large = Buttons['L'];
-export const ExtraLarge = Buttons['XL'];
+export const ExtraLarge = Template.bind({});
+ExtraLarge.args = {
+	size: 'XL',
+	children: 'Label ExtraLarge',
+};

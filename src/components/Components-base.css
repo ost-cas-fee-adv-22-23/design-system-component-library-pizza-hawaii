@@ -6,7 +6,7 @@
  * Button
  */
 .M-Button-base {
-	@apply flex items-center justify-center text-white text-base font-semibold w-full;
+	@apply flex items-center justify-center text-white text-base font-semibold w-full cursor-pointer;
 }
 
 .M-Button-l {
@@ -73,49 +73,6 @@
 }
 .M-FormItem-Error {
 	@apply text-red-700 text-xs font-medium;
-}
-
-/*
- * UserProfile - Image Dimensions
- */
-
-.M-size-big img {
-	@apply h-40 w-40 border-4 rounded-full bg-slate-100;
-}
-
-.M-size-l img {
-	@apply h-24 w-24 border-4 rounded-full bg-slate-100;
-}
-
-.M-size-m img {
-	@apply h-16 w-16 border-4 rounded-full bg-slate-100;
-}
-
-.M-size-s img {
-	@apply h-10 w-10;
-}
-
-/*
- * ContentCard - a mumbel view
- */
-
-/*
- * layout variants
- */
-
-.-variantDetail img {
-	position: absolute;
-	left: -32px;
-}
-
-.-variantTimeline img {
-	position: absolute;
-	left: -32px;
-}
-
-.-variantResponsive {
-	display: flex;
-	flex-direction: row;
 }
 
 /*

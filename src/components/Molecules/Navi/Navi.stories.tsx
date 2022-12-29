@@ -1,4 +1,5 @@
 import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { IconNames } from '../../Atoms/Icon/IconLib';
 import { Navi as Component } from './Navi';
@@ -13,9 +14,9 @@ export default {
 			control: { type: 'select' },
 		},
 	},
-};
+} as ComponentMeta<typeof Component>;
 
-const Template = (args): JSX.Element => <Navi {...args} />;
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Navi {...args} />;
 
 export const Navi = Template.bind({});
 

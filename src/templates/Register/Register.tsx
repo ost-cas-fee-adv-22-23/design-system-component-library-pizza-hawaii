@@ -8,12 +8,12 @@ import { Form } from '../../components/Molecules/Form/Form';
 import { FormInput } from '../../components/Molecules/Form/FormInput/FormInput';
 import { SplitScreen } from '../../components/Organisms/SplitScreen/SplitScreen';
 
-type BaseProps = object;
+type RegisterType = object;
 
-export const Register: FC<BaseProps> = () => {
+export const Register: FC<RegisterType> = () => {
 	return (
 		<SplitScreen>
-			<Headline level="2">Registrieren</Headline>
+			<Headline level={2}>Registrieren</Headline>
 			<Form>
 				<FormInput label="Vorname Name" type="text" />
 				<FormInput label="User Name" type="text" />
@@ -23,7 +23,10 @@ export const Register: FC<BaseProps> = () => {
 			</Form>
 			<div className="mt-3 text-center">
 				<Label as="span" size="M">
-					Bereits registriert? <Link href="/">Jetzt anmelden</Link>
+					Bereits registriert?{' '}
+					<Link as="a" href="/">
+						Jetzt anmelden
+					</Link>
 				</Label>
 			</div>
 		</SplitScreen>

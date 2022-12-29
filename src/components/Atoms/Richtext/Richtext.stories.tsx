@@ -1,23 +1,23 @@
 import React from 'react';
-import { Richtext } from './Richtext';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Richtext as Component } from './Richtext';
 
 export default {
 	title: 'Example/Atoms/Richtext',
-	component: Richtext,
+	component: Component,
 	argTypes: {},
+} as ComponentMeta<typeof Component>;
+
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
+
+export const Medium = Template.bind({});
+Medium.args = {
+	size: 'M',
+	children: 'Lorem imsum dolor sit amet',
 };
 
-const Template = (args): JSX.Element => <Richtext {...args} />;
-
-const Buttons = ['M', 'L'].reduce((acc, size) => {
-	const RichtextTemplate = Template.bind({});
-	RichtextTemplate.args = {
-		size: size,
-		children: `Richtext ${size}`,
-	};
-	acc[size] = RichtextTemplate;
-	return acc;
-}, {});
-
-export const Medium = Buttons['M'];
-export const Large = Buttons['L'];
+export const Large = Template.bind({});
+Large.args = {
+	size: 'L',
+	children: 'Lorem imsum dolor sit amet',
+};

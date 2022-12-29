@@ -65,7 +65,7 @@ export const SplitScreen: FC<BaseProps> = ({ children }) => {
 						</defs>
 					</svg>
 
-					<Headline level="1">
+					<Headline level={1}>
 						Find out what’s new in{' '}
 						<a href="#fashion" className="text-white">
 							#fashion

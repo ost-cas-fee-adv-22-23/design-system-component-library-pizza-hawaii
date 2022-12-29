@@ -1,15 +1,17 @@
 import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
 import { SplitScreen as Component } from './SplitScreen';
 
 export default {
-	title: 'Example/Organisms/SplitScreen/SplitScreen',
+	title: 'Example/Template',
 	component: Component,
-	argTypes: {},
-};
+	parameters: {},
+} as ComponentMeta<typeof Component>;
 
-const Template = (args): JSX.Element => <Component {...args} />;
-
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 export const SplitScreen = Template.bind({});
+
 SplitScreen.args = {
 	children: `SplitScreen Content`,
 };

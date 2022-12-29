@@ -8,12 +8,12 @@ import { Form } from '../../components/Molecules/Form/Form';
 import { FormInput } from '../../components/Molecules/Form/FormInput/FormInput';
 import { SplitScreen } from '../../components/Organisms/SplitScreen/SplitScreen';
 
-type BaseProps = object;
+type SignInType = object;
 
-export const SignIn: FC<BaseProps> = () => {
+export const SignIn: FC<SignInType> = () => {
 	return (
 		<SplitScreen>
-			<Headline level="2">Anmelden</Headline>
+			<Headline level={2}>Anmelden</Headline>
 			<Form>
 				<FormInput label="E-Mail" type="email" />
 				<FormInput label="Passwort" type="password" />
@@ -21,7 +21,10 @@ export const SignIn: FC<BaseProps> = () => {
 			</Form>
 			<div className="mt-3 text-center">
 				<Label as="span" size="M">
-					Noch kein Account? <Link href="/">Jetzt registrieren</Link>
+					Noch kein Account?{' '}
+					<Link as="a" href="/">
+						Jetzt registrieren
+					</Link>
 				</Label>
 			</div>
 		</SplitScreen>

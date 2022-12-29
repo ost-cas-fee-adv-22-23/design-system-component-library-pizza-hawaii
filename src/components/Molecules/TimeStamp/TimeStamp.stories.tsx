@@ -1,13 +1,14 @@
 import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { TimeStamp as Component } from './TimeStamp';
 
 export default {
 	title: 'Example/Molecules/TimeStamp',
 	component: Component,
-};
+} as ComponentMeta<typeof Component>;
 
-const Template = (args): JSX.Element => <Component {...args} />;
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
 export const TimeStamp = Template.bind({});
 TimeStamp.args = {

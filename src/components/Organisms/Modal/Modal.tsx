@@ -28,7 +28,7 @@ export const Modal: FC<BaseProps> = ({ title, children = 'Modal Content', isVisi
 						<div className="relative flex flex-col w-full overflow-x-hidden max-h-screen">
 							{/*header*/}
 							<div className="flex items-center justify-between gap-4 px-8 py-6 bg-violet-600 text-white">
-								<Headline level="3" as="h1">
+								<Headline level={3} as="h1">
 									{title}
 								</Headline>
 								<button className="inline-flex p-4 -m-4 transition hover:rotate-90" onClick={onClose}>

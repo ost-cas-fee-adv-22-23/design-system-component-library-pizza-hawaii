@@ -2,16 +2,20 @@ import React, { FC, ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes, HTMLA
 
 import { Icon } from '../../Atoms/Icon/Icon';
 
-import './IconLink.css';
+const sizeMap: Record<string, string> = {
+	S: 'text-sm gap-1',
+	M: 'text-base gap-2',
+	L: 'text-xl gap-2',
+};
 
-interface BaseIconLinkProps {
+type BaseIconLinkProps = {
 	children: ReactNode;
 	as: 'button' | 'a' | 'span';
-	size: 'S' | 'M' | 'L';
+	size: keyof typeof sizeMap;
 	color: 'slate' | 'violet';
 	icon: string;
 	iconState?: string;
-}
+};
 
 type SpanButtonProps = BaseIconLinkProps & {
 	as: 'span';
@@ -25,14 +29,7 @@ type LinkButtonProps = BaseIconLinkProps & {
 	as: 'a';
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-type IconLinkProps = SpanButtonProps | HTMLButtonProps | LinkButtonProps;
-
-const defaultProps: Partial<IconLinkProps> = {
-	as: 'a',
-	size: 'M',
-	color: 'violet',
-	icon: 'mumble',
-};
+type IconLinkProps = SpanButtonProps | HTMLButtonProps | LinkButtonProps | any; // Todo: remove any
 
 export const IconLink: FC<IconLinkProps> = ({
 	children = 'NaviButton',
@@ -43,12 +40,6 @@ export const IconLink: FC<IconLinkProps> = ({
 	iconState,
 	...props
 }) => {
-	const sizeMap: Record<BaseIconLinkProps['size'], string> = {
-		S: 'text-sm gap-1',
-		M: 'text-base gap-2',
-		L: 'text-xl gap-2',
-	};
-
 	return (
 		<Tag
 			className={['IconLink', 'flex', 'items-center', sizeMap[size] || sizeMap.M, `M-Link-${color}`].join(' ')}
@@ -60,5 +51,3 @@ export const IconLink: FC<IconLinkProps> = ({
 		</Tag>
 	);
 };
-
-IconLink.defaultProps = defaultProps;

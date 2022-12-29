@@ -1,17 +1,15 @@
 import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Header } from './Header';
+import { Header as Component } from './Header';
 
 export default {
 	title: 'Example/Organisms/Header',
-	component: Header,
-	parameters: {
-		// More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
-		layout: 'fullscreen',
-	},
-};
+	component: Component,
+	parameters: {},
+} as ComponentMeta<typeof Component>;
 
-const Template = (args): JSX.Element => <Header {...args} />;
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {};

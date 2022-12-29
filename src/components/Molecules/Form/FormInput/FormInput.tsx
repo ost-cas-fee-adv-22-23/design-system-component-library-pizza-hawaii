@@ -26,9 +26,3 @@ export const FormInput: FC<FormInputType> = ({ label, errorMessage, id = uid('Fo
 		</FormItem>
 	);
 };
-
-FormInput.defaultProps = {
-	type: 'text',
-	name: 'text-input',
-	label: 'Text Input',
-};

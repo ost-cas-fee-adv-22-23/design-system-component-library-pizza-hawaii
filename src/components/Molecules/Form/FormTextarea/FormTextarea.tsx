@@ -1,5 +1,4 @@
 import React, { FC, TextareaHTMLAttributes } from 'react';
-import PropTypes from 'prop-types';
 import { FormItem } from '../FormItem/FormItem';
 
 import uid from '../../../../utils/uid';
@@ -22,15 +21,4 @@ export const FormTextarea: FC<FormTextareaType> = ({ label, errorMessage, id = u
 			/>
 		</FormItem>
 	);
-};
-
-FormTextarea.propTypes = {
-	name: PropTypes.string.isRequired,
-	label: PropTypes.string.isRequired,
-	errorMessage: PropTypes.string,
-};
-
-FormTextarea.defaultProps = {
-	name: 'text-input',
-	label: 'Text Input',
 };

@@ -91,7 +91,7 @@ export const Header: FC<BaseProps> = ({ user }) => {
 					</a>
 					<nav className="Header--nav">
 						<Navi>
-							<NaviButton as="a" icon="" href={`/${user.userName}`}>
+							<NaviButton as="a" icon="" href={`/user/${user.userName}`}>
 								<UserProfile size="S" user={user} />
 							</NaviButton>
 							<NaviButton as="button" icon="settings" onClick={handleSettingsModalClick}>

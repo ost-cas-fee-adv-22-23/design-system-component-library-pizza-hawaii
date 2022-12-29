@@ -3,7 +3,7 @@ import ProjectSettings from '../../../utils/ProjectSettings.json';
 import { ImageService, ImageServiceResult } from './ImageService';
 
 type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
-	preset: string;
+	preset?: string;
 	caption?: string;
 };
 
@@ -49,6 +49,10 @@ export const Image: FC<ImageProps> = ({ src, alt = '', caption, preset, ...props
 			...imageSettings.img(),
 		};
 		styleClasses = imageSettings.styleClasses;
+	} else if (props.width && props.width) {
+		props = {
+			...ImageService.imgAttr(props.width as number, props.width as number, src as string),
+		};
 	}
 	return (
 		<figure>
@@ -56,10 +60,4 @@ export const Image: FC<ImageProps> = ({ src, alt = '', caption, preset, ...props
 			{caption ? <figcaption>{caption}</figcaption> : null}
 		</figure>
 	);
-};
-
-Image.defaultProps = {
-	src: '',
-	preset: 'profile',
-	alt: 'A good description in needed!',
 };

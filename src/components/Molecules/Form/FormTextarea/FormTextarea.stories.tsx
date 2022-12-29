@@ -1,4 +1,5 @@
 import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { FormTextarea as Component } from './FormTextarea';
 
@@ -6,9 +7,9 @@ export default {
 	title: 'Example/Molecules/Form/FormTextarea',
 	component: Component,
 	argTypes: {},
-};
+} as ComponentMeta<typeof Component>;
 
-const Template = (args): JSX.Element => <Component {...args} />;
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 export const FormTextarea = Template.bind({});
 FormTextarea.args = {};
 

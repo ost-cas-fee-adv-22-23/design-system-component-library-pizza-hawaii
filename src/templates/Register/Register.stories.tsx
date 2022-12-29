@@ -1,17 +1,15 @@
 import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Register as Component } from './Register';
 
 export default {
 	title: 'Example/Template',
 	component: Component,
-	parameters: {
-		// More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
-		layout: 'fullscreen',
-	},
-};
+	parameters: {},
+} as ComponentMeta<typeof Component>;
 
-const Template = (args): JSX.Element => <Component {...args} />;
-
-// More on interaction testing: https://storybook.js.org/docs/react/writing-tests/interaction-testing
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 export const Register = Template.bind({});
+
+Register.args = {};

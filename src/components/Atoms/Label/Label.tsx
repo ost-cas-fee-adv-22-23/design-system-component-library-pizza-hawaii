@@ -1,31 +1,31 @@
 import React, { FC, LabelHTMLAttributes, HTMLAttributes, ReactNode } from 'react';
 
+const sizeMap: Record<string, string> = {
+	S: 'text-sm',
+	M: 'text-base',
+	L: 'text-lg',
+	XL: 'text-xl ',
+};
+
 type BaseLabelProps = {
 	as?: 'span' | 'label' | 'p' | 'legend';
-	size: 'S' | 'M' | 'L' | 'XL';
+	size: keyof typeof sizeMap;
 	className?: string;
 	children: ReactNode;
 };
 
 type HTMLSpanProps = BaseLabelProps & {
 	as: 'span' | 'p' | 'legend';
-} & HTMLAttributes<HTMLButtonElement>;
+} & HTMLAttributes<HTMLElement>;
 
 type HTMLLabelProps = BaseLabelProps & {
 	as: 'label';
 } & LabelHTMLAttributes<HTMLLabelElement>;
 
-type LabelType = HTMLSpanProps | HTMLLabelProps;
+type LabelType = HTMLSpanProps | HTMLLabelProps | any; // Todo: remove any;
 
-const sizeMap: Record<BaseLabelProps['size'], string> = {
-	S: 'text-sm',
-	M: 'text-base',
-	L: 'text-xl',
-	XL: 'text-2xl ',
-};
-
-export const Label: FC<LabelType> = ({ children = 'Label', as: Tag = 'span', size = 'M', className = '', ...props }) => {
-	const style = ['inline-block leading-none font-semibold', sizeMap[size], className].join(' ');
+export const Label: FC<LabelType> = ({ children = 'Label', as: Tag = 'span', size, ...props }) => {
+	const style = ['inline-block leading-none font-semibold', sizeMap[size]].join(' ');
 
 	return (
 		<Tag className={style} {...props}>

@@ -10,13 +10,13 @@ type BaseProps = {
 };
 
 const sizeMap: Record<BaseProps['size'], string> = {
-	M: 'text-base',
+	M: 'text-l',
 	L: 'text-xl',
 };
 
 export const Richtext: FC<BaseProps> = ({ children, as: Tag = 'div', size = 'M', className = '', ...props }) => {
 	const style = [
-		'Richtext inline-block leading-none font-medium text-lg text-slate-900 leading-normal',
+		'Richtext inline-block leading-none font-medium text-slate-900 leading-normal',
 		sizeMap[size],
 		className,
 	].join(' ');

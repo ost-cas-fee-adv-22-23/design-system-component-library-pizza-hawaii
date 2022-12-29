@@ -1,5 +1,4 @@
 import React, { FC, ReactNode } from 'react';
-import PropTypes from 'prop-types';
 import uid from '../../../../utils/uid';
 
 type BaseProps = {
@@ -20,15 +19,4 @@ export const FormItem: FC<BaseProps> = ({ label, children, errorMessage, classNa
 			{errorMessage ? <span className="FormItem--error M-FormItem-Error mt-xxs self-end">{errorMessage}</span> : null}
 		</div>
 	);
-};
-
-FormItem.propTypes = {
-	label: PropTypes.string.isRequired,
-	children: PropTypes.node.isRequired,
-	errorMessage: PropTypes.string,
-};
-
-FormItem.defaultProps = {
-	label: 'Text Input',
-	children: <span>...</span>,
 };

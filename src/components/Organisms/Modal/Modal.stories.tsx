@@ -1,4 +1,6 @@
 import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
 import { Modal as Component } from './Modal';
 
 export default {
@@ -10,9 +12,9 @@ export default {
 			control: { type: 'select' },
 		},
 	},
-};
+} as ComponentMeta<typeof Component>;
 
-const Template = (args): JSX.Element => <Component {...args} />;
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
 export const Modal = Template.bind({});
 
