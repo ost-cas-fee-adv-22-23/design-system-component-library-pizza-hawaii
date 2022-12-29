@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ContentCard as Component } from './ContentCard';
-import { All as posts } from '../../../mocks/Post';
+import { Posts } from '../../../mocks/Post';
 
 export default {
 	title: 'Example/Organisms/ContentCard',
@@ -14,17 +14,17 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 export const Detailpage = Template.bind({});
 Detailpage.args = {
 	variant: 'detailpage',
-	...posts[0],
+	...Posts[0],
 };
 
 export const Timeline = Template.bind({});
 Timeline.args = {
 	variant: 'timeline',
-	...posts[0],
+	...Posts[0],
 };
 
 export const Responsive = Template.bind({});
 Responsive.args = {
 	variant: 'responsive',
-	...posts[0],
+	...Posts[0],
 };

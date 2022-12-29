@@ -1,6 +1,6 @@
 import { Post as PostType } from '../types/Post';
 import { User } from '../types/User';
-import { All as UserList } from './User';
+import { Users as UserList } from './User';
 
 const getRandUser = (): User => UserList[Math.floor(Math.random() * UserList.length)];
 const getRandUsers = (): User[] => {
@@ -11,7 +11,7 @@ const getRandUsers = (): User[] => {
 	return users;
 };
 
-export const All: PostType[] = [
+export const Posts: PostType[] = [
 	{
 		id: 1,
 		body: 'Sed ante. Vivamus tortor. Duis mattis #egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla #neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
