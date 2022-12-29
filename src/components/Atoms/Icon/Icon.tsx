@@ -7,8 +7,7 @@ type IconProps = {
 	name: string;
 };
 
-export const IconNames = IcoNames;
-export const Icon: FC<IconProps> = ({ size = 'M', name = IconNames[0], ...props }) => {
+export const Icon: FC<IconProps> = ({ size = 'M', name = IcoNames[0], ...props }) => {
 	const sizeStyle = {
 		S: ['w-3'],
 		M: ['w-s'],

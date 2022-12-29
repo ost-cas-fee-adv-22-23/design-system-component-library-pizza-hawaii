@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Timeline as Component } from './Timeline';
 
-import { All as examplePosts } from '../../mocks/Post';
+import { Posts as examplePosts } from '../../mocks/Post';
 import { Current as exampleUser } from '../../mocks/User';
 
 export default {

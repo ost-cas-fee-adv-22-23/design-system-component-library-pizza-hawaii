@@ -1,6 +1,6 @@
 import { User as UserType } from '../types/User';
 
-export const All: UserType[] = [
+export const Users: UserType[] = [
 	{
 		userName: 'johndoe',
 		fullName: 'John Doe',
@@ -51,4 +51,4 @@ export const All: UserType[] = [
 	},
 ];
 
-export const Current: UserType = All[0];
+export const Current: UserType = Users[0];
