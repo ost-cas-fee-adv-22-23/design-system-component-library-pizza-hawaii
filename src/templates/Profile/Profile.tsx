@@ -22,7 +22,7 @@ type ProfileType = {
 export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 	const [currentPostType, setCurrentPostType] = useState('mumbles');
 
-	const postsToRender = {
+	const postsToRender: Record<string, PostType[]> = {
 		mumbles: posts.filter((p) => p.author === user),
 		likes: posts.filter((p) => p.likes?.includes(user)),
 	};

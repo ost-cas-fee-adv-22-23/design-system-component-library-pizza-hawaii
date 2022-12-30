@@ -10,8 +10,7 @@ type BaseProps = {
 	icon?: string;
 };
 
-export const TimeStamp: FC<BaseProps> = ({ time, prefix, postfix, icon = "time" }) => {
-
+export const TimeStamp: FC<BaseProps> = ({ time, prefix, postfix, icon = 'time' }) => {
 	const dateTimeAgo = [
 		prefix,
 		moment(new Date(time))

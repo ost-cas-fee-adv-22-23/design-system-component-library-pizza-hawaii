@@ -1,9 +1,9 @@
 import { Post as PostType } from '../types/Post';
 import { User } from '../types/User';
 import { Users as UserList } from './User';
-import uid from '../utils/uid';
+import { uidInt } from '../utils/uid';
 
-const getRandId = (): number => uid() as number;
+const getRandId = (): number => uidInt();
 
 const getRandUser = (): User => UserList[Math.floor(Math.random() * UserList.length)];
 const getRandUsers = (): User[] => {
