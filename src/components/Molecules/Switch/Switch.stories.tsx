@@ -4,15 +4,15 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Switch as Component } from './Switch';
 
 export default {
-	title: 'Example/Molecules/Switch',
+	title: 'Component/Molecules/Switch',
 	component: Component,
 	parameters: {},
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
-export const Variant1 = Template.bind({});
-Variant1.args = {
+export const Switch = Template.bind({});
+Switch.args = {
 	value: 'likes',
 	name: 'switch',
 	options: [

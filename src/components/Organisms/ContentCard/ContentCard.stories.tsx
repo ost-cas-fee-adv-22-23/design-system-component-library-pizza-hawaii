@@ -5,7 +5,7 @@ import { ContentCard as Component } from './ContentCard';
 import { Posts } from '../../../mocks/Post';
 
 export default {
-	title: 'Example/Organisms/ContentCard',
+	title: 'Component/Organisms/ContentCard',
 	component: Component,
 } as ComponentMeta<typeof Component>;
 

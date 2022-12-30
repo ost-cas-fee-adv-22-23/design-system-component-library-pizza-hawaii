@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Modal as Component } from './Modal';
 
 export default {
-	title: 'Example/Organisms/Modal',
+	title: 'Component/Organisms/Modal',
 	component: Component,
 	argTypes: {
 		preset: {

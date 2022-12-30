@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { TimeStamp as Component } from './TimeStamp';
 
 export default {
-	title: 'Example/Molecules/TimeStamp',
+	title: 'Component/Molecules/TimeStamp',
 	component: Component,
 } as ComponentMeta<typeof Component>;
 

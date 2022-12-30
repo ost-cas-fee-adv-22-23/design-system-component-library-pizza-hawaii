@@ -5,7 +5,7 @@ import { IconNames } from '../../Atoms/Icon/IconLib';
 import { Button as Component } from './Button';
 
 export default {
-	title: 'Example/Molecules/Button',
+	title: 'Component/Molecules/Button',
 
 	component: Component,
 	argTypes: {

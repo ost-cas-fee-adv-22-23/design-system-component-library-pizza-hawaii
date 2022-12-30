@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Form as Component } from './Form';
 
 export default {
-	title: 'Example/Molecules/Form/Form',
+	title: 'Component/Molecules/Form/Form',
 	component: Component,
 	argTypes: {},
 } as ComponentMeta<typeof Component>;

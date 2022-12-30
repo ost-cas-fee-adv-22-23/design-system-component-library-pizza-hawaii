@@ -6,7 +6,7 @@ import { Header as Component } from './Header';
 import { Current as exampleUser } from '../../../mocks/User';
 
 export default {
-	title: 'Example/Organisms',
+	title: 'Component/Organisms',
 	component: Component,
 	parameters: {},
 } as ComponentMeta<typeof Component>;
