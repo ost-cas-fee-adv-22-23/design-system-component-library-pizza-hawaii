@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 
 export const Variant1 = Template.bind({});
 Variant1.args = {
-	value: 'mumbles',
+	value: 'likes',
 	name: 'switch',
 	options: [
 		{
