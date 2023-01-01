@@ -3,7 +3,7 @@ import { ComponentStory } from '@storybook/react';
 import { Wrapper as Component } from './Wrapper';
 
 export default {
-	title: 'Example/Atoms/Wrapper',
+	title: 'Component/Atoms/Wrapper',
 	component: Component,
 	argTypes: {
 		as: {
