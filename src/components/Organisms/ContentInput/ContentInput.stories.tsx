@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { User } from '../../../types/User';
-import { All as UserList } from '../../../mocks/User';
+import { Users as UserList } from '../../../mocks/User';
 import { ContentInput as Component } from './ContentInput';
 
 export default {

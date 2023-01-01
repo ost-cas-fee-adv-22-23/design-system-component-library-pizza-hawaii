@@ -1,1 +1,1 @@
-export { ContentInput } from './ContentInput';
+export * from './ContentInput';
