@@ -5,7 +5,7 @@ import { UserProfile as Component } from './UserProfile';
 import { Current } from '../../../mocks/User';
 
 export default {
-	title: 'Example/Molecules/UserProfile',
+	title: 'Component/Molecules/UserProfile',
 	component: Component,
 	argTypes: {},
 } as ComponentMeta<typeof Component>;

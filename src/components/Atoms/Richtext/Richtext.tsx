@@ -15,11 +15,7 @@ const sizeMap: Record<BaseProps['size'], string> = {
 };
 
 export const Richtext: FC<BaseProps> = ({ children, as: Tag = 'div', size = 'M', className = '', ...props }) => {
-	const style = [
-		'Richtext inline-block leading-none font-medium text-slate-900 leading-normal',
-		sizeMap[size],
-		className,
-	].join(' ');
+	const style = ['Richtext inline-block leading-none font-medium leading-normal', sizeMap[size], className].join(' ');
 
 	let content = children;
 	if (Children.count(children) === 1 && typeof children === 'string') {

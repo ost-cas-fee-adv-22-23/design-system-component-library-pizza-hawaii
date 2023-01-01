@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Richtext as Component } from './Richtext';
 
 export default {
-	title: 'Example/Atoms/Richtext',
+	title: 'Component/Atoms/Richtext',
 	component: Component,
 	argTypes: {},
 } as ComponentMeta<typeof Component>;

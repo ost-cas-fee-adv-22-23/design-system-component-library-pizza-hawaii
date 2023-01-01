@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { FormTextarea as Component } from './FormTextarea';
 
 export default {
-	title: 'Example/Molecules/Form/FormTextarea',
+	title: 'Component/Molecules/Form/FormTextarea',
 	component: Component,
 	argTypes: {},
 } as ComponentMeta<typeof Component>;

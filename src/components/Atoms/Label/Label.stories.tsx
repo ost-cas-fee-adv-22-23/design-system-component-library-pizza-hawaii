@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Label as Component } from './Label';
 
 export default {
-	title: 'Example/Atoms/Label',
+	title: 'Component/Atoms/Label',
 	component: Component,
 	argTypes: {
 		size: {

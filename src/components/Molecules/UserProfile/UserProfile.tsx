@@ -29,13 +29,7 @@ const imgMap: Record<BaseProps['size'], number> = {
 };
 
 export const UserProfile: FC<BaseProps> = ({ size = 'M', border, href, user }) => {
-	const baseStyle = [
-		'inline-flex',
-		'rounded-full',
-		'self-center',
-		'bg-purple-200',
-		border && 'border-6',
-	];
+	const baseStyle = ['inline-flex', 'rounded-full', 'self-center', 'bg-purple-200', border && 'border-6'];
 
 	if (href) {
 		if (size !== 'XL') {

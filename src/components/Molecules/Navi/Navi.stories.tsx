@@ -6,7 +6,7 @@ import { Navi as Component } from './Navi';
 import { NaviButton } from './NaviButton';
 
 export default {
-	title: 'Example/Molecules/Navi',
+	title: 'Component/Molecules/Navi',
 	component: Component,
 	argTypes: {
 		icon: {

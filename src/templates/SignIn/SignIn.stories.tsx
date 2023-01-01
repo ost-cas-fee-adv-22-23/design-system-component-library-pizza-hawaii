@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { SignIn as Component } from './SignIn';
 
 export default {
-	title: 'Example/Template',
+	title: 'Template/Welcome',
 	component: Component,
 	parameters: {},
 } as ComponentMeta<typeof Component>;

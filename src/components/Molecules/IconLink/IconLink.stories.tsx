@@ -5,7 +5,7 @@ import { IconNames } from '../../Atoms/Icon/IconLib';
 import { IconLink as Component } from './IconLink';
 
 export default {
-	title: 'Example/Molecules/IconLink',
+	title: 'Component/Molecules/IconLink',
 	component: Component,
 	argTypes: {
 		icon: {
