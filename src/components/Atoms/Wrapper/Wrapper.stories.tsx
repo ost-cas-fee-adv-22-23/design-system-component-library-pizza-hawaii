@@ -1,32 +1,60 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Wrapper from './Wrapper';
 
 export default {
 	title: 'Example/Atoms/Wrapper',
-	component: Comment,
-	argTypes: {},
+	component: Component,
+	argTypes: {
+		as: {
+			control: {
+				type: 'select',
+				options: ['div', 'section', 'body', 'article', 'footer'],
+			},
+		},
+		wrapperStyles: {
+			control: {
+				type: 'select',
+				options: ['w-screen', 'w-min', 'w-full', 'w-max'],
+			},
+		},
+		children: String,
+	},
 };
 
-const Template = (args): JSX.Element => <Wrapper {...args} />;
+const Template = (args: object): JSX.Element => <Wrapper {...args} />;
 
 export const Div = Template.bind({});
 export const Section = Template.bind({});
 export const Body = Template.bind({});
+export const Footer = Template.bind({});
+export const Article = Template.bind({});
 
 Div.args = {
-  as: 'div',
-  className: 'min-w-full, bg-indigo-500',
-  children: 'bg'
+	as: 'div',
+	wrapperStyles: 'w-screen',
+	children: 'Div wrapper content',
 };
 
 Section.args = {
-  as: 'section',
-  className: 'min-w-full, bg-purple-600',
-  children: 'section'
+	as: 'section',
+	wrapperStyles: 'w-min',
+	children: 'Section wrapper content',
 };
 
 Body.args = {
-  as: 'body',
-  className: 'w-full, bg-slate-100',
-  children: 'body'
+	as: 'body',
+	wrapperStyles: 'w-full',
+	children: 'Body wrapper content',
+};
+
+Article.args = {
+	as: 'article',
+	wrapperStyles: 'w-max',
+	children: 'Article wrapper content',
+};
+
+Footer.args = {
+	as: 'footer',
+	wrapperStyles: 'w-full',
+	children: 'Footer wrapper content',
 };
