@@ -31,7 +31,7 @@ type BaseProps = {
 
 type InputCardType = BaseProps;
 
-const ContentInput: FC<InputCardType> = (props) => {
+export const ContentInput: FC<InputCardType> = (props) => {
 	const { headline, variant, placeHolderText, author, createdAt } = props;
 	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl w-full relative text-slate-900';
 	const inputFieldStyles = 'h-40';
@@ -92,5 +92,3 @@ const ContentInput: FC<InputCardType> = (props) => {
 		</div>
 	);
 };
-
-export default ContentInput;

@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import Wrapper from './Wrapper';
+import React from 'react';
+import { ComponentStory } from '@storybook/react';
+import { Wrapper as Component } from './Wrapper';
 
 export default {
 	title: 'Example/Atoms/Wrapper',
@@ -21,7 +22,7 @@ export default {
 	},
 };
 
-const Template = (args: object): JSX.Element => <Wrapper {...args} />;
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
 export const Div = Template.bind({});
 export const Section = Template.bind({});

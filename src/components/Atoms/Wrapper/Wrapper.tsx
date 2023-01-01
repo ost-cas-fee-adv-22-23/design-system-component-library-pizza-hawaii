@@ -6,7 +6,7 @@ type BaseProps = {
 	wrapperStyles?: string;
 };
 
-const Wrapper: FC<BaseProps> = ({ children, as: Tag = 'div', ...props }) => {
+export const Wrapper: FC<BaseProps> = ({ children, as: Tag = 'div', ...props }) => {
 	const wrapperDefaults = ['z-0, bg-slate-100'];
 	return (
 		<Tag className={[wrapperDefaults, props.wrapperStyles].join(' ')} {...props}>
@@ -14,5 +14,3 @@ const Wrapper: FC<BaseProps> = ({ children, as: Tag = 'div', ...props }) => {
 		</Tag>
 	);
 };
-
-export default Wrapper;
