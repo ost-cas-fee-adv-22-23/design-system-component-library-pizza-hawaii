@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const defaultTheme = require('tailwindcss/defaultTheme');
 const ProjectSettings = require('./src/utils/ProjectSettings.json');
 
 const toRem = (px) => `${px / ProjectSettings.baseFontSize}rem`;
@@ -14,6 +13,12 @@ let spacing = Object.keys(ProjectSettings.spaces).reduce((acc, size) => {
 	return acc;
 }, {});
 
+let aspectRatio = Object.keys(ProjectSettings.images).reduce((acc, size) => {
+	const ratio = ProjectSettings.images[size].aspectRatio;
+	acc[size] = `${ratio[0]} / ${ratio[1]}`;
+	return acc;
+}, {});
+
 spacing = {
 	...spacing,
 	content: toRem(ProjectSettings.content.padding),
@@ -23,7 +28,7 @@ module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	theme: {
 		fontFamily: {
-			sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+			sans: ['Poppins', 'sans-serif'],
 		},
 
 		extend: {
@@ -51,6 +56,9 @@ module.exports = {
 			},
 			borderWidth: {
 				6: '6px',
+			},
+			aspectRatio: {
+				...aspectRatio,
 			},
 		},
 	},
