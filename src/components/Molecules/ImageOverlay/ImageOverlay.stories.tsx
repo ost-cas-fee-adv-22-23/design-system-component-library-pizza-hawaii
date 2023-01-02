@@ -16,13 +16,12 @@ export const ZoomOverlay = Template.bind({});
 
 EditOverlay.args = {
 	icon: 'edit',
-	overlayStyles: '',
+	overlayStyles: 'rounded-2xl',
 	src: '//picsum.photos/id/28/1600/1587/',
 };
 
-// TODO: zoom icon export correctly and alignement of icon
 ZoomOverlay.args = {
-	icon: 'zoom',
-	overlayStyles: '',
+	icon: 'fullscreen',
+	overlayStyles: 'rounded-2xl',
 	src: '//picsum.photos/id/27/1600/2087/',
 };
