@@ -7,8 +7,8 @@
 		"tag": "latest"
 	},
 	"scripts": {
-		"build": "rm -rf ./dist && ctix create --overwrite --useRootDir --noBackup --p ./tsconfig.json && rm ./index.ts && tsc",
-		"build-storybook": "build-storybook",
+		"build": "rm -rf ./dist && ctix create --overwrite --useRootDir --noBackup --p ./tsconfig.json && rm ./index.ts && npx tailwindcss -i ./src/styles/common.css -o ./dist/output.css && tsc",
+		"build-storybook": "npx tailwindcss -i ./src/styles/common.css -o ./dist/output.css --watch && build-storybook",
 		"lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
 		"lint-fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
 		"pretty": "prettier src/",

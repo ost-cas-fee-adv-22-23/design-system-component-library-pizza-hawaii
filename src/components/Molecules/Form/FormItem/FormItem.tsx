@@ -7,12 +7,24 @@ type BaseProps = {
 	errorMessage?: string;
 	className?: string;
 	id?: string;
+	labelHidden?: boolean;
 };
 
-export const FormItem: FC<BaseProps> = ({ label, children, errorMessage, className, id = uid('FormItem'), ...props }) => {
+export const FormItem: FC<BaseProps> = ({
+	label,
+	children,
+	errorMessage,
+	className,
+	labelHidden,
+	id = uid('FormItem'),
+	...props
+}) => {
 	return (
 		<div className={['FormItem flex flex-col', className].join(' ')} {...props}>
-			<label className="FormItem--label M-FormItem-Label mb-xxs" htmlFor={id}>
+			<label
+				className={['FormItem--label M-FormItem-Label mb-xxs', labelHidden ? 'sr-only' : ''].join(' ')}
+				htmlFor={id}
+			>
 				{label}
 			</label>
 			{children}

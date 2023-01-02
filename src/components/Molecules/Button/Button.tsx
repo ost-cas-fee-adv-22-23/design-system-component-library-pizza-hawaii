@@ -4,8 +4,6 @@ import { Icon } from '../../Atoms/Icon/Icon';
 import { Label } from '../../Atoms/Label/Label';
 import '../../../../src/components/Components-base.css';
 
-import '../../../components/Components-base.css';
-
 type BaseButtonProps = {
 	label: string;
 	as: 'button' | 'a';

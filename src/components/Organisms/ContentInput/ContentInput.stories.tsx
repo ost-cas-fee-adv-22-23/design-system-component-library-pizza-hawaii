@@ -27,6 +27,5 @@ AnswerPost.args = {
 	variant: 'answerPost',
 	headline: '',
 	placeHolderText: 'Was meinst Du dazu...?',
-	createdAt: '2022-12-23T08:50:23Z',
 	author: getRandUser(),
 };

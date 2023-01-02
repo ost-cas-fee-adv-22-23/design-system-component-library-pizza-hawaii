@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
-import { FormInput } from '../../Molecules/Form/FormInput/FormInput';
 import '../../../components/Components-base.css';
 import { UserProfile, BaseProps as UserProfileProps } from '../../Molecules/UserProfile/UserProfile';
 import { UserName } from '../../Molecules/UserName/UserName';
-import { TimeStamp } from '../../Molecules/TimeStamp/TimeStamp';
-import { Headline } from '../../Atoms/Headline/Headline';
 import { Label } from '../../Atoms/Label/Label';
-import { User } from '../../../types/User';
 import { Button } from '../../Molecules/Button/Button';
+import { Card } from '../../Molecules/Card/Card';
+
+import { User } from '../../../types/User';
+import { FormTextarea } from '../../Molecules/Form/FormTextarea/FormTextarea';
 
 type ContentInputPreset = {
 	headlineLevel: 1 | 2 | 3 | 4;
@@ -25,16 +25,13 @@ type BaseProps = {
 	variant: 'newPost' | 'answerPost';
 	headline: string;
 	author: User;
-	createdAt: string;
 	placeHolderText: string;
 };
 
 type InputCardType = BaseProps;
 
 export const ContentInput: FC<InputCardType> = (props) => {
-	const { headline, variant, placeHolderText, author, createdAt } = props;
-	const cardStyle = 'flex flex-start justify-center items-start bg-white py-l px-xl w-full relative text-slate-900';
-	const inputFieldStyles = 'h-40';
+	const { variant, placeHolderText, author } = props;
 
 	const preset: Record<InputCardType['variant'], ContentInputPreset> = {
 		newPost: {
@@ -60,35 +57,30 @@ export const ContentInput: FC<InputCardType> = (props) => {
 	const setting = preset[variant] || preset.newPost;
 
 	return (
-		<div className={[cardStyle, setting.cardStyle].join(' ')}>
+		<Card size="M">
 			<div className="w-full">
-				<div className={setting.sizeStyle + ' mb-4'}>
-					<UserProfile {...setting.userprofile} />
-					{setting.showUserdetails && (
-						<div className={setting.headerStyle}>
-							<Label as="span" size={setting.headlineSize}>
-								{author.fullName}
-							</Label>
-							<span className="flex flex-row align-baseline mt-1 gap-3">
-								<UserName user={author} />
-								<TimeStamp time={createdAt} />
-							</span>
-						</div>
-					)}
-					{headline && (
-						<Headline level={setting.headlineLevel} as="h4">
-							{headline}
-						</Headline>
-					)}
+				<div className="mb-4 flex items-center gap-2">
+					<div className={setting.profileStyle}>
+						<UserProfile {...setting.userprofile} />
+					</div>
+					<div className="flex flex-col gap-2">
+						<Label as="span" size={setting.headlineSize}>
+							{author.fullName}
+						</Label>
+						<span className="flex flex-row align-baseline gap-3">
+							<UserName user={author} />
+						</span>
+					</div>
 				</div>
+
 				<div className="inputStyles">
-					<FormInput label={placeHolderText} placeholder={placeHolderText} addStyles={inputFieldStyles} />
+					<FormTextarea label={placeHolderText} placeholder={placeHolderText} labelHidden={true} />
 				</div>
 				<div className="flex flex-row py-4 space-x-8">
 					<Button as="button" size="M" color="slate" icon="upload" label="Bild Hochladen" />
 					<Button as="button" size="M" color="violet" icon="send" label="Absenden" />
 				</div>
 			</div>
-		</div>
+		</Card>
 	);
 };

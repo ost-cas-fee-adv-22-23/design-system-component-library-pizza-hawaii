@@ -7,13 +7,20 @@ type BaseProps = {
 	label: string;
 	errorMessage?: string;
 	id?: string;
+	labelHidden?: boolean;
 };
 
 type FormTextareaType = BaseProps & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-export const FormTextarea: FC<FormTextareaType> = ({ label, errorMessage, id = uid('FormTextarea'), ...props }) => {
+export const FormTextarea: FC<FormTextareaType> = ({
+	label,
+	errorMessage,
+	id = uid('FormTextarea'),
+	labelHidden,
+	...props
+}) => {
 	return (
-		<FormItem className="FormTextarea" id={id} label={label} errorMessage={errorMessage}>
+		<FormItem className="FormTextarea" id={id} label={label} errorMessage={errorMessage} labelHidden={labelHidden}>
 			<textarea
 				className={['FormTextarea', 'M-FormItem-Input', errorMessage && 'M-FormItem-Input-error'].join(' ')}
 				id={id}
