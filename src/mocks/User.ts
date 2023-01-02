@@ -66,3 +66,13 @@ export const Users: UserType[] = [
 ];
 
 export const Current: UserType = Users[0];
+export const NewUser: UserType = {
+	userName: 'peterparker',
+	fullName: 'Peter Parker',
+	email: 'peterparker@example.com',
+	city: '',
+	bio: '',
+	avatar: undefined,
+	posterImage: undefined,
+	createdAt: new Date(+new Date() - Math.floor(Math.random() * 20000)).toISOString(),
+};

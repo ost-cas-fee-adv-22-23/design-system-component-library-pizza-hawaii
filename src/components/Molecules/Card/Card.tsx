@@ -8,7 +8,7 @@ type BaseProps = {
 };
 
 const sizeMap: Record<string, string> = {
-	S: 'py-l px-xl',
+	S: 'py-s px-s',
 	M: 'py-l px-xl',
 };
 

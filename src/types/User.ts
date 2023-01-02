@@ -4,7 +4,7 @@ export type User = {
 	email: string;
 	city: string;
 	bio: string;
-	avatar: string;
-	posterImage: string;
+	avatar?: string;
+	posterImage?: string;
 	createdAt: string;
 };
