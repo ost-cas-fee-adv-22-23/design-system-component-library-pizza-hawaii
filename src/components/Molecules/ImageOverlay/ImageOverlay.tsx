@@ -11,7 +11,6 @@ type BaseProps = {
 };
 
 export const ImageOverlay: FC<BaseProps> = (props) => {
-	console.log('ImageOverlay.tsx', props);
 
 	const baseOverlay = [
 		'absolute',
