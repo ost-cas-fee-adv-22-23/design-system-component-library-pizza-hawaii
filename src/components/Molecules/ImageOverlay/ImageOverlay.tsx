@@ -11,7 +11,6 @@ type BaseProps = {
 };
 
 export const ImageOverlay: FC<BaseProps> = (props) => {
-
 	const baseOverlay = [
 		'absolute',
 		'bg-opacity-0',
