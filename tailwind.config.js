@@ -1,3 +1,4 @@
+// TODO: may create a eslint-ignore-file for config files we cannot change 
 /* eslint-disable @typescript-eslint/no-var-requires */
 const ProjectSettings = require('./src/utils/ProjectSettings.json');
 
