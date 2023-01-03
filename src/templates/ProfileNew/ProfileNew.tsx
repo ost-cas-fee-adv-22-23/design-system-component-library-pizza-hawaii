@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 
 import { Header } from '../../components/Organisms/Header/Header';
 import { Headline } from '../../components/Atoms/Headline/Headline';
@@ -8,7 +8,6 @@ import { UserProfile } from '../../components/Molecules/UserProfile/UserProfile'
 import { UserCard } from '../../components/Organisms/UserCard';
 import { ContentCard } from '../../components/Organisms/ContentCard/ContentCard';
 
-import { Richtext } from '../../components/Atoms/Richtext/Richtext';
 import { UserName } from '../../components/Molecules/UserName/UserName';
 import { TimeStamp } from '../../components/Molecules/TimeStamp/TimeStamp';
 import { IconLink } from '../../components/Molecules/IconLink/IconLink';

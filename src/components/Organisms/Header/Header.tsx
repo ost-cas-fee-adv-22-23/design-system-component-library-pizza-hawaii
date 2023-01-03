@@ -25,7 +25,6 @@ export const Header: FC<BaseProps> = ({ user }) => {
 
 	const handleSettingsModalClick = (): void => {
 		setState({ ...state, showSettingsModal: !state.showSettingsModal });
-		console.log(state);
 	};
 
 	const onFieldChange: any = (e: any): void => {
@@ -37,7 +36,6 @@ export const Header: FC<BaseProps> = ({ user }) => {
 				[field]: value,
 			},
 		});
-		console.log(state);
 	};
 
 	return (

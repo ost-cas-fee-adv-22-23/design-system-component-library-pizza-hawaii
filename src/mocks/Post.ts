@@ -7,7 +7,7 @@ const getRandId = (): number => uidInt();
 
 const getRandUser = (): User => UserList[Math.floor(Math.random() * UserList.length)];
 const getRandUsers = (): User[] => {
-	const users = [];
+	const users: User[] = [];
 	for (let i = 0; i < Math.floor(Math.random() * UserList.length); i++) {
 		users.push(getRandUser());
 	}

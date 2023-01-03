@@ -13,13 +13,21 @@ type BaseProps = {
 	options: OptionType[];
 	errorMessage?: string;
 	id?: string;
+	labelHidden?: boolean;
 };
 
 type FormSelectType = BaseProps & SelectHTMLAttributes<HTMLSelectElement>;
 
-export const FormSelect: FC<FormSelectType> = ({ label, options, errorMessage, id = uid('FormSelect'), ...props }) => {
+export const FormSelect: FC<FormSelectType> = ({
+	label,
+	options,
+	errorMessage,
+	id = uid('FormSelect'),
+	labelHidden,
+	...props
+}) => {
 	return (
-		<FormItem className="FormSelect" id={id} label={label} errorMessage={errorMessage}>
+		<FormItem className="FormSelect" id={id} label={label} errorMessage={errorMessage} labelHidden={labelHidden}>
 			<select
 				className={['FormSelect', 'M-FormItem-Input', errorMessage && 'M-FormItem-Input-error'].join(' ')}
 				id={id}

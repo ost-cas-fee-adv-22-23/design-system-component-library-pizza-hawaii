@@ -10,7 +10,7 @@ type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
 type ImagePresetType = {
 	img: (src: string | undefined) => ImageServiceResult;
 	styleClasses: string;
-	aspectRatio: string;
+	aspectRatio: number[];
 };
 
 type ImagePresetListType = {
@@ -28,13 +28,17 @@ const ImagePreset: ImagePresetListType = Object.keys(ProjectSettings.images).red
 		const imgSettings: Record<string, ImagePreset> = ProjectSettings.images;
 		const imgSetting: ImagePreset = imgSettings[presetName];
 
-		if (typeof presetName === 'string') {
-			acc[presetName as string] = {
+		if (presetName && typeof presetName === 'string') {
+			acc[presetName] = {
 				...imgSetting,
 				img: (src: string | undefined): ImageServiceResult => {
 					return ImageService.imgAttr(
 						imgSetting.width,
-						Math.floor((imgSetting.aspectRatio[1] / imgSetting.aspectRatio[0]) * imgSetting.width),
+						Math.floor(
+							typeof imgSetting.aspectRatio === 'string'
+								? imgSetting.width
+								: (imgSetting.aspectRatio[1] / imgSetting.aspectRatio[0]) * imgSetting.width
+						),
 						src
 					);
 				},
@@ -47,22 +51,20 @@ const ImagePreset: ImagePresetListType = Object.keys(ProjectSettings.images).red
 
 export const Image: FC<ImageProps> = ({ src, alt = '', caption, preset, ...props }) => {
 	let styleClasses = 'block object-cover h-full w-full';
-	let aspectRatio = '[1/1]';
 	if (preset) {
 		const imageSettings = ImagePreset[preset];
-		aspectRatio = '';
 		props = {
 			...imageSettings.img(src),
 		};
 		styleClasses = [styleClasses, imageSettings.styleClasses].join(' ');
 	} else if (props.width && props.width) {
-		aspectRatio = `aspect-[${props.width}/${props.height}]`;
+		styleClasses += ` aspect-[${props.width}/${props.height}]`;
 		props = {
 			...ImageService.imgAttr(props.width as number, props.width as number, src as string),
 		};
 	}
 	return (
-		<figure className={[styleClasses, aspectRatio, 'bg-purple-200'].join(' ')}>
+		<figure className={[styleClasses, 'bg-purple-200'].join(' ')}>
 			<img className={styleClasses} src={src} alt={alt} {...props} />
 			{caption ? <figcaption>{caption}</figcaption> : null}
 		</figure>

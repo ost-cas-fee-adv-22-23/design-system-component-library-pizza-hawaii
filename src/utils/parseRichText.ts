@@ -1,7 +1,7 @@
 export default (plainText: string): string => {
 	// Add paragraph tags to the text
 	let richText = `<p>${plainText.split('\n\n').join('</p><p>')}</p>`;
-	console.log(richText);
+
 	// Replace newline characters with line break tags
 	richText = richText.replace(/\n/g, '<br>');
 

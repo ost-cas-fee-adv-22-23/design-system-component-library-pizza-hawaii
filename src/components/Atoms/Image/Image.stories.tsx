@@ -1,13 +1,14 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Image as Component } from './Image';
+import ProjectSettings from '../../../utils/ProjectSettings.json';
 
 export default {
 	title: 'Component/Atoms/Image',
 	component: Component,
 	argTypes: {
 		preset: {
-			options: ['profile', 'post', 'header'],
+			options: Object.keys(ProjectSettings.images),
 			control: { type: 'select' },
 		},
 	},

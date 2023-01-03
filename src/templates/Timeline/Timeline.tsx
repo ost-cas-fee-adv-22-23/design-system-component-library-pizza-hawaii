@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import { Header } from '../../components/Organisms/Header/Header';
 import { Headline } from '../../components/Atoms/Headline/Headline';
 import { ContentCard } from '../../components/Organisms/ContentCard/ContentCard';
+import { ContentInput } from '../../components/Organisms/ContentInput/ContentInput';
 
 import { Post as PostType } from '../../types/Post';
 import { User as UserType } from '../../types/User';
@@ -27,6 +28,14 @@ export const Timeline: FC<TimelineType> = ({ user, posts = [] }) => {
 						<Headline level={4} as="p">
 							Voluptatem qui cumque voluptatem quia tempora dolores distinctio vel repellat dicta.
 						</Headline>
+					</div>
+					<div className="flex gap-4 flex-col mt-8">
+						<ContentInput
+							variant="newPost"
+							headline="Hey, was geht ab?"
+							author={user}
+							placeHolderText="Deine Meinung zählt"
+						/>
 					</div>
 					<div className="flex gap-4 flex-col mt-8">
 						{posts &&
