@@ -1,4 +1,4 @@
-# Template for CAS FEE ADV Design System
+# CAS FEE ADV Design System - Pizza Hawaii Style System Guide 
 
 This is a template repository for the CAS FEE ADV design system part.
 It is configured to automatically provide GitHub Actions to build and deploy
@@ -7,7 +7,7 @@ GitHub package registry.
 
 ## Getting started
 
-install it my `npm install` or `npm ci`.
+install it by `npm install` or `npm ci`.
 
 this should install
 
@@ -22,7 +22,7 @@ this should install
 
 make sure your node-version is `v16.14` or higher.
 
-to run a local server on Port 6006 and compile your components with a 'story' to the storybook collection
+to run a local server on `Port 6006` and compile your components with a 'story' to the storybook collection
 
 `npm run storybook`
 
@@ -37,6 +37,38 @@ to build all components for browsers type
 start on a filewhatcher on the console with
 
 `npx tailwindcss -i ./src/styles/common.css -o ./dist/output.css --watch`
+
+
+# Developer Manifesto
+
+## Development rules for Hawaiian Taste
+
+Some Rulesets we want to ensure the full Hawaiian taste:
+
+- We like CamelCase naming convention.
+- Directories and Components, Storries starts with Capital Letters.
+- Whenever possible we like as many css to be written with tailwind-css. (its fancy and we are here to learn something new...) Where it's not posssible or practiacal -  commen css is also allowed in a component module. 
+- 
+
+
+## git semantic commit message 
+
+try to use these semantics while committing to maintain a meaningfull commit history:
+
+`feat:` (new feature for the user, not a new feature for build script)
+
+`fix:` (bug fix for the user, not a fix to a build script)
+
+`docs:` (changes to the documentation)
+
+`style:` (formatting, missing semi colons)
+
+`refactor:` (refactoring production code, eg. renaming a variable)
+
+`test:` (adding missing tests, refactoring tests;)
+
+`chore:` (updating taskrunnner, libraries changes, configurations)
+
 
 ## Deployment
 
