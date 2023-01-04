@@ -22,13 +22,17 @@ type HTMLLabelProps = BaseLabelProps & {
 	as: 'label';
 } & LabelHTMLAttributes<HTMLLabelElement>;
 
-type LabelType = HTMLSpanProps | HTMLLabelProps | any; // Todo: remove any;
+type LabelType = HTMLSpanProps | HTMLLabelProps;
 
 export const Label: FC<LabelType> = ({ children = 'Label', as: Tag = 'span', size, ...props }) => {
 	const style = ['inline-block leading-none font-semibold', sizeMap[size]].join(' ');
 
 	return (
-		<Tag className={style} {...props}>
+		<Tag
+			className={style}
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			{...(props as any)}
+		>
 			{children}
 		</Tag>
 	);

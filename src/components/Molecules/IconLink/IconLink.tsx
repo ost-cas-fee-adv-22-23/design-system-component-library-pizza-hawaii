@@ -29,7 +29,7 @@ type LinkButtonProps = BaseIconLinkProps & {
 	as: 'a';
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-type IconLinkProps = SpanButtonProps | HTMLButtonProps | LinkButtonProps | any; // Todo: remove any
+type IconLinkProps = SpanButtonProps | HTMLButtonProps | LinkButtonProps;
 
 export const IconLink: FC<IconLinkProps> = ({
 	children = 'NaviButton',
@@ -43,8 +43,9 @@ export const IconLink: FC<IconLinkProps> = ({
 	return (
 		<Tag
 			className={['IconLink', 'flex', 'items-center', sizeMap[size] || sizeMap.M, `M-Link-${color}`].join(' ')}
-			{...props}
 			data-ico-state={iconState}
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			{...(props as any)}
 		>
 			<Icon name={icon} size={size} />
 			{children}

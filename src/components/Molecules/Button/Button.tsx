@@ -21,13 +21,17 @@ type LinkButtonProps = BaseButtonProps & {
 	as: 'a';
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-type ButtonProps = HTMLButtonProps | LinkButtonProps | any; // Todo: remove any
+type ButtonProps = HTMLButtonProps | LinkButtonProps;
 
 export const Button: FC<ButtonProps> = ({ label, as: Tag = 'a', color, size, icon = 'mumble', ...props }) => {
 	const style = [`M-Button-base`, `M-Button-${size?.toLowerCase()}`, `M-Button-${color?.toLowerCase()}`];
 
 	return (
-		<Tag className={['Button', ...style].join(' ')} {...props}>
+		<Tag
+			className={['Button', ...style].join(' ')}
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			{...(props as any)}
+		>
 			<Label as="span" className="Button--inner" size="M">
 				{label}
 			</Label>
