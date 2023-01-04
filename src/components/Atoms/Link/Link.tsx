@@ -1,7 +1,7 @@
 import React, { FC, ReactNode, AnchorHTMLAttributes, HTMLAttributes } from 'react';
 
 type BaseProps = {
-	as?: 'a' | 'span';
+	as: 'a' | 'span';
 	href: string;
 	children: ReactNode;
 };

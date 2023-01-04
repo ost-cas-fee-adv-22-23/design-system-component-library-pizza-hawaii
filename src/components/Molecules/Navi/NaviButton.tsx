@@ -15,7 +15,7 @@ type LinkButtonProps = BaseNaviButtonProps & {
 	as: 'a';
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-type NaviButtonProps = LinkButtonProps | HTMLButtonProps | any; // Todo: remove any
+type NaviButtonProps = LinkButtonProps | HTMLButtonProps;
 
 export const NaviButton: FC<NaviButtonProps> = ({ as: Tag, icon, ...props }) => {
 	const style =
@@ -34,7 +34,11 @@ export const NaviButton: FC<NaviButtonProps> = ({ as: Tag, icon, ...props }) => 
 
 	return (
 		<li className="flex-auto">
-			<Tag className={style} {...props}>
+			<Tag
+				className={style}
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
+				{...(props as any)}
+			>
 				{icon ? <Icon name={icon} /> : null}
 				{content}
 			</Tag>

@@ -1,16 +1,14 @@
-import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
+import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
 
 import { Icon } from '../../Atoms/Icon/Icon';
 import { Label } from '../../Atoms/Label/Label';
-import '../../../../src/components/Components-base.css';
 
 type BaseButtonProps = {
-	label: string;
-	as: 'button' | 'a';
-	size: 'M' | 'L' | 'round';
-	color: 'slate' | 'violet' | 'gradient';
+	children: ReactNode;
+	as?: 'button' | 'a';
+	size?: keyof typeof sizeMap;
+	color: keyof typeof colorMap;
 	icon?: string;
-	onClick?: (e: MouseEvent) => void;
 };
 
 type HTMLButtonProps = BaseButtonProps & {
@@ -21,15 +19,34 @@ type LinkButtonProps = BaseButtonProps & {
 	as: 'a';
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-type ButtonProps = HTMLButtonProps | LinkButtonProps | any; // Todo: remove any
+type ButtonProps = HTMLButtonProps | LinkButtonProps;
 
-export const Button: FC<ButtonProps> = ({ label, as: Tag = 'a', color, size, icon = 'mumble', ...props }) => {
-	const style = [`M-Button-base`, `M-Button-${size?.toLowerCase()}`, `M-Button-${color?.toLowerCase()}`];
+export const baseStyle = ['flex items-center justify-center', 'text-white text-base font-semibold', 'cursor-pointer'];
+
+export const sizeMap: Record<string, string> = {
+	S: 'p-2 rounded-lg gap-y-0 gap-x-2 text-sm font-semibold',
+	M: 'p-3 rounded-lg gap-y-0 gap-x-2',
+	L: 'py-4 px-6 rounded-lg gap-y-1 gap-x-3',
+};
+
+export const colorMap: Record<string, string> = {
+	slate: 'bg-slate-700 hover:bg-slate-800',
+	violet: 'bg-violet-600 hover:bg-violet-700',
+	gradient:
+		'bg-gradient-to-r transition-all ease-out duration-200 bg-pos-0 bg-size-200 from-violet-600 via-pink-600 to-violet-700 hover:bg-pos-100',
+};
+
+export const Button: FC<ButtonProps> = ({ children, as: Tag = 'button', color = 'violet', size = 'M', icon = 'mumble', ...props }) => {
+	const style = [...baseStyle, 'w-full', sizeMap[size], colorMap[color]];
 
 	return (
-		<Tag className={['Button', ...style].join(' ')} {...props}>
-			<Label as="span" className="Button--inner" size="M">
-				{label}
+		<Tag
+			className={['w-full', ...style].join(' ')}
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			{...(props as any)}
+		>
+			<Label as="span" size="M">
+				{children}
 			</Label>
 			{icon ? <Icon name={icon} /> : null}
 		</Tag>
