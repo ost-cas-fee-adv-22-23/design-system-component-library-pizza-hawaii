@@ -1,6 +1,6 @@
 {
-	"name": "@smartive-education/pizza-hawaii_juergen-and-filiks",
-	"version": "0.0.1-development",
+	"name": "@smartive-education/pizza-hawaii",
+	"version": "0.0.2-development",
 	"publishConfig": {
 		"access": "public",
 		"registry": "https://npm.pkg.github.com",
