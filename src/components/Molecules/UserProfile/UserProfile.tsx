@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { User } from '../../../types/User';
 import { Image } from '../../Atoms/Image/Image';
-import { ButtonRound } from '../ButtonRound/ButtonRound';
+import { RoundButton } from '../RoundButton/RoundButton';
 
 /**
  * User Icon with image from loged in user
@@ -53,9 +53,9 @@ export const UserProfile: FC<BaseProps> = ({ size = 'M', border, href, user }) =
 						/>
 					</div>
 					<div className="absolute bottom-0 right-0">
-						<ButtonRound as="a" icon="edit" color="slate">
+						<RoundButton as="a" icon="edit" color="slate">
 							Edit User Image
-						</ButtonRound>
+						</RoundButton>
 					</div>
 				</div>
 			);

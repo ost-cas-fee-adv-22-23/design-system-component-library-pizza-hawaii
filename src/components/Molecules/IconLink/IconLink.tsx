@@ -10,7 +10,7 @@ const sizeMap: Record<string, string> = {
 
 type BaseIconLinkProps = {
 	children: ReactNode;
-	as?: 'a' | 'button' | 'span';
+	as: 'a' | 'button' | 'span';
 	size?: keyof typeof sizeMap;
 	color: 'slate' | 'violet';
 	icon: string;
