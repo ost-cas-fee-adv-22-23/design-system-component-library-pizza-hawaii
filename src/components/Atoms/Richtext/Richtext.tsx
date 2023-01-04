@@ -1,5 +1,4 @@
 import React, { FC, Children, ReactNode } from 'react';
-import parseRichText from '../../../utils/parseRichText';
 import './Richtext.css';
 
 type BaseProps = {
@@ -7,6 +6,7 @@ type BaseProps = {
 	size: 'M' | 'L';
 	className?: string;
 	children: ReactNode;
+	settings: Record<string, string | boolean>;
 };
 
 const sizeMap: Record<BaseProps['size'], string> = {
@@ -14,17 +14,8 @@ const sizeMap: Record<BaseProps['size'], string> = {
 	L: 'text-xl',
 };
 
-export const Richtext: FC<BaseProps> = ({ children, as: Tag = 'div', size = 'M', className = '', ...props }) => {
+export const Richtext: FC<BaseProps> = ({ children, as: Tag = 'div', size = 'M', className = '', settings, ...props }) => {
 	const style = ['Richtext inline-block leading-none font-medium leading-normal', sizeMap[size], className].join(' ');
-
-	let content = children;
-	if (Children.count(children) === 1 && typeof children === 'string') {
-		const html = parseRichText(children);
-		content = <div dangerouslySetInnerHTML={{ __html: html }}></div>;
-	}
-	return (
-		<Tag className={style} {...props}>
-			{content}
-		</Tag>
-	);
+	console.log(children);
+	return <Tag className={style} {...props} dangerouslySetInnerHTML={{ __html: children }}></Tag>;
 };

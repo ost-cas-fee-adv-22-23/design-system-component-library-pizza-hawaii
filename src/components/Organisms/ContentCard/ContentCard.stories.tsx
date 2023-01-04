@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ContentCard as Component } from './ContentCard';
-import { Posts } from '../../../mocks/Post';
+import { PostsFormated as Posts } from '../../../mocks/Post';
 
 export default {
 	title: 'Component/Organisms/ContentCard',
