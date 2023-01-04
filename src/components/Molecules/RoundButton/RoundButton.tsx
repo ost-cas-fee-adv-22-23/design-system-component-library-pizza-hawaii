@@ -2,7 +2,7 @@ import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from
 
 import { Icon } from '../../Atoms/Icon/Icon';
 
-import { baseStyle, colorMap } from '../../Molecules//Button/Button';
+import { baseStyle, colorMap } from '../Button/Button';
 
 type BaseButtonProps = {
 	children: ReactNode;
@@ -21,7 +21,7 @@ type LinkButtonProps = BaseButtonProps & {
 
 type ButtonProps = HTMLButtonProps | LinkButtonProps;
 
-export const ButtonRound: FC<ButtonProps> = ({ children, as: Tag = 'button', color, icon = 'mumble', ...props }) => {
+export const RoundButton: FC<ButtonProps> = ({ children, as: Tag = 'button', color = 'violet', icon = 'mumble', ...props }) => {
 	const style = [...baseStyle, 'p-4 rounded-full w-auto', colorMap[color]];
 
 	return (

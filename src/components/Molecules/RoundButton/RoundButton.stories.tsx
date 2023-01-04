@@ -2,10 +2,10 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { IconNames } from '../../Atoms/Icon/IconLib';
-import { ButtonRound as Component } from './ButtonRound';
+import { RoundButton as Component } from './RoundButton';
 
 export default {
-	title: 'Component/Molecules/ButtonRound',
+	title: 'Component/Molecules/RoundButton',
 
 	component: Component,
 	argTypes: {
@@ -18,8 +18,8 @@ export default {
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
-export const ButtonRound = Template.bind({});
-ButtonRound.args = {
+export const RoundButton = Template.bind({});
+RoundButton.args = {
 	icon: 'edit',
 	children: 'Button Round',
 };
