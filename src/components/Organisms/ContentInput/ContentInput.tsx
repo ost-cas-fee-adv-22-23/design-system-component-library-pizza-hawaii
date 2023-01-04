@@ -59,6 +59,7 @@ export const ContentInput: FC<InputCardType> = (props) => {
 					<div className={setting.profileStyle}>
 						<UserProfile {...setting.userprofile} />
 					</div>
+
 					<div className="flex flex-col gap-2">
 						{!setting.showUserdetails && <Headline level={4}>{props.headline}</Headline>}
 						{setting.showUserdetails && (
@@ -74,12 +75,17 @@ export const ContentInput: FC<InputCardType> = (props) => {
 					</div>
 				</div>
 
-				<div className="inputStyles">
+				<div className="mb-4">
 					<FormTextarea label={placeHolderText} placeholder={placeHolderText} labelHidden={true} />
 				</div>
-				<div className="flex flex-row py-4 space-x-8">
-					<Button as="button" size="M" color="slate" icon="upload" label="Bild Hochladen" />
-					<Button as="button" size="M" color="violet" icon="send" label="Absenden" />
+
+				<div className="flex flex-row gap-4">
+					<Button as="button" color="slate" icon="upload">
+						Bild Hochladen
+					</Button>
+					<Button as="button" color="violet" icon="send">
+						Absenden
+					</Button>
 				</div>
 			</div>
 		</Card>
