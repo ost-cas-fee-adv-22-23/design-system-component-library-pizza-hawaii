@@ -9,8 +9,13 @@
 .M-Link-slate {
 	@apply text-slate-400 hover:text-slate-600;
 }
+
 .M-Link-violet {
 	@apply text-violet-600 hover:text-violet-900;
+}
+
+.M-link-pink {
+	@apply text-pink-400 hover:text-pink-600;
 }
 
 /*
