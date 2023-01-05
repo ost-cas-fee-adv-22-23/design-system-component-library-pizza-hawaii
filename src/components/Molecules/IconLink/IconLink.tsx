@@ -1,6 +1,7 @@
 import React, { FC, ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes, HTMLAttributes } from 'react';
 
 import { Icon } from '../../Atoms/Icon/Icon';
+import '../../../components/Components-base.css';
 
 const sizeMap: Record<string, string> = {
 	S: 'text-sm gap-1',
@@ -12,7 +13,7 @@ type BaseIconLinkProps = {
 	children: ReactNode;
 	as: 'a' | 'button' | 'span';
 	size?: keyof typeof sizeMap;
-	color: 'slate' | 'violet';
+	color: 'slate' | 'violet' | 'pink';
 	icon: string;
 	iconState?: string;
 };
@@ -41,7 +42,9 @@ export const IconLink: FC<IconLinkProps> = ({
 }) => {
 	return (
 		<Tag
-			className={['IconLink', 'flex', 'items-center', sizeMap[size], `M-Link-${color}`].join(' ')}
+			className={['IconLink', 'flex', 'items-center', sizeMap[size], `M-Link-${color}`, 'hover:cursor-pointer'].join(
+				' '
+			)}
 			data-ico-state={iconState}
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}

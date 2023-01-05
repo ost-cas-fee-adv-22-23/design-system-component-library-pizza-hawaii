@@ -96,7 +96,7 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 						as="a"
 						href="#"
 						icon="heart"
-						color="slate"
+						color="pink"
 						iconState={likes && likes.length > 0 ? 'filled' : 'empty'}
 						title={likes && likes.length > 0 ? `${likes.length} likes` : 'No likes'}
 					>
