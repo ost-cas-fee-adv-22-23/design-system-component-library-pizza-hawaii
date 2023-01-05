@@ -21,7 +21,13 @@ type LinkButtonProps = BaseButtonProps & {
 
 type ButtonProps = HTMLButtonProps | LinkButtonProps;
 
-export const RoundButton: FC<ButtonProps> = ({ children, as: Tag = 'button', color = 'violet', icon = 'mumble', ...props }) => {
+export const RoundButton: FC<ButtonProps> = ({
+	children,
+	as: Tag = 'button',
+	color = 'violet',
+	icon = 'mumble',
+	...props
+}) => {
 	const style = [...baseStyle, 'p-4 rounded-full w-auto', colorMap[color]];
 
 	return (
@@ -31,7 +37,7 @@ export const RoundButton: FC<ButtonProps> = ({ children, as: Tag = 'button', col
 			{...(props as any)}
 		>
 			<span className="sr-only">{children}</span>
-			{icon ? <Icon name={icon} /> : null}
+			{icon ? <Icon name={icon} colorMode="darkmode" /> : null}
 		</Tag>
 	);
 };

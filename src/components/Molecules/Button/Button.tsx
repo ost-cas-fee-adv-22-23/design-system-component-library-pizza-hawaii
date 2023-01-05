@@ -48,7 +48,7 @@ export const Button: FC<ButtonProps> = ({ children, as: Tag = 'button', color = 
 			<Label as="span" size="M">
 				{children}
 			</Label>
-			{icon ? <Icon name={icon} /> : null}
+			{icon ? <Icon name={icon} colorMode="darkmode" /> : null}
 		</Tag>
 	);
 };

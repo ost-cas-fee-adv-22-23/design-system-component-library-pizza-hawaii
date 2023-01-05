@@ -32,7 +32,7 @@ export const Modal: FC<BaseProps> = ({ title, children = 'Modal Content', isVisi
 									{title}
 								</Headline>
 								<button className="inline-flex p-4 -m-4 transition hover:rotate-90" onClick={onClose}>
-									<Icon name="cancel" />
+									<Icon name="cancel" colorMode="lightmode" />
 									<span className="sr-only">Close</span>
 								</button>
 							</div>

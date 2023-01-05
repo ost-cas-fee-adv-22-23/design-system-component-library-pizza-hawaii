@@ -30,7 +30,7 @@ export const ImageOverlay: FC<BaseProps> = (props) => {
 			<div className="relative w-max">
 				<div className={[...baseOverlay, props.overlayStyles].join(' ')}>
 					<div className="center">
-						<Icon name={props.icon} size="M" />
+						<Icon name={props.icon} size="M" colorMode="darkmode" />
 					</div>
 				</div>
 				<Image preset="post" src={props.src} />

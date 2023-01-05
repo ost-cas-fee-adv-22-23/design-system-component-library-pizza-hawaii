@@ -5,7 +5,7 @@ export type RichtextSettings = {
 	tagLinkpattern?: string;
 };
 
-const defaultSettings: Settings = {
+const defaultSettings: RichtextSettings = {
 	basics: true,
 	links: true,
 	tags: true,
