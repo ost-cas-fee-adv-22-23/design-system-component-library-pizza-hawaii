@@ -16,8 +16,6 @@ this should install
 -   React and ReactDom Library (for fun and for storybook)
 -   TypeScript (because its the future)
 
-<b>-> all source-files have been moved to /src</b>
-
 ## Run to get started
 
 make sure your node-version is `v16.14` or higher.
@@ -46,9 +44,29 @@ start on a filewhatcher on the console with
 Some Rulesets we want to ensure the full Hawaiian taste:
 
 - We like CamelCase naming convention.
-- Directories and Components, Storries starts with Capital Letters.
-- Whenever possible we like as many css to be written with tailwind-css. (its fancy and we are here to learn something new...) Where it's not posssible or practiacal -  commen css is also allowed in a component module. 
+- Directories and Components, Stories starts with Capital Letters.
+- Whenever possible we like as many css to be written with tailwind-css. (it's fancy and we are here to learn something new...) Where it's not posssible or impractiacal -  commen css is also allowed in a component module. 
+- We use TypeScript because it is de-facto standard these days.
 - 
+
+## Structure of the Design Library
+
+The Pizza Hawaii Design Library it's structured from very general reusabele components to very 'Mumble-specific' use-cases. 
+
+### Atoms
+Atoms are very reusable versatile and configurable components for a single Purpose - Basics to start.
+Find Icons, Headlines, Labels or Images here. 
+
+### Molescules
+Molescules are combination of Atoms with basic states. You can and should configure, expand these and reuse them to the specific use-case. Find here Forms, Cards, Buttons and Switches.
+
+### Organisms
+Organisms are Combination of Molescules with a simple level of complexity and provide a certain purpose or use case. Find here Combination of user Content, Input Components, Modal Window, or simple User Interfaces. 
+
+### Templates
+Here you can see the full experience of combined Organisms within for a preview how the Design of Mumble Views and Screens could possible look and feel. 
+Find here: Timelines, Profile views, Sign In and Register Screens.
+
 
 
 ## git semantic commit message 
@@ -68,6 +86,13 @@ try to use these semantics while committing to maintain a meaningfull commit his
 `test:` (adding missing tests, refactoring tests;)
 
 `chore:` (updating taskrunnner, libraries changes, configurations)
+
+
+## Some special Hawaiian flawor... 
+
+- We use some mock Library to have always a fresh breeze of Sample Pictures.
+- All special Component-base css classes start with a capital `M`. Why you ask ? - Mumble it baby!.
+
 
 
 ## Deployment
