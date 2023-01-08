@@ -1,4 +1,6 @@
+// TODO: may create a eslint-ignore-file for config files we cannot change 
 /* eslint-disable @typescript-eslint/no-var-requires */
+const defaultTheme = require('tailwindcss/defaultTheme');
 const ProjectSettings = require('./src/utils/ProjectSettings.json');
 
 const toRem = (px) => `${px / ProjectSettings.baseFontSize}rem`;
@@ -28,7 +30,7 @@ module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx,json}'],
 	theme: {
 		fontFamily: {
-			sans: ['Poppins', 'sans-serif'],
+			sans: ['Poppins', ...defaultTheme.fontFamily.sans],
 		},
 
 		extend: {

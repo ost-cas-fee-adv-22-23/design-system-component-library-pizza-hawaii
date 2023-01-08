@@ -52,11 +52,11 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 						<TimeStamp time={user.createdAt} prefix="Mitglied seit" icon="calendar" />
 					</span>
 
-					<div className="text-slate-400">
+					<div className="text-slate-400 mb-8">
 						<Richtext size="M">{user.bio}</Richtext>
 					</div>
 
-					<div className="flex gap-4 flex-col mt-8">
+					<div className="flex gap-4 flex-col mb-8">
 						<Switch
 							options={[
 								{
@@ -77,7 +77,7 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 						/>
 					</div>
 
-					<div className="flex gap-4 flex-col mt-8">
+					<div className="flex gap-4 flex-col mb-8">
 						{postsToRender[currentPostType] &&
 							postsToRender[currentPostType]
 								.sort((a: PostType, b: PostType) => {

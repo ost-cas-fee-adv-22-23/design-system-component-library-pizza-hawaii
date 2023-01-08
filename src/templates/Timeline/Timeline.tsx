@@ -24,12 +24,12 @@ export const Timeline: FC<TimelineType> = ({ user, posts = [] }) => {
 						<Headline level={2}>Welcome to Storybook</Headline>
 					</div>
 
-					<div className="text-slate-500">
+					<div className="text-slate-500 mb-8">
 						<Headline level={4} as="p">
 							Voluptatem qui cumque voluptatem quia tempora dolores distinctio vel repellat dicta.
 						</Headline>
 					</div>
-					<div className="flex gap-4 flex-col mt-8">
+					<div className="flex gap-4 flex-col mb-8">
 						<ContentInput
 							variant="newPost"
 							headline="Hey, was geht ab?"
@@ -37,7 +37,7 @@ export const Timeline: FC<TimelineType> = ({ user, posts = [] }) => {
 							placeHolderText="Deine Meinung zählt"
 						/>
 					</div>
-					<div className="flex gap-4 flex-col mt-8">
+					<div className="flex gap-4 flex-col mb-8">
 						{posts &&
 							posts
 								.sort((a: PostType, b: PostType) => {

@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ProfileNew as Component } from './ProfileNew';
 
-import { Posts as examplePosts } from '../../mocks/Post';
+import { PostsFormated as examplePosts } from '../../mocks/Post';
 import { Users as promotedUsers, NewUser as exampleUser } from '../../mocks/User';
 
 export default {

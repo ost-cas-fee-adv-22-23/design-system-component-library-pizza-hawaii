@@ -29,7 +29,7 @@ export const ImageOverlay: FC<BaseProps> = (props) => {
 		<a href="#">
 			<div className="relative w-max">
 				<div className={[...baseOverlay, props.overlayStyles].join(' ')}>
-					<div className="center">
+					<div className="center text-white">
 						<Icon name={props.icon} size="M" />
 					</div>
 				</div>

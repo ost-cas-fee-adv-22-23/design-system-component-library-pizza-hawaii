@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import '../../../components/Components-base.css';
 import { UserProfile, BaseProps as UserProfileProps } from '../../Molecules/UserProfile/UserProfile';
 import { UserName } from '../../Molecules/UserName/UserName';
+import { Headline } from '../../Atoms/Headline/Headline';
 import { Label } from '../../Atoms/Label/Label';
 import { Button } from '../../Molecules/Button/Button';
 import { Card } from '../../Molecules/Card/Card';
@@ -10,7 +11,6 @@ import { User } from '../../../types/User';
 import { FormTextarea } from '../../Molecules/Form/FormTextarea/FormTextarea';
 
 type ContentInputPreset = {
-	headlineLevel: 1 | 2 | 3 | 4;
 	userprofile: UserProfileProps;
 	textSize: 'M' | 'L';
 	showUserdetails: boolean;
@@ -18,7 +18,6 @@ type ContentInputPreset = {
 	profileStyle: string;
 	headerStyle?: string;
 	sizeStyle?: string;
-	headlineSize?: 'M' | 'L';
 };
 
 type BaseProps = {
@@ -35,7 +34,6 @@ export const ContentInput: FC<InputCardType> = (props) => {
 
 	const preset: Record<InputCardType['variant'], ContentInputPreset> = {
 		newPost: {
-			headlineLevel: 4,
 			userprofile: { size: 'M', border: true, user: author, href: `/user/${author.userName}` },
 			profileStyle: 'inline-flex absolute left-0 transform -translate-x-1/2',
 			textSize: 'L',
@@ -43,13 +41,11 @@ export const ContentInput: FC<InputCardType> = (props) => {
 			cardStyle: 'rounded-3xl border-2 border-solid border-white hover:border-slate-300',
 		},
 		answerPost: {
-			headlineLevel: 2,
 			userprofile: { size: 'S', border: false, user: author, href: `/user/${author.userName}` },
 			profileStyle: 'flex flex-row',
 			textSize: 'M',
 			showUserdetails: true,
 			headerStyle: 'flex-col px-2',
-			headlineSize: 'M',
 			cardStyle: '',
 			sizeStyle: 'flex flex-row border-2 border-solid border-white hover:border-slate-300',
 		},
@@ -63,22 +59,33 @@ export const ContentInput: FC<InputCardType> = (props) => {
 					<div className={setting.profileStyle}>
 						<UserProfile {...setting.userprofile} />
 					</div>
+
 					<div className="flex flex-col gap-2">
-						<Label as="span" size={setting.headlineSize}>
-							{author.fullName}
-						</Label>
-						<span className="flex flex-row align-baseline gap-3">
-							<UserName user={author} />
-						</span>
+						{!setting.showUserdetails && <Headline level={4}>{props.headline}</Headline>}
+						{setting.showUserdetails && (
+							<>
+								<Label as="span" size="M">
+									{author.fullName}
+								</Label>
+								<span className="flex flex-row align-baseline gap-3">
+									<UserName user={author} />
+								</span>
+							</>
+						)}
 					</div>
 				</div>
 
-				<div className="inputStyles">
+				<div className="mb-4">
 					<FormTextarea label={placeHolderText} placeholder={placeHolderText} labelHidden={true} />
 				</div>
-				<div className="flex flex-row py-4 space-x-8">
-					<Button as="button" size="M" color="slate" icon="upload" label="Bild Hochladen" />
-					<Button as="button" size="M" color="violet" icon="send" label="Absenden" />
+
+				<div className="flex flex-row gap-4">
+					<Button as="button" color="slate" icon="upload">
+						Bild Hochladen
+					</Button>
+					<Button as="button" color="violet" icon="send">
+						Absenden
+					</Button>
 				</div>
 			</div>
 		</Card>
