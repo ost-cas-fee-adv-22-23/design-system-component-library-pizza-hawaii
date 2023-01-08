@@ -37,7 +37,7 @@ export const RoundButton: FC<ButtonProps> = ({
 			{...(props as any)}
 		>
 			<span className="sr-only">{children}</span>
-			{icon ? <Icon name={icon} colorMode="darkmode" /> : null}
+			{icon ? <Icon name={icon} /> : null}
 		</Tag>
 	);
 };

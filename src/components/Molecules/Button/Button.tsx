@@ -36,7 +36,14 @@ export const colorMap: Record<string, string> = {
 		'bg-gradient-to-r transition-all ease-out duration-200 bg-pos-0 bg-size-200 from-violet-600 via-pink-600 to-violet-700 hover:bg-pos-100',
 };
 
-export const Button: FC<ButtonProps> = ({ children, as: Tag = 'button', color = 'violet', size = 'M', icon = 'mumble', ...props }) => {
+export const Button: FC<ButtonProps> = ({
+	children,
+	as: Tag = 'button',
+	color = 'violet',
+	size = 'M',
+	icon = 'mumble',
+	...props
+}) => {
 	const style = [...baseStyle, 'w-full', sizeMap[size], colorMap[color]];
 
 	return (
@@ -48,7 +55,7 @@ export const Button: FC<ButtonProps> = ({ children, as: Tag = 'button', color = 
 			<Label as="span" size="M">
 				{children}
 			</Label>
-			{icon ? <Icon name={icon} colorMode="darkmode" /> : null}
+			{icon ? <Icon name={icon} /> : null}
 		</Tag>
 	);
 };

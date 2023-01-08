@@ -49,7 +49,7 @@ export const IconLink: FC<IconLinkProps> = ({
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}
 		>
-			<Icon name={icon} size={size as 'S' | 'M' | 'L'} colorMode="lightmode" />
+			<Icon name={icon} size={size as 'S' | 'M' | 'L'} />
 			{children}
 		</Tag>
 	);

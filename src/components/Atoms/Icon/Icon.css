@@ -1,13 +1,6 @@
-.Icon {
-	--currentColor: #475569;
-}
-
-.darkmode {
-	--currentColor: #fff;
-}
-
+.Icon,
 .Icon svg {
-	color: var(--currentColor);
+	color: currentColor;
 }
 .Icon svg {
 	width: 100%;
@@ -15,7 +8,7 @@
 }
 
 .Icon svg path {
-	fill: var(--currentColor);
+	fill: currentColor;
 }
 
 svg.fillable .filled {

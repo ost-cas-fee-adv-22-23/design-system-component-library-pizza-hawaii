@@ -39,7 +39,7 @@ export const NaviButton: FC<NaviButtonProps> = ({ as: Tag, icon, ...props }) => 
 				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 				{...(props as any)}
 			>
-				{icon ? <Icon name={icon} colorMode="darkmode" /> : null}
+				{icon ? <Icon name={icon} /> : null}
 				{content}
 			</Tag>
 		</li>

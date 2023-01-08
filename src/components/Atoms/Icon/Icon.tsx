@@ -5,10 +5,9 @@ import './Icon.css';
 type IconProps = {
 	size?: 'S' | 'M' | 'L';
 	name: string;
-	colorMode?: 'lightmode' | 'darkmode';
 };
 
-export const Icon: FC<IconProps> = ({ colorMode = 'lightmode', size = 'M', name = IcoNames[0], ...props }) => {
+export const Icon: FC<IconProps> = ({ size = 'M', name = IcoNames[0], ...props }) => {
 	const sizeStyle = {
 		S: ['w-3'],
 		M: ['w-s'],
@@ -19,7 +18,7 @@ export const Icon: FC<IconProps> = ({ colorMode = 'lightmode', size = 'M', name 
 
 	return (
 		<span
-			className={[colorMode, 'Icon', 'inline-flex', ...style].join(' ')}
+			className={['Icon', 'inline-flex', ...style].join(' ')}
 			{...props}
 			dangerouslySetInnerHTML={{ __html: IconLib[name] }}
 		></span>
