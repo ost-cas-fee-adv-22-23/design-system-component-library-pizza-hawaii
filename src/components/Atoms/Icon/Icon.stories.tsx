@@ -19,5 +19,5 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 export const Icon = Template.bind({});
 Icon.args = {
 	name: 'mumble',
-	// colorMode: 'lightmode',
+	colorMode: 'lightmode',
 };

@@ -47,7 +47,14 @@ Some Rulesets we want to ensure the full Hawaiian taste:
 - Directories and Components, Stories starts with Capital Letters.
 - Whenever possible we like as many css to be written with tailwind-css. (it's fancy and we are here to learn something new...) Where it's not posssible or impractiacal -  commen css is also allowed in a component module. 
 - We use TypeScript because it is de-facto standard these days.
-- 
+
+
+# Overview
+
+The latest published Design System (main-branch) is available at this link:
+
+https://smartive-education.github.io/design-system-component-library-pizza-hawaii/
+
 
 ## Structure of the Design Library
 
