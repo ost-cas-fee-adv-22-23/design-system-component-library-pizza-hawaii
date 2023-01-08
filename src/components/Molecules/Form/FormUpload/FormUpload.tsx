@@ -64,7 +64,7 @@ export const FormUpload: FC<FormUploadType> = ({
 					'mb-4',
 				].join(' ')}
 			>
-				<label htmlFor={id} className="flex flex-col gap-2 items-center justify-center h-full text-slate-500">
+				<label htmlFor={id} className="flex flex-col gap-2 items-center text-slate-500">
 					<Icon name="upload" size="L" />
 					<Label as="span" size="XL">
 						Datei hierhin ziehen ...
