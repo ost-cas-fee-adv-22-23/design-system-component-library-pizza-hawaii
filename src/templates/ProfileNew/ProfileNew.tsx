@@ -55,6 +55,7 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 
 					<div className="flex gap-4 flex-col mb-8">
 						<ContentInput
+							author={user}
 							variant="newPost"
 							headline="Voll leer hier! 😲"
 							placeHolderText="Und was meinst du dazu?"
