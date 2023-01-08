@@ -15,7 +15,13 @@ type FormInputType = BaseProps & InputHTMLAttributes<HTMLInputElement>;
 
 export const FormInput: FC<FormInputType> = ({ label, errorMessage, id = uid('FormInput'), labelHidden, ...props }) => {
 	return (
-		<FormItem className="FormInput" id={id} label={label} errorMessage={errorMessage} labelHidden={labelHidden}>
+		<FormItem
+			className="FormInput"
+			id={id}
+			label={label || 'FormInput'}
+			errorMessage={errorMessage}
+			labelHidden={labelHidden}
+		>
 			<input
 				className={['FormInput', 'M-FormItem-Input', errorMessage && 'M-FormItem-Input-error'].join(' ')}
 				id={id}

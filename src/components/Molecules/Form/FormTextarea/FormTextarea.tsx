@@ -1,6 +1,7 @@
 import React, { FC, TextareaHTMLAttributes } from 'react';
 import { FormItem } from '../FormItem/FormItem';
 
+import '../../../../components/Components-base.css';
 import uid from '../../../../utils/uid';
 
 type BaseProps = {
@@ -20,7 +21,13 @@ export const FormTextarea: FC<FormTextareaType> = ({
 	...props
 }) => {
 	return (
-		<FormItem className="FormTextarea" id={id} label={label} errorMessage={errorMessage} labelHidden={labelHidden}>
+		<FormItem
+			className="FormTextarea"
+			id={id}
+			label={label || 'FormTextarea'}
+			errorMessage={errorMessage}
+			labelHidden={labelHidden}
+		>
 			<textarea
 				className={['FormTextarea', 'M-FormItem-Input', errorMessage && 'M-FormItem-Input-error', 'h-40'].join(' ')}
 				id={id}

@@ -20,14 +20,12 @@ type ContentInputPreset = {
 	sizeStyle?: string;
 };
 
-type BaseProps = {
+type InputCardType = {
 	variant: 'newPost' | 'answerPost';
 	headline: string;
 	author: User;
 	placeHolderText: string;
 };
-
-type InputCardType = BaseProps;
 
 export const ContentInput: FC<InputCardType> = (props) => {
 	const { variant, placeHolderText, author } = props;

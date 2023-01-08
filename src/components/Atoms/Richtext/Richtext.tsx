@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, Children } from 'react';
 import './Richtext.css';
 
 type BaseProps = {
@@ -14,5 +14,19 @@ const sizeMap: Record<BaseProps['size'], string> = {
 
 export const Richtext: FC<BaseProps> = ({ children, as: Tag = 'div', size = 'M', ...props }) => {
 	const style = ['Richtext inline-block leading-none font-medium leading-normal', sizeMap[size]].join(' ');
-	return <Tag className={style} {...props} dangerouslySetInnerHTML={{ __html: children as string }}></Tag>;
+
+	let content = children;
+	if (Children.count(children) === 1 && typeof children === 'string') {
+		if (!/<\/?[a-z][\s\S]*>/i.test(children)) {
+			return <p>{children}</p>;
+		}
+		content = <div dangerouslySetInnerHTML={{ __html: children }}></div>;
+	}
+	console.log(Children.count(children), typeof children, content);
+	return (
+		<Tag className={style} {...props}>
+			{content}
+		</Tag>
+	);
 };
+
