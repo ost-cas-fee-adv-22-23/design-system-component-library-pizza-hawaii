@@ -6,7 +6,7 @@ import { Label } from '../../Atoms/Label/Label';
 type BaseButtonProps = {
 	children: ReactNode;
 	as?: 'button' | 'a';
-	size?: keyof typeof sizeMap;
+	size?: keyof typeof btnSizeMap;
 	color: keyof typeof colorMap;
 	icon?: string;
 };
@@ -23,7 +23,7 @@ type ButtonProps = HTMLButtonProps | LinkButtonProps;
 
 export const baseStyle = ['flex items-center justify-center', 'text-base font-semibold', 'cursor-pointer'];
 
-export const sizeMap: Record<string, string> = {
+export const btnSizeMap: Record<string, string> = {
 	S: 'p-2 rounded-lg gap-y-0 gap-x-2 text-sm font-semibold',
 	M: 'p-3 rounded-lg gap-y-0 gap-x-2',
 	L: 'py-4 px-6 rounded-lg gap-y-1 gap-x-3',
@@ -44,7 +44,7 @@ export const Button: FC<ButtonProps> = ({
 	icon = 'mumble',
 	...props
 }) => {
-	const style = [...baseStyle, 'w-full', sizeMap[size], colorMap[color]];
+	const style = [...baseStyle, 'w-full', btnSizeMap[size], colorMap[color]];
 
 	return (
 		<Tag

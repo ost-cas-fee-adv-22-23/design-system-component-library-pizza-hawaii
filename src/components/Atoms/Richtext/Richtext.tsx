@@ -22,7 +22,6 @@ export const Richtext: FC<BaseProps> = ({ children, as: Tag = 'div', size = 'M',
 		}
 		content = <div dangerouslySetInnerHTML={{ __html: children }}></div>;
 	}
-	console.log(Children.count(children), typeof children, content);
 	return (
 		<Tag className={style} {...props}>
 			{content}

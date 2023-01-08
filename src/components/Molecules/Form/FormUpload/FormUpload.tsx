@@ -4,7 +4,7 @@ import { FormItem } from '../FormItem/FormItem';
 import { Icon } from '../../../Atoms/Icon/Icon';
 import { Label } from '../../../Atoms/Label/Label';
 import { Richtext } from '../../../Atoms/Richtext/Richtext';
-import { baseStyle as ButtonBaseStyle, sizeMap as ButtonSizeMap } from '../../../Molecules/Button/Button';
+import { baseStyle as ButtonBaseStyle, btnSizeMap as ButtonSizeMap } from '../../../Molecules/Button/Button';
 
 import '../../../../components/Components-base.css';
 import uid from '../../../../utils/uid';
