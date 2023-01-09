@@ -14,7 +14,7 @@
 	@apply text-violet-600 hover:text-violet-900;
 }
 
-.M-link-pink {
+.M-Link-pink {
 	@apply text-pink-400 hover:text-pink-600;
 }
 

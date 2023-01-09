@@ -1,0 +1,8 @@
+/* custom css imports for some components are registered here */
+@import url('../components/Components-base.css');
+/* components */
+@import url('../components/Atoms/Icon/Icon.css');
+@import url('../components/Atoms/Richtext/Richtext.css');
+@import url('../components/Molecules/Form/Form.css');
+@import url('../components/Organisms/Header/header.css');
+@import url('../components/Molecules/ImageOverlay/ImageOverlay.css');
