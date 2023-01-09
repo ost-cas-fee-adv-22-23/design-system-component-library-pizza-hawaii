@@ -12,8 +12,6 @@ import { Label } from '../../Atoms/Label/Label';
 
 import { Post } from '../../../types/Post';
 
-import '/src/components/Components-base.css';
-
 type ContentCardPreset = {
 	userprofile: UserProfileProps;
 	headlineSize: 'S' | 'M' | 'L' | 'XL';

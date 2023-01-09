@@ -1,24 +1,4 @@
 /*
- * Typography
- */
-
-/*
- * Link
- */
-
-.M-Link-slate {
-	@apply text-slate-400 hover:text-slate-600;
-}
-
-.M-Link-violet {
-	@apply text-violet-600 hover:text-violet-900;
-}
-
-.M-Link-pink {
-	@apply text-pink-400 hover:text-pink-600;
-}
-
-/*
  * Form
  */
 
@@ -46,12 +26,4 @@
 	 	border-dashed outline-dashed
 		hover:outline-2 focus:outline-2
 		hover:border-slate-100 hover:border-transparent focus:border-slate-100 focus:border-transparent;
-}
-
-/*
-* switch
-*/
-
-.M-input-checked input:checked + label {
-	@apply bg-white text-violet-600;
 }

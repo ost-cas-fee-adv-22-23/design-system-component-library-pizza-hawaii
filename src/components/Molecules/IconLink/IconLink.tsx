@@ -9,6 +9,12 @@ export const icoLinkSizeMap: Record<string, string> = {
 	L: 'text-xl gap-2',
 };
 
+export const IconLinkColorMap: Record<string, string> = {
+	slate: 'text-slate-400 hover:text-slate-600',
+	violet: 'text-violet-600 hover:text-violet-900',
+	pink: ' text-pink-400 hover:text-pink-600',
+};
+
 type BaseIconLinkProps = {
 	children: ReactNode;
 	as: 'a' | 'button' | 'span';
@@ -42,9 +48,14 @@ export const IconLink: FC<IconLinkProps> = ({
 }) => {
 	return (
 		<Tag
-			className={['IconLink', 'flex', 'items-center', icoLinkSizeMap[size], `M-Link-${color}`, 'hover:cursor-pointer'].join(
-				' '
-			)}
+			className={[
+				'IconLink',
+				'flex',
+				'items-center',
+				icoLinkSizeMap[size],
+				IconLinkColorMap[color],
+				'hover:cursor-pointer',
+			].join(' ')}
 			data-ico-state={iconState}
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}
