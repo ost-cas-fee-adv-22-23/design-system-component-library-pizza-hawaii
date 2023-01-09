@@ -6,7 +6,7 @@ import { Label } from '../../Atoms/Label/Label';
 type BaseButtonProps = {
 	children: ReactNode;
 	as?: 'button' | 'a';
-	size?: keyof typeof sizeMap;
+	size?: keyof typeof btnSizeMap;
 	color: keyof typeof colorMap;
 	icon?: string;
 };
@@ -21,19 +21,19 @@ type LinkButtonProps = BaseButtonProps & {
 
 type ButtonProps = HTMLButtonProps | LinkButtonProps;
 
-export const baseStyle = ['flex items-center justify-center', 'text-white text-base font-semibold', 'cursor-pointer'];
+export const baseStyle = ['flex items-center justify-center', 'text-base font-semibold', 'cursor-pointer'];
 
-export const sizeMap: Record<string, string> = {
+export const btnSizeMap: Record<string, string> = {
 	S: 'p-2 rounded-lg gap-y-0 gap-x-2 text-sm font-semibold',
 	M: 'p-3 rounded-lg gap-y-0 gap-x-2',
 	L: 'py-4 px-6 rounded-lg gap-y-1 gap-x-3',
 };
 
 export const colorMap: Record<string, string> = {
-	slate: 'bg-slate-700 hover:bg-slate-800',
-	violet: 'bg-violet-600 hover:bg-violet-700',
+	slate: 'text-white bg-slate-700 hover:bg-slate-800',
+	violet: 'text-white bg-violet-600 hover:bg-violet-700',
 	gradient:
-		'bg-gradient-to-r transition-all ease-out duration-200 bg-pos-0 bg-size-200 from-violet-600 via-pink-600 to-violet-700 hover:bg-pos-100',
+		'text-white bg-gradient-to-r transition-all ease-out duration-200 bg-pos-0 bg-size-200 from-violet-600 via-pink-600 to-violet-700 hover:bg-pos-100',
 };
 
 export const Button: FC<ButtonProps> = ({
@@ -44,7 +44,7 @@ export const Button: FC<ButtonProps> = ({
 	icon = 'mumble',
 	...props
 }) => {
-	const style = [...baseStyle, 'w-full', sizeMap[size], colorMap[color]];
+	const style = [...baseStyle, 'w-full', btnSizeMap[size], colorMap[color]];
 
 	return (
 		<Tag

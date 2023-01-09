@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { IconNames } from '../../Atoms/Icon/IconLib';
-import { IconLink as Component } from './IconLink';
+import { IconLink as Component, icoLinkSizeMap } from './IconLink';
 
 export default {
 	title: 'Component/Molecules/IconLink',
@@ -10,6 +10,10 @@ export default {
 	argTypes: {
 		icon: {
 			options: IconNames,
+			control: { type: 'select' },
+		},
+		size: {
+			options: Object.keys(icoLinkSizeMap),
 			control: { type: 'select' },
 		},
 	},

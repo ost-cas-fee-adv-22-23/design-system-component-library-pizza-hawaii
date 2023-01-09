@@ -7,13 +7,13 @@ type IconProps = {
 	name: string;
 };
 
-export const Icon: FC<IconProps> = ({ size = 'M', name = IcoNames[0], ...props }) => {
-	const sizeStyle = {
-		S: ['w-3'],
-		M: ['w-s'],
-		L: ['w-xl'],
-	};
+const sizeStyle = {
+	S: ['w-3'],
+	M: ['w-s'],
+	L: ['w-[28px]'],
+};
 
+export const Icon: FC<IconProps> = ({ size = 'M', name = IcoNames[0], ...props }) => {
 	const style = [...(sizeStyle[size] || sizeStyle.M)];
 
 	return (

@@ -1,6 +1,7 @@
 import React, { FC, SelectHTMLAttributes } from 'react';
 import { FormItem } from '../FormItem/FormItem';
 
+import '../../../../components/Components-base.css';
 import uid from '../../../../utils/uid';
 
 type OptionType = {
@@ -27,7 +28,13 @@ export const FormSelect: FC<FormSelectType> = ({
 	...props
 }) => {
 	return (
-		<FormItem className="FormSelect" id={id} label={label} errorMessage={errorMessage} labelHidden={labelHidden}>
+		<FormItem
+			className="FormSelect"
+			id={id}
+			label={label || 'FormSelect'}
+			errorMessage={errorMessage}
+			labelHidden={labelHidden}
+		>
 			<select
 				className={['FormSelect', 'M-FormItem-Input', errorMessage && 'M-FormItem-Input-error'].join(' ')}
 				id={id}
