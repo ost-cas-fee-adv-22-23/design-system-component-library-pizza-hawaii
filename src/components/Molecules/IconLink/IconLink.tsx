@@ -3,7 +3,7 @@ import React, { FC, ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes, HTMLA
 import { Icon } from '../../Atoms/Icon/Icon';
 import '../../../components/Components-base.css';
 
-export const sizeMap: Record<string, string> = {
+export const icoLinkSizeMap: Record<string, string> = {
 	S: 'text-sm gap-1',
 	M: 'text-base gap-2',
 	L: 'text-xl gap-2',
@@ -12,7 +12,7 @@ export const sizeMap: Record<string, string> = {
 type BaseIconLinkProps = {
 	children: ReactNode;
 	as: 'a' | 'button' | 'span';
-	size?: keyof typeof sizeMap;
+	size?: keyof typeof icoLinkSizeMap;
 	color: 'slate' | 'violet' | 'pink';
 	icon: string;
 	iconState?: string;
@@ -42,7 +42,7 @@ export const IconLink: FC<IconLinkProps> = ({
 }) => {
 	return (
 		<Tag
-			className={['IconLink', 'flex', 'items-center', sizeMap[size], `M-Link-${color}`, 'hover:cursor-pointer'].join(
+			className={['IconLink', 'flex', 'items-center', icoLinkSizeMap[size], `M-Link-${color}`, 'hover:cursor-pointer'].join(
 				' '
 			)}
 			data-ico-state={iconState}
