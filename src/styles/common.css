@@ -2,4 +2,5 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import './fonts.css';
-@import url('./customImports.css');
+@import './customStyles.css'
+

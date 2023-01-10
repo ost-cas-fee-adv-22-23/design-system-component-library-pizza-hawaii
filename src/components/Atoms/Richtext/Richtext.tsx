@@ -1,5 +1,5 @@
 import React, { FC, ReactNode, Children } from 'react';
-import './Richtext.css';
+// import './Richtext.css';
 
 type BaseProps = {
 	as?: 'div' | 'section';
@@ -28,4 +28,3 @@ export const Richtext: FC<BaseProps> = ({ children, as: Tag = 'div', size = 'M',
 		</Tag>
 	);
 };
-

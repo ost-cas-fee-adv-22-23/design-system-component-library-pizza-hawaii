@@ -8,7 +8,7 @@
 	},
 	"scripts": {
 		"build": "rm -rf ./dist && ctix create --overwrite --useRootDir --noBackup --p ./tsconfig.json && rm ./index.ts && npx tailwindcss -i ./src/styles/common.css -o ./dist/output.css && tsc",
-		"build-storybook": "npx tailwindcss -i ./src/styles/common.css -o ./dist/output.css --watch && build-storybook",
+		"build-storybook": "npx tailwindcss -i ./src/styles/common.css -o ./dist/output.css && build-storybook",
 		"format": "$npm_execpath run lint && $npm_execpath run prettier",
 		"format:fix": "$npm_execpath run lint:fix && $npm_execpath run prettier:fix",
 		"lint": "eslint --quiet --ext .js,.jsx,.ts,.tsx src/",
