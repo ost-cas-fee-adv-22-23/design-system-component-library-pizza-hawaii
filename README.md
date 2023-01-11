@@ -95,14 +95,14 @@ try to use these semantics while committing to maintain a meaningfull commit his
 `chore:` (updating taskrunnner, libraries changes, configurations)
 
 
-## Some special Hawaiian flawor... 
+## Some special Hawaiian flavor... 
 
 - We use some mock Library to have always a fresh breeze of Sample Pictures.
 - All special Component-base css classes start with a capital `M`. Why you ask ? - Mumble it baby!.
 
 
 
-## Deployment
+## Deployment - to be written when it builds
 
 This repository is configured to automatically deploy your design system
 to GitHub Pages and the component library to the GitHub package registry.
