@@ -16,7 +16,6 @@ const sizeMap: Record<BaseProps['level'], string> = {
 
 export const Headline: FC<BaseProps> = ({ children, level = 1, as: Tag = `h${level}`, className = '', ...props }) => {
 	const style = ['leading-tight', sizeMap[level], className].join(' ');
-
 	return (
 		<Tag className={style} {...props}>
 			{children}

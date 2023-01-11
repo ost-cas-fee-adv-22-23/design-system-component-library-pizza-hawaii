@@ -71,7 +71,6 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 							value="mumbles"
 							name="posttype"
 							onChange={(value: string): void => {
-								console.log(value);
 								setCurrentPostType(value);
 							}}
 						/>

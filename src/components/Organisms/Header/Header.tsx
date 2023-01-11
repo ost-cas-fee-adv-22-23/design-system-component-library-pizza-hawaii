@@ -11,8 +11,6 @@ import { FormTextarea } from '../../Molecules/Form/FormTextarea/FormTextarea';
 
 import { User } from '../../../types/User';
 
-import './header.css';
-
 type BaseProps = {
 	user: User;
 };
@@ -42,7 +40,7 @@ export const Header: FC<BaseProps> = ({ user }) => {
 		<header className="Header mb-8 bg-violet-600 text-white">
 			<div className="px-content py-3">
 				<div className="flex items-center justify-between w-full max-w-content mx-auto">
-					<a href="/" className="Header--logo">
+					<a href="/" className="inline-block w-[209px]">
 						<svg width="209" height="40" viewBox="0 0 209 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<g>
 								<path

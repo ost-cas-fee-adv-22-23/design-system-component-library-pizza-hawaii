@@ -1,6 +1,5 @@
 import React, { FC, ReactNode } from 'react';
 import { Headline } from '../../Atoms/Headline/Headline';
-import './SplitScreen.css';
 
 type BaseProps = {
 	children: ReactNode;

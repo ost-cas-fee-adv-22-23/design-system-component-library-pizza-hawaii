@@ -1,0 +1,28 @@
+
+    /*Form input*/
+
+	.M-FormItem-Input {
+	@apply text-black text-base
+		bg-slate-100 rounded-lg p-4
+		border border-slate-300 outline outline-slate-300 outline-0
+		hover:border-slate-300 hover:outline-slate-300 hover:outline-1
+		focus:border-purple-600 focus:outline-purple-600 focus:outline-1;
+	}
+
+	.M-FormItem-Input-error {
+		@apply border-red-700 outline-red-700 outline-1;
+	}
+
+	.M-FormItem-Label {
+		@apply text-slate-800 font-semibold text-base;
+	}
+	.M-FormItem-Error {
+		@apply text-red-700 text-xs font-medium;
+	}
+
+	.M-FormItem-Upload {
+		@apply p-12
+			border-dashed outline-dashed
+			hover:outline-2 focus:outline-2
+			hover:border-slate-100 hover:border-transparent focus:border-slate-100 focus:border-transparent;
+	}

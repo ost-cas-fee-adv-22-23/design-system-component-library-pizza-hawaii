@@ -1,7 +1,6 @@
 import React, { FC, SelectHTMLAttributes } from 'react';
 import { FormItem } from '../FormItem/FormItem';
 
-import '../../../../components/Components-base.css';
 import uid from '../../../../utils/uid';
 
 type OptionType = {

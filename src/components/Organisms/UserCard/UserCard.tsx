@@ -9,7 +9,6 @@ import { Label } from '../../Atoms/Label/Label';
 
 import { User } from '../../../types/User';
 
-import '/src/components/Components-base.css';
 import { Button } from '../../Molecules/Button/Button';
 
 type BaseProps = {
