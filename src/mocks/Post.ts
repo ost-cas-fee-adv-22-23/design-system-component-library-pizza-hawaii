@@ -549,7 +549,6 @@ export const Posts: PostType[] = [
 
 export const PostsFormated = Posts.map((post) => {
 	const html = parseRichText(post.body);
-	console.log(post.body, html);
 	return {
 		...post,
 		body: html,
