@@ -1,6 +1,18 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import './fonts.css';
 @import './customStyles.css'
 
+@layer components {
+  
+  
+  h1 {
+    display: block;
+    background: hotpink !important;
+  }
+  .pizza {
+    display: block;
+    background: hotpink !important;
+    }
+}
