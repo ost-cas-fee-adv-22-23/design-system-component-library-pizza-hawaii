@@ -1,5 +1,4 @@
 import React, { FC, ReactNode, Children } from 'react';
-// import './Richtext.css';
 
 type BaseProps = {
 	as?: 'div' | 'section';

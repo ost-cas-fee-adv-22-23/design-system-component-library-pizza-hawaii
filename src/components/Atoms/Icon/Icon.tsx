@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { default as IconLib, IconNames as IcoNames } from './IconLib';
-import './Icon.css';
 
 type IconProps = {
 	size?: 'S' | 'M' | 'L';

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import '../../../components/Components-base.css';
+
 import { UserProfile, BaseProps as UserProfileProps } from '../../Molecules/UserProfile/UserProfile';
 import { UserName } from '../../Molecules/UserName/UserName';
 import { Headline } from '../../Atoms/Headline/Headline';

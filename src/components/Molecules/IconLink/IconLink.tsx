@@ -1,7 +1,6 @@
 import React, { FC, ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes, HTMLAttributes } from 'react';
 
 import { Icon } from '../../Atoms/Icon/Icon';
-import '../../../components/Components-base.css';
 
 export const icoLinkSizeMap: Record<string, string> = {
 	S: 'text-sm gap-1',

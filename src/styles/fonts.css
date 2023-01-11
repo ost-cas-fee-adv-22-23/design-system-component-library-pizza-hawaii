@@ -41,7 +41,3 @@
        url('../assets/fonts/Poppins/poppins-v20-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../assets/fonts/Poppins/poppins-v20-latin-700.svg#Poppins') format('svg'); /* Legacy iOS */
 }
-
-body {
-	font-family: 'Poppins';
-}

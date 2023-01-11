@@ -16,12 +16,9 @@ const sizeMap: Record<BaseProps['level'], string> = {
 
 export const Headline: FC<BaseProps> = ({ children, level = 1, as: Tag = `h${level}`, className = '', ...props }) => {
 	const style = ['leading-tight', sizeMap[level], className].join(' ');
-	// TODO: remove the pizza test
 	return (
-		<div className="pizza">
-			<Tag className={style} {...props}>
-				{children}
-			</Tag>
-		</div>
+		<Tag className={style} {...props}>
+			{children}
+		</Tag>
 	);
 };

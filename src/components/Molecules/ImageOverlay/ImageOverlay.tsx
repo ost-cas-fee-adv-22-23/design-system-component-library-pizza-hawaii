@@ -2,8 +2,6 @@ import React, { FC } from 'react';
 import { Icon } from '../../Atoms/Icon/Icon';
 import { Image } from '../../Atoms/Image/Image';
 
-import './ImageOverlay.css';
-
 type BaseProps = {
 	icon: string;
 	overlayStyles: string;
@@ -29,7 +27,7 @@ export const ImageOverlay: FC<BaseProps> = (props) => {
 		<a href="#">
 			<div className="relative w-max">
 				<div className={[...baseOverlay, props.overlayStyles].join(' ')}>
-					<div className="center text-white">
+					<div className="relative top-1/2 left-1/2 -translate-y-2/4 text-white">
 						<Icon name={props.icon} size="M" />
 					</div>
 				</div>
