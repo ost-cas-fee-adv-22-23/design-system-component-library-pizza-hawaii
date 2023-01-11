@@ -7,7 +7,7 @@
 	height: 100%;
 }
 
-.Icon svg path {
+.Icon svg * {
 	fill: currentColor;
 }
 
