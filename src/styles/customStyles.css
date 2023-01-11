@@ -1,16 +1,8 @@
-@layer tailwind-base,
-my-custom-styles;
-
-@layer tailwind-base {
-  @tailwind base;
-}
-
-@tailwind utilities;
-
-@layer my-custom-styles {
+ 
   /* test */
   .pizza {
-      background-color: aqua;
+    display: block;
+    background: hotpink !important;
     }
     /* richtext*/
     .Richtext p:not(:last-child) {
@@ -40,4 +32,3 @@ my-custom-styles;
     .M-FormItem-Upload {
       @apply p-12 border-dashed outline-dashed hover:outline-2 focus:outline-2 hover:border-slate-100 hover:border-transparent focus:border-slate-100 focus:border-transparent;
     }
-}
