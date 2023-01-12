@@ -6,10 +6,9 @@ import { UserName } from '../../Molecules/UserName/UserName';
 import { UserProfile } from '../../Molecules/UserProfile/UserProfile';
 
 import { Label } from '../../Atoms/Label/Label';
+import { Button } from '../../Molecules/Button/Button';
 
 import { User } from '../../../types/User';
-
-import { Button } from '../../Molecules/Button/Button';
 
 type BaseProps = {
 	user: User;
@@ -20,7 +19,13 @@ export const UserCard: FC<BaseProps> = ({ user }) => {
 		<Card as="div" rounded={true} size="S">
 			<div>
 				<div className="flex flex-col items-center gap-4">
-					<UserProfile user={user} size="L" border={true} href={`/user/${user.userName}`} />
+					<UserProfile
+						userName={user.userName}
+						userAvatar={user.avatar}
+						size="L"
+						border={true}
+						href={`/user/${user.userName}`}
+					/>
 
 					<div className="flex flex-col gap-2">
 						<Label as="span" size="L">

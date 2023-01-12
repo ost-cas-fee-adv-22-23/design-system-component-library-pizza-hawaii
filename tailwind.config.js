@@ -32,8 +32,7 @@ module.exports = {
 		},
 
 		extend: {
-			colors: {
-			},
+			colors: {},
 			lineHeight: {
 				normal: '1.4',
 			},
@@ -61,6 +60,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [
-	],
+	plugins: [],
 };

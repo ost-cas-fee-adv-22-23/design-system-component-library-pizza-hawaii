@@ -33,7 +33,13 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 					<div className="relative mb-6">
 						<Image src={user.posterImage} alt={user.userName} preset="header" />
 						<div className="absolute right-8 bottom-0 translate-y-1/2">
-							<UserProfile user={user} size="XL" border={true} href="/" />
+							<UserProfile
+								userName={user.userName}
+								userAvatar={user.avatar}
+								size="XL"
+								border={true}
+								href="/"
+							/>
 						</div>
 					</div>
 

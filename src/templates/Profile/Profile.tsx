@@ -1,18 +1,20 @@
 import React, { FC, useState } from 'react';
 
-import { Header } from '../../components/Organisms/Header/Header';
 import { Headline } from '../../components/Atoms/Headline/Headline';
 import { Image } from '../../components/Atoms/Image/Image';
+import { Richtext } from '../../components/Atoms/Richtext/Richtext';
+
 import { Switch } from '../../components/Molecules/Switch/Switch';
 import { UserProfile } from '../../components/Molecules/UserProfile/UserProfile';
-import { ContentCard } from '../../components/Organisms/ContentCard/ContentCard';
-
-import { Post as PostType } from '../../types/Post';
-import { User as UserType } from '../../types/User';
-import { Richtext } from '../../components/Atoms/Richtext/Richtext';
 import { UserName } from '../../components/Molecules/UserName/UserName';
 import { TimeStamp } from '../../components/Molecules/TimeStamp/TimeStamp';
 import { IconLink } from '../../components/Molecules/IconLink/IconLink';
+
+import { ContentCard } from '../../components/Organisms/ContentCard/ContentCard';
+import { Header } from '../../components/Organisms/Header/Header';
+
+import { Post as PostType } from '../../types/Post';
+import { User as UserType } from '../../types/User';
 
 type ProfileType = {
 	user: UserType;
@@ -36,7 +38,13 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 					<div className="relative mb-6">
 						<Image src={user.posterImage} alt={user.userName} preset="header" />
 						<div className="absolute right-8 bottom-0 translate-y-1/2">
-							<UserProfile user={user} size="XL" border={true} href="/" />
+							<UserProfile
+								userName={user.userName}
+								userAvatar={user.avatar}
+								size="XL"
+								border={true}
+								href="/"
+							/>
 						</div>
 					</div>
 					<div className="mb-2 text-slate-900 pr-48">

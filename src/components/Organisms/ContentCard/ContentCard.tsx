@@ -13,7 +13,7 @@ import { Label } from '../../Atoms/Label/Label';
 import { Post } from '../../../types/Post';
 
 type ContentCardPreset = {
-	userprofile: UserProfileProps;
+	userprofile: { size: UserProfileProps['size']; border: UserProfileProps['border'] };
 	headlineSize: 'S' | 'M' | 'L' | 'XL';
 	textSize: 'M' | 'L';
 	cardStyle?: string;
@@ -26,31 +26,31 @@ type BaseProps = {
 
 type ContentCardType = BaseProps & Post;
 
-export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, body, image, comments, likes }) => {
-	const preset: Record<ContentCardType['variant'], ContentCardPreset> = {
-		detailpage: {
-			userprofile: { size: 'M', border: true, user: author, href: `/user/${author.userName}` },
-			headlineSize: 'XL',
-			textSize: 'L',
-			profileStyle: '',
-			cardStyle: 'border-2 border-solid border-white hover:border-slate-300',
-		},
-		timeline: {
-			userprofile: { size: 'M', border: true, user: author, href: `/user/${author.userName}` },
-			headlineSize: 'L',
-			textSize: 'M',
-			profileStyle: 'inline-flex absolute left-0 transform -translate-x-1/2',
-			cardStyle: 'rounded-3xl',
-		},
-		responsive: {
-			userprofile: { size: 'S', border: false, user: author, href: `/user/${author.userName}` },
-			headlineSize: 'M',
-			textSize: 'M',
-			cardStyle: 'border-2 border-solid border-white hover:border-slate-200',
-			profileStyle: 'inline-flex',
-		},
-	};
+const preset: Record<ContentCardType['variant'], ContentCardPreset> = {
+	detailpage: {
+		userprofile: { size: 'M', border: true },
+		headlineSize: 'XL',
+		textSize: 'L',
+		profileStyle: '',
+		cardStyle: 'border-2 border-solid border-white hover:border-slate-300',
+	},
+	timeline: {
+		userprofile: { size: 'M', border: true },
+		headlineSize: 'L',
+		textSize: 'M',
+		profileStyle: 'inline-flex absolute left-0 transform -translate-x-1/2',
+		cardStyle: 'rounded-3xl',
+	},
+	responsive: {
+		userprofile: { size: 'S', border: false },
+		headlineSize: 'M',
+		textSize: 'M',
+		cardStyle: 'border-2 border-solid border-white hover:border-slate-200',
+		profileStyle: 'inline-flex',
+	},
+};
 
+export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, body, image, comments, likes }) => {
 	const setting = preset[variant] || preset.detailpage;
 
 	return (
@@ -58,7 +58,12 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 			<div>
 				<div className="mb-4 flex items-center gap-2">
 					<div className={setting.profileStyle}>
-						<UserProfile {...setting.userprofile} />
+						<UserProfile
+							userName={author.userName}
+							userAvatar={author.avatar}
+							href={`/user/${author.userName}`}
+							{...setting.userprofile}
+						/>
 					</div>
 					<div className="flex flex-col gap-2">
 						<Label as="span" size={setting.headlineSize}>

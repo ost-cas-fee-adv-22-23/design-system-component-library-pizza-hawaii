@@ -11,7 +11,7 @@ import { User } from '../../../types/User';
 import { FormTextarea } from '../../Molecules/Form/FormTextarea/FormTextarea';
 
 type ContentInputPreset = {
-	userprofile: UserProfileProps;
+	userprofile: { size: UserProfileProps['size']; border: UserProfileProps['border'] };
 	textSize: 'M' | 'L';
 	showUserdetails: boolean;
 	cardStyle: string;
@@ -27,27 +27,28 @@ type InputCardType = {
 	placeHolderText: string;
 };
 
+const preset: Record<InputCardType['variant'], ContentInputPreset> = {
+	newPost: {
+		userprofile: { size: 'M', border: true },
+		profileStyle: 'inline-flex absolute left-0 transform -translate-x-1/2',
+		textSize: 'L',
+		showUserdetails: false,
+		cardStyle: 'rounded-3xl border-2 border-solid border-white hover:border-slate-300',
+	},
+	answerPost: {
+		userprofile: { size: 'S', border: false },
+		profileStyle: 'flex flex-row',
+		textSize: 'M',
+		showUserdetails: true,
+		headerStyle: 'flex-col px-2',
+		cardStyle: '',
+		sizeStyle: 'flex flex-row border-2 border-solid border-white hover:border-slate-300',
+	},
+};
+
 export const ContentInput: FC<InputCardType> = (props) => {
 	const { variant, placeHolderText, author } = props;
 
-	const preset: Record<InputCardType['variant'], ContentInputPreset> = {
-		newPost: {
-			userprofile: { size: 'M', border: true, user: author, href: `/user/${author.userName}` },
-			profileStyle: 'inline-flex absolute left-0 transform -translate-x-1/2',
-			textSize: 'L',
-			showUserdetails: false,
-			cardStyle: 'rounded-3xl border-2 border-solid border-white hover:border-slate-300',
-		},
-		answerPost: {
-			userprofile: { size: 'S', border: false, user: author, href: `/user/${author.userName}` },
-			profileStyle: 'flex flex-row',
-			textSize: 'M',
-			showUserdetails: true,
-			headerStyle: 'flex-col px-2',
-			cardStyle: '',
-			sizeStyle: 'flex flex-row border-2 border-solid border-white hover:border-slate-300',
-		},
-	};
 	const setting = preset[variant] || preset.newPost;
 
 	return (
@@ -55,7 +56,12 @@ export const ContentInput: FC<InputCardType> = (props) => {
 			<div className="w-full">
 				<div className="mb-4 flex items-center gap-2">
 					<div className={setting.profileStyle}>
-						<UserProfile {...setting.userprofile} />
+						<UserProfile
+							userName={author.userName}
+							userAvatar={author.avatar}
+							href={`/user/${author.userName}`}
+							{...setting.userprofile}
+						/>
 					</div>
 
 					<div className="flex flex-col gap-2">

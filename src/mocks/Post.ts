@@ -1,6 +1,8 @@
 import { Post as PostType } from '../types/Post';
-import { User } from '../types/User';
 import { Users as UserList } from './User';
+
+import { User } from '../types/User';
+
 import { uidInt } from '../utils/uid';
 import parseRichText from '../utils/parseRichText';
 
@@ -545,7 +547,6 @@ export const Posts: PostType[] = [
 		],
 	},
 ];
-
 
 export const PostsFormated = Posts.map((post) => {
 	const html = parseRichText(post.body);
