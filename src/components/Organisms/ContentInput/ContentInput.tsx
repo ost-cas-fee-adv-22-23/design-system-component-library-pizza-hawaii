@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { UserProfile, BaseProps as UserProfileProps } from '../../Molecules/UserProfile/UserProfile';
+import { UserProfile, TUserProfile } from '../../Molecules/UserProfile/UserProfile';
 import { UserName } from '../../Molecules/UserName/UserName';
 import { Headline } from '../../Atoms/Headline/Headline';
 import { Label } from '../../Atoms/Label/Label';
@@ -11,7 +11,7 @@ import { User } from '../../../types/User';
 import { FormTextarea } from '../../Molecules/Form/FormTextarea/FormTextarea';
 
 type ContentInputPreset = {
-	userprofile: { size: UserProfileProps['size']; border: UserProfileProps['border'] };
+	userprofile: { size: TUserProfile['size']; border: TUserProfile['border'] };
 	textSize: 'M' | 'L';
 	showUserdetails: boolean;
 	cardStyle: string;

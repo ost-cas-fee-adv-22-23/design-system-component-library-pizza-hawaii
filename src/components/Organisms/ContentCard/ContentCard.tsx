@@ -3,8 +3,8 @@ import React, { FC } from 'react';
 
 import { Card } from '../../Molecules/Card/Card';
 import { UserName } from '../../Molecules/UserName/UserName';
-import { TimeStamp } from '../../Molecules/TimeStamp/TimeStamp';
-import { UserProfile, BaseProps as UserProfileProps } from '../../Molecules/UserProfile/UserProfile';
+import { TimeStamp } from '../../Atoms/TimeStamp/TimeStamp';
+import { UserProfile, TUserProfile } from '../../Molecules/UserProfile/UserProfile';
 import { IconLink } from '../../Molecules/IconLink/IconLink';
 import { Image } from '../../Atoms/Image/Image';
 import { Richtext } from '../../Atoms/Richtext/Richtext';
@@ -13,7 +13,7 @@ import { Label } from '../../Atoms/Label/Label';
 import { Post } from '../../../types/Post';
 
 type ContentCardPreset = {
-	userprofile: { size: UserProfileProps['size']; border: UserProfileProps['border'] };
+	userprofile: { size: TUserProfile['size']; border: TUserProfile['border'] };
 	headlineSize: 'S' | 'M' | 'L' | 'XL';
 	textSize: 'M' | 'L';
 	cardStyle?: string;
@@ -71,7 +71,9 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 						</Label>
 						<span className="flex flex-row align-baseline gap-3">
 							<UserName href={`/user/${author.userName}`}>{author.userName}</UserName>
-							<TimeStamp time={createdAt} />
+							<IconLink as="span" icon="calendar" color="slate" size="S">
+								<TimeStamp time={createdAt} />
+							</IconLink>
 						</span>
 					</div>
 				</div>

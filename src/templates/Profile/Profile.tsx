@@ -7,7 +7,7 @@ import { Richtext } from '../../components/Atoms/Richtext/Richtext';
 import { Switch } from '../../components/Molecules/Switch/Switch';
 import { UserProfile } from '../../components/Molecules/UserProfile/UserProfile';
 import { UserName } from '../../components/Molecules/UserName/UserName';
-import { TimeStamp } from '../../components/Molecules/TimeStamp/TimeStamp';
+import { TimeStamp } from '../../components/Atoms/TimeStamp/TimeStamp';
 import { IconLink } from '../../components/Molecules/IconLink/IconLink';
 
 import { ContentCard } from '../../components/Organisms/ContentCard/ContentCard';
@@ -57,7 +57,9 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 							{user.city}
 						</IconLink>
 
-						<TimeStamp time={user.createdAt} prefix="Mitglied seit" icon="calendar" />
+						<IconLink as="span" icon="calendar" color="slate" size="S">
+							<TimeStamp time={user.createdAt} prefix="Mitglied seit" />
+						</IconLink>
 					</span>
 
 					<div className="text-slate-400 mb-8">

@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
 import moment from 'moment';
 
-import { IconLink } from '../IconLink/IconLink';
-
 /*
  * Type
  */
@@ -11,10 +9,9 @@ type TTimeStamp = {
 	time: string;
 	prefix?: string;
 	postfix?: string;
-	icon?: string;
 };
 
-export const TimeStamp: FC<TTimeStamp> = ({ time, prefix, postfix, icon = 'time' }) => {
+export const TimeStamp: FC<TTimeStamp> = ({ time, prefix, postfix }) => {
 	const dateTimeAgo = [
 		prefix,
 		moment(new Date(time))
@@ -22,13 +19,12 @@ export const TimeStamp: FC<TTimeStamp> = ({ time, prefix, postfix, icon = 'time'
 			.fromNow(!!prefix || !!postfix),
 		postfix,
 	].join(' ');
+
 	const dateTime = moment(new Date(time)).locale('de').format('LLLL');
 
 	return (
-		<IconLink as="span" icon={icon} color="slate" size="S">
-			<time dateTime={time} title={dateTime}>
-				{dateTimeAgo}
-			</time>
-		</IconLink>
+		<time dateTime={time} title={dateTime}>
+			{dateTimeAgo}
+		</time>
 	);
 };
