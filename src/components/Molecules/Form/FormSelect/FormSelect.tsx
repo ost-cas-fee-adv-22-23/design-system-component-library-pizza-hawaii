@@ -1,24 +1,28 @@
 import React, { FC, SelectHTMLAttributes } from 'react';
-import { FormItem } from '../FormItem/FormItem';
+import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem/FormItem';
 
 import uid from '../../../../utils/uid';
 
-type OptionType = {
+/*
+ * Type
+ */
+
+type TFormSelectOption = {
 	label: string;
 	value: string;
 };
 
-type BaseProps = {
+type TFormSelect = {
 	label: string;
-	options: OptionType[];
+	options: TFormSelectOption[];
 	errorMessage?: string;
 	id?: string;
 	labelHidden?: boolean;
 };
 
-type FormSelectType = BaseProps & SelectHTMLAttributes<HTMLSelectElement>;
+type TFormSelectType = TFormSelect & SelectHTMLAttributes<HTMLSelectElement>;
 
-export const FormSelect: FC<FormSelectType> = ({
+export const FormSelect: FC<TFormSelectType> = ({
 	label,
 	options,
 	errorMessage,
@@ -27,21 +31,13 @@ export const FormSelect: FC<FormSelectType> = ({
 	...props
 }) => {
 	return (
-		<FormItem
-			className="FormSelect"
-			id={id}
-			label={label || 'FormSelect'}
-			errorMessage={errorMessage}
-			labelHidden={labelHidden}
-		>
+		<FormItem id={id} label={label || 'FormSelect'} errorMessage={errorMessage} labelHidden={labelHidden}>
 			<select
-				className={['FormSelect', 'M-FormItem-Input', errorMessage && 'M-FormItem-Input-error'].join(' ')}
+				className={[...FormItem_InputStyle, ...(errorMessage ? FormItem_InputErrorStyle : [])].join(' ')}
 				id={id}
 				{...props}
 			>
-				{options.map((option) => (
-					<option value={option.value}>{option.label}</option>
-				))}
+				{options && options.map((option) => <option value={option.value}>{option.label}</option>)}
 			</select>
 		</FormItem>
 	);

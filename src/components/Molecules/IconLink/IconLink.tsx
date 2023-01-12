@@ -2,6 +2,31 @@ import React, { FC, ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes, HTMLA
 
 import { Icon } from '../../Atoms/Icon/Icon';
 
+/*
+ * Type
+ */
+
+type TIconLinkSize = keyof typeof icoLinkSizeMap;
+
+type TIconLink = {
+	children: ReactNode;
+	as: 'a' | 'button' | 'span';
+	size?: TIconLinkSize;
+	color: 'slate' | 'violet' | 'pink';
+	icon: string;
+	iconState?: string;
+};
+
+type TLinkButtonProps = TIconLink & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
+type THTMLButtonProps = TIconLink & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
+type TSpanButtonProps = TIconLink & { as: 'span' } & HTMLAttributes<HTMLSpanElement>;
+
+type TIconLinkProps = TSpanButtonProps | THTMLButtonProps | TLinkButtonProps;
+
+/*
+ * Style
+ */
+
 export const icoLinkSizeMap: Record<string, string> = {
 	S: 'text-sm gap-1',
 	M: 'text-base gap-2',
@@ -14,29 +39,7 @@ export const IconLinkColorMap: Record<string, string> = {
 	pink: ' text-pink-400 hover:text-pink-600',
 };
 
-type BaseIconLinkProps = {
-	children: ReactNode;
-	as: 'a' | 'button' | 'span';
-	size?: keyof typeof icoLinkSizeMap;
-	color: 'slate' | 'violet' | 'pink';
-	icon: string;
-	iconState?: string;
-};
-type LinkButtonProps = BaseIconLinkProps & {
-	as: 'a';
-} & AnchorHTMLAttributes<HTMLAnchorElement>;
-
-type HTMLButtonProps = BaseIconLinkProps & {
-	as: 'button';
-} & ButtonHTMLAttributes<HTMLButtonElement>;
-
-type SpanButtonProps = BaseIconLinkProps & {
-	as: 'span';
-} & HTMLAttributes<HTMLSpanElement>;
-
-type IconLinkProps = SpanButtonProps | HTMLButtonProps | LinkButtonProps;
-
-export const IconLink: FC<IconLinkProps> = ({
+export const IconLink: FC<TIconLinkProps> = ({
 	children = 'NaviButton',
 	as: Tag = 'a',
 	color,
@@ -45,16 +48,11 @@ export const IconLink: FC<IconLinkProps> = ({
 	iconState,
 	...props
 }) => {
+	const styles = ['flex items-center', icoLinkSizeMap[size], IconLinkColorMap[color], 'group', 'transition-all'];
+
 	return (
 		<Tag
-			className={[
-				'IconLink',
-				'flex',
-				'items-center',
-				icoLinkSizeMap[size],
-				IconLinkColorMap[color],
-				'hover:cursor-pointer',
-			].join(' ')}
+			className={styles.join(' ')}
 			data-ico-state={iconState}
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}

@@ -2,13 +2,17 @@ import React, { FC } from 'react';
 import { Icon } from '../../Atoms/Icon/Icon';
 import { Image } from '../../Atoms/Image/Image';
 
-type BaseProps = {
+/*
+ * Type
+ */
+
+type TImageOverlay = {
 	icon: string;
 	overlayStyles: string;
 	src: string;
 };
 
-export const ImageOverlay: FC<BaseProps> = (props) => {
+export const ImageOverlay: FC<TImageOverlay> = (props) => {
 	const baseOverlay = [
 		'absolute',
 		'bg-opacity-0',

@@ -1,27 +1,33 @@
 import React, { FC, ReactNode, AnchorHTMLAttributes, HTMLAttributes } from 'react';
 
-type BaseProps = {
+/*
+ * Type
+ */
+
+type TLink = {
 	as: 'a' | 'span';
 	href: string;
 	children: ReactNode;
 };
 
-type LinkProps = BaseProps & {
-	as: 'a';
-} & AnchorHTMLAttributes<HTMLAnchorElement>;
-type SpanProps = BaseProps & {
-	as: 'span';
-} & HTMLAttributes<HTMLSpanElement>;
+type THTMLLinkProps = TLink & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
+type TSpanLinkProps = TLink & { as: 'span' } & HTMLAttributes<HTMLSpanElement>;
 
-type Props = LinkProps | SpanProps;
+type TLinkProps = THTMLLinkProps | TSpanLinkProps;
 
-export const Link: FC<Props> = ({ as: Tag = 'a', href, children = 'Link', ...props }) => {
+/*
+ * Style
+ */
+
+export const Link: FC<TLinkProps> = ({ as: Tag = 'a', href, children = 'Link', ...props }) => {
+	const style = [
+		'inline-block font-semibold',
+		'text-violet-600 hover:text-violet-700',
+		'underline underline-offset-4 decoration-1 decoration-violet-600 hover:decoration-violet-200',
+	];
+
 	return (
-		<Tag
-			className="inline-block text-violet-600 hover:text-violet-700 underline decoration-2 decoration-violet-600 hover:decoration-violet-700 underline-offset-2"
-			{...props}
-			href={href}
-		>
+		<Tag className={style.join(' ')} {...props} href={href}>
 			{children}
 		</Tag>
 	);

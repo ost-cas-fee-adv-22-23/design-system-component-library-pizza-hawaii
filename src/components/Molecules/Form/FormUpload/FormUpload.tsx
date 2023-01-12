@@ -1,5 +1,5 @@
 import React, { FC, InputHTMLAttributes, ChangeEvent } from 'react';
-import { FormItem } from '../FormItem/FormItem';
+import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem/FormItem';
 
 import { Icon } from '../../../Atoms/Icon/Icon';
 import { Label } from '../../../Atoms/Label/Label';
@@ -7,6 +7,10 @@ import { Richtext } from '../../../Atoms/Richtext/Richtext';
 import { baseStyle as ButtonBaseStyle, btnSizeMap as ButtonSizeMap } from '../../../Molecules/Button/Button';
 
 import uid from '../../../../utils/uid';
+
+/*
+ * Type
+ */
 
 type BaseProps = {
 	label: string;
@@ -26,12 +30,25 @@ type UploadTypePreset = {
 	hint: string;
 };
 
+/*
+ * Style
+ */
+
 const filePreset: Record<string, UploadTypePreset> = {
 	img: {
 		accept: 'image/jpeg, image/png',
 		hint: 'JPEG oder PNG, maximal 50 MB',
 	},
 };
+
+const fieldStyle: string[] = [
+	'relative',
+	'mb-4 p-12',
+	'rounded-xl',
+	'border-0 outline-1 outline-dashed -outline-offset-1',
+	'hover:border-0 hover:outline-2 hover:outline-slate-400 hover:-outline-offset-2',
+	'focus:border-0 focus:outline-2 focus:outline-slate-400 focus:-outline-offset-2',
+];
 
 export const FormUpload: FC<FormUploadType> = ({
 	preset = 'img',
@@ -46,22 +63,11 @@ export const FormUpload: FC<FormUploadType> = ({
 	const { accept: presetAccept, hint: presetHint } = filePreset[preset];
 
 	return (
-		<FormItem
-			className="FormUpload"
-			id={id}
-			label={label || 'FormUpload'}
-			errorMessage={errorMessage}
-			labelHidden={labelHidden}
-		>
+		<FormItem id={id} label={label || 'FormUpload'} errorMessage={errorMessage} labelHidden={labelHidden}>
 			<div
-				className={[
-					'FormUpload',
-					'M-FormItem-Input',
-					'M-FormItem-Upload',
-					errorMessage && 'M-FormItem-Input-error',
-					'relative',
-					'mb-4',
-				].join(' ')}
+				className={[...FormItem_InputStyle, ...(errorMessage ? FormItem_InputErrorStyle : []), ...fieldStyle].join(
+					' '
+				)}
 			>
 				<label htmlFor={id} className="flex flex-col gap-2 items-center text-slate-500">
 					<Icon name="upload" size="L" />

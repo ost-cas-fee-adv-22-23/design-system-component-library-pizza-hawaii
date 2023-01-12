@@ -82,9 +82,8 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 					<IconLink
 						as="a"
 						href="#"
-						icon="comment"
+						icon={likes && likes.length > 0 ? 'comment_filled' : 'comment_fillable'}
 						color="slate"
-						iconState={comments && comments.length > 0 ? 'filled' : 'empty'}
 						title={comments && comments.length > 0 ? `${comments.length} comments` : 'No comments'}
 					>
 						{comments && comments.length > 0 ? `${comments.length} comments` : 'Comment'}
@@ -93,9 +92,8 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 					<IconLink
 						as="a"
 						href="#"
-						icon="heart"
+						icon={likes && likes.length > 0 ? 'heart_filled' : 'heart_fillable'}
 						color="pink"
-						iconState={likes && likes.length > 0 ? 'filled' : 'empty'}
 						title={likes && likes.length > 0 ? `${likes.length} likes` : 'No likes'}
 					>
 						{likes && likes.length > 0 ? `${likes.length} likes` : 'Like'}

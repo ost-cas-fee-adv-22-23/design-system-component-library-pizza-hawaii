@@ -3,14 +3,18 @@ import moment from 'moment';
 
 import { IconLink } from '../IconLink/IconLink';
 
-type BaseProps = {
+/*
+ * Type
+ */
+
+type TTimeStamp = {
 	time: string;
 	prefix?: string;
 	postfix?: string;
 	icon?: string;
 };
 
-export const TimeStamp: FC<BaseProps> = ({ time, prefix, postfix, icon = 'time' }) => {
+export const TimeStamp: FC<TTimeStamp> = ({ time, prefix, postfix, icon = 'time' }) => {
 	const dateTimeAgo = [
 		prefix,
 		moment(new Date(time))

@@ -33,8 +33,6 @@ module.exports = {
 
 		extend: {
 			colors: {
-				transparent: 'transparent',
-				current: 'currentColor',
 			},
 			lineHeight: {
 				normal: '1.4',
@@ -49,6 +47,7 @@ module.exports = {
 			},
 			backgroundSize: {
 				'size-200': '200% 200%',
+				'size-300': '300% 300%',
 			},
 			backgroundPosition: {
 				'pos-0': '0% 0%',
@@ -62,5 +61,6 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+	],
 };

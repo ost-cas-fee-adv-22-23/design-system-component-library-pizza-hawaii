@@ -1,9 +1,13 @@
 import React, { FC, InputHTMLAttributes, ChangeEvent } from 'react';
-import { FormItem } from '../FormItem/FormItem';
+import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem/FormItem';
 
 import uid from '../../../../utils/uid';
 
-type BaseProps = {
+/*
+ * Type
+ */
+
+type TFormInput = {
 	label: string;
 	errorMessage?: string;
 	id?: string;
@@ -11,19 +15,13 @@ type BaseProps = {
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-type FormInputType = BaseProps & InputHTMLAttributes<HTMLInputElement>;
+type TFormInputType = TFormInput & InputHTMLAttributes<HTMLInputElement>;
 
-export const FormInput: FC<FormInputType> = ({ label, errorMessage, id = uid('FormInput'), labelHidden, ...props }) => {
+export const FormInput: FC<TFormInputType> = ({ label, errorMessage, id = uid('FormInput'), labelHidden, ...props }) => {
 	return (
-		<FormItem
-			className="FormInput"
-			id={id}
-			label={label || 'FormInput'}
-			errorMessage={errorMessage}
-			labelHidden={labelHidden}
-		>
+		<FormItem id={id} label={label || 'FormInput'} errorMessage={errorMessage} labelHidden={labelHidden}>
 			<input
-				className={['FormInput', 'M-FormItem-Input', errorMessage && 'M-FormItem-Input-error'].join(' ')}
+				className={[...FormItem_InputStyle, ...(errorMessage ? FormItem_InputErrorStyle : [])].join(' ')}
 				id={id}
 				{...props}
 			/>

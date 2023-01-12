@@ -1,8 +1,11 @@
 import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
 
 import { Icon } from '../../Atoms/Icon/Icon';
-
 import { baseStyle, colorMap } from '../Button/Button';
+
+/*
+ * Type
+ */
 
 type BaseButtonProps = {
 	children: ReactNode;
@@ -11,13 +14,8 @@ type BaseButtonProps = {
 	icon?: string;
 };
 
-type HTMLButtonProps = BaseButtonProps & {
-	as: 'button';
-} & ButtonHTMLAttributes<HTMLButtonElement>;
-
-type LinkButtonProps = BaseButtonProps & {
-	as: 'a';
-} & AnchorHTMLAttributes<HTMLAnchorElement>;
+type HTMLButtonProps = BaseButtonProps & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
+type LinkButtonProps = BaseButtonProps & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 type ButtonProps = HTMLButtonProps | LinkButtonProps;
 

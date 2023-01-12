@@ -17,10 +17,12 @@ export const Medium = Template.bind({});
 Medium.args = {
 	size: 'M',
 	children: string,
+	allowedTags: ['p', 'a'],
 };
 
 export const Large = Template.bind({});
 Large.args = {
 	size: 'L',
 	children: string,
+	allowedTags: ['p', 'a'],
 };

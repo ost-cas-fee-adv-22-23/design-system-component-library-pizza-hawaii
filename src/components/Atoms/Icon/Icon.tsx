@@ -1,23 +1,35 @@
 import React, { FC } from 'react';
 import { default as IconLib, IconNames as IcoNames } from './IconLib';
 
-type IconProps = {
-	size?: 'S' | 'M' | 'L';
+/*
+ * Type
+ */
+
+type TIconSize = keyof typeof sizeStyle;
+
+type TIcon = {
+	size?: TIconSize;
 	name: string;
 };
 
+type TIconProps = (TIcon & { size?: TIconSize }) | TIcon;
+
+/*
+ * Styles
+ */
+
 const sizeStyle = {
-	S: ['w-3'],
-	M: ['w-s'],
-	L: ['w-[28px]'],
+	S: ['text-[11px]'],
+	M: ['text-[16px]'],
+	L: ['text-[28px]'],
 };
 
-export const Icon: FC<IconProps> = ({ size = 'M', name = IcoNames[0], ...props }) => {
-	const style = [...(sizeStyle[size] || sizeStyle.M)];
+export const Icon: FC<TIconProps> = ({ size = 'M', name = IcoNames[0], ...props }) => {
+	const style = [...(sizeStyle[size] || sizeStyle.M), '[&>svg]:fill-current [&>svg]:w-[1em]'];
 
 	return (
 		<span
-			className={['Icon', 'inline-flex', ...style].join(' ')}
+			className={['inline-flex', ...style].join(' ')}
 			{...props}
 			dangerouslySetInnerHTML={{ __html: IconLib[name] }}
 		></span>

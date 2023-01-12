@@ -1,9 +1,13 @@
 import React, { FC, ReactNode } from 'react';
 
-type NaviProps = {
-	children: ReactNode | ReactNode[];
+/*
+ * Type
+ */
+
+type TNavi = {
+	children: ReactNode;
 };
 
-export const Navi: FC<NaviProps> = ({ children }) => {
+export const Navi: FC<TNavi> = ({ children }) => {
 	return <ul className="flex gap-8">{children}</ul>;
 };

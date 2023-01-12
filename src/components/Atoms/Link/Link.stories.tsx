@@ -10,4 +10,8 @@ export default {
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 export const Link = Template.bind({});
-Link.args = {};
+
+Link.args = {
+	children: 'Link',
+	href: '/',
+};

@@ -2,10 +2,18 @@ import React, { FC, ImgHTMLAttributes } from 'react';
 import ProjectSettings from '../../../utils/ProjectSettings.json';
 import { ImageService, ImageServiceResult } from './ImageService';
 
-type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
+/*
+ * Type
+ */
+
+type TImage = ImgHTMLAttributes<HTMLImageElement> & {
 	preset?: keyof typeof ProjectSettings.images;
 	caption?: string;
 };
+
+/*
+ * Helpers
+ */
 
 type ImagePresetType = {
 	img: (src: string | undefined) => ImageServiceResult;
@@ -49,7 +57,7 @@ const ImagePreset: ImagePresetListType = Object.keys(ProjectSettings.images).red
 	{}
 );
 
-export const Image: FC<ImageProps> = ({ src, alt = '', caption, preset, ...props }) => {
+export const Image: FC<TImage> = ({ src, alt = '', caption, preset, ...props }) => {
 	let styleClasses = 'block object-cover h-full w-full';
 	if (preset) {
 		const imageSettings = ImagePreset[preset];

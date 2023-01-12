@@ -1,29 +1,56 @@
 import React, { FC, ReactNode, Children } from 'react';
+import dompurify from 'dompurify';
 
-type BaseProps = {
-	as?: 'div' | 'section';
-	size: 'M' | 'L';
+/*
+ * Type
+ */
+
+type TRichtext = {
+	as?: 'div' | 'section' | 'article';
+	size: keyof typeof sizeMap;
 	children: string | ReactNode;
+	allowedTags?: string[];
 };
 
-const sizeMap: Record<BaseProps['size'], string> = {
+/*
+ * Styles
+ */
+
+const sizeMap: Record<string, string> = {
 	M: 'text-l',
 	L: 'text-xl',
 };
 
-export const Richtext: FC<BaseProps> = ({ children, as: Tag = 'div', size = 'M', ...props }) => {
-	const style = ['Richtext inline-block leading-none font-medium leading-normal', sizeMap[size]].join(' ');
+/*
+ * Helpers
+ */
 
-	let content = children;
-	if (Children.count(children) === 1 && typeof children === 'string') {
-		if (!/<\/?[a-z][\s\S]*>/i.test(children)) {
-			return <p>{children}</p>;
-		}
-		content = <div dangerouslySetInnerHTML={{ __html: children }}></div>;
+function sanitizeContent(content: string, allowedTags: string[]): string {
+	content = dompurify.sanitize(content, { ALLOWED_TAGS: allowedTags });
+
+	if (!/<\/?[a-z][\s\S]*>/i.test(content)) {
+		content = `<p>${content}</p>`;
 	}
-	return (
-		<Tag className={style} {...props}>
-			{content}
-		</Tag>
-	);
+
+	return content;
+}
+
+export const Richtext: FC<TRichtext> = ({ children, as: Tag = 'div', size = 'M', allowedTags = ['p', 'a'], ...rest }) => {
+	const style = [
+		'block font-medium leading-normal',
+		sizeMap[size],
+		'[&>p]:block [&>p]:mb-2 [&>p:last-child]:mb-0', // Paragraphs
+		'[&>p>a]:inline-block [&>p>a]:text-violet-600 [&>p>a:hover]:text-violet-400', // Links
+	].join(' ');
+
+	const props = {
+		className: style,
+		...rest,
+	};
+
+	if (Children.count(children) === 1 && typeof children === 'string') {
+		return <Tag {...props} dangerouslySetInnerHTML={{ __html: sanitizeContent(children, allowedTags) }} />;
+	}
+
+	return <Tag {...props}>{children}</Tag>;
 };
