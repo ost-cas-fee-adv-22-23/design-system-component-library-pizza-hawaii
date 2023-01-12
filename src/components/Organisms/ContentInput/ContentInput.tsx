@@ -66,7 +66,7 @@ export const ContentInput: FC<InputCardType> = (props) => {
 									{author.fullName}
 								</Label>
 								<span className="flex flex-row align-baseline gap-3">
-									<UserName user={author} />
+									<UserName href={`/user/${author.userName}`}>{author.userName}</UserName>
 								</span>
 							</>
 						)}

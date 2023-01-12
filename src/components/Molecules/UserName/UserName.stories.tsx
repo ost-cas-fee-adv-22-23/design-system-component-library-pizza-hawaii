@@ -14,5 +14,6 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 
 export const UserName = Template.bind({});
 UserName.args = {
-	user: Current,
+	children: Current.userName,
+	href: `/user/${Current.userName}`,
 };

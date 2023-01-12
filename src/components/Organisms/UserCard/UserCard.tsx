@@ -27,7 +27,7 @@ export const UserCard: FC<BaseProps> = ({ user }) => {
 							{user.fullName}
 						</Label>
 						<span className="flex flex-row align-baseline gap-3">
-							<UserName user={user} />
+							<UserName href={`/user/${user.userName}`}>{user.userName}</UserName>
 						</span>
 					</div>
 

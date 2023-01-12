@@ -65,7 +65,7 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 							{author.fullName}
 						</Label>
 						<span className="flex flex-row align-baseline gap-3">
-							<UserName user={author} />
+							<UserName href={`/user/${author.userName}`}>{author.userName}</UserName>
 							<TimeStamp time={createdAt} />
 						</span>
 					</div>
