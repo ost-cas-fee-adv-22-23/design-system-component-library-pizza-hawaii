@@ -1,0 +1,4 @@
+/* load font Poppins always in a new project on body with fontsource */
+body {
+  font-family: "Poppins", sans-serif;
+}
