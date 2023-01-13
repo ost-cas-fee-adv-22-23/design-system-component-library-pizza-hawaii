@@ -16,7 +16,7 @@ export * from './components/Molecules/ImageOverlay/ImageOverlay';
 export * from './components/Molecules/Navi/Navi';
 export * from './components/Molecules/RoundButton/RoundButton';
 export * from './components/Molecules/Switch/Switch';
-export * from './components/Molecules/TimeStamp/TimeStamp';
+export * from './components/Atoms/TimeStamp/TimeStamp';
 export * from './components/Molecules/UserName/UserName';
 export * from './components/Molecules/UserProfile/UserProfile';
 export * from './components/Organisms/ContentCard/ContentCard';
