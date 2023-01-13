@@ -4,7 +4,7 @@ import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../Form
 import { Icon } from '../../../Atoms/Icon/Icon';
 import { Label } from '../../../Atoms/Label/Label';
 import { Richtext } from '../../../Atoms/Richtext/Richtext';
-import { baseStyle as ButtonBaseStyle, btnSizeMap as ButtonSizeMap } from '../../../Molecules/Button/Button';
+import { ButtonBaseStyle, ButtonSizeMap } from '../../../Molecules/Button/Button';
 
 import uid from '../../../../utils/uid';
 
@@ -15,52 +15,35 @@ import uid from '../../../../utils/uid';
 type BaseProps = {
 	label: string;
 	hint?: string;
-	accept?: string;
 	errorMessage?: string;
 	id?: string;
 	labelHidden?: boolean;
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-	preset: keyof typeof filePreset;
 };
 
 type FormUploadType = BaseProps & InputHTMLAttributes<HTMLInputElement>;
 
-type UploadTypePreset = {
-	accept: string;
-	hint: string;
-};
-
 /*
  * Style
  */
-
-const filePreset: Record<string, UploadTypePreset> = {
-	img: {
-		accept: 'image/jpeg, image/png',
-		hint: 'JPEG oder PNG, maximal 50 MB',
-	},
-};
 
 const fieldStyle: string[] = [
 	'relative',
 	'mb-4 p-12',
 	'rounded-xl',
 	'border-0 outline-1 outline-dashed -outline-offset-1',
-	'hover:border-0 hover:outline-2 hover:outline-slate-400 hover:-outline-offset-2',
-	'focus:border-0 focus:outline-2 focus:outline-slate-400 focus:-outline-offset-2',
+	'hover:border-0 hover:outline-2 hover:outline-slate-300 hover:-outline-offset-2',
+	'focus:border-0 focus:outline-2 focus:outline-slate-300 focus:-outline-offset-2',
 ];
 
 export const FormUpload: FC<FormUploadType> = ({
-	preset = 'img',
 	label,
 	hint,
-	accept,
 	errorMessage,
 	id = uid('FormUpload'),
 	labelHidden,
 	...props
 }) => {
-	const { accept: presetAccept, hint: presetHint } = filePreset[preset];
 
 	return (
 		<FormItem id={id} label={label || 'FormUpload'} errorMessage={errorMessage} labelHidden={labelHidden}>
@@ -74,15 +57,9 @@ export const FormUpload: FC<FormUploadType> = ({
 					<Label as="span" size="XL">
 						Datei hierhin ziehen ...
 					</Label>
-					<Richtext size="M">{hint || presetHint}</Richtext>
+					{hint && <Richtext size="M">{hint}</Richtext>}
 				</label>
-				<input
-					className="absolute top-0 left-0 w-full h-full opacity-0"
-					id={id}
-					type="file"
-					accept={accept || presetAccept}
-					{...props}
-				/>
+				<input className="absolute top-0 left-0 w-full h-full opacity-0" id={id} type="file" {...props} />
 			</div>
 			<label
 				className={[

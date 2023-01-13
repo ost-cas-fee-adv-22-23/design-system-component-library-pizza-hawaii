@@ -3,11 +3,11 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ProfileNew as Component } from './ProfileNew';
 
-import { PostsFormated as examplePosts } from '../../mocks/Post';
-import { Users as promotedUsers, NewUser as exampleUser } from '../../mocks/User';
+import { PostsFormated as examplePosts } from '../../../mocks/Post';
+import { Users as promotedUsers, NewUser as exampleUser } from '../../../mocks/User';
 
 export default {
-	title: 'Template/Mumble',
+	title: 'Example/Template',
 	component: Component,
 	parameters: {},
 } as ComponentMeta<typeof Component>;

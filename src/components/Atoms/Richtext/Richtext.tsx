@@ -7,8 +7,8 @@ import dompurify from 'dompurify';
 
 type TRichtext = {
 	as?: 'div' | 'section' | 'article';
-	size: keyof typeof sizeMap;
-	children: string | ReactNode;
+	size: keyof typeof RichtextSizeMap;
+	children: ReactNode;
 	allowedTags?: string[];
 };
 
@@ -16,7 +16,7 @@ type TRichtext = {
  * Styles
  */
 
-const sizeMap: Record<string, string> = {
+export const RichtextSizeMap: Record<string, string> = {
 	M: 'text-l',
 	L: 'text-xl',
 };
@@ -38,7 +38,7 @@ function sanitizeContent(content: string, allowedTags: string[]): string {
 export const Richtext: FC<TRichtext> = ({ children, as: Tag = 'div', size = 'M', allowedTags = ['p', 'a'], ...rest }) => {
 	const style = [
 		'block font-medium leading-normal',
-		sizeMap[size],
+		RichtextSizeMap[size],
 		'[&>p]:block [&>p]:mb-2 [&>p:last-child]:mb-0', // Paragraphs
 		'[&>p>a]:inline-block [&>p>a]:text-violet-600 [&>p>a:hover]:text-violet-400', // Links
 	].join(' ');

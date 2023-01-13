@@ -5,7 +5,7 @@ import { Users as UserList } from '../../../mocks/User';
 import { ContentInput as Component } from './ContentInput';
 
 export default {
-	title: 'Component/Organisms/ContentInput',
+	title: 'Components/Organisms/ContentInput',
 	component: Component,
 } as ComponentMeta<typeof Component>;
 

@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ImageOverlay as Component } from './ImageOverlay';
 
 export default {
-	title: 'Component/Molecules/ImageOverlay',
+	title: 'Components/Molecules/ImageOverlay',
 	component: Component,
 	argTypes: {},
 } as ComponentMeta<typeof Component>;

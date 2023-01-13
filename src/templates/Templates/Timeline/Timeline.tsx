@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 
-import { Header } from '../../components/Organisms/Header/Header';
-import { Headline } from '../../components/Atoms/Headline/Headline';
-import { ContentCard } from '../../components/Organisms/ContentCard/ContentCard';
-import { ContentInput } from '../../components/Organisms/ContentInput/ContentInput';
+import { Header } from '../../Snippet/Header/Header';
+import { Headline } from '../../../components/Atoms/Headline/Headline';
+import { ContentCard } from '../../../components/Organisms/ContentCard/ContentCard';
+import { ContentInput } from '../../../components/Organisms/ContentInput/ContentInput';
 
-import { Post as PostType } from '../../types/Post';
-import { User as UserType } from '../../types/User';
+import { Post as PostType } from '../../../types/Post';
+import { User as UserType } from '../../../types/User';
 
 type TimelineType = {
 	user: UserType;

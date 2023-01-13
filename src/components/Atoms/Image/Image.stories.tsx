@@ -4,7 +4,7 @@ import { Image as Component } from './Image';
 import ProjectSettings from '../../../utils/ProjectSettings.json';
 
 export default {
-	title: 'Component/Atoms/Image',
+	title: 'Components/Atoms/Image',
 	component: Component,
 	argTypes: {
 		preset: {

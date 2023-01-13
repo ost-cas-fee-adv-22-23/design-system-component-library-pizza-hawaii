@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { FormSelect as Component } from './FormSelect';
 
 export default {
-	title: 'Component/Molecules/Form/FormSelect',
+	title: 'Components/Molecules/Form/FormSelect',
 	component: Component,
 	argTypes: {},
 } as ComponentMeta<typeof Component>;

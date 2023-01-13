@@ -6,25 +6,31 @@ import moment from 'moment';
  */
 
 type TTimeStamp = {
-	time: string;
+	date: Date | string;
 	prefix?: string;
 	postfix?: string;
+	showTitle?: boolean;
 };
 
-export const TimeStamp: FC<TTimeStamp> = ({ time, prefix, postfix }) => {
+export const TimeStamp: FC<TTimeStamp> = ({ date: inputDate, prefix, postfix, showTitle = true }) => {
+	const date = new Date(inputDate);
+
+	// Date-Ago format
 	const dateTimeAgo = [
 		prefix,
-		moment(new Date(time))
+		moment(date)
 			.locale('de-ch')
 			.fromNow(!!prefix || !!postfix),
 		postfix,
 	].join(' ');
 
-	const dateTime = moment(new Date(time)).locale('de').format('LLLL');
+	// Readable exact time
+	const dateTime = moment(date).locale('de').format('LLLL');
 
-	return (
-		<time dateTime={time} title={dateTime}>
-			{dateTimeAgo}
-		</time>
-	);
+	const props = {
+		dateTime: date.toISOString(),
+		title: showTitle ? dateTime : undefined,
+	};
+
+	return <time {...props}>{dateTimeAgo}</time>;
 };

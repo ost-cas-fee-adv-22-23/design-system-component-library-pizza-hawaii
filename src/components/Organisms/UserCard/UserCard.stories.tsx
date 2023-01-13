@@ -5,7 +5,7 @@ import { UserCard as Component } from './UserCard';
 import { Current } from '../../../mocks/User';
 
 export default {
-	title: 'Component/Organisms',
+	title: 'Components/Organisms',
 	component: Component,
 } as ComponentMeta<typeof Component>;
 

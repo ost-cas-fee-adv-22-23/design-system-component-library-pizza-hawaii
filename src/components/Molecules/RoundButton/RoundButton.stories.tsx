@@ -5,7 +5,7 @@ import { IconNames } from '../../Atoms/Icon/IconLib';
 import { RoundButton as Component } from './RoundButton';
 
 export default {
-	title: 'Component/Molecules/RoundButton',
+	title: 'Components/Molecules/RoundButton',
 
 	component: Component,
 	argTypes: {

@@ -32,7 +32,9 @@ module.exports = {
 		},
 
 		extend: {
-			colors: {},
+			colors: {
+				'error-red': '#FF0000',
+			},
 			lineHeight: {
 				normal: '1.4',
 			},
@@ -43,6 +45,10 @@ module.exports = {
 			},
 			maxWidth: {
 				content: toRem(ProjectSettings.content.width),
+			},
+			backgroundImage: {
+				'select-background':
+					"url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='4 4 16 16' width='30'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='%23475569'/%3E%3C/svg%3E\")",
 			},
 			backgroundSize: {
 				'size-200': '200% 200%',

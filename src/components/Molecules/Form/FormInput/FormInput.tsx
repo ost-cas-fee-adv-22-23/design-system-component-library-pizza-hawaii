@@ -1,5 +1,6 @@
 import React, { FC, InputHTMLAttributes, ChangeEvent } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem/FormItem';
+import { Icon } from '../../../Atoms/Icon/Icon';
 
 import uid from '../../../../utils/uid';
 
@@ -12,12 +13,20 @@ type TFormInput = {
 	errorMessage?: string;
 	id?: string;
 	labelHidden?: boolean;
+	icon?: string;
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 type TFormInputType = TFormInput & InputHTMLAttributes<HTMLInputElement>;
 
-export const FormInput: FC<TFormInputType> = ({ label, errorMessage, id = uid('FormInput'), labelHidden, ...props }) => {
+export const FormInput: FC<TFormInputType> = ({
+	label,
+	errorMessage,
+	id = uid('FormInput'),
+	labelHidden,
+	icon,
+	...props
+}) => {
 	return (
 		<FormItem id={id} label={label || 'FormInput'} errorMessage={errorMessage} labelHidden={labelHidden}>
 			<input
@@ -25,6 +34,15 @@ export const FormInput: FC<TFormInputType> = ({ label, errorMessage, id = uid('F
 				id={id}
 				{...props}
 			/>
+			{icon && (
+				<span
+					className={`absolute right-4 top-1/2 -translate-y-1/2 flex ${
+						errorMessage ? 'text-error-red ' : 'text-slate-600'
+					}`}
+				>
+					<Icon name={icon} />
+				</span>
+			)}
 		</FormItem>
 	);
 };

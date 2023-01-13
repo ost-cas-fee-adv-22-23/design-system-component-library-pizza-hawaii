@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Switch as Component } from './Switch';
 
 export default {
-	title: 'Component/Molecules/Switch',
+	title: 'Components/Molecules/Switch',
 	component: Component,
 	parameters: {},
 } as ComponentMeta<typeof Component>;

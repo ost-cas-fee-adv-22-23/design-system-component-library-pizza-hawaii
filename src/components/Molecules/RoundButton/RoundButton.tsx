@@ -1,7 +1,7 @@
 import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
 
 import { Icon } from '../../Atoms/Icon/Icon';
-import { baseStyle, colorMap } from '../Button/Button';
+import { ButtonBaseStyle, ButtonColorMap } from '../Button/Button';
 
 /*
  * Type
@@ -10,7 +10,7 @@ import { baseStyle, colorMap } from '../Button/Button';
 type BaseButtonProps = {
 	children: ReactNode;
 	as?: 'button' | 'a';
-	color: keyof typeof colorMap;
+	color: keyof typeof ButtonColorMap;
 	icon?: string;
 };
 
@@ -26,7 +26,7 @@ export const RoundButton: FC<ButtonProps> = ({
 	icon = 'mumble',
 	...props
 }) => {
-	const style = [...baseStyle, 'p-4 rounded-full w-auto', colorMap[color]];
+	const style = [...ButtonBaseStyle, 'p-4 rounded-full w-auto', ButtonColorMap[color]];
 
 	return (
 		<Tag

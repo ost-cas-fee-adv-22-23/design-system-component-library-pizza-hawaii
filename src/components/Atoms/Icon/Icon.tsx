@@ -5,7 +5,7 @@ import { default as IconLib, IconNames as IcoNames } from './IconLib';
  * Type
  */
 
-type TIconSize = keyof typeof sizeStyle;
+type TIconSize = keyof typeof IconSizeMap;
 
 type TIcon = {
 	size?: TIconSize;
@@ -18,14 +18,14 @@ type TIconProps = (TIcon & { size?: TIconSize }) | TIcon;
  * Styles
  */
 
-const sizeStyle = {
+export const IconSizeMap = {
 	S: ['text-[11px]'],
 	M: ['text-[16px]'],
 	L: ['text-[28px]'],
 };
 
 export const Icon: FC<TIconProps> = ({ size = 'M', name = IcoNames[0], ...props }) => {
-	const style = [...(sizeStyle[size] || sizeStyle.M), '[&>svg]:fill-current [&>svg]:w-[1em]'];
+	const style = [...(IconSizeMap[size] || IconSizeMap.M), '[&>svg]:fill-current [&>svg]:w-[1em]'];
 
 	return (
 		<span

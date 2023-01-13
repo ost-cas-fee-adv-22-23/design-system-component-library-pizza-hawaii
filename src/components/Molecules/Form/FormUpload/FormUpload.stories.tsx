@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { FormUpload as Component } from './FormUpload';
 
 export default {
-	title: 'Component/Molecules/Form/FormUpload',
+	title: 'Components/Molecules/Form/FormUpload',
 	component: Component,
 	argTypes: {},
 } as ComponentMeta<typeof Component>;

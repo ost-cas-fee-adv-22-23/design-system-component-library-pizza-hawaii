@@ -1,20 +1,20 @@
 import React, { FC, useState } from 'react';
 
-import { Headline } from '../../components/Atoms/Headline/Headline';
-import { Image } from '../../components/Atoms/Image/Image';
-import { Richtext } from '../../components/Atoms/Richtext/Richtext';
+import { Headline } from '../../../components/Atoms/Headline/Headline';
+import { Image } from '../../../components/Atoms/Image/Image';
+import { Richtext } from '../../../components/Atoms/Richtext/Richtext';
 
-import { Switch } from '../../components/Molecules/Switch/Switch';
-import { UserProfile } from '../../components/Molecules/UserProfile/UserProfile';
-import { UserName } from '../../components/Molecules/UserName/UserName';
-import { TimeStamp } from '../../components/Atoms/TimeStamp/TimeStamp';
-import { IconLink } from '../../components/Molecules/IconLink/IconLink';
+import { Switch } from '../../../components/Molecules/Switch/Switch';
+import { UserProfile } from '../../../components/Molecules/UserProfile/UserProfile';
+import { UserName } from '../../../components/Molecules/UserName/UserName';
+import { TimeStamp } from '../../../components/Atoms/TimeStamp/TimeStamp';
+import { IconLink } from '../../../components/Molecules/IconLink/IconLink';
 
-import { ContentCard } from '../../components/Organisms/ContentCard/ContentCard';
-import { Header } from '../../components/Organisms/Header/Header';
+import { ContentCard } from '../../../components/Organisms/ContentCard/ContentCard';
+import { Header } from '../../Snippet/Header/Header';
 
-import { Post as PostType } from '../../types/Post';
-import { User as UserType } from '../../types/User';
+import { Post as PostType } from '../../../types/Post';
+import { User as UserType } from '../../../types/User';
 
 type ProfileType = {
 	user: UserType;
@@ -58,7 +58,7 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 						</IconLink>
 
 						<IconLink as="span" icon="calendar" color="slate" size="S">
-							<TimeStamp time={user.createdAt} prefix="Mitglied seit" />
+							<TimeStamp date={user.createdAt} prefix="Mitglied seit" />
 						</IconLink>
 					</span>
 

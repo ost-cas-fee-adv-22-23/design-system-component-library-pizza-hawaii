@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { SplitScreen as Component } from './SplitScreen';
 
 export default {
-	title: 'Component/Organisms',
+	title: 'Components/Organisms',
 	component: Component,
 	parameters: {},
 } as ComponentMeta<typeof Component>;

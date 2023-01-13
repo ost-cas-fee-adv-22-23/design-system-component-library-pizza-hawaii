@@ -1,21 +1,21 @@
 import React, { FC } from 'react';
 
-import { Header } from '../../components/Organisms/Header/Header';
-import { Headline } from '../../components/Atoms/Headline/Headline';
-import { Image } from '../../components/Atoms/Image/Image';
-import { Richtext } from '../../components/Atoms/Richtext/Richtext';
+import { Header } from '../../Snippet/Header/Header';
+import { Headline } from '../../../components/Atoms/Headline/Headline';
+import { Image } from '../../../components/Atoms/Image/Image';
+import { Richtext } from '../../../components/Atoms/Richtext/Richtext';
 
-import { UserProfile } from '../../components/Molecules/UserProfile/UserProfile';
-import { UserName } from '../../components/Molecules/UserName/UserName';
-import { TimeStamp } from '../../components/Atoms/TimeStamp/TimeStamp';
-import { IconLink } from '../../components/Molecules/IconLink/IconLink';
+import { UserProfile } from '../../../components/Molecules/UserProfile/UserProfile';
+import { UserName } from '../../../components/Molecules/UserName/UserName';
+import { TimeStamp } from '../../../components/Atoms/TimeStamp/TimeStamp';
+import { IconLink } from '../../../components/Molecules/IconLink/IconLink';
 
-import { UserCard } from '../../components/Organisms/UserCard';
-import { ContentCard } from '../../components/Organisms/ContentCard/ContentCard';
-import { ContentInput } from '../../components/Organisms/ContentInput/ContentInput';
+import { UserCard } from '../../../components/Organisms/UserCard/index';
+import { ContentCard } from '../../../components/Organisms/ContentCard/ContentCard';
+import { ContentInput } from '../../../components/Organisms/ContentInput/ContentInput';
 
-import { Post as PostType } from '../../types/Post';
-import { User as UserType } from '../../types/User';
+import { Post as PostType } from '../../../types/Post';
+import { User as UserType } from '../../../types/User';
 
 type ProfileNewType = {
 	user: UserType;
@@ -53,7 +53,7 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 							{user.city || 'Location'}
 						</IconLink>
 						<IconLink as="span" icon="calendar" color="slate" size="S">
-							<TimeStamp time={user.createdAt} prefix="Mitglied seit" />
+							<TimeStamp date={user.createdAt} prefix="Mitglied seit" />
 						</IconLink>
 					</span>
 

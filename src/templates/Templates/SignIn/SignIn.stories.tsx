@@ -1,19 +1,15 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Header as Component } from './Header';
-
-import { Current as exampleUser } from '../../../mocks/User';
+import { SignIn as Component } from './SignIn';
 
 export default {
-	title: 'Component/Organisms',
+	title: 'Example/Template',
 	component: Component,
 	parameters: {},
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
+export const SignIn = Template.bind({});
 
-export const Header = Template.bind({});
-Header.args = {
-	user: exampleUser,
-};
+SignIn.args = {};

@@ -1,13 +1,13 @@
 import React, { FC, useState } from 'react';
 
-import { UserProfile } from '../../Molecules/UserProfile/UserProfile';
-import { Navi } from '../../Molecules/Navi/Navi';
-import { NaviButton } from '../../Molecules/Navi/NaviButton';
-import { Modal } from '../Modal/Modal';
-import { Label } from '../../Atoms/Label/Label';
-import { Form } from '../../Molecules/Form/Form';
-import { FormInput } from '../../Molecules/Form/FormInput/FormInput';
-import { FormTextarea } from '../../Molecules/Form/FormTextarea/FormTextarea';
+import { UserProfile } from '../../../components/Molecules/UserProfile/UserProfile';
+import { Navi } from '../../../components/Molecules/Navi/Navi';
+import { NaviButton } from '../../../components/Molecules/Navi/NaviButton';
+import { Modal } from '../../../components/Organisms/Modal/Modal';
+import { Label } from '../../../components/Atoms/Label/Label';
+import { Form } from '../../../components/Molecules/Form/Form';
+import { FormInput } from '../../../components/Molecules/Form/FormInput/FormInput';
+import { FormTextarea } from '../../../components/Molecules/Form/FormTextarea/FormTextarea';
 
 import { User } from '../../../types/User';
 

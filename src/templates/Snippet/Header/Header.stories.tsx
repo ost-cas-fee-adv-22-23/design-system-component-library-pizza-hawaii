@@ -1,22 +1,19 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Timeline as Component } from './Timeline';
+import { Header as Component } from './Header';
 
-import { PostsFormated as examplePosts } from '../../mocks/Post';
-import { Current as exampleUser } from '../../mocks/User';
+import { Current as exampleUser } from '../../../mocks/User';
 
 export default {
-	title: 'Template/Mumble',
+	title: 'Example/Snippet',
 	component: Component,
 	parameters: {},
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
-export const Timeline = Template.bind({});
-
-Timeline.args = {
+export const Header = Template.bind({});
+Header.args = {
 	user: exampleUser,
-	posts: examplePosts,
 };

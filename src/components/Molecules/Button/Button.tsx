@@ -10,8 +10,8 @@ import { Label } from '../../Atoms/Label/Label';
 type TButton = {
 	children: ReactNode;
 	as?: 'button' | 'a' | 'span';
-	size?: keyof typeof btnSizeMap;
-	color: keyof typeof colorMap;
+	size?: keyof typeof ButtonSizeMap;
+	color: keyof typeof ButtonColorMap;
 	icon?: string;
 };
 
@@ -25,15 +25,15 @@ type TButtonProps = THTMLButtonProps | TLinkButtonProps | TSpanButtonProps;
  * Styles
  */
 
-export const baseStyle = ['flex items-center justify-center', 'w-full', 'transition-all'];
+export const ButtonBaseStyle = ['flex items-center justify-center', 'w-full', 'transition-all'];
 
-export const btnSizeMap: Record<string, string> = {
+export const ButtonSizeMap: Record<string, string> = {
 	S: 'p-2 rounded-lg gap-y-0 gap-x-2 text-sm font-semibold',
 	M: 'p-3 rounded-lg gap-y-0 gap-x-2 text-base font-semibold',
 	L: 'py-4 px-6 rounded-lg gap-y-1 gap-x-3 text-base font-semibold',
 };
 
-export const colorMap: Record<string, string> = {
+export const ButtonColorMap: Record<string, string> = {
 	slate: 'text-white bg-slate-700 hover:bg-slate-800',
 	violet: 'text-white bg-violet-600 hover:bg-violet-700',
 	gradient:
@@ -52,7 +52,7 @@ export const Button: FC<TButtonProps> = ({
 	icon = 'mumble',
 	...props
 }) => {
-	const style = [...baseStyle, btnSizeMap[size], colorMap[color]];
+	const style = [...ButtonBaseStyle, ButtonSizeMap[size], ButtonColorMap[color]];
 
 	return (
 		<Tag

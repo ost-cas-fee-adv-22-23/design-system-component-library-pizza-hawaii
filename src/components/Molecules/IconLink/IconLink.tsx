@@ -6,7 +6,7 @@ import { Icon } from '../../Atoms/Icon/Icon';
  * Type
  */
 
-type TIconLinkSize = keyof typeof icoLinkSizeMap;
+type TIconLinkSize = keyof typeof IconLinkSizeMap;
 
 type TIconLink = {
 	children: ReactNode;
@@ -27,7 +27,7 @@ type TIconLinkProps = TSpanButtonProps | THTMLButtonProps | TLinkButtonProps;
  * Style
  */
 
-export const icoLinkSizeMap: Record<string, string> = {
+export const IconLinkSizeMap: Record<string, string> = {
 	S: 'text-sm gap-1',
 	M: 'text-base gap-2',
 	L: 'text-xl gap-2',
@@ -48,7 +48,7 @@ export const IconLink: FC<TIconLinkProps> = ({
 	iconState,
 	...props
 }) => {
-	const styles = ['flex items-center', icoLinkSizeMap[size], IconLinkColorMap[color], 'group', 'transition-all'];
+	const styles = ['flex items-center', IconLinkSizeMap[size], IconLinkColorMap[color], 'group', 'transition-all'];
 
 	return (
 		<Tag

@@ -33,7 +33,11 @@ export const FormSelect: FC<TFormSelectType> = ({
 	return (
 		<FormItem id={id} label={label || 'FormSelect'} errorMessage={errorMessage} labelHidden={labelHidden}>
 			<select
-				className={[...FormItem_InputStyle, ...(errorMessage ? FormItem_InputErrorStyle : [])].join(' ')}
+				className={[
+					...FormItem_InputStyle,
+					...(errorMessage ? FormItem_InputErrorStyle : []),
+					'appearance-none bg-[length:1em_1em] bg-[center_right_.7rem] bg-no-repeat bg-select-background',
+				].join(' ')}
 				id={id}
 				{...props}
 			>
