@@ -42,7 +42,9 @@ export const FormItem: FC<TFormItem> = ({ label, children, errorMessage, labelHi
 				{label}
 			</label>
 			<div className="relative">{children}</div>
-			{errorMessage ? <span className="text-error-red text-xs font-medium mt-xxs self-end">{errorMessage}</span> : null}
+			{errorMessage ? (
+				<span className="text-error-red text-xs font-medium mt-xxs self-end">{errorMessage}</span>
+			) : null}
 		</div>
 	);
 };

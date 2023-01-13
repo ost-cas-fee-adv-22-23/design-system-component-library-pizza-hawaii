@@ -44,7 +44,6 @@ export const FormUpload: FC<FormUploadType> = ({
 	labelHidden,
 	...props
 }) => {
-
 	return (
 		<FormItem id={id} label={label || 'FormUpload'} errorMessage={errorMessage} labelHidden={labelHidden}>
 			<div
