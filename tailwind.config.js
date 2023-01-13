@@ -28,7 +28,7 @@ module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx,json}'],
 	theme: {
 		fontFamily: {
-			sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+			sans: ['Poppins', 'sans-serif'],
 		},
 
 		extend: {
