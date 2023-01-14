@@ -1,11 +1,13 @@
 import React, { FC } from 'react';
 
-import { UserProfile, TUserProfile } from '../../Molecules/UserProfile/UserProfile';
-import { UserName } from '../../Molecules/UserName/UserName';
+import { Grid } from '../../Atoms/Grid/Grid';
 import { Headline } from '../../Atoms/Headline/Headline';
 import { Label } from '../../Atoms/Label/Label';
+
+import { UserName } from '../../Molecules/UserName/UserName';
 import { Button } from '../../Molecules/Button/Button';
 import { Card } from '../../Molecules/Card/Card';
+import { UserProfile, TUserProfile } from '../../Molecules/UserProfile/UserProfile';
 
 import { User } from '../../../types/User';
 import { FormTextarea } from '../../Molecules/Form/FormTextarea/FormTextarea';
@@ -14,10 +16,7 @@ type ContentInputPreset = {
 	userprofile: { size: TUserProfile['size']; border: TUserProfile['border'] };
 	textSize: 'M' | 'L';
 	showUserdetails: boolean;
-	cardStyle: string;
 	profileStyle: string;
-	headerStyle?: string;
-	sizeStyle?: string;
 };
 
 type InputCardType = {
@@ -30,19 +29,15 @@ type InputCardType = {
 const preset: Record<InputCardType['variant'], ContentInputPreset> = {
 	newPost: {
 		userprofile: { size: 'M', border: true },
-		profileStyle: 'inline-flex absolute left-0 transform -translate-x-1/2',
+		profileStyle: 'absolute left-0 transform -translate-x-1/2',
 		textSize: 'L',
 		showUserdetails: false,
-		cardStyle: 'rounded-3xl border-2 border-solid border-white hover:border-slate-300',
 	},
 	answerPost: {
 		userprofile: { size: 'S', border: false },
 		profileStyle: 'flex flex-row',
 		textSize: 'M',
 		showUserdetails: true,
-		headerStyle: 'flex-col px-2',
-		cardStyle: '',
-		sizeStyle: 'flex flex-row border-2 border-solid border-white hover:border-slate-300',
 	},
 };
 
@@ -53,8 +48,8 @@ export const ContentInput: FC<InputCardType> = (props) => {
 
 	return (
 		<Card size="M">
-			<div className="w-full">
-				<div className="mb-4 flex items-center gap-2">
+			<Grid variant="col" gap="M">
+				<Grid variant="row" gap="S" centerd={true}>
 					<div className={setting.profileStyle}>
 						<UserProfile
 							userName={author.userName}
@@ -63,8 +58,7 @@ export const ContentInput: FC<InputCardType> = (props) => {
 							{...setting.userprofile}
 						/>
 					</div>
-
-					<div className="flex flex-col gap-2">
+					<Grid variant="col" gap="S">
 						{!setting.showUserdetails && <Headline level={4}>{props.headline}</Headline>}
 						{setting.showUserdetails && (
 							<>
@@ -76,22 +70,20 @@ export const ContentInput: FC<InputCardType> = (props) => {
 								</span>
 							</>
 						)}
-					</div>
-				</div>
+					</Grid>
+				</Grid>
 
-				<div className="mb-4">
-					<FormTextarea label={placeHolderText} placeholder={placeHolderText} labelHidden={true} />
-				</div>
+				<FormTextarea label={placeHolderText} placeholder={placeHolderText} labelHidden={true} />
 
-				<div className="flex flex-row gap-4">
+				<Grid variant="row" gap="S" wrapBelowScreen="md">
 					<Button as="button" color="slate" icon="upload">
 						Bild Hochladen
 					</Button>
 					<Button as="button" color="violet" icon="send">
 						Absenden
 					</Button>
-				</div>
-			</div>
+				</Grid>
+			</Grid>
 		</Card>
 	);
 };

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 import { Header } from '../../Snippet/Header/Header';
+import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Headline } from '../../../components/Atoms/Headline/Headline';
 import { ContentCard } from '../../../components/Organisms/ContentCard/ContentCard';
 import { ContentInput } from '../../../components/Organisms/ContentInput/ContentInput';
@@ -29,15 +30,15 @@ export const Timeline: FC<TimelineType> = ({ user, posts = [] }) => {
 							Voluptatem qui cumque voluptatem quia tempora dolores distinctio vel repellat dicta.
 						</Headline>
 					</div>
-					<div className="flex gap-4 flex-col mb-8">
+
+					<Grid variant="col" gap="M" marginBelow="M">
 						<ContentInput
 							variant="newPost"
 							headline="Hey, was geht ab?"
 							author={user}
 							placeHolderText="Deine Meinung zählt"
 						/>
-					</div>
-					<div className="flex gap-4 flex-col mb-8">
+
 						{posts &&
 							posts
 								.sort((a: PostType, b: PostType) => {
@@ -46,7 +47,7 @@ export const Timeline: FC<TimelineType> = ({ user, posts = [] }) => {
 								.map((post) => {
 									return <ContentCard key={post.id} variant="timeline" {...post} />;
 								})}
-					</div>
+					</Grid>
 				</section>
 			</main>
 		</article>

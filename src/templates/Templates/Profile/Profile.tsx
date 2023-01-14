@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 
+import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Headline } from '../../../components/Atoms/Headline/Headline';
 import { Image } from '../../../components/Atoms/Image/Image';
 import { Richtext } from '../../../components/Atoms/Richtext/Richtext';
@@ -66,7 +67,7 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 						<Richtext size="M">{user.bio}</Richtext>
 					</div>
 
-					<div className="flex gap-4 flex-col mb-8">
+					<Grid variant="col" gap="M" marginBelow="M">
 						<Switch
 							options={[
 								{
@@ -84,9 +85,9 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 								setCurrentPostType(value);
 							}}
 						/>
-					</div>
+					</Grid>
 
-					<div className="flex gap-4 flex-col mb-8">
+					<Grid variant="col" gap="M" marginBelow="M">
 						{postsToRender[currentPostType] &&
 							postsToRender[currentPostType]
 								.sort((a: PostType, b: PostType) => {
@@ -95,7 +96,7 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 								.map((post) => {
 									return <ContentCard key={post.id} variant="timeline" {...post} />;
 								})}
-					</div>
+					</Grid>
 				</section>
 			</main>
 		</article>

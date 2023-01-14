@@ -48,7 +48,14 @@ export const IconLink: FC<TIconLinkProps> = ({
 	iconState,
 	...props
 }) => {
-	const styles = ['flex items-center', IconLinkSizeMap[size], IconLinkColorMap[color], 'group', 'transition-all'];
+	const styles = [
+		'flex items-center',
+		'leading-none',
+		IconLinkSizeMap[size],
+		IconLinkColorMap[color],
+		'group',
+		'transition-all',
+	];
 
 	return (
 		<Tag

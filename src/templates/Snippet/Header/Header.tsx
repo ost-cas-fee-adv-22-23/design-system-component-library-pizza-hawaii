@@ -1,13 +1,17 @@
 import React, { FC, useState } from 'react';
 
+import { Grid } from '../../../components/Atoms/Grid/Grid';
+import { Label } from '../../../components/Atoms/Label/Label';
+
 import { UserProfile } from '../../../components/Molecules/UserProfile/UserProfile';
 import { Navi } from '../../../components/Molecules/Navi/Navi';
 import { NaviButton } from '../../../components/Molecules/Navi/NaviButton';
-import { Modal } from '../../../components/Organisms/Modal/Modal';
-import { Label } from '../../../components/Atoms/Label/Label';
 import { Form } from '../../../components/Molecules/Form/Form';
 import { FormInput } from '../../../components/Molecules/Form/FormInput/FormInput';
 import { FormTextarea } from '../../../components/Molecules/Form/FormTextarea/FormTextarea';
+import { Button } from '../../../components/Molecules/Button/Button';
+
+import { Modal } from '../../../components/Organisms/Modal/Modal';
 
 import { User } from '../../../types/User';
 
@@ -102,25 +106,43 @@ export const Header: FC<BaseProps> = ({ user }) => {
 			</div>
 			<Modal title="Einstellungen" isVisible={state.showSettingsModal} onClose={handleSettingsModalClick}>
 				<Form>
-					<fieldset className="flex flex-col gap-4 mb-8">
-						<div className="mb-4">
-							<Label as="legend" size="L">
-								Persönliche Einstellungen
-							</Label>
-						</div>
-						<FormInput type="text" label="Vorname Name" value={state.user.fullName} onChange={onFieldChange} />
-						<FormInput type="email" label="E-Mail" value={state.user.email} onChange={onFieldChange} />
-						<FormTextarea label="Bio" value={state.user.bio} onChange={onFieldChange} />
+					<fieldset>
+						<Grid variant="col" gap="M" marginBelow="M">
+							<div className="mb-4">
+								<Label as="legend" size="L">
+									Persönliche Einstellungen
+								</Label>
+							</div>
+							<FormInput
+								type="text"
+								label="Vorname Name"
+								value={state.user.fullName}
+								onChange={onFieldChange}
+							/>
+							<FormInput type="email" label="E-Mail" value={state.user.email} onChange={onFieldChange} />
+							<FormTextarea label="Bio" value={state.user.bio} onChange={onFieldChange} />
+						</Grid>
 					</fieldset>
-					<fieldset className="flex flex-col gap-4 mb-8">
-						<div className="mb-4">
-							<Label as="legend" size="L">
-								Passwort ändern
-							</Label>
-						</div>
-						<FormInput type="password" label="Altes Passwort" />
-						<FormInput type="password" label="Neues Passwort" />
+					<fieldset>
+						<Grid variant="col" gap="M" marginBelow="M">
+							<div className="mb-4">
+								<Label as="legend" size="L">
+									Passwort ändern
+								</Label>
+							</div>
+							<FormInput type="password" label="Altes Passwort" />
+							<FormInput type="password" label="Neues Passwort" />
+						</Grid>
 					</fieldset>
+
+					<Grid variant="row" gap="S" marginBelow="M" wrapBelowScreen="md">
+						<Button as="button" color="slate" icon="upload">
+							Bild Hochladen
+						</Button>
+						<Button as="button" color="violet" icon="send">
+							Absenden
+						</Button>
+					</Grid>
 				</Form>
 			</Modal>
 		</header>

@@ -1,14 +1,16 @@
 /* eslint-disable import/no-unresolved */
 import React, { FC } from 'react';
 
-import { Card } from '../../Molecules/Card/Card';
-import { UserName } from '../../Molecules/UserName/UserName';
+import { Grid } from '../../Atoms/Grid/Grid';
 import { TimeStamp } from '../../Atoms/TimeStamp/TimeStamp';
-import { UserProfile, TUserProfile } from '../../Molecules/UserProfile/UserProfile';
-import { IconLink } from '../../Molecules/IconLink/IconLink';
 import { Image } from '../../Atoms/Image/Image';
 import { Richtext } from '../../Atoms/Richtext/Richtext';
 import { Label } from '../../Atoms/Label/Label';
+
+import { Card } from '../../Molecules/Card/Card';
+import { UserName } from '../../Molecules/UserName/UserName';
+import { UserProfile, TUserProfile } from '../../Molecules/UserProfile/UserProfile';
+import { IconLink } from '../../Molecules/IconLink/IconLink';
 
 import { Post } from '../../../types/Post';
 
@@ -31,22 +33,22 @@ const preset: Record<ContentCardType['variant'], ContentCardPreset> = {
 		userprofile: { size: 'M', border: true },
 		headlineSize: 'XL',
 		textSize: 'L',
-		profileStyle: '',
+		profileStyle: 'absolute left-0 transform -translate-x-1/2',
 		cardStyle: 'border-2 border-solid border-white hover:border-slate-300',
 	},
 	timeline: {
 		userprofile: { size: 'M', border: true },
 		headlineSize: 'L',
 		textSize: 'M',
-		profileStyle: 'inline-flex absolute left-0 transform -translate-x-1/2',
+		profileStyle: 'absolute left-0 transform -translate-x-1/2',
 		cardStyle: 'rounded-3xl',
 	},
 	responsive: {
 		userprofile: { size: 'S', border: false },
 		headlineSize: 'M',
 		textSize: 'M',
+		profileStyle: 'flex',
 		cardStyle: 'border-2 border-solid border-white hover:border-slate-200',
-		profileStyle: 'inline-flex',
 	},
 };
 
@@ -55,8 +57,8 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 
 	return (
 		<Card as="article" rounded={variant !== 'responsive'} size="M">
-			<div>
-				<div className="mb-4 flex items-center gap-2">
+			<Grid variant="col" gap="L">
+				<Grid variant="row" gap="S" centerd={true}>
 					<div className={setting.profileStyle}>
 						<UserProfile
 							userName={author.userName}
@@ -65,27 +67,24 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 							{...setting.userprofile}
 						/>
 					</div>
-					<div className="flex flex-col gap-2">
+					<Grid variant="col" gap="S">
 						<Label as="span" size={setting.headlineSize}>
 							{author.fullName}
 						</Label>
-						<span className="flex flex-row align-baseline gap-3">
+						<Grid variant="row" gap="S">
 							<UserName href={`/user/${author.userName}`}>{author.userName}</UserName>
 							<IconLink as="span" icon="calendar" color="slate" size="S">
 								<TimeStamp date={createdAt} />
 							</IconLink>
-						</span>
-					</div>
-				</div>
-				<div className="mb-6">
-					<Richtext size={setting.textSize}>{body}</Richtext>
-				</div>
-				{image && (
-					<div className="mb-6">
-						<Image preset="post" src={image} />
-					</div>
-				)}
-				<div className="flex flex-row items-center gap-12">
+						</Grid>
+					</Grid>
+				</Grid>
+
+				<Richtext size={setting.textSize}>{body}</Richtext>
+
+				{image && <Image preset="post" src={image} />}
+
+				<Grid variant="row" gap="M">
 					<IconLink
 						as="a"
 						href="#"
@@ -109,8 +108,8 @@ export const ContentCard: FC<ContentCardType> = ({ variant, author, createdAt, b
 					<IconLink as="a" href="#" icon="share" color="slate">
 						Share Link
 					</IconLink>
-				</div>
-			</div>
+				</Grid>
+			</Grid>
 		</Card>
 	);
 };

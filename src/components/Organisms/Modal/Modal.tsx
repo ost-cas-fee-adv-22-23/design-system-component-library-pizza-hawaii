@@ -25,7 +25,7 @@ export const Modal: FC<BaseProps> = ({ title, children = 'Modal Content', isVisi
 						className="flex justify-center items-center fixed inset-0 p-0 z-50 bg-white rounded-2xl shadow-lg overflow-hidden"
 						open={isVisible}
 					>
-						<div className="relative flex flex-col w-full overflow-x-hidden max-h-screen">
+						<div className="relative flex flex-col w-full overflow-x-hidden max-w-screen max-h-screen min-w-[600px] sm:min-w-full">
 							{/*header*/}
 							<div className="flex items-center justify-between gap-4 px-8 py-6 bg-violet-600 text-white">
 								<Headline level={3} as="h1">

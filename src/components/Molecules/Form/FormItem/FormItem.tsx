@@ -34,7 +34,7 @@ export const FormItem_InputErrorStyle = [
 
 export const FormItem: FC<TFormItem> = ({ label, children, errorMessage, labelHidden, id = uid('FormItem'), ...props }) => {
 	return (
-		<div className={['FormItem flex flex-col'].join(' ')} {...props}>
+		<div className="flex flex-col" {...props}>
 			<label
 				className={['text-slate-800 font-semibold text-base mb-xxs', labelHidden ? 'sr-only' : ''].join(' ')}
 				htmlFor={id}

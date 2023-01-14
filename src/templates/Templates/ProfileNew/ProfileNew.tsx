@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Header } from '../../Snippet/Header/Header';
+import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Headline } from '../../../components/Atoms/Headline/Headline';
 import { Image } from '../../../components/Atoms/Image/Image';
 import { Richtext } from '../../../components/Atoms/Richtext/Richtext';
@@ -13,6 +13,8 @@ import { IconLink } from '../../../components/Molecules/IconLink/IconLink';
 import { UserCard } from '../../../components/Organisms/UserCard/index';
 import { ContentCard } from '../../../components/Organisms/ContentCard/ContentCard';
 import { ContentInput } from '../../../components/Organisms/ContentInput/ContentInput';
+
+import { Header } from '../../Snippet/Header/Header';
 
 import { Post as PostType } from '../../../types/Post';
 import { User as UserType } from '../../../types/User';
@@ -61,14 +63,14 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 						<Richtext size="M">{user.bio || 'Schreibe etwas über dich!'}</Richtext>
 					</div>
 
-					<div className="flex gap-4 flex-col mb-8">
+					<Grid variant="col" gap="M" marginBelow="M">
 						<ContentInput
 							author={user}
 							variant="newPost"
 							headline="Voll leer hier! 😲"
 							placeHolderText="Und was meinst du dazu?"
 						/>
-					</div>
+					</Grid>
 
 					<div className="mb-2 text-slate-600">
 						<Headline level={3}>Empfohlene User</Headline>
@@ -89,7 +91,7 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 					<div className="mb-2 text-slate-600">
 						<Headline level={3}>Empfohlene Mumbles</Headline>
 					</div>
-					<div className="flex gap-4 flex-col mb-8">
+					<Grid variant="col" gap="M" marginBelow="M">
 						{promotedPosts &&
 							promotedPosts
 								.sort((a: PostType, b: PostType) => {
@@ -98,7 +100,7 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 								.map((post) => {
 									return <ContentCard key={post.id} variant="timeline" {...post} />;
 								})}
-					</div>
+					</Grid>
 				</section>
 			</main>
 		</article>
