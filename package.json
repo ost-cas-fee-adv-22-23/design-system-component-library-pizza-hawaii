@@ -8,7 +8,7 @@
 		"tag": "latest"
 	},
 	"scripts": {
-		"build": "rm -rf ./dist && ctix create --overwrite --useRootDir --noBackup --p ./tsconfig.json && rm ./index.ts && npx tailwindcss -i ./src/styles/main.css -o ./dist/bundle.css && tsc",
+		"build": "rm -rf ./dist && ctix create --overwrite --useRootDir --noBackup --p ./tsconfig.json -a ./src/ && npx tailwindcss -i ./src/styles/main.css -o ./dist/bundle.css && tsc",
 		"build-storybook": "rm -rf ./dist && npx tailwindcss -i ./src/styles/main.css -o ./dist/bundle.css && build-storybook",
 		"format": "$npm_execpath run lint && $npm_execpath run prettier",
 		"format:fix": "$npm_execpath run lint:fix && $npm_execpath run prettier:fix",
