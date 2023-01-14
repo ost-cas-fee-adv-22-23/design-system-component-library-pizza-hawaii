@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
-import { default as IconLib, IconNames as IcoNames } from './IconLib';
+import { default as IconLib, IconNames as IcoNames, TIconLibEntry } from './IconLib';
 
 /*
  * Type
  */
 
-type TIconSize = keyof typeof IconSizeMap;
+export type TIconSize = keyof typeof IconSizeMap;
+export type TIconName = TIconLibEntry;
 
 type TIcon = {
 	size?: TIconSize;
-	name: string;
+	name: TIconName;
 };
 
 type TIconProps = (TIcon & { size?: TIconSize }) | TIcon;

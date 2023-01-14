@@ -21,10 +21,10 @@ export const UserCard: FC<BaseProps> = ({ user }) => {
 				<div className="flex flex-col items-center gap-4">
 					<UserProfile
 						userName={user.userName}
-						userAvatar={user.avatar}
+						avatar={user.avatar}
 						size="L"
 						border={true}
-						href={`/user/${user.userName}`}
+						profileLink={`/user/${user.userName}`}
 					/>
 
 					<div className="flex flex-col gap-2">

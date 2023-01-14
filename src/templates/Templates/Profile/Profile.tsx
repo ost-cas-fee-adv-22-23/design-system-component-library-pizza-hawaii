@@ -11,7 +11,7 @@ import { UserName } from '../../../components/Molecules/UserName/UserName';
 import { TimeStamp } from '../../../components/Atoms/TimeStamp/TimeStamp';
 import { IconLink } from '../../../components/Molecules/IconLink/IconLink';
 
-import { ContentCard } from '../../../components/Organisms/ContentCard/ContentCard';
+import { ContentCard } from '../../Snippet/ContentCard/ContentCard';
 import { Header } from '../../Snippet/Header/Header';
 
 import { Post as PostType } from '../../../types/Post';
@@ -41,10 +41,10 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 						<div className="absolute right-8 bottom-0 translate-y-1/2">
 							<UserProfile
 								userName={user.userName}
-								userAvatar={user.avatar}
+								avatar={user.avatar}
 								size="XL"
 								border={true}
-								href="/"
+								profileLink="/"
 							/>
 						</div>
 					</div>
@@ -94,7 +94,7 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 									return new Date(b.createdAt) > new Date(a.createdAt) ? 1 : -1;
 								})
 								.map((post) => {
-									return <ContentCard key={post.id} variant="timeline" {...post} />;
+									return <ContentCard key={post.id} variant="timeline" post={post} />;
 								})}
 					</Grid>
 				</section>

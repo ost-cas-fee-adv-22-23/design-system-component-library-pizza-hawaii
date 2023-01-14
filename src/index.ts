@@ -19,9 +19,11 @@ export * from './components/Molecules/Switch/Switch';
 export * from './components/Atoms/TimeStamp/TimeStamp';
 export * from './components/Molecules/UserName/UserName';
 export * from './components/Molecules/UserProfile/UserProfile';
-export * from './components/Organisms/ContentCard/ContentCard';
-export * from './components/Organisms/ContentInput/ContentInput';
-export * from './templates/Snippet/Header/Header';
 export * from './components/Organisms/Modal/Modal';
 export * from './components/Organisms/SplitScreen/SplitScreen';
 export * from './components/Organisms/UserCard/UserCard';
+
+
+export * from './templates/Snippet/ContentCard/ContentCard';
+export * from './templates/Snippet/ContentInput/ContentInput';
+export * from './templates/Snippet/Header/Header';

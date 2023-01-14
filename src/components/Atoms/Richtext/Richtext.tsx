@@ -21,6 +21,14 @@ export const RichtextSizeMap: Record<string, string> = {
 	L: 'text-xl',
 };
 
+export const RichtextChildStyleMap: string[] = [
+	// Paragraphs
+	'[&>p]:block [&>p]:mb-2 [&>p:last-child]:mb-0',
+
+	// Links
+	'[&>p>a]:inline-block [&>p>a]:text-violet-600 [&>p>a:hover]:text-violet-400',
+];
+
 /*
  * Helpers
  */
@@ -38,9 +46,8 @@ function sanitizeContent(content: string, allowedTags: string[]): string {
 export const Richtext: FC<TRichtext> = ({ children, as: Tag = 'div', size = 'M', allowedTags = ['p', 'a'], ...rest }) => {
 	const style = [
 		'block font-medium leading-normal',
-		RichtextSizeMap[size],
-		'[&>p]:block [&>p]:mb-2 [&>p:last-child]:mb-0', // Paragraphs
-		'[&>p>a]:inline-block [&>p>a]:text-violet-600 [&>p>a:hover]:text-violet-400', // Links
+		RichtextSizeMap[size], // Text size
+		...RichtextChildStyleMap, // Child styles
 	].join(' ');
 
 	const props = {

@@ -15,18 +15,18 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 export const Small = Template.bind({});
 Small.args = {
 	size: 'S',
-	href: '/user/username',
+	profileLink: '/user/username',
 	userName: Current.userName,
-	userAvatar: Current.avatar,
+	avatar: Current.avatar,
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
 	size: 'M',
-	href: '/user/username',
+	profileLink: '/user/username',
 	border: true,
 	userName: Current.userName,
-	userAvatar: Current.avatar,
+	avatar: Current.avatar,
 };
 
 export const Large = Template.bind({});
@@ -34,14 +34,14 @@ Large.args = {
 	size: 'L',
 	border: true,
 	userName: Current.userName,
-	userAvatar: Current.avatar,
+	avatar: Current.avatar,
 };
 
 export const ExtraLarge = Template.bind({});
 ExtraLarge.args = {
 	size: 'XL',
-	href: '/user/username',
+	profileLink: '/user/username',
 	border: true,
 	userName: Current.userName,
-	userAvatar: Current.avatar,
+	avatar: Current.avatar,
 };

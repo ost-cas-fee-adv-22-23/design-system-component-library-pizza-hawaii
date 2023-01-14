@@ -4,16 +4,16 @@ import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Headline } from '../../../components/Atoms/Headline/Headline';
 import { Image } from '../../../components/Atoms/Image/Image';
 import { Richtext } from '../../../components/Atoms/Richtext/Richtext';
+import { TimeStamp } from '../../../components/Atoms/TimeStamp/TimeStamp';
 
 import { UserProfile } from '../../../components/Molecules/UserProfile/UserProfile';
 import { UserName } from '../../../components/Molecules/UserName/UserName';
-import { TimeStamp } from '../../../components/Atoms/TimeStamp/TimeStamp';
 import { IconLink } from '../../../components/Molecules/IconLink/IconLink';
 
 import { UserCard } from '../../../components/Organisms/UserCard/index';
-import { ContentCard } from '../../../components/Organisms/ContentCard/ContentCard';
-import { ContentInput } from '../../../components/Organisms/ContentInput/ContentInput';
 
+import { ContentCard } from '../../Snippet/ContentCard/ContentCard';
+import { ContentInput } from '../../Snippet/ContentInput/ContentInput';
 import { Header } from '../../Snippet/Header/Header';
 
 import { Post as PostType } from '../../../types/Post';
@@ -37,10 +37,10 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 						<div className="absolute right-8 bottom-0 translate-y-1/2">
 							<UserProfile
 								userName={user.userName}
-								userAvatar={user.avatar}
+								avatar={user.avatar}
 								size="XL"
 								border={true}
-								href="/"
+								profileLink="/"
 							/>
 						</div>
 					</div>
@@ -98,7 +98,7 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 									return new Date(b.createdAt) > new Date(a.createdAt) ? 1 : -1;
 								})
 								.map((post) => {
-									return <ContentCard key={post.id} variant="timeline" {...post} />;
+									return <ContentCard key={post.id} variant="timeline" post={post} />;
 								})}
 					</Grid>
 				</section>

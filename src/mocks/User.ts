@@ -6,6 +6,7 @@ export const Users: UserType[] = [
 	{
 		userName: 'johndoe',
 		fullName: 'John Doe',
+		profileLink: '/user/johndoe',
 		email: 'johndoe@example.com',
 		city: 'Zürich',
 		avatar: 'https://faces-img.xcdn.link/image-lorem-face-6307.jpg',
@@ -16,6 +17,7 @@ export const Users: UserType[] = [
 	{
 		userName: 'janedoe',
 		fullName: 'Jane Doe',
+		profileLink: '/user/janedoe',
 		email: 'janedoe@example.com',
 		city: 'Bern',
 		avatar: 'https://faces-img.xcdn.link/image-lorem-face-2.jpg',
@@ -26,6 +28,7 @@ export const Users: UserType[] = [
 	{
 		userName: 'bobsmith',
 		fullName: 'Bob Smith',
+		profileLink: 'b/user/obsmith',
 		email: 'bobsmith@example.com',
 		city: 'Genf',
 		avatar: 'https://faces-img.xcdn.link/image-lorem-face-3.jpg',
@@ -36,6 +39,7 @@ export const Users: UserType[] = [
 	{
 		userName: 'sarahjohnson',
 		fullName: 'Sarah Johnson',
+		profileLink: 'sarah/user/johnson',
 		email: 'sarahjohnson@example.com',
 		city: 'Lausanne',
 		avatar: 'https://faces-img.xcdn.link/image-lorem-face-4.jpg',
@@ -46,6 +50,7 @@ export const Users: UserType[] = [
 	{
 		userName: 'emmamiller',
 		fullName: 'Emma Miller',
+		profileLink: 'emm/user/amiller',
 		email: 'emmamiller@example.com',
 		city: 'Luzern',
 		avatar: 'https://faces-img.xcdn.link/image-lorem-face-5.jpg',
@@ -56,6 +61,7 @@ export const Users: UserType[] = [
 	{
 		userName: 'davidsmith',
 		fullName: 'David Smith',
+		profileLink: 'dav/user/idsmith',
 		email: 'davidsmith@example.com',
 		city: 'St. Gallen',
 		avatar: 'https://faces-img.xcdn.link/image-lorem-face-6.jpg',
@@ -69,6 +75,7 @@ export const Current: UserType = Users[0];
 export const NewUser: UserType = {
 	userName: 'peterparker',
 	fullName: 'Peter Parker',
+	profileLink: 'pete/user/rparker',
 	email: 'peterparker@example.com',
 	city: '',
 	bio: '',

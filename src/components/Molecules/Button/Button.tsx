@@ -1,6 +1,6 @@
 import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
 
-import { Icon } from '../../Atoms/Icon/Icon';
+import { Icon, TIconName } from '../../Atoms/Icon/Icon';
 import { Label } from '../../Atoms/Label/Label';
 
 /*
@@ -12,7 +12,7 @@ type TButton = {
 	as?: 'button' | 'a' | 'span';
 	size?: keyof typeof ButtonSizeMap;
 	color: keyof typeof ButtonColorMap;
-	icon?: string;
+	icon?: TIconName;
 };
 
 type THTMLButtonProps = TButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;

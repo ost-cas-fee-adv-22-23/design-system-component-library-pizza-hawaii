@@ -92,7 +92,7 @@ export const Header: FC<BaseProps> = ({ user }) => {
 					<nav className="Header--nav">
 						<Navi>
 							<NaviButton as="a" icon="" href={`/user/${user.userName}`}>
-								<UserProfile size="S" userName={user.userName} userAvatar={user.avatar} />
+								<UserProfile size="S" userName={user.userName} avatar={user.avatar} />
 							</NaviButton>
 							<NaviButton as="button" icon="settings" onClick={handleSettingsModalClick}>
 								Settings
@@ -136,11 +136,11 @@ export const Header: FC<BaseProps> = ({ user }) => {
 					</fieldset>
 
 					<Grid variant="row" gap="S" marginBelow="M" wrapBelowScreen="md">
-						<Button as="button" color="slate" icon="upload">
-							Bild Hochladen
+						<Button as="button" color="slate" icon="cross">
+							Abbrechen
 						</Button>
-						<Button as="button" color="violet" icon="send">
-							Absenden
+						<Button as="button" color="violet" icon="check">
+							Speichern
 						</Button>
 					</Grid>
 				</Form>

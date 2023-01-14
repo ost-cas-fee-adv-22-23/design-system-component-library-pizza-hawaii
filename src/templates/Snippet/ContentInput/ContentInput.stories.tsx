@@ -1,31 +1,27 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { User } from '../../../types/User';
-import { Users as UserList } from '../../../mocks/User';
 import { ContentInput as Component } from './ContentInput';
 
+import { Current } from '../../../mocks/User';
+
 export default {
-	title: 'Components/Organisms/ContentInput',
+	title: 'Example/Snippet/ContentInput',
 	component: Component,
 } as ComponentMeta<typeof Component>;
-
-const getRandUser = (): User => UserList[Math.floor(Math.random() * UserList.length)];
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
 export const NewPost = Template.bind({});
-export const AnswerPost = Template.bind({});
-
 NewPost.args = {
 	variant: 'newPost',
-	headline: 'Hey, was geht ab?',
+	headline: 'Hey, was gibt’s neues?',
 	placeHolderText: 'Deine Meinung zählt!',
-	author: getRandUser(),
+	author: Current,
 };
 
+export const AnswerPost = Template.bind({});
 AnswerPost.args = {
 	variant: 'answerPost',
-	headline: '',
 	placeHolderText: 'Was meinst Du dazu...?',
-	author: getRandUser(),
+	author: Current,
 };

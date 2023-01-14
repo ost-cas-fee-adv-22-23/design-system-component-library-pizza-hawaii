@@ -1,6 +1,4 @@
-export type TIconLib = { [index: string]: string };
-
-const Icons: TIconLib = {
+const IconsMap: Record<string, string> = {
 	mumble: `
 		<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
 			<path d="M9.793 10H6.207a.5.5 0 0 0-.353.854l1.792 1.792a.5.5 0 0 0 .708 0l1.792-1.793A.5.5 0 0 0 9.793 10Z"/>
@@ -129,5 +127,6 @@ const Icons: TIconLib = {
 	`,
 };
 
-export default Icons;
-export const IconNames = Object.keys(Icons);
+export default IconsMap;
+export const IconNames: string[] = Object.keys(IconsMap);
+export type TIconLibEntry = keyof typeof IconsMap;

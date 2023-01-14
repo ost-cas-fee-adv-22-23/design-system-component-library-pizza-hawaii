@@ -3,8 +3,8 @@ import React, { FC } from 'react';
 import { Header } from '../../Snippet/Header/Header';
 import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Headline } from '../../../components/Atoms/Headline/Headline';
-import { ContentCard } from '../../../components/Organisms/ContentCard/ContentCard';
-import { ContentInput } from '../../../components/Organisms/ContentInput/ContentInput';
+import { ContentCard } from '../../Snippet/ContentCard/ContentCard';
+import { ContentInput } from '../../Snippet/ContentInput/ContentInput';
 
 import { Post as PostType } from '../../../types/Post';
 import { User as UserType } from '../../../types/User';
@@ -45,7 +45,7 @@ export const Timeline: FC<TimelineType> = ({ user, posts = [] }) => {
 									return new Date(b.createdAt) > new Date(a.createdAt) ? 1 : -1;
 								})
 								.map((post) => {
-									return <ContentCard key={post.id} variant="timeline" {...post} />;
+									return <ContentCard key={post.id} variant="timeline" post={post} />;
 								})}
 					</Grid>
 				</section>
