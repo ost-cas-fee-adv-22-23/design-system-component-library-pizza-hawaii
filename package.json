@@ -24,7 +24,7 @@
 	],
 	"exports": {
 		".": {
-			"import": "./dist/components/index.js"
+			"import": "./dist/index.js"
 		},
 		"./dist/bundle.css": {
 			"import": "./dist/bundle.css"
