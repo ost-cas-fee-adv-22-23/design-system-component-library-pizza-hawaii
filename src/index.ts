@@ -21,7 +21,6 @@ export * from './components/Organisms/Modal';
 export * from './components/Organisms/SplitScreen';
 export * from './components/Organisms/UserCard';
 export * from './components/Organisms/UserContentCard';
-export * from './types';
 export * from './utils';
 
 
