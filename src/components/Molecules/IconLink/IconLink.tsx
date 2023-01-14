@@ -14,7 +14,7 @@ type TIconLink = {
 	size?: TIconLinkSize;
 	color: 'slate' | 'violet' | 'pink';
 	icon: string;
-	iconState?: string;
+	iconState: string;
 };
 
 type TLinkButtonProps = TIconLink & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -34,9 +34,19 @@ export const IconLinkSizeMap: Record<string, string> = {
 };
 
 export const IconLinkColorMap: Record<string, string> = {
-	slate: 'text-slate-400 hover:text-slate-600',
-	violet: 'text-violet-600 hover:text-violet-900',
-	pink: ' text-pink-400 hover:text-pink-600',
+	slate: 'text-slate-400 hover:text-slate-600 hover:bg-slate-100 active:bg-slate-100',
+	violet: 'text-violet-600 hover:text-violet-900 hover:bg-violet-50 active:bg-violet-50',
+	pink: ' text-pink-400 hover:text-pink-600 hover:bg-pink-50 active:bg-pink-50',
+};
+
+/*
+ * State
+ */
+export const IconStateMap: Record<string, string> = {
+	linkState: 'underline',
+	hoverState: 'py-2 px-3 rounded-full',
+	activeState: 'bg-pink-500',
+	withReaction: 'py-2 px-3 rounded-full',
 };
 
 export const IconLink: FC<TIconLinkProps> = ({
@@ -53,10 +63,12 @@ export const IconLink: FC<TIconLinkProps> = ({
 		'leading-none',
 		IconLinkSizeMap[size],
 		IconLinkColorMap[color],
+		IconStateMap[iconState],
 		'group',
+		'hover: cursor-pointer',
 		'transition-all',
 	];
-
+	console.log('Iconlink state', iconState)
 	return (
 		<Tag
 			className={styles.join(' ')}

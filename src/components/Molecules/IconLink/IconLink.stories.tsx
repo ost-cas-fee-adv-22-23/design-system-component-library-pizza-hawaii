@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { IconNames } from '../../Atoms/Icon/IconLib';
-import { IconLink as Component, IconLinkSizeMap } from './IconLink';
+import { IconLink as Component, IconLinkSizeMap, IconStateMap } from './IconLink';
 
 export default {
 	title: 'Components/Molecules/IconLink',
@@ -14,6 +14,10 @@ export default {
 		},
 		size: {
 			options: Object.keys(IconLinkSizeMap),
+			control: { type: 'select' },
+		},
+		iconState: {
+			options: Object.keys(IconStateMap),
 			control: { type: 'select' },
 		},
 	},
