@@ -5,7 +5,7 @@ import { ContentCard as Component } from './ContentCard';
 import { PostsFormated as Posts } from '../../../mocks/Post';
 
 export default {
-	title: 'Example/Snippet/ContentCard',
+	title: 'Examples/Snippets/ContentCard',
 	component: Component,
 } as ComponentMeta<typeof Component>;
 

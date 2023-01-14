@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
 
-import { Header } from '../../Snippet/Header/Header';
 import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Headline } from '../../../components/Atoms/Headline/Headline';
-import { ContentCard } from '../../Snippet/ContentCard/ContentCard';
-import { ContentInput } from '../../Snippet/ContentInput/ContentInput';
+
+import { Header } from '../../Snippets/Header/Header';
+import { ContentCard } from '../../Snippets/ContentCard/ContentCard';
+import { ContentInput } from '../../Snippets/ContentInput/ContentInput';
 
 import { Post as PostType } from '../../../types/Post';
 import { User as UserType } from '../../../types/User';

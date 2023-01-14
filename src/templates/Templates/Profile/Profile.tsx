@@ -11,8 +11,8 @@ import { UserName } from '../../../components/Molecules/UserName/UserName';
 import { TimeStamp } from '../../../components/Atoms/TimeStamp/TimeStamp';
 import { IconLink } from '../../../components/Molecules/IconLink/IconLink';
 
-import { ContentCard } from '../../Snippet/ContentCard/ContentCard';
-import { Header } from '../../Snippet/Header/Header';
+import { ContentCard } from '../../Snippets/ContentCard/ContentCard';
+import { Header } from '../../Snippets/Header/Header';
 
 import { Post as PostType } from '../../../types/Post';
 import { User as UserType } from '../../../types/User';

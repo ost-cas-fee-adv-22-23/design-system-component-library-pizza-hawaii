@@ -24,6 +24,6 @@ export * from './components/Organisms/SplitScreen/SplitScreen';
 export * from './components/Organisms/UserCard/UserCard';
 
 
-export * from './templates/Snippet/ContentCard/ContentCard';
-export * from './templates/Snippet/ContentInput/ContentInput';
-export * from './templates/Snippet/Header/Header';
+export * from './templates/Snippets/ContentCard/ContentCard';
+export * from './templates/Snippets/ContentInput/ContentInput';
+export * from './templates/Snippets/Header/Header';

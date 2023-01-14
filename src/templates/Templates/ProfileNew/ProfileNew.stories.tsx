@@ -7,7 +7,7 @@ import { PostsFormated as examplePosts } from '../../../mocks/Post';
 import { Users as promotedUsers, NewUser as exampleUser } from '../../../mocks/User';
 
 export default {
-	title: 'Example/Template',
+	title: 'Examples/Templates',
 	component: Component,
 	parameters: {},
 } as ComponentMeta<typeof Component>;

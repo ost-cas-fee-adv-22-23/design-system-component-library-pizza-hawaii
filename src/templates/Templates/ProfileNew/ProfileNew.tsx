@@ -12,9 +12,9 @@ import { IconLink } from '../../../components/Molecules/IconLink/IconLink';
 
 import { UserCard } from '../../../components/Organisms/UserCard/index';
 
-import { ContentCard } from '../../Snippet/ContentCard/ContentCard';
-import { ContentInput } from '../../Snippet/ContentInput/ContentInput';
-import { Header } from '../../Snippet/Header/Header';
+import { ContentCard } from '../../Snippets/ContentCard/ContentCard';
+import { ContentInput } from '../../Snippets/ContentInput/ContentInput';
+import { Header } from '../../Snippets/Header/Header';
 
 import { Post as PostType } from '../../../types/Post';
 import { User as UserType } from '../../../types/User';

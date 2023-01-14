@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Register as Component } from './Register';
 
 export default {
-	title: 'Example/Template',
+	title: 'Examples/Templates',
 	component: Component,
 	parameters: {},
 } as ComponentMeta<typeof Component>;

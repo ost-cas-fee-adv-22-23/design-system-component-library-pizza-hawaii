@@ -5,7 +5,7 @@ import { ContentInput as Component } from './ContentInput';
 import { Current } from '../../../mocks/User';
 
 export default {
-	title: 'Example/Snippet/ContentInput',
+	title: 'Examples/Snippets/ContentInput',
 	component: Component,
 } as ComponentMeta<typeof Component>;
 
