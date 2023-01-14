@@ -7,7 +7,7 @@ type BaseProps = {
 
 export const SplitScreen: FC<BaseProps> = ({ children }) => {
 	return (
-		<article className="SplitScreen grid grid-cols-1 grid-rows-1 md:grid-cols-2 w-screen min-h-screen">
+		<article className="SplitScreen grid grid-rows-1 grid-cols-2 md:grid-cols-1 w-screen min-h-screen">
 			<header className="column-start-1 column-span-1 row-start-1 row-span-1 flex items-center justify-center bg-gradient-to-tl from-violet-600 to-pink-500">
 				<div className="w-8/12 text-pink-300 text-center">
 					<svg
@@ -73,7 +73,7 @@ export const SplitScreen: FC<BaseProps> = ({ children }) => {
 					</Headline>
 				</div>
 			</header>
-			<div className="column-start-1 column-span-1 row-start-2 row-span-1 md:column-start-2 md:row-start-1 flex items-center justify-center">
+			<div className="column-start-2 column-span-1 row-start-1 row-span-1 md:column-start-1 md:row-start-2 flex items-center justify-center">
 				<section className="w-6/12">{children}</section>
 			</div>
 		</article>
