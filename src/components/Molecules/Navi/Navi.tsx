@@ -1,5 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 
+import { Grid } from '../../Atoms/Grid/Grid';
+
 /*
  * Type
  */
@@ -9,5 +11,9 @@ type TNavi = {
 };
 
 export const Navi: FC<TNavi> = ({ children }) => {
-	return <ul className="flex gap-8">{children}</ul>;
+	return (
+		<Grid as="ul" variant="row" gap="S" centerd={true}>
+			{children}
+		</Grid>
+	);
 };

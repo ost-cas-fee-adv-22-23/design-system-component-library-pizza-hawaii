@@ -1,35 +1,29 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { IconNames } from '../../Atoms/Icon/IconLib';
 import { Navi as Component } from './Navi';
 import { NaviButton } from './NaviButton';
 
 export default {
 	title: 'Components/Molecules/Navi',
 	component: Component,
-	argTypes: {
-		icon: {
-			options: IconNames,
-			control: { type: 'select' },
-		},
-	},
+	argTypes: {},
 } as ComponentMeta<typeof Component>;
 
-const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Navi {...args} />;
+const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
 export const Navi = Template.bind({});
 
 Navi.args = {
 	children: (
 		<>
-			<NaviButton as="a" href="/" icon="settings">
+			<NaviButton as="a" href="/" icon="settings" title="Settings">
 				Settings
 			</NaviButton>
-			<NaviButton as="a" href="/" icon="settings">
+			<NaviButton as="a" href="/" icon="settings" title="Settings">
 				Settings
 			</NaviButton>
-			<NaviButton as="a" href="/" icon="settings">
+			<NaviButton as="a" href="/" icon="settings" title="Settings">
 				Settings
 			</NaviButton>
 		</>

@@ -1,4 +1,4 @@
-import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
+import React, { FC, HTMLAttributes, ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
 
 import { Icon, TIconName } from '../../Atoms/Icon/Icon';
 import { Label } from '../../Atoms/Label/Label';
@@ -17,7 +17,7 @@ type TButton = {
 
 type THTMLButtonProps = TButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
 type TLinkButtonProps = TButton & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
-type TSpanButtonProps = TButton & { as: 'span' } & AnchorHTMLAttributes<HTMLSpanElement>;
+type TSpanButtonProps = TButton & { as: 'span' } & HTMLAttributes<HTMLSpanElement>;
 
 type TButtonProps = THTMLButtonProps | TLinkButtonProps | TSpanButtonProps;
 

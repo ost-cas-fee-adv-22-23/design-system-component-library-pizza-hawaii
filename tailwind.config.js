@@ -70,6 +70,9 @@ module.exports = {
 			aspectRatio: {
 				...aspectRatio,
 			},
+			leading: {
+				'normal': '1.4',
+			},
 		},
 	},
 	plugins: [],

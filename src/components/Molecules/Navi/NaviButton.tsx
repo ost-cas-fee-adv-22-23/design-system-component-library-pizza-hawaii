@@ -1,4 +1,4 @@
-import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
+import React, { FC, ReactNode, HTMLAttributes, ButtonHTMLAttributes, AnchorHTMLAttributes, Children } from 'react';
 import { Icon } from '../../Atoms/Icon/Icon';
 import { Label } from '../../Atoms/Label/Label';
 
@@ -9,37 +9,46 @@ import { Label } from '../../Atoms/Label/Label';
 type TNaviButton = {
 	as: 'button' | 'a';
 	icon?: string;
+	children: ReactNode;
 };
 
-type HTMLButtonProps = TNaviButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
-type LinkButtonProps = TNaviButton & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
+type HTMLButtonProps = TNaviButton &
+	HTMLAttributes<HTMLElement> & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
+type LinkButtonProps = TNaviButton & HTMLAttributes<HTMLElement> & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 type NaviButtonProps = LinkButtonProps | HTMLButtonProps;
 
-export const NaviButton: FC<NaviButtonProps> = ({ as: Tag, icon, ...props }) => {
-	const style =
-		'inline-flex flex-col items-center justify-center min-w-[56px] min-h-[56px] gap-1 p-2 rounded-lg text-white bg-violet-600 hover:bg-violet-700';
+/*
+ * Styles
+ */
 
-	let content = props.children;
+const style = [
+	'inline-flex flex-col gap-1 items-center justify-center',
+	'min-w-[56px] min-h-[56px] sm:min-w-[40px] sm:min-h-[40px]',
+	'p-2 sm:p-1 rounded-lg',
+	'text-white ',
+	'bg-violet-600 hover:bg-violet-700',
+];
 
-	if (props.children && typeof props.children === 'string') {
-		content = (
-			<Label as="span" size="S">
-				{props.children}
-			</Label>
+export const NaviButton: FC<NaviButtonProps> = ({ as: Tag = "a", children, icon, ...props }) => {
+	if (Children.count(children) === 1 && typeof children === 'string') {
+		children = (
+			<span className="leading-none sm:sr-only">
+				<Label as="span" size="S">
+					{children}
+				</Label>
+			</span>
 		);
 	}
 
 	return (
-		<li className="flex-auto">
-			<Tag
-				className={style}
-				// eslint-disable-next-line @typescript-eslint/no-explicit-any
-				{...(props as any)}
-			>
-				{icon ? <Icon name={icon} /> : null}
-				{content}
-			</Tag>
-		</li>
+		<Tag
+			className={style.join(' ')}
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			{...(props as any)}
+		>
+			{icon && <Icon name={icon} />}
+			{children}
+		</Tag>
 	);
 };

@@ -43,9 +43,9 @@ export const Header: FC<BaseProps> = ({ user }) => {
 	return (
 		<header className="Header mb-8 bg-violet-600 text-white">
 			<div className="px-content py-3">
-				<div className="flex items-center justify-between w-full max-w-content mx-auto">
-					<a href="/" className="inline-block w-[209px]">
-						<svg width="209" height="40" viewBox="0 0 209 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<div className="flex items-center justify-between gap-8 w-full max-w-content mx-auto">
+					<a href="/" className="flex w-[209px">
+						<svg className="w-full" viewBox="0 0 209 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<g>
 								<path
 									d="M23.3332 24.9999H16.6666C15.7128 24.9999 14.8567 25.5305 14.4303 26.3833C14.0038 27.2346 14.095 28.2388 14.6663 28.9989L17.9996 33.4455C18.4765 34.0803 19.2056 34.4448 19.9999 34.4448C20.7942 34.4448 21.5233 34.0803 22.0002 33.4439L25.3336 29.0005C25.9048 28.2388 25.996 27.2346 25.5696 26.3833C25.1431 25.5305 24.287 24.9999 23.3332 24.9999Z"
@@ -89,7 +89,7 @@ export const Header: FC<BaseProps> = ({ user }) => {
 
 						<h1 className="sr-only">Mumble</h1>
 					</a>
-					<nav className="Header--nav">
+					<nav className="">
 						<Navi>
 							<NaviButton as="a" icon="" href={`/user/${user.userName}`}>
 								<UserProfile size="S" userName={user.userName} avatar={user.avatar} />
