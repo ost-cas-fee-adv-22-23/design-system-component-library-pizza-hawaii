@@ -1,5 +1,6 @@
 export * from './components/Atoms/Headline/Headline';
 export * from './components/Atoms/Icon/Icon';
+export * from './components/Atoms/Colors/Colors';
 export * from './components/Atoms/Image/Image';
 export * from './components/Atoms/Label/Label';
 export * from './components/Atoms/Link/Link';
@@ -22,7 +23,6 @@ export * from './components/Molecules/UserProfile/UserProfile';
 export * from './components/Organisms/Modal/Modal';
 export * from './components/Organisms/SplitScreen/SplitScreen';
 export * from './components/Organisms/UserCard/UserCard';
-
 
 export * from './templates/Snippets/ContentCard/ContentCard';
 export * from './templates/Snippets/ContentInput/ContentInput';
