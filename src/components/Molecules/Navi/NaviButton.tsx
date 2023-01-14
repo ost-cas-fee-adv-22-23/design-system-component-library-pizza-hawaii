@@ -30,7 +30,7 @@ const style = [
 	'bg-violet-600 hover:bg-violet-700',
 ];
 
-export const NaviButton: FC<NaviButtonProps> = ({ as: Tag = "a", children, icon, ...props }) => {
+export const NaviButton: FC<NaviButtonProps> = ({ as: Tag = 'a', children, icon, ...props }) => {
 	if (Children.count(children) === 1 && typeof children === 'string') {
 		children = (
 			<span className="leading-none sm:sr-only">

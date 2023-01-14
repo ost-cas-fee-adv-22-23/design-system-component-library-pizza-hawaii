@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC, useState, ChangeEvent } from 'react';
 import uid from '../../../utils/uid';
 
