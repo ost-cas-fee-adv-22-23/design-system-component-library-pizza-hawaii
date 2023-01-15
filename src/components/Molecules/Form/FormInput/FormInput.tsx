@@ -12,8 +12,9 @@ type TFormInput = {
 	label: string;
 	errorMessage?: string;
 	id?: string;
-	labelHidden?: boolean;
+	hideLabel?: boolean;
 	icon?: string;
+	onIconClick?: () => void;
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -23,23 +24,31 @@ export const FormInput: FC<TFormInputType> = ({
 	label,
 	errorMessage,
 	id = uid('FormInput'),
-	labelHidden,
+	hideLabel,
 	icon,
 	...props
 }) => {
+	if (errorMessage) {
+		props['aria-invalid'] = true;
+		props['aria-describedby'] = `${id}-error`;
+		icon = 'cancel';
+	}
+
+	const inputProps = {
+		className: [...FormItem_InputStyle, ...(errorMessage ? FormItem_InputErrorStyle : []), icon && 'pr-10'].join(' '),
+		id,
+		...props,
+	};
+
+	const iconContainerProps = {
+		className: `absolute right-4 top-1/2 -translate-y-1/2 flex ${errorMessage ? 'text-error-red ' : 'text-slate-600'}`,
+	};
+
 	return (
-		<FormItem id={id} label={label || 'FormInput'} errorMessage={errorMessage} labelHidden={labelHidden}>
-			<input
-				className={[...FormItem_InputStyle, ...(errorMessage ? FormItem_InputErrorStyle : [])].join(' ')}
-				id={id}
-				{...props}
-			/>
+		<FormItem id={id} label={label || 'FormInput'} errorMessage={errorMessage} hideLabel={hideLabel}>
+			<input {...inputProps} />
 			{icon && (
-				<span
-					className={`absolute right-4 top-1/2 -translate-y-1/2 flex ${
-						errorMessage ? 'text-error-red ' : 'text-slate-600'
-					}`}
-				>
+				<span {...iconContainerProps}>
 					<Icon name={icon} />
 				</span>
 			)}

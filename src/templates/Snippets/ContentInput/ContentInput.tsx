@@ -67,7 +67,7 @@ export const ContentInput: FC<TContentInputCard> = (props) => {
 			avatarVariant={setting.avatarVariant}
 			avatarSize={setting.avatarSize}
 		>
-			<FormTextarea label={placeHolderText} placeholder={placeHolderText} labelHidden={true} size="L" />
+			<FormTextarea label={placeHolderText} placeholder={placeHolderText} hideLabel={true} size="L" />
 
 			<Grid variant="row" gap="S" wrapBelowScreen="md">
 				<Button as="button" color="slate" icon="upload">

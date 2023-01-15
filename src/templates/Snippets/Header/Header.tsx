@@ -4,11 +4,8 @@ import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Label } from '../../../components/Atoms/Label';
 
 import { UserProfile } from '../../../components/Molecules/UserProfile';
-import { Navi } from '../../../components/Molecules/Navi';
-import { NaviButton } from '../../../components/Molecules/Navi/NaviButton';
-import { Form } from '../../../components/Molecules/Form';
-import { FormInput } from '../../../components/Molecules/Form/FormInput';
-import { FormTextarea } from '../../../components/Molecules/Form/FormTextarea';
+import { Navi, NaviButton } from '../../../components/Molecules/Navi';
+import { Form, FormPassword, FormInput, FormTextarea } from '../../../components/Molecules/Form';
 import { Button } from '../../../components/Molecules/Button';
 
 import { Modal } from '../../../components/Organisms/Modal/Modal';
@@ -23,6 +20,10 @@ export const Header: FC<BaseProps> = ({ user }) => {
 	const [state, setState] = useState({
 		showSettingsModal: false,
 		user: user,
+		form: {
+			passwordFieldType: 'password',
+			passwordConfirmFieldType: 'password',
+		},
 	});
 
 	const handleSettingsModalClick = (): void => {
@@ -38,6 +39,15 @@ export const Header: FC<BaseProps> = ({ user }) => {
 				[field]: value,
 			},
 		});
+	};
+
+	const onShowPassword: any = (e: any): void => {
+		const { field, value } = e.target;
+		console.log(field, value);
+		// setState({
+		// 	...state,
+		// 	[field.id]: !state[field.id],
+		// });
 	};
 
 	return (
@@ -116,12 +126,14 @@ export const Header: FC<BaseProps> = ({ user }) => {
 							</div>
 							<FormInput
 								type="text"
-								label="Vorname Name"
-								value={state.user.fullName}
-								onChange={onFieldChange}
+								label="UserName"
+								value={state.user.userName}
+								disabled={true}
+								icon="mumble"
 							/>
-							<FormInput type="email" label="E-Mail" value={state.user.email} onChange={onFieldChange} />
-							<FormTextarea label="Bio" value={state.user.bio} onChange={onFieldChange} />
+							<FormInput type="text" label="Vorname Name" value={state.user.fullName} />
+							<FormInput type="email" label="E-Mail" value={state.user.email} />
+							<FormTextarea label="Bio" value={state.user.bio} />
 						</Grid>
 					</fieldset>
 					<fieldset>
@@ -131,8 +143,12 @@ export const Header: FC<BaseProps> = ({ user }) => {
 									Passwort ändern
 								</Label>
 							</div>
-							<FormInput type="password" label="Altes Passwort" />
-							<FormInput type="password" label="Neues Passwort" />
+							<FormPassword
+								label="Altes Passwort"
+							/>
+							<FormPassword
+								label="Neues Passwort"
+							/>
 						</Grid>
 					</fieldset>
 

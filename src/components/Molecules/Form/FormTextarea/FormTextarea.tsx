@@ -11,7 +11,7 @@ type TFormTextarea = {
 	label: string;
 	errorMessage?: string;
 	id?: string;
-	labelHidden?: boolean;
+	hideLabel?: boolean;
 	size?: 'M' | 'L';
 };
 
@@ -27,7 +27,7 @@ export const FormTextarea: FC<TFormTextareaType> = ({
 	label,
 	errorMessage,
 	id = uid('FormTextarea'),
-	labelHidden,
+	hideLabel,
 	size,
 	...props
 }) => {
@@ -39,7 +39,7 @@ export const FormTextarea: FC<TFormTextareaType> = ({
 	];
 
 	return (
-		<FormItem id={id} label={label || 'FormTextarea'} errorMessage={errorMessage} labelHidden={labelHidden}>
+		<FormItem id={id} label={label || 'FormTextarea'} errorMessage={errorMessage} hideLabel={hideLabel}>
 			<textarea className={style.join(' ')} id={id} {...props} />
 		</FormItem>
 	);
