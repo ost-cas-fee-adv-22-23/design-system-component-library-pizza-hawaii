@@ -14,8 +14,7 @@ type TIconLink = {
 	size?: TIconLinkSize;
 	color: 'slate' | 'violet' | 'pink';
 	icon: string;
-	iconState?: string;
-	linkState?: string;
+	iconState: string;
 };
 
 type TLinkButtonProps = TIconLink & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -44,25 +43,13 @@ export const IconLinkColorMap: Record<string, string> = {
  * State
  */
 
-export const LinkStateMap: Record<string, string> = {
-	link: '',
-	hoverState: 'py-2 px-3 rounded-full',
-	activeState: [`bg-${IconLinkColorMap.color}-100}` + 'py-2 px-3 rounded-full'].join(' '),
-};
-
-export const IconStateMap: Record<string, string> = {
-	fillable: 'fillable',
-	filled: 'filled',
-};
-
 export const IconLink: FC<TIconLinkProps> = ({
 	children = 'NaviButton',
 	as: Tag = 'a',
-	color,
+	color = 'slate',
 	size = 'M',
 	icon,
-	iconState = '',
-	linkState = 'link',
+	iconState,
 	...props
 }) => {
 	const styles = [
@@ -70,8 +57,6 @@ export const IconLink: FC<TIconLinkProps> = ({
 		'leading-none',
 		IconLinkSizeMap[size],
 		IconLinkColorMap[color],
-		LinkStateMap[linkState],
-		IconStateMap[iconState],
 		'group',
 		'hover: cursor-pointer',
 		'transition-all',
