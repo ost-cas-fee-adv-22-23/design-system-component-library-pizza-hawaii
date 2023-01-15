@@ -71,6 +71,7 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 
 					<Grid variant="col" gap="M" marginBelow="M">
 						<Switch
+							label="Wechsle deine angezeigten Mumbles"
 							options={[
 								{
 									label: 'Meine Mumbles',
