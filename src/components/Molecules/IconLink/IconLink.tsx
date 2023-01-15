@@ -14,8 +14,8 @@ type TIconLink = {
 	size?: TIconLinkSize;
 	color: 'slate' | 'violet' | 'pink';
 	icon: string;
-	iconState: string;
-	linkState: string;
+	iconState?: string;
+	linkState?: string;
 };
 
 type TLinkButtonProps = TIconLink & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -61,8 +61,8 @@ export const IconLink: FC<TIconLinkProps> = ({
 	color,
 	size = 'M',
 	icon,
-	iconState,
-	linkState,
+	iconState = '',
+	linkState = 'link',
 	...props
 }) => {
 	const styles = [
