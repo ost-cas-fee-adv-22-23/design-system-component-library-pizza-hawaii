@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { ChangeEvent, FC, useState } from 'react';
 
 import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Headline } from '../../../components/Atoms/Headline/Headline';
@@ -24,6 +24,8 @@ type ProfileType = {
 
 export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 	const [currentPostType, setCurrentPostType] = useState('mumbles');
+
+	const setPostType = setCurrentPostType.bind(this);
 
 	const postsToRender: Record<string, PostType[]> = {
 		mumbles: posts.filter((p) => p.author === user),
@@ -81,7 +83,8 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 							]}
 							value="mumbles"
 							name="posttype"
-							onChange={(value: string): void => {
+							onChange={(event: ChangeEvent): void => {
+								const value = (event.target as HTMLInputElement).value;
 								setCurrentPostType(value);
 							}}
 						/>

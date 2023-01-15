@@ -20,10 +20,6 @@ export const Header: FC<BaseProps> = ({ user }) => {
 	const [state, setState] = useState({
 		showSettingsModal: false,
 		user: user,
-		form: {
-			passwordFieldType: 'password',
-			passwordConfirmFieldType: 'password',
-		},
 	});
 
 	const handleSettingsModalClick = (): void => {
@@ -39,15 +35,6 @@ export const Header: FC<BaseProps> = ({ user }) => {
 				[field]: value,
 			},
 		});
-	};
-
-	const onShowPassword: any = (e: any): void => {
-		const { field, value } = e.target;
-		console.log(field, value);
-		// setState({
-		// 	...state,
-		// 	[field.id]: !state[field.id],
-		// });
 	};
 
 	return (
@@ -143,12 +130,8 @@ export const Header: FC<BaseProps> = ({ user }) => {
 									Passwort ändern
 								</Label>
 							</div>
-							<FormPassword
-								label="Altes Passwort"
-							/>
-							<FormPassword
-								label="Neues Passwort"
-							/>
+							<FormPassword label="Altes Passwort" />
+							<FormPassword label="Neues Passwort" />
 						</Grid>
 					</fieldset>
 
