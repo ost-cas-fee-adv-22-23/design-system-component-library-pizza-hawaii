@@ -9,6 +9,7 @@ import { Label } from '../../../components/Atoms/Label';
 
 import { UserName } from '../../../components/Molecules/UserName';
 import { IconLink } from '../../../components/Molecules/IconLink';
+import { ImageOverlay } from '../../../components/Molecules/ImageOverlay';
 
 import { UserContentCard, TUserContentCard } from '../../../components/Organisms/UserContentCard/UserContentCard';
 
@@ -81,7 +82,16 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 		>
 			<Richtext size={setting.textSize}>{post.body}</Richtext>
 
-			{post.image && <Image preset="post" src={post.image} />}
+			{post.image && (
+				<ImageOverlay
+					icon="fullscreen"
+					onClick={function (): void {
+						throw new Error('Function not implemented.');
+					}}
+				>
+					<Image preset="post" src={post.image} />
+				</ImageOverlay>
+			)}
 
 			<Grid variant="row" gap="M">
 				<IconLink
