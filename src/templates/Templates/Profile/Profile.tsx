@@ -2,14 +2,14 @@ import React, { FC, useState } from 'react';
 
 import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Headline } from '../../../components/Atoms/Headline/Headline';
-import { Image } from '../../../components/Atoms/Image/Image';
-import { Richtext } from '../../../components/Atoms/Richtext/Richtext';
+import { Image } from '../../../components/Atoms/Image';
+import { Richtext } from '../../../components/Atoms/Richtext';
 
-import { Switch } from '../../../components/Molecules/Switch/Switch';
-import { UserProfile } from '../../../components/Molecules/UserProfile/UserProfile';
-import { UserName } from '../../../components/Molecules/UserName/UserName';
-import { TimeStamp } from '../../../components/Atoms/TimeStamp/TimeStamp';
-import { IconLink } from '../../../components/Molecules/IconLink/IconLink';
+import { Switch } from '../../../components/Molecules/Switch';
+import { UserProfile } from '../../../components/Molecules/UserProfile';
+import { UserName } from '../../../components/Molecules/UserName';
+import { TimeStamp } from '../../../components/Atoms/TimeStamp';
+import { IconLink } from '../../../components/Molecules/IconLink';
 
 import { ContentCard } from '../../Snippets/ContentCard/ContentCard';
 import { Header } from '../../Snippets/Header/Header';

@@ -2,13 +2,13 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Form as Component } from './Form';
 
-import { FormInput } from './FormInput/FormInput';
-import { FormSelect } from './FormSelect/FormSelect';
-import { FormTextarea } from './FormTextarea/FormTextarea';
+import { FormInput } from './FormInput';
+import { FormSelect } from './FormSelect';
+import { FormTextarea } from './FormTextarea';
 import { FormUpload } from './FormUpload/FormUpload';
 
 export default {
-	title: 'Components/Molecules/Form/Form',
+	title: 'Components/Molecules/Form',
 	component: Component,
 	argTypes: {},
 } as ComponentMeta<typeof Component>;

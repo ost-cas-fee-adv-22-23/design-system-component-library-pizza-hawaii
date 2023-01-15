@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 
 import { Grid } from '../../../components/Atoms/Grid/Grid';
-import { Label } from '../../../components/Atoms/Label/Label';
+import { Label } from '../../../components/Atoms/Label';
 
-import { UserName } from '../../../components/Molecules/UserName/UserName';
-import { Button } from '../../../components/Molecules/Button/Button';
-import { FormTextarea } from '../../../components/Molecules/Form/FormTextarea/FormTextarea';
+import { UserName } from '../../../components/Molecules/UserName';
+import { Button } from '../../../components/Molecules/Button';
+import { FormTextarea } from '../../../components/Molecules/Form/FormTextarea';
 
 import { UserContentCard, TUserContentCard } from '../../../components/Organisms/UserContentCard/UserContentCard';
 

@@ -5,7 +5,7 @@ import { Headline } from '../../../components/Atoms/Headline/Headline';
 
 import { Header } from '../../Snippets/Header/Header';
 import { ContentCard } from '../../Snippets/ContentCard/ContentCard';
-import { ContentInput } from '../../Snippets/ContentInput/ContentInput';
+import { ContentInput } from '../../Snippets/ContentInput';
 
 import { Post as PostType } from '../../../types/Post';
 import { User as UserType } from '../../../types/User';

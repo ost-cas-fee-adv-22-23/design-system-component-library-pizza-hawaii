@@ -2,13 +2,13 @@
 import React, { FC } from 'react';
 
 import { Grid } from '../../../components/Atoms/Grid/Grid';
-import { TimeStamp } from '../../../components/Atoms/TimeStamp/TimeStamp';
-import { Image } from '../../../components/Atoms/Image/Image';
-import { Richtext } from '../../../components/Atoms/Richtext/Richtext';
-import { Label } from '../../../components/Atoms/Label/Label';
+import { TimeStamp } from '../../../components/Atoms/TimeStamp';
+import { Image } from '../../../components/Atoms/Image';
+import { Richtext } from '../../../components/Atoms/Richtext';
+import { Label } from '../../../components/Atoms/Label';
 
-import { UserName } from '../../../components/Molecules/UserName/UserName';
-import { IconLink } from '../../../components/Molecules/IconLink/IconLink';
+import { UserName } from '../../../components/Molecules/UserName';
+import { IconLink } from '../../../components/Molecules/IconLink';
 
 import { UserContentCard, TUserContentCard } from '../../../components/Organisms/UserContentCard/UserContentCard';
 

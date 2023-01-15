@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Icon } from '../../Atoms/Icon/Icon';
-import { Image } from '../../Atoms/Image/Image';
+import { Icon } from '../../Atoms/Icon';
+import { Image } from '../../Atoms/Image';
 
 /*
  * Type

@@ -1,6 +1,6 @@
 import React, { FC, InputHTMLAttributes, ChangeEvent } from 'react';
-import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem/FormItem';
-import { Icon } from '../../../Atoms/Icon/Icon';
+import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem';
+import { Icon } from '../../../Atoms/Icon';
 
 import uid from '../../../../utils/uid';
 

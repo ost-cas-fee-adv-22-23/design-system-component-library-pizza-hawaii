@@ -1,15 +1,15 @@
 import React, { FC, useState } from 'react';
 
 import { Grid } from '../../../components/Atoms/Grid/Grid';
-import { Label } from '../../../components/Atoms/Label/Label';
+import { Label } from '../../../components/Atoms/Label';
 
-import { UserProfile } from '../../../components/Molecules/UserProfile/UserProfile';
-import { Navi } from '../../../components/Molecules/Navi/Navi';
+import { UserProfile } from '../../../components/Molecules/UserProfile';
+import { Navi } from '../../../components/Molecules/Navi';
 import { NaviButton } from '../../../components/Molecules/Navi/NaviButton';
-import { Form } from '../../../components/Molecules/Form/Form';
-import { FormInput } from '../../../components/Molecules/Form/FormInput/FormInput';
-import { FormTextarea } from '../../../components/Molecules/Form/FormTextarea/FormTextarea';
-import { Button } from '../../../components/Molecules/Button/Button';
+import { Form } from '../../../components/Molecules/Form';
+import { FormInput } from '../../../components/Molecules/Form/FormInput';
+import { FormTextarea } from '../../../components/Molecules/Form/FormTextarea';
+import { Button } from '../../../components/Molecules/Button';
 
 import { Modal } from '../../../components/Organisms/Modal/Modal';
 

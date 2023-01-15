@@ -2,12 +2,12 @@
 import React, { FC } from 'react';
 
 import { Grid } from '../../Atoms/Grid/Grid';
-import { Label } from '../../Atoms/Label/Label';
+import { Label } from '../../Atoms/Label';
 
 import { Card } from '../../Molecules/Card/Card';
-import { UserName } from '../../Molecules/UserName/UserName';
-import { UserProfile } from '../../Molecules/UserProfile/UserProfile';
-import { Button } from '../../Molecules/Button/Button';
+import { UserName } from '../../Molecules/UserName';
+import { UserProfile } from '../../Molecules/UserProfile';
+import { Button } from '../../Molecules/Button';
 
 import { User } from '../../../types/User';
 

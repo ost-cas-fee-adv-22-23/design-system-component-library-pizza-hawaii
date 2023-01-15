@@ -1,5 +1,5 @@
 import React, { FC, TextareaHTMLAttributes } from 'react';
-import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem/FormItem';
+import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem';
 
 import uid from '../../../../utils/uid';
 

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Image } from '../../Atoms/Image/Image';
+import { Image } from '../../Atoms/Image';
 import { RoundButton } from '../RoundButton/RoundButton';
 
 /*

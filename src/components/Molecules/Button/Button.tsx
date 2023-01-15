@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes, ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
 
-import { Icon, TIconName } from '../../Atoms/Icon/Icon';
-import { Label } from '../../Atoms/Label/Label';
+import { Icon, TIconName } from '../../Atoms/Icon';
+import { Label } from '../../Atoms/Label';
 
 /*
  * Type
