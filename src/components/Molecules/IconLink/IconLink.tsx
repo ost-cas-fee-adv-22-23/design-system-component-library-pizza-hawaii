@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes, HTMLAttributes } from 'react';
 
-import { Icon } from '../../Atoms/Icon/Icon';
+import { Icon, TIconSize, TIconName } from '../../Atoms/Icon/Icon';
 
 /*
  * Type
@@ -13,8 +13,7 @@ type TIconLink = {
 	as: 'a' | 'button' | 'span';
 	size?: TIconLinkSize;
 	color: 'slate' | 'violet' | 'pink';
-	icon: string;
-	iconState: string;
+	icon: TIconName;
 };
 
 type TLinkButtonProps = TIconLink & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -49,7 +48,6 @@ export const IconLink: FC<TIconLinkProps> = ({
 	color = 'slate',
 	size = 'M',
 	icon,
-	iconState,
 	...props
 }) => {
 	const styles = [
@@ -65,11 +63,10 @@ export const IconLink: FC<TIconLinkProps> = ({
 	return (
 		<Tag
 			className={styles.join(' ')}
-			data-ico-state={iconState}
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}
 		>
-			<Icon name={icon} size={size as 'S' | 'M' | 'L'} />
+			<Icon name={icon} size={size as TIconSize} />
 			{children}
 		</Tag>
 	);
