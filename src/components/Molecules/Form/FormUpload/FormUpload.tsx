@@ -3,7 +3,6 @@ import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../Form
 
 import { Icon } from '../../../Atoms/Icon';
 import { Label } from '../../../Atoms/Label';
-import { Richtext } from '../../../Atoms/Richtext';
 import { ButtonBaseStyle, ButtonSizeMap } from '../../../Molecules/Button';
 
 import uid from '../../../../utils/uid';
@@ -17,7 +16,7 @@ type BaseProps = {
 	hint?: string;
 	errorMessage?: string;
 	id?: string;
-	labelHidden?: boolean;
+	hideLabel?: boolean;
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -29,7 +28,7 @@ type FormUploadType = BaseProps & InputHTMLAttributes<HTMLInputElement>;
 
 const fieldStyle: string[] = [
 	'relative',
-	'mb-4 p-12',
+	'mb-4 p-0',
 	'rounded-xl',
 	'border-0 outline-1 outline-dashed -outline-offset-1',
 	'hover:border-0 hover:outline-2 hover:outline-slate-300 hover:-outline-offset-2',
@@ -38,25 +37,35 @@ const fieldStyle: string[] = [
 
 export const FormUpload: FC<FormUploadType> = ({
 	label,
+	title = 'Datei hierhin ziehen ...',
 	hint,
 	errorMessage,
 	id = uid('FormUpload'),
-	labelHidden,
+	hideLabel,
 	...props
 }) => {
 	return (
-		<FormItem id={id} label={label || 'FormUpload'} errorMessage={errorMessage} labelHidden={labelHidden}>
+		<FormItem id={id} label={label || 'FormUpload'} errorMessage={errorMessage} hideLabel={hideLabel}>
 			<div
 				className={[...FormItem_InputStyle, ...(errorMessage ? FormItem_InputErrorStyle : []), ...fieldStyle].join(
 					' '
 				)}
 			>
-				<label htmlFor={id} className="flex flex-col gap-2 items-center text-slate-500">
+				<label
+					htmlFor={id}
+					className="flex flex-col gap-2 items-center w-full px-4 py-12 sm:py-8 text-slate-500 text-center"
+				>
 					<Icon name="upload" size="L" />
 					<Label as="span" size="XL">
-						Datei hierhin ziehen ...
+						{title}
 					</Label>
-					{hint && <Richtext size="M">{hint}</Richtext>}
+					{hint && (
+						<span className="text-slate-400">
+							<Label as="span" size="M">
+								{hint}
+							</Label>
+						</span>
+					)}
 				</label>
 				<input className="absolute top-0 left-0 w-full h-full opacity-0" id={id} type="file" {...props} />
 			</div>

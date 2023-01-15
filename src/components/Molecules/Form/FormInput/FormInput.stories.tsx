@@ -8,6 +8,15 @@ export default {
 	title: 'Components/Molecules/Form/FormInput',
 	component: Component,
 	argTypes: {
+		id: {
+			control: { type: 'text' },
+		},
+		errorMessage: {
+			control: { type: 'text' },
+		},
+		hideLabel: {
+			control: { type: 'boolean' },
+		},
 		icon: {
 			options: IconNames,
 			control: { type: 'select' },
@@ -17,10 +26,12 @@ export default {
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 export const FormInput = Template.bind({});
-FormInput.args = {};
+FormInput.args = {
+	label: 'Form Input',
+};
 
 export const FormInputError = Template.bind({});
 FormInputError.args = {
-	errorMessage: 'Error-Message',
-	icon: 'cancel',
+	label: 'Form Input and Error',
+	errorMessage: 'Oh no, an error occurred',
 };
