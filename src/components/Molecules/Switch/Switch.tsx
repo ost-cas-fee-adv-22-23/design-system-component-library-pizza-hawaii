@@ -5,7 +5,7 @@ import uid from '../../../utils/uid';
  * Type
  */
 
-type TSwitchOption = InputHTMLAttributes<HTMLInputElement> & { label: string };
+export type TSwitchOption = InputHTMLAttributes<HTMLInputElement> & { label: string };
 
 type TSwitch = {
 	label: string;
@@ -26,7 +26,13 @@ export const Switch: FC<TSwitch> = ({ options, name = uid('Switch'), label, valu
 		<fieldset className={fieldsetStyles}>
 			<legend className="sr-only">{label}</legend>
 			{options.map((option: TSwitchOption, index) => (
-				<SwitchButton key={index} name={name} defaultChecked={index === 0} onChange={onChange} {...option} />
+				<SwitchButton
+					key={index}
+					name={name}
+					defaultChecked={value === option.value || index === 0}
+					onChange={onChange}
+					{...option}
+				/>
 			))}
 		</fieldset>
 	);
@@ -39,15 +45,16 @@ export const Switch: FC<TSwitch> = ({ options, name = uid('Switch'), label, valu
 const labelStyles =
 	'block hover:cursor-pointer hover:text-slate-800 bg-slate-200 first-of-type:rounded-tl-md first-of-type:rounded-bl-md last:rounded-tr-md last:rounded-br-md text-slate-600 text-base font-semibold text-center py-2 px-4 border-slate-600 transition-all ease-in duration-150 peer-checked:bg-white peer-checked:text-violet-600';
 
-const SwitchButton: FC<TSwitch> = ({ label, ...rest }: TnputElementProps) => {
+const SwitchButton: FC<TSwitchOption> = ({ label, ...rest }) => {
 	const inputProps = {
 		className: 'sr-only peer',
 		type: 'radio',
 		...rest,
 	};
+
 	return (
 		<label>
-			<input type="radio" {...inputProps} />
+			<input {...inputProps} />
 			<span className={labelStyles}>{label}</span>
 		</label>
 	);
