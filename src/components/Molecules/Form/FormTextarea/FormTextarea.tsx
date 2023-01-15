@@ -13,6 +13,7 @@ type TFormTextarea = {
 	id?: string;
 	hideLabel?: boolean;
 	size?: 'M' | 'L';
+	onChange?: (e: ChangeEvent<HTMLSelectElement>) => void;
 };
 
 type TFormTextareaType = TFormTextarea & TextareaHTMLAttributes<HTMLTextAreaElement>;

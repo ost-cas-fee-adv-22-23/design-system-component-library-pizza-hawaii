@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC, InputHTMLAttributes, ChangeEvent, useState } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem/index';
 import { Icon } from '../../../Atoms/Icon/index';

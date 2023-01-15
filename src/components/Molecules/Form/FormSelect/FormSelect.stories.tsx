@@ -21,6 +21,12 @@ export default {
 
 const exampleOptions = [
 	{
+		value: '',
+		label: 'Bitte wählen',
+		disabled: true,
+		selected: true,
+	},
+	{
 		value: '1',
 		label: 'Option 1',
 	},

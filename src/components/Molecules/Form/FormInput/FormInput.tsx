@@ -14,20 +14,12 @@ type TFormInput = {
 	id?: string;
 	hideLabel?: boolean;
 	icon?: string;
-	onIconClick?: () => void;
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 type TFormInputType = TFormInput & InputHTMLAttributes<HTMLInputElement>;
 
-export const FormInput: FC<TFormInputType> = ({
-	label,
-	errorMessage,
-	id = uid('FormInput'),
-	hideLabel,
-	icon,
-	...props
-}) => {
+export const FormInput: FC<TFormInputType> = ({ label, errorMessage, id = uid('FormInput'), hideLabel, icon, ...props }) => {
 	if (errorMessage) {
 		props['aria-invalid'] = true;
 		props['aria-describedby'] = `${id}-error`;
