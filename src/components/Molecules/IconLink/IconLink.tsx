@@ -14,7 +14,7 @@ type TIconLink = {
 	size?: TIconLinkSize;
 	color: 'slate' | 'violet' | 'pink';
 	icon: string;
-	iconState: string;
+	iconState?: string;
 };
 
 type TLinkButtonProps = TIconLink & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;

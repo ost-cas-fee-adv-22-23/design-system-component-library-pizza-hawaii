@@ -22,8 +22,23 @@ export default {
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
-export const Test = Template.bind({});
-Test.args = {
+export const Like = Template.bind({});
+export const Comment = Template.bind({});
+
+Like.args = {
+	count: 0,
+	colorScheme: 'pink',
+	buttonTextSingular: 'Like',
+	buttonTextPlural: 'Likes',
+	iconNameSingle: 'heart_fillable',
+	iconNamePlural: 'heart_filled'
+};
+
+Comment.args = {
 	count: 0,
 	colorScheme: 'violet',
+	buttonTextSingular: 'Comment',
+	buttonTextPlural: 'Comments',
+	iconNameSingle: 'comment_fillable',
+	iconNamePlural: 'comment_filled',
 };

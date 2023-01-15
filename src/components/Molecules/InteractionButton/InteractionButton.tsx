@@ -1,11 +1,14 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 
 import { Icon } from '../../Atoms/Icon';
 
 type Props = {
-	// onClick: () => void;
 	colorScheme: string;
 	count: number;
+	buttonTextSingular: string;
+	buttonTextPlural: string;
+	iconNameSingle: string;
+	iconNamePlural: string;
 };
 
 export const ColorSchemeMap: Record<string, string> = {
@@ -14,14 +17,16 @@ export const ColorSchemeMap: Record<string, string> = {
 	pink: ' text-pink-400 hover:text-pink-600 hover:bg-pink-50 hover:rounded-full',
 };
 
-export const InteractionButton: FC<Props> = ({ count, colorScheme }) => {
+export const InteractionButton: FC<Props> = ({
+	count,
+	colorScheme,
+	buttonTextSingular,
+	buttonTextPlural,
+	iconNameSingle,
+	iconNamePlural,
+}) => {
 	const styles = ['flex items-center', ColorSchemeMap[colorScheme]];
-	// TODO: solve that useState - or not
-	const [comments, setComments] = useState(count);
-
-	useEffect(() => {
-		setComments(count);
-	}, [count]);
+	// TODO: check and correct all fonts sizes and paddings and alignings
 
 	return (
 		<div>
@@ -29,18 +34,18 @@ export const InteractionButton: FC<Props> = ({ count, colorScheme }) => {
 				<div className={[styles, 'gap-x-xs', 'py-2', 'px-3'].join(' ')}>
 					{count === 0 ? (
 						<>
-							<Icon name="mumble" />
-							<span>Comment</span>
+							<span className={`text-${colorScheme}-600 `}>
+								<Icon name={iconNameSingle} />
+							</span>
+							<span>{buttonTextSingular}</span>
 						</>
 					) : (
 						<>
 							<span className={`text-${colorScheme}-600 `}>
-								<Icon name="mumble" />
+								<Icon name={iconNamePlural} />
 							</span>
-							<span>
-								{count}
-								{count === 1 ? ' Comment' : ' Comments'}
-							</span>
+							<span>{count}</span>
+							<span>{count === 1 ? buttonTextSingular : buttonTextPlural}</span>
 						</>
 					)}
 				</div>
