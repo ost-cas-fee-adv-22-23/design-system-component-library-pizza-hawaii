@@ -93,6 +93,7 @@ export const Header: FC<BaseProps> = ({ user }) => {
 						<Navi>
 							<NaviButton as="a" icon="" href={`/user/${user.userName}`}>
 								<UserProfile size="S" userName={user.userName} avatar={user.avatar} />
+								<span className="sr-only">My Mumble</span>
 							</NaviButton>
 							<NaviButton as="button" icon="settings" onClick={handleSettingsModalClick}>
 								Settings
