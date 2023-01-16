@@ -1,9 +1,10 @@
 # CAS FEE ADV Design System - Pizza Hawaii 🍕 Style System & Installation Guide 
 
-This is a template repository for the CAS FEE ADV design system part.
-It is configured to automatically provide GitHub Actions to build and deploy
-your design system as a static page and your component library to the
-GitHub package registry.
+This package, developed by Felix and Jürgen, is a component library for a fictional Twitter clone named "Mumble". It is created as a part of a Frontend Engineering Advanced (CAS) course, with the goal of providing a reusable and maintainable set of UI components that can be integrated into an application. It uses TypeScript for strong typing and improved developer experience, Tailwind CSS for a utility-first approach to styling, ESLint and Prettier for code quality and consistency, and Storybook for building, visualizing and testing components in isolation. 
+
+You can find the latest published Storybook here:
+
+https://smartive-education.github.io/design-system-component-library-pizza-hawaii/
 
 ## Getting started
 
@@ -16,6 +17,19 @@ this should install
 -   React and ReactDom Library (for fun and for storybook)
 -   TypeScript (because its the future)
 
+
+The package uses:
+- `Storybook` for building and testing UI components, which allows us to build, visualize and test individual components in isolation
+- `Tailwind CSS` to create responsive, consistent and customizable components without the need of writing CSS from scratch
+- `TypeScript` which provides optional types and improved development experience, making the code more robust, easier to maintain and to catch errors early in the development process
+- `ESLint` for linting and identifying issues in JavaScript code and `Prettier` to format code, which help to enforce consistent coding styles, identify and fix errors and improve overall code quality. As defaut stings we used `@smartive/eslint-config` and `@smartive/prettier-config`
+- `@storybook/react` for building the storybook component library page
+
+
+The package exports:
+- the build files in the `dist` folder including the `tailwind.config.js` file
+- the types are located in dist/types/index.d.ts
+- type definitions can be found in `dist/types/index.d.ts`
 ## Run to get started
 
 make sure your node-version is `v16.14` or higher.
@@ -29,6 +43,18 @@ to build all components for browsers type
 `npm run build-storybook`
 
 -> this should create / overwrite the sets to the dist-directory.
+
+### Scripts
+- `npm run build`: Builds the package
+- `npm run build-storybook`: Builds the storybook
+- `npm run format`: Lints and runs prettier
+- `npm run format:fix`: Lints, runs prettier and fixes errors
+- `npm run lint`: Lints the code
+- `npm run lint:fix`: Lints the code and fixes errors
+- `npm run prettier`: Runs prettier
+- `npm run prettier:fix`: Runs prettier and fixes errors
+- `npm run storybook`: Runs the storybook
+
 
 ## tailwind
 
@@ -50,12 +76,6 @@ Some Rulesets we want to ensure the full Hawaiian taste:
 - We use some mock Library to have always a fresh breeze of Sample Pictures.
 - All special Component-base css classes start with a capital `M`. Why you ask ? - Mumble it baby!.
 
-
-## Web-Overview
-
-The latest published Design System (main-branch) is available at this link:
-
-https://smartive-education.github.io/design-system-component-library-pizza-hawaii/
 
 ---
 
