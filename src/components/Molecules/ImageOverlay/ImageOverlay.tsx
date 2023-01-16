@@ -27,7 +27,7 @@ const ImageOverLayButtonStyle = [
 	'z-10',
 ];
 
-export const ImageOverlay: FC<TImageOverlay> = ({ children, icon, buttonLabel,...props }) => (
+export const ImageOverlay: FC<TImageOverlay> = ({ children, icon, buttonLabel, ...props }) => (
 	<div className="block relative">
 		<button type="button" className={[...ImageOverLayButtonStyle].join(' ')} {...props}>
 			<Icon name={icon} size="M" />
