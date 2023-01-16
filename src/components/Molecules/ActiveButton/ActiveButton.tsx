@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-
+import { Label } from '../../Atoms/Label/Label';
 import { Icon } from '../../Atoms/Icon';
 
 export type Props = {
@@ -16,26 +16,29 @@ export const ColorSchemeActiveButtonMap: Record<string, string> = {
 };
 
 export const ActiveButton: FC<Props> = ({ colorScheme, isActive, buttonInitialText, buttonActiveText }) => {
-  const styles = ['flex items-center', ColorSchemeActiveButtonMap[colorScheme]];
-	// TODO: font sizes correct
+	const styles = ['flex items-center leading-none', ColorSchemeActiveButtonMap[colorScheme]];
 
 	return (
 		<div>
 			<button className={[styles].join(' ')}>
-				<div className={[styles, 'gap-x-xs', 'py-2', 'px-3'].join(' ')}>
+				<div className={[styles, 'gap-2 py-2 px-3'].join(' ')}>
 					{isActive ? (
 						<>
-							<span>
+							<span className="leanding-none">
 								<Icon name="share" />
 							</span>
-							<span>{buttonActiveText}</span>
+							<Label as="span" size="M" className="leading-4">
+								{buttonActiveText}
+							</Label>
 						</>
 					) : (
 						<>
-							<span className={``}>
+							<span className="leading-4">
 								<Icon name="share" />
 							</span>
-							<span>{buttonInitialText}</span>
+							<Label as="span" size="M" className="leading-4">
+								{buttonInitialText}
+							</Label>
 						</>
 					)}
 				</div>
