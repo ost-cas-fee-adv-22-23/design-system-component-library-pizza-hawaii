@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Label } from '../../Atoms/Label/Label';
 import { Icon } from '../../Atoms/Icon';
+import copy from 'copy-to-clipboard';
 
 export type Props = {
 	colorScheme: string;
@@ -17,10 +18,13 @@ export const ColorSchemeActiveButtonMap: Record<string, string> = {
 
 export const ActiveButton: FC<Props> = ({ colorScheme, isActive, buttonInitialText, buttonActiveText }) => {
 	const styles = ['flex items-center leading-none', ColorSchemeActiveButtonMap[colorScheme]];
+	const copyToText = (): void => {
+		copy('Text to copy');
+	};
 
 	return (
 		<div>
-			<button className={[styles].join(' ')}>
+			<button type="button" className={[styles].join(' ')} onClick={copyToText}>
 				<div className={[styles, 'gap-2 py-2 px-3'].join(' ')}>
 					{isActive ? (
 						<>

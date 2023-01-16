@@ -26,6 +26,7 @@ export const Header: FC<BaseProps> = ({ user }) => {
 		setState({ ...state, showSettingsModal: !state.showSettingsModal });
 	};
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
 	const onFieldChange: any = (e: any): void => {
 		const { field, value } = e.target;
 		setState({
