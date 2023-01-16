@@ -60,7 +60,6 @@ const contentCardvariantMap: Record<TContentCard['variant'], TContentCardvariant
 
 export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 	const setting = contentCardvariantMap[variant] || contentCardvariantMap.detailpage;
-	console.log('%cContentCard.tsx line:62 post.comments', 'color: white; background-color: #007acc;', post.comments);
 	const headerSlotContent = (
 		<Grid variant="col" gap="S">
 			<Label as="span" size={setting.headlineSize}>
