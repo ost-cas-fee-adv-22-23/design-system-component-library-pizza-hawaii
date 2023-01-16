@@ -17,27 +17,6 @@ This package, developed by Felix and Jürgen, is a component library for a ficti
 - the types are located in dist/types/index.d.ts
 - type definitions can be found in `dist/types/index.d.ts`
 
-## Installation Guide for Developing Components
-1.  Make sure you have Node v16.14 or higher installed.
-2.  Clone or download the package.
-3.  Run `npm install` or `npm ci` to install dependencies.
-4.  Run `npm run storybook` to start a local development server on port 6006.
-5.  Use `npm run format`, `npm run lint` and their `:fix` versions to maintain code quality.
-Please make sure to follow the development rules as stated in the "Developer Manifesto" section to ensure the full Hawaiian taste of the components. Happy coding!
-
-
-### Scripts
-- `npm run build`: Builds the package
-- `npm run build-storybook`: Builds the storybook
-- `npm run format`: Lints and runs prettier
-- `npm run format:fix`: Lints, runs prettier and fixes errors
-- `npm run lint`: Lints the code
-- `npm run lint:fix`: Lints the code and fixes errors
-- `npm run prettier`: Runs prettier
-- `npm run prettier:fix`: Runs prettier and fixes errors
-- `npm run storybook`: Runs the storybook
-
-
 
 ## Installation Guide for Using the Library
 Run npm install @smartive-education/pizza-hawaii to install the package from the npm registry.
@@ -71,11 +50,12 @@ Also you should use the `npm ci` command instead of `npm install` when installin
 4.  Make sure to have the peer dependencies installed (react and react-dom)
 Please note that this package requires at least Node v16.14 to be used.
 
-## Use Components
+### 3. Use Components
 Start building your application with the components and styles provided by the Pizza Hawaii library.
 1. Import Components `import { Headline, Icon, ImageOverlay } from '@smartive-education/pizza-hawaii'`
 2. Import CSS `import '@smartive-education/pizza-hawaii/dist/bundle.css'`
 3. Import Font `import "@fontsource/poppins/500.css";import "@fontsource/poppins/600.css";import "@fontsource/poppins/700.css";`
+> You are good to go!  🎉
 
 #### Setup a new Test-Application with React & Next
 If you would like to test it without include to your App. You can create with this simple steps a new one.
@@ -83,7 +63,6 @@ If you would like to test it without include to your App. You can create with th
 2. In our Test Setup we use Next-JS `npx create-next-app@latest --typescript`
 3. Follow the Install Package Guide from above.
 4. Add CSS Imports for testing to `_app.tsx` file
-> You are good to go!  🎉
 
 ---
 ## Deadend-lazy- Developper? This Guide is for you:
@@ -100,6 +79,27 @@ npm run dev
 ```
 
 > here you have a overview of some components and how to use them. Take, delete, copy/ paste what you need... 😇
+
+## Installation Guide for Developing Components
+1.  Make sure you have Node v16.14 or higher installed.
+2.  Clone or download the package.
+3.  Run `npm install` or `npm ci` to install dependencies.
+4.  Run `npm run storybook` to start a local development server on port 6006.
+5.  Use `npm run format`, `npm run lint` and their `:fix` versions to maintain code quality.
+Please make sure to follow the development rules as stated in the "Developer Manifesto" section to ensure the full Hawaiian taste of the components. Happy coding!
+
+
+### Scripts
+- `npm run build`: Builds the package
+- `npm run build-storybook`: Builds the storybook
+- `npm run format`: Lints and runs prettier
+- `npm run format:fix`: Lints, runs prettier and fixes errors
+- `npm run lint`: Lints the code
+- `npm run lint:fix`: Lints the code and fixes errors
+- `npm run prettier`: Runs prettier
+- `npm run prettier:fix`: Runs prettier and fixes errors
+- `npm run storybook`: Runs the storybook
+
 
 
 
