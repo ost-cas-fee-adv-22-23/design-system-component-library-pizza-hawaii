@@ -1,21 +1,10 @@
-# CAS FEE ADV Design System - Pizza Hawaii 🍕 Style System & Installation Guide 
+# CAS FEE ADV Design System - Pizza Hawaii 🍕 
 
-This package, developed by Felix and Jürgen, is a component library for a fictional Twitter clone named "Mumble". It is created as a part of a Frontend Engineering Advanced (CAS) course, with the goal of providing a reusable and maintainable set of UI components that can be integrated into an application. It uses TypeScript for strong typing and improved developer experience, Tailwind CSS for a utility-first approach to styling, ESLint and Prettier for code quality and consistency, and Storybook for building, visualizing and testing components in isolation. 
+This package, developed by Felix and Jürgen, is a component library for a fictional Twitter clone named "Mumble". It is created as a part of a Frontend Engineering Advanced (CAS) course, with the goal of providing a reusable and maintainable set of UI components that can be integrated into an application.
 
 You can find the latest published Storybook here:
 
 https://smartive-education.github.io/design-system-component-library-pizza-hawaii/
-
-## Getting started
-
-install it by `npm install` or `npm ci`.
-
-this should install
-
--   storybook
--   tailwind-css
--   React and ReactDom Library (for fun and for storybook)
--   TypeScript (because its the future)
 
 
 The package uses:
@@ -26,23 +15,38 @@ The package uses:
 - `@storybook/react` for building the storybook component library page
 
 
+
 The package exports:
 - the build files in the `dist` folder including the `tailwind.config.js` file
 - the types are located in dist/types/index.d.ts
 - type definitions can be found in `dist/types/index.d.ts`
+
+## Getting started
+
+
+
 ## Run to get started
+To get started, install the package using npm:
 
-make sure your node-version is `v16.14` or higher.
+```
+npm install
+```
 
-to run a local server on `Port 6006` and compile your components with a 'story' to the storybook collection
 
-`npm run storybook`
+Make sure your node-version is `v16.14` or higher.
 
-to build all components for browsers type
+To run a local server on `Port 6006` and compile your components with a 'story' to the storybook collection
 
-`npm run build-storybook`
+```
+npm run storybook
+```
 
--> this should create / overwrite the sets to the dist-directory.
+To build all components for browsers type
+
+```
+npm run build-storybook
+```
+
 
 ### Scripts
 - `npm run build`: Builds the package
@@ -56,11 +60,74 @@ to build all components for browsers type
 - `npm run storybook`: Runs the storybook
 
 
-## tailwind
 
-start on a filewatcher on the console with
 
-`npx tailwindcss -i ./src/styles/common.css -o ./dist/output.css`
+
+## Installation Guide for using the Library
+
+Before you install Pizza Hawaii Library you should have a valid Github Token.
+
+### 1. have a look <a href='https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token'>here</a> how to create a github authToken. 
+
+
+### 2. create a `.npmrc` - file in your local repository, to be ensure you are able to 
+install smartive-eduction repo. it should look like that.
+
+```
+@smartive-education:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=ghp_xxxxxxx
+```
+
+
+### 3. install Pizza Hawaii 🍕
+
+`npm install @smartive-education/pizza-hawaii@latest`
+
+
+### 4. install TypesScript, and React, React-dom
+
+`npm install typescript react react-dom`
+
+You are good to go!  🎉
+
+### Now for Starters we recommend Next-JS:
+
+### 4.1 install also Next-JS
+(yes of course you can also try another framework -its just a recommendation & tested...)
+
+`npx create-next-app@latest --typescript`
+
+### 5. import Pizza-Hawaii lib into your code
+
+`import { Headline, Icon, ImageOverlay } from '@smartive-education/pizza-hawaii'`
+
+### 6. CSS should be imported in '_app.tsx' file 
+
+`import '@smartive-education/pizza-hawaii/dist/bundle.css'`
+
+and for our favourite font flawour add this:
+
+`import "@fontsource/poppins/400.css";`
+
+> You are good to go!  🎉
+
+---
+## Deadend-lazy- Developper? This Guide is for you:
+
+do step 1. and 2. and just install our testing Lib Repo with next-js already backed for you. 
+
+`git clone https://github.com/smartive-education/pizza-test`
+
+and
+
+`npm i`
+
+then
+
+`npm run dev`
+
+> here you have a overview of some components and how to use them. Take, delete, copy/ paste what you need... 😇
+
 
 
 # Developer Manifesto
@@ -118,72 +185,4 @@ try to use these semantics while committing to maintain a meaningfull commit his
 
 `chore:` (updating taskrunnner, libraries changes, configurations)
 
-
 ---
-
-## Installation Guide for using the Library
-
-Before you install Pizza Hawaii Library you should have a valid Github Token
-
-### 1. have a look <a href='https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token'>here</a> how to create a github authToken. 
-
-
-### 2. create a `.npmrc` - file in your local repository, to be ensure you are able to 
-install smartive-eduction repo. it should look like that.
-
-<code>
-@smartive-education:registry=https://npm.pkg.github.com
- //npm.pkg.github.com/:_authToken=ghp_xxxxxxx
-</code>
-
-
-### 3. install Pizza Hawaii 🍕
-
-`npm install @smartive-education/pizza-hawaii@latest`
-
-
-### 4. install TypesScript, and React, React-dom
-
-`npm install typescript react react-dom`
-
-You are good to go!  🎉
-
-### Now for Starters we recommend Next-JS:
-
-### 4.1 install also Next-JS
-(yes of course you can also try another framework -its just a recommendation & tested...)
-
-`npx create-next-app@latest --typescript`
-
-### 5. import Pizza-Hawaii lib into your code
-
-`import { Headline, Icon, ImageOverlay } from '@smartive-education/pizza-hawaii'`
-
-### 6. CSS should be imported in '_app.tsx' file 
-
-`import '@smartive-education/pizza-hawaii/dist/bundle.css'`
-
-and for our favourite font flawour add this:
-
-`import "@fontsource/poppins/400.css";`
-
-> You are good to go!  🎉
-
----
-## Deadend-lazy- Developper? This Guide is for you:
-
-do step 1. and 2. and just install our testing Lib Repo with next-js already backed for you. 
-
-`git clone https://github.com/smartive-education/pizza-test`
-
-and
-
-`npm i`
-
-then
-
-`npm run dev`
-
-> here you have a overview of some components and how to use them. Take, delete, copy/ paste what you need... 😇
-
-
