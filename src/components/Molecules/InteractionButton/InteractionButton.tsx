@@ -5,7 +5,7 @@ import { Icon } from '../../Atoms/Icon';
 
 type Props = {
 	colorScheme: string;
-	count: number;
+	count?: number;
 	buttonTextSingular: string;
 	buttonTextPlural: string;
 	iconNameSingle: string;
@@ -19,7 +19,7 @@ export const ColorSchemeMap: Record<string, string> = {
 };
 
 export const InteractionButton: FC<Props> = ({
-	count,
+	count = 0,
 	colorScheme,
 	buttonTextSingular,
 	buttonTextPlural,
@@ -34,22 +34,22 @@ export const InteractionButton: FC<Props> = ({
 				<div className={[styles, 'gap-1', 'py-2', 'px-3'].join(' ')}>
 					{count === 0 ? (
 						<>
-							<span className="leanding-none">
+							<span className="leading-4 gap-2">
 								<Icon name={iconNameSingle} />
 							</span>
-							<Label as="span" size="M" className="leading-4">
+							<Label as="span" size="M" className="leading-4 gap-2">
 								{buttonTextSingular}
 							</Label>
 						</>
 					) : (
 						<>
-							<span className={`text-${colorScheme}-600 `}>
+							<span className={`text-${colorScheme}-600 leading-4`}>
 								<Icon name={iconNamePlural} />
 							</span>
-							<Label as="span" size="M" className="leading-4">
+							<Label as="span" size="M" className="leading-4 gap-1">
 								{count}
 							</Label>
-							<Label as="span" size="M" className="leading-4">
+							<Label as="span" size="M" className="leading-4 gap-0.5">
 								{count === 1 ? buttonTextSingular : buttonTextPlural}
 							</Label>
 						</>

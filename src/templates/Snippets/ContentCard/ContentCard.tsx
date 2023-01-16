@@ -14,6 +14,8 @@ import { ImageOverlay } from '../../../components/Molecules/ImageOverlay';
 import { UserContentCard, TUserContentCard } from '../../../components/Organisms/UserContentCard/UserContentCard';
 
 import { Post } from '../../../types/Post';
+import { InteractionButton } from '../../../components/Molecules/InteractionButton';
+import { ActiveButton } from '../../../components/Molecules/ActiveButton';
 
 /*
  * Type
@@ -58,7 +60,7 @@ const contentCardvariantMap: Record<TContentCard['variant'], TContentCardvariant
 
 export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 	const setting = contentCardvariantMap[variant] || contentCardvariantMap.detailpage;
-
+	console.log('%cContentCard.tsx line:62 post.comments', 'color: white; background-color: #007acc;', post.comments);
 	const headerSlotContent = (
 		<Grid variant="col" gap="S">
 			<Label as="span" size={setting.headlineSize}>
@@ -94,29 +96,28 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 			)}
 
 			<Grid variant="row" gap="M">
-				<IconLink
-					as="a"
-					href="#"
-					icon={post.likes && post.likes.length > 0 ? 'comment_filled' : 'comment_fillable'}
-					color="slate"
-					title={post.comments && post.comments.length > 0 ? `${post.comments.length} comments` : 'No comments'}
-				>
-					{post.comments && post.comments.length > 0 ? `${post.comments.length} comments` : 'Comment'}
-				</IconLink>
-
-				<IconLink
-					as="a"
-					href="#"
-					icon={post.likes && post.likes.length > 0 ? 'heart_filled' : 'heart_fillable'}
-					color="pink"
-					title={post.likes && post.likes.length > 0 ? `${post.likes.length} likes` : 'No likes'}
-				>
-					{post.likes && post.likes.length > 0 ? `${post.likes.length} likes` : 'Like'}
-				</IconLink>
-
-				<IconLink as="a" href="#" icon="share" color="slate">
-					Share Link
-				</IconLink>
+				<InteractionButton
+					count={post.comments?.length}
+					colorScheme="violet"
+					iconNameSingle="comment_fillable"
+					iconNamePlural="comment_filled"
+					buttonTextSingular="Comment"
+					buttonTextPlural="Comments"
+				/>
+				<InteractionButton
+					count={post.likes?.length}
+					colorScheme="pink"
+					buttonTextSingular="Like"
+					buttonTextPlural="Likes"
+					iconNameSingle="heart_fillable"
+					iconNamePlural="heart_filled"
+				/>
+				<ActiveButton
+					colorScheme="slate"
+					buttonInitialText="Copy Link"
+					buttonActiveText="Link copied"
+					isActive={false}
+				/>
 			</Grid>
 		</UserContentCard>
 	);
