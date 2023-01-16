@@ -86,6 +86,7 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 			{post.image && (
 				<ImageOverlay
 					icon="fullscreen"
+					buttonLabel="Open image in fullscreen"
 					onClick={function (): void {
 						throw new Error('Function not implemented.');
 					}}

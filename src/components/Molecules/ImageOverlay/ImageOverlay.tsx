@@ -1,13 +1,14 @@
 import React, { FC, ReactNode } from 'react';
-import { Icon } from '../../Atoms/Icon';
+import { Icon, TIconName } from '../../Atoms/Icon';
 
 /*
  * Type
  */
 
-type TImageOverlay = {
-	icon: string;
+export type TImageOverlay = {
 	children: ReactNode;
+	icon: TIconName;
+	buttonLabel: string;
 	onClick: () => void;
 };
 
@@ -15,25 +16,23 @@ type TImageOverlay = {
  * Style
  */
 
-const baseOverlay = [
+const ImageOverLayButtonStyle = [
 	'flex items-center justify-center',
 	'absolute inset-0',
-	'text-white',
 	'rounded-2xl',
-	'opacity-0 bg-violet-600',
+	'bg-violet-600 text-white',
+	'opacity-0',
 	'transition-all duration-300',
 	'hover:opacity-100 hover:bg-opacity-50',
 	'z-10',
 ];
 
-export const ImageOverlay: FC<TImageOverlay> = ({ children, ...props }) => {
-	return (
-		<div className="block relative">
-			<button type="button" className={[...baseOverlay].join(' ')} {...props}>
-				<Icon name={props.icon} size="M" />
-				<span className="sr-only">View</span>
-			</button>
-			{children}
-		</div>
-	);
-};
+export const ImageOverlay: FC<TImageOverlay> = ({ children, icon, buttonLabel,...props }) => (
+	<div className="block relative">
+		<button type="button" className={[...ImageOverLayButtonStyle].join(' ')} {...props}>
+			<Icon name={icon} size="M" />
+			<span className="sr-only">{buttonLabel}</span>
+		</button>
+		{children}
+	</div>
+);
