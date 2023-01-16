@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Label } from '../../Atoms/Label/Label.stories';
 
 import { Icon } from '../../Atoms/Icon';
 
@@ -25,27 +26,32 @@ export const InteractionButton: FC<Props> = ({
 	iconNameSingle,
 	iconNamePlural,
 }) => {
-	const styles = ['flex items-center', ColorSchemeMap[colorScheme]];
-	// TODO: check and correct all fonts sizes and paddings and alignings
+	const styles = ['flex items-center leading-none', ColorSchemeMap[colorScheme]];
 
 	return (
 		<div>
 			<button className={[styles].join(' ')}>
-				<div className={[styles, 'gap-x-xs', 'py-2', 'px-3'].join(' ')}>
+				<div className={[styles, 'gap-1', 'py-2', 'px-3'].join(' ')}>
 					{count === 0 ? (
 						<>
-							<span className={`text-${colorScheme}-600 `}>
+							<span className="leanding-none">
 								<Icon name={iconNameSingle} />
 							</span>
-							<span>{buttonTextSingular}</span>
+							<Label as="span" size="M" className="leading-4">
+								{buttonTextSingular}
+							</Label>
 						</>
 					) : (
 						<>
 							<span className={`text-${colorScheme}-600 `}>
 								<Icon name={iconNamePlural} />
 							</span>
-							<span>{count}</span>
-							<span>{count === 1 ? buttonTextSingular : buttonTextPlural}</span>
+							<Label as="span" size="M" className="leading-4">
+								{count}
+							</Label>
+							<Label as="span" size="M" className="leading-4">
+								{count === 1 ? buttonTextSingular : buttonTextPlural}
+							</Label>
 						</>
 					)}
 				</div>
