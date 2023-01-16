@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from 'react';
-import { IconLink } from '../IconLink/IconLink';
+import { IconLink } from '../IconLink';
 
 /*
  * Type

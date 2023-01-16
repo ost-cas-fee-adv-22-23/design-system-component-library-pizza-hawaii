@@ -23,7 +23,7 @@ export const LabelSizeMap: Record<string, string> = {
 	S: 'text-sm',
 	M: 'text-base',
 	L: 'text-lg',
-	XL: 'text-xl ',
+	XL: 'text-xl',
 };
 
 export const Label: FC<TLabelProps> = ({ children = 'Label', as: Tag = 'span', size, ...rest }) => {

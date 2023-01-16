@@ -13,6 +13,7 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 
 export const Switch = Template.bind({});
 Switch.args = {
+	label: 'Wechsle deine angezeigten Mumbles',
 	value: 'likes',
 	name: 'switch',
 	options: [
@@ -23,6 +24,10 @@ Switch.args = {
 		{
 			label: 'Meine Likes',
 			value: 'likes',
+		},
+		{
+			label: 'Empfehlungen',
+			value: 'promotedPosts',
 		},
 	],
 };

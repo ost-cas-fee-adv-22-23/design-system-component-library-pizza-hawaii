@@ -1,40 +1,106 @@
-# CAS FEE ADV Design System - Pizza Hawaii 🍕 Style System & Installation Guide 
+# CAS FEE ADV Design System - Pizza Hawaii 🍕 
 
-This is a template repository for the CAS FEE ADV design system part.
-It is configured to automatically provide GitHub Actions to build and deploy
-your design system as a static page and your component library to the
-GitHub package registry.
+This package, developed by Felix and Jürgen, is a component library for a fictional Twitter clone named "Mumble". It is created as a part of a Frontend Engineering Advanced (CAS) course, with the goal of providing a reusable and maintainable set of UI components that can be integrated into an application. 
 
-## Getting started
+[Here can find the latest published Storybook](https://smartive-education.github.io/design-system-component-library-pizza-hawaii/)
 
-install it by `npm install` or `npm ci`.
+**The package uses:**
+- `Storybook` for building and testing UI components, which allows us to build, visualize and test individual components in isolation
+- `Tailwind CSS` to create responsive, consistent and customizable components without the need of writing CSS from scratch
+- `TypeScript` which provides optional types and improved development experience, making the code more robust, easier to maintain and to catch errors early in the development process
+- `ESLint` for linting and identifying issues in JavaScript code and `Prettier` to format code, which help to enforce consistent coding styles, identify and fix errors and improve overall code quality. As defaut stings we used `@smartive/eslint-config` and `@smartive/prettier-config`
+- `@storybook/react` for building the storybook component library page
 
-this should install
 
--   storybook
--   tailwind-css
--   React and ReactDom Library (for fun and for storybook)
--   TypeScript (because its the future)
+**The package exports:**
+- the build files in the `dist` folder including the `tailwind.config.js` file
+- the types are located in dist/types/index.d.ts
+- type definitions can be found in `dist/types/index.d.ts`
 
-## Run to get started
 
-make sure your node-version is `v16.14` or higher.
+## Installation Guide for Using the Library
+Run npm install @smartive-education/pizza-hawaii to install the package from the npm registry.
+Import the necessary components and styles from the package in your application.
+Include the output.css file in your HTML file to apply the tailwind styles to your application.
+Make sure to have the peer dependencies installed (react and react-dom)
+Start building your application with the components and styles provided by the Pizza Hawaii library.
+Please note that this package requires at least Node v16.14 to be used.
 
-to run a local server on `Port 6006` and compile your components with a 'story' to the storybook collection
+## Installation Guide for Using the Library
 
-`npm run storybook`
+### 1. Github Token
+This package is published to GitHub Package Registry, which requires a GitHub token with the `read:packages` permissions to be set in your environment to be able to publish and install the package. You can create a new token by going to your GitHub settings and navigating to the "Developer Settings" section, then "Personal access tokens".
 
-to build all components for browsers type
+You can then set the token as an environment variable with the name `NPM_TOKEN` or add it to your `.npmrc` file
 
-`npm run build-storybook`
+```
+@smartive-education:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=<NPM_TOKEN>
+```
 
--> this should create / overwrite the sets to the dist-directory.
+Please make sure to keep your token secure and not to share it with anyone.
 
-## tailwind
+Also you should use the `npm ci` command instead of `npm install` when installing the package in a production environment, to ensure that the exact versions of dependencies are installed, and avoid potential security vulnerabilities caused by using non-deterministic dependency trees.
 
-start on a filewatcher on the console with
+### 2. Install Package
 
-`npx tailwindcss -i ./src/styles/common.css -o ./dist/output.css`
+1.  Run `npm install @smartive-education/pizza-hawaii` to install the package.
+2.  Import the necessary components and styles from the package in your application (Create a Test-Application see below).
+3.  Include the output.css file in your HTML file to apply the tailwind styles to your application.
+4.  Make sure to have the peer dependencies installed (react and react-dom)
+Please note that this package requires at least Node v16.14 to be used.
+
+### 3. Use Components
+Start building your application with the components and styles provided by the Pizza Hawaii library.
+1. Import Components `import { Headline, Icon, ImageOverlay } from '@smartive-education/pizza-hawaii'`
+2. Import CSS `import '@smartive-education/pizza-hawaii/dist/bundle.css'`
+3. Import Font `import "@fontsource/poppins/500.css";import "@fontsource/poppins/600.css";import "@fontsource/poppins/700.css";`
+> You are good to go!  🎉
+
+#### Setup a new Test-Application with React & Next
+If you would like to test it without include to your App. You can create with this simple steps a new one.
+1. Install TypesScript, React and React-dom `npm install typescript react react-dom`
+2. In our Test Setup we use Next-JS `npx create-next-app@latest --typescript`
+3. Follow the Install Package Guide from above.
+4. Add CSS Imports for testing to `_app.tsx` file
+
+---
+## Deadend-lazy- Developper? This Guide is for you:
+
+do step 1. and 2. and just install our testing Lib Repo with next-js already backed for you. 
+
+```
+git clone https://github.com/smartive-education/pizza-test
+npm install
+```
+Add Github Token
+```
+npm run dev
+```
+
+> here you have a overview of some components and how to use them. Take, delete, copy/ paste what you need... 😇
+
+## Installation Guide for Developing Components
+1.  Make sure you have Node v16.14 or higher installed.
+2.  Clone or download the package.
+3.  Run `npm install` or `npm ci` to install dependencies.
+4.  Run `npm run storybook` to start a local development server on port 6006.
+5.  Use `npm run format`, `npm run lint` and their `:fix` versions to maintain code quality.
+Please make sure to follow the development rules as stated in the "Developer Manifesto" section to ensure the full Hawaiian taste of the components. Happy coding!
+
+
+### Scripts
+- `npm run build`: Builds the package
+- `npm run build-storybook`: Builds the storybook
+- `npm run format`: Lints and runs prettier
+- `npm run format:fix`: Lints, runs prettier and fixes errors
+- `npm run lint`: Lints the code
+- `npm run lint:fix`: Lints the code and fixes errors
+- `npm run prettier`: Runs prettier
+- `npm run prettier:fix`: Runs prettier and fixes errors
+- `npm run storybook`: Runs the storybook
+
+
 
 
 # Developer Manifesto
@@ -50,12 +116,6 @@ Some Rulesets we want to ensure the full Hawaiian taste:
 - We use some mock Library to have always a fresh breeze of Sample Pictures.
 - All special Component-base css classes start with a capital `M`. Why you ask ? - Mumble it baby!.
 
-
-## Web-Overview
-
-The latest published Design System (main-branch) is available at this link:
-
-https://smartive-education.github.io/design-system-component-library-pizza-hawaii/
 
 ---
 
@@ -98,72 +158,4 @@ try to use these semantics while committing to maintain a meaningfull commit his
 
 `chore:` (updating taskrunnner, libraries changes, configurations)
 
-
 ---
-
-## Installation Guide for using the Library
-
-Before you install Pizza Hawaii Library you should have a valid Github Token
-
-### 1. have a look <a href='https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token'>here</a> how to create a github authToken. 
-
-
-### 2. create a `.npmrc` - file in your local repository, to be ensure you are able to 
-install smartive-eduction repo. it should look like that.
-
-<code>
-@smartive-education:registry=https://npm.pkg.github.com
- //npm.pkg.github.com/:_authToken=ghp_xxxxxxx
-</code>
-
-
-### 3. install Pizza Hawaii 🍕
-
-`npm install @smartive-education/pizza-hawaii@latest`
-
-
-### 4. install TypesScript, and React, React-dom
-
-`npm install typescript react react-dom`
-
-You are good to go!  🎉
-
-### Now for Starters we recommend Next-JS:
-
-### 4.1 install also Next-JS
-(yes of course you can also try another framework -its just a recommendation & tested...)
-
-`npx create-next-app@latest --typescript`
-
-### 5. import Pizza-Hawaii lib into your code
-
-`import { Headline, Icon, ImageOverlay } from '@smartive-education/pizza-hawaii'`
-
-### 6. CSS should be imported in '_app.tsx' file 
-
-`import '@smartive-education/pizza-hawaii/dist/bundle.css'`
-
-and for our favourite font flawour add this:
-
-`import "@fontsource/poppins/400.css";`
-
-> You are good to go!  🎉
-
----
-## Deadend-lazy- Developper? This Guide is for you:
-
-do step 1. and 2. and just install our testing Lib Repo with next-js already backed for you. 
-
-`git clone https://github.com/smartive-education/pizza-test`
-
-and
-
-`npm i`
-
-then
-
-`npm run dev`
-
-> here you have a overview of some components and how to use them. Take, delete, copy/ paste what you need... 😇
-
-

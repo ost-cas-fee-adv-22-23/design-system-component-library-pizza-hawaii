@@ -6,7 +6,11 @@ import { Colors as Component } from './Colors';
 export default {
 	title: 'Components/Atoms/Colors',
 	component: Component,
-	argTypes: {},
+	argTypes: {
+		paletteName: {
+			control: { type: 'select' },
+		},
+	},
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;

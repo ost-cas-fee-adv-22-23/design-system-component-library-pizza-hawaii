@@ -2,18 +2,18 @@ import React, { FC } from 'react';
 
 import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Headline } from '../../../components/Atoms/Headline/Headline';
-import { Image } from '../../../components/Atoms/Image/Image';
-import { Richtext } from '../../../components/Atoms/Richtext/Richtext';
-import { TimeStamp } from '../../../components/Atoms/TimeStamp/TimeStamp';
+import { Image } from '../../../components/Atoms/Image';
+import { Richtext } from '../../../components/Atoms/Richtext';
+import { TimeStamp } from '../../../components/Atoms/TimeStamp';
 
-import { UserProfile } from '../../../components/Molecules/UserProfile/UserProfile';
-import { UserName } from '../../../components/Molecules/UserName/UserName';
-import { IconLink } from '../../../components/Molecules/IconLink/IconLink';
+import { UserProfile } from '../../../components/Molecules/UserProfile';
+import { UserName } from '../../../components/Molecules/UserName';
+import { IconLink } from '../../../components/Molecules/IconLink';
 
 import { UserCard } from '../../../components/Organisms/UserCard/index';
 
 import { ContentCard } from '../../Snippets/ContentCard/ContentCard';
-import { ContentInput } from '../../Snippets/ContentInput/ContentInput';
+import { ContentInput } from '../../Snippets/ContentInput';
 import { Header } from '../../Snippets/Header/Header';
 
 import { Post as PostType } from '../../../types/Post';

@@ -2,13 +2,14 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Form as Component } from './Form';
 
-import { FormInput } from './FormInput/FormInput';
-import { FormSelect } from './FormSelect/FormSelect';
-import { FormTextarea } from './FormTextarea/FormTextarea';
-import { FormUpload } from './FormUpload/FormUpload';
+import { FormInput } from './FormInput';
+import { FormSelect } from './FormSelect';
+import { FormTextarea } from './FormTextarea';
+import { FormUpload } from './FormUpload';
+import { FormPassword } from './FormPassword';
 
 export default {
-	title: 'Components/Molecules/Form/Form',
+	title: 'Components/Molecules/Form',
 	component: Component,
 	argTypes: {},
 } as ComponentMeta<typeof Component>;
@@ -20,6 +21,8 @@ Form.args = {
 	children: (
 		<>
 			<FormInput label="Form Input" />
+			<FormInput label="Form Input and Error" errorMessage="Ohhh noo. Hier gab es einen gewaltigen Fehler." />
+			<FormPassword label="Form Password" />
 			<FormSelect
 				label="Form Select"
 				value="val2"

@@ -1,15 +1,12 @@
 import React, { FC, useState } from 'react';
 
 import { Grid } from '../../../components/Atoms/Grid/Grid';
-import { Label } from '../../../components/Atoms/Label/Label';
+import { Label } from '../../../components/Atoms/Label';
 
-import { UserProfile } from '../../../components/Molecules/UserProfile/UserProfile';
-import { Navi } from '../../../components/Molecules/Navi/Navi';
-import { NaviButton } from '../../../components/Molecules/Navi/NaviButton';
-import { Form } from '../../../components/Molecules/Form/Form';
-import { FormInput } from '../../../components/Molecules/Form/FormInput/FormInput';
-import { FormTextarea } from '../../../components/Molecules/Form/FormTextarea/FormTextarea';
-import { Button } from '../../../components/Molecules/Button/Button';
+import { UserProfile } from '../../../components/Molecules/UserProfile';
+import { Navi, NaviButton } from '../../../components/Molecules/Navi';
+import { Form, FormPassword, FormInput, FormTextarea } from '../../../components/Molecules/Form';
+import { Button } from '../../../components/Molecules/Button';
 
 import { Modal } from '../../../components/Organisms/Modal/Modal';
 
@@ -29,6 +26,7 @@ export const Header: FC<BaseProps> = ({ user }) => {
 		setState({ ...state, showSettingsModal: !state.showSettingsModal });
 	};
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
 	const onFieldChange: any = (e: any): void => {
 		const { field, value } = e.target;
 		setState({
@@ -93,6 +91,7 @@ export const Header: FC<BaseProps> = ({ user }) => {
 						<Navi>
 							<NaviButton as="a" icon="" href={`/user/${user.userName}`}>
 								<UserProfile size="S" userName={user.userName} avatar={user.avatar} />
+								<span className="sr-only">My Mumble</span>
 							</NaviButton>
 							<NaviButton as="button" icon="settings" onClick={handleSettingsModalClick}>
 								Settings
@@ -115,12 +114,14 @@ export const Header: FC<BaseProps> = ({ user }) => {
 							</div>
 							<FormInput
 								type="text"
-								label="Vorname Name"
-								value={state.user.fullName}
-								onChange={onFieldChange}
+								label="UserName"
+								value={state.user.userName}
+								disabled={true}
+								icon="mumble"
 							/>
-							<FormInput type="email" label="E-Mail" value={state.user.email} onChange={onFieldChange} />
-							<FormTextarea label="Bio" value={state.user.bio} onChange={onFieldChange} />
+							<FormInput type="text" label="Vorname Name" value={state.user.fullName} />
+							<FormInput type="email" label="E-Mail" value={state.user.email} />
+							<FormTextarea label="Bio" value={state.user.bio} />
 						</Grid>
 					</fieldset>
 					<fieldset>
@@ -130,8 +131,8 @@ export const Header: FC<BaseProps> = ({ user }) => {
 									Passwort ändern
 								</Label>
 							</div>
-							<FormInput type="password" label="Altes Passwort" />
-							<FormInput type="password" label="Neues Passwort" />
+							<FormPassword label="Altes Passwort" />
+							<FormPassword label="Neues Passwort" />
 						</Grid>
 					</fieldset>
 

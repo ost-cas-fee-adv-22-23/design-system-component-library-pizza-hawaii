@@ -1,7 +1,7 @@
 import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
 
-import { Icon } from '../../Atoms/Icon/Icon';
-import { ButtonBaseStyle, ButtonColorMap } from '../Button/Button';
+import { Icon } from '../../Atoms/Icon';
+import { ButtonBaseStyle, ButtonColorMap } from '../Button';
 
 /*
  * Type

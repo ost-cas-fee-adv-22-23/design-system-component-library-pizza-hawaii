@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Image } from '../../Atoms/Image/Image';
+import { Image } from '../../Atoms/Image';
 import { RoundButton } from '../RoundButton/RoundButton';
 
 /*
@@ -28,7 +28,7 @@ const sizeMap: Record<TUserProfile['size'], string> = {
 	S: 'h-10 w-10',
 	M: 'h-16 w-16',
 	L: 'h-24 w-24',
-	XL: 'h-40 w-40',
+	XL: 'h-40 w-40 md:h-32 md:w-32 sm:h-24 sm:w-24',
 };
 
 const imgMap: Record<TUserProfile['size'], number> = {
@@ -59,7 +59,7 @@ export const UserProfile: FC<TUserProfile> = ({ size = 'M', border, profileLink,
 					<div className="rounded-full overflow-hidden">
 						<Image src={avatar || noAvatar} alt={userName} width={imgMap[size]} height={imgMap[size]} />
 					</div>
-					<div className="absolute bottom-0 right-0">
+					<div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 sm:-bottom-4 sm:-right-4">
 						<RoundButton as="a" icon="edit" color="slate">
 							Edit User Image
 						</RoundButton>

@@ -1,6 +1,5 @@
-import React, { FC } from 'react';
-import { Icon } from '../../Atoms/Icon/Icon';
-import { Image } from '../../Atoms/Image/Image';
+import React, { FC, ReactNode } from 'react';
+import { Icon } from '../../Atoms/Icon';
 
 /*
  * Type
@@ -8,35 +7,33 @@ import { Image } from '../../Atoms/Image/Image';
 
 type TImageOverlay = {
 	icon: string;
-	overlayStyles: string;
-	src: string;
+	children: ReactNode;
+	onClick: () => void;
 };
 
-export const ImageOverlay: FC<TImageOverlay> = (props) => {
-	const baseOverlay = [
-		'absolute',
-		'bg-opacity-0',
-		'top-0',
-		'bottom-0',
-		'left-0',
-		'right-0',
-		'transition-all',
-		'duration-300',
-		'hover:bg-opacity-50',
-		'hover: bg-violet-600',
-		'z-10',
-	];
+/*
+ * Style
+ */
 
+const baseOverlay = [
+	'flex items-center justify-center',
+	'absolute inset-0',
+	'text-white',
+	'rounded-2xl',
+	'opacity-0 bg-violet-600',
+	'transition-all duration-300',
+	'hover:opacity-100 hover:bg-opacity-50',
+	'z-10',
+];
+
+export const ImageOverlay: FC<TImageOverlay> = ({ children, ...props }) => {
 	return (
-		<a href="#">
-			<div className="relative w-max">
-				<div className={[...baseOverlay, props.overlayStyles].join(' ')}>
-					<div className="relative top-1/2 left-1/2 -translate-y-2/4 text-white">
-						<Icon name={props.icon} size="M" />
-					</div>
-				</div>
-				<Image preset="post" src={props.src} />
-			</div>
-		</a>
+		<div className="block relative">
+			<button type="button" className={[...baseOverlay].join(' ')} {...props}>
+				<Icon name={props.icon} size="M" />
+				<span className="sr-only">View</span>
+			</button>
+			{children}
+		</div>
 	);
 };

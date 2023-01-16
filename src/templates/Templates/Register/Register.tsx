@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 
 import { Headline } from '../../../components/Atoms/Headline/Headline';
-import { Label } from '../../../components/Atoms/Label/Label';
-import { Link } from '../../../components/Atoms/Link/Link';
-import { Button } from '../../../components/Molecules/Button/Button';
-import { Form } from '../../../components/Molecules/Form/Form';
-import { FormInput } from '../../../components/Molecules/Form/FormInput/FormInput';
-import { SplitScreen } from '../../../components/Organisms/SplitScreen/SplitScreen';
+import { Label } from '../../../components/Atoms/Label';
+import { Link } from '../../../components/Atoms/Link';
+import { Button } from '../../../components/Molecules/Button';
+import { Form } from '../../../components/Molecules/Form';
+import { FormInput } from '../../../components/Molecules/Form/FormInput';
+import { SplitScreen } from '../../../components/Organisms/SplitScreen';
 
 type RegisterType = object;
 

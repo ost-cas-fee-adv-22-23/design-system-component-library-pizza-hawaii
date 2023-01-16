@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 import { Headline } from '../../Atoms/Headline/Headline';
-import { Icon } from '../../Atoms/Icon/Icon';
+import { Icon } from '../../Atoms/Icon';
 
 type BaseProps = {
 	title: string;

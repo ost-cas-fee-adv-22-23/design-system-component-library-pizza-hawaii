@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes, HTMLAttributes } from 'react';
 
-import { Icon } from '../../Atoms/Icon/Icon';
+import { Icon, TIconSize, TIconName } from '../../Atoms/Icon/Icon';
 
 /*
  * Type
@@ -13,8 +13,7 @@ type TIconLink = {
 	as: 'a' | 'button' | 'span';
 	size?: TIconLinkSize;
 	color: 'slate' | 'violet' | 'pink';
-	icon: string;
-	iconState?: string;
+	icon: TIconName;
 };
 
 type TLinkButtonProps = TIconLink & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -34,18 +33,21 @@ export const IconLinkSizeMap: Record<string, string> = {
 };
 
 export const IconLinkColorMap: Record<string, string> = {
-	slate: 'text-slate-400 hover:text-slate-600',
-	violet: 'text-violet-600 hover:text-violet-900',
-	pink: ' text-pink-400 hover:text-pink-600',
+	slate: 'text-slate-400 hover:text-slate-600 hover:bg-slate-100 ',
+	violet: 'text-violet-600 hover:text-violet-900 hover:bg-violet-50 ',
+	pink: ' text-pink-400 hover:text-pink-600 hover:bg-pink-50',
 };
+
+/*
+ * State
+ */
 
 export const IconLink: FC<TIconLinkProps> = ({
 	children = 'NaviButton',
 	as: Tag = 'a',
-	color,
+	color = 'slate',
 	size = 'M',
 	icon,
-	iconState,
 	...props
 }) => {
 	const styles = [
@@ -54,17 +56,17 @@ export const IconLink: FC<TIconLinkProps> = ({
 		IconLinkSizeMap[size],
 		IconLinkColorMap[color],
 		'group',
+		'hover: cursor-pointer',
 		'transition-all',
 	];
 
 	return (
 		<Tag
 			className={styles.join(' ')}
-			data-ico-state={iconState}
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}
 		>
-			<Icon name={icon} size={size as 'S' | 'M' | 'L'} />
+			<Icon name={icon} size={size as TIconSize} />
 			{children}
 		</Tag>
 	);

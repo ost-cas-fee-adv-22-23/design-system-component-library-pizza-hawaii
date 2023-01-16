@@ -2,11 +2,18 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ImageOverlay as Component } from './ImageOverlay';
+import { IconNames } from '../../Atoms/Icon/IconLib';
+import { Image } from '../../Atoms/Image';
 
 export default {
 	title: 'Components/Molecules/ImageOverlay',
 	component: Component,
-	argTypes: {},
+	argTypes: {
+		icon: {
+			options: IconNames,
+			control: { type: 'select' },
+		},
+	},
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
@@ -14,14 +21,14 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 export const EditOverlay = Template.bind({});
 export const ZoomOverlay = Template.bind({});
 
+const img = <Image preset="post" src="//picsum.photos/id/28/1600/1587/" />;
+
 EditOverlay.args = {
 	icon: 'edit',
-	overlayStyles: 'rounded-2xl',
-	src: '//picsum.photos/id/28/1600/1587/',
+	children: img,
 };
 
 ZoomOverlay.args = {
 	icon: 'fullscreen',
-	overlayStyles: 'rounded-2xl',
-	src: '//picsum.photos/id/27/1600/2087/',
+	children: img,
 };

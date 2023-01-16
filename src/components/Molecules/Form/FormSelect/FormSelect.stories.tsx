@@ -6,14 +6,50 @@ import { FormSelect as Component } from './FormSelect';
 export default {
 	title: 'Components/Molecules/Form/FormSelect',
 	component: Component,
-	argTypes: {},
+	argTypes: {
+		id: {
+			control: { type: 'text' },
+		},
+		errorMessage: {
+			control: { type: 'text' },
+		},
+		hideLabel: {
+			control: { type: 'boolean' },
+		},
+	},
 } as ComponentMeta<typeof Component>;
+
+const exampleOptions = [
+	{
+		value: '',
+		label: 'Bitte wählen',
+		disabled: true,
+		selected: true,
+	},
+	{
+		value: '1',
+		label: 'Option 1',
+	},
+	{
+		value: '2',
+		label: 'Option 2',
+	},
+	{
+		value: '3',
+		label: 'Option 3',
+	},
+];
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 export const FormSelect = Template.bind({});
-FormSelect.args = {};
+FormSelect.args = {
+	label: 'Form Select',
+	options: exampleOptions,
+};
 
 export const FormSelectError = Template.bind({});
 FormSelectError.args = {
-	errorMessage: 'Error-Message',
+	label: 'Form Select and Error',
+	options: exampleOptions,
+	errorMessage: 'Oh no, an error occurred',
 };
