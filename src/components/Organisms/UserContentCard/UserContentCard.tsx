@@ -52,7 +52,7 @@ export const UserContentCard: FC<TUserContentCard> = ({
 	};
 
 	return (
-		<Card as="article" rounded={avatarVariant === 'standalone'} size="M">
+		<Card as="div" rounded={avatarVariant === 'standalone'} size="M">
 			<Grid variant="col" gap="L">
 				<Grid variant="row" gap="S" centerd={true}>
 					<div className={UserProfileVariantMap[avatarVariant]}>

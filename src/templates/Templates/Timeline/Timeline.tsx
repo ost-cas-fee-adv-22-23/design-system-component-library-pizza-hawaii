@@ -17,7 +17,7 @@ type TimelineType = {
 
 export const Timeline: FC<TimelineType> = ({ user, posts = [] }) => {
 	return (
-		<article className="bg-slate-100">
+		<div className="bg-slate-100">
 			<Header user={user} />
 
 			<main className="px-content">
@@ -51,6 +51,6 @@ export const Timeline: FC<TimelineType> = ({ user, posts = [] }) => {
 					</Grid>
 				</section>
 			</main>
-		</article>
+		</div>
 	);
 };

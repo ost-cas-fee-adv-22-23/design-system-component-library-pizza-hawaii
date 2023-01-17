@@ -110,34 +110,34 @@ export const Header: FC<BaseProps> = ({ user }) => {
 			<Modal title="Einstellungen" isVisible={state.showSettingsModal} onClose={handleSettingsModalClick}>
 				<Form>
 					<fieldset>
-						<Grid variant="col" gap="M" marginBelow="M">
-							<div className="mb-4">
-								<Label as="legend" size="L">
-									Persönliche Einstellungen
-								</Label>
-							</div>
-							<FormInput
-								type="text"
-								label="UserName"
-								value={state.user.userName}
-								disabled={true}
-								icon="mumble"
-							/>
-							<FormInput type="text" label="Vorname Name" value={state.user.fullName} />
-							<FormInput type="email" label="E-Mail" value={state.user.email} />
-							<FormTextarea label="Bio" value={state.user.bio} />
-						</Grid>
+						<Label as="legend" size="XL">
+							Persönliche Einstellungen
+						</Label>
+						<div className="mt-4">
+							<Grid variant="col" gap="M" marginBelow="M">
+								<FormInput
+									type="text"
+									label="UserName"
+									value={state.user.userName}
+									disabled={true}
+									icon="mumble"
+								/>
+								<FormInput type="text" label="Vorname Name" value={state.user.fullName} />
+								<FormInput type="email" label="E-Mail" value={state.user.email} />
+								<FormTextarea label="Bio" value={state.user.bio} />
+							</Grid>
+						</div>
 					</fieldset>
 					<fieldset>
-						<Grid variant="col" gap="M" marginBelow="M">
-							<div className="mb-4">
-								<Label as="legend" size="L">
-									Passwort ändern
-								</Label>
-							</div>
-							<FormPassword label="Altes Passwort" />
-							<FormPassword label="Neues Passwort" />
-						</Grid>
+						<Label as="legend" size="XL">
+							Passwort ändern
+						</Label>
+						<div className="mt-4">
+							<Grid variant="col" gap="M" marginBelow="M">
+								<FormPassword label="Altes Passwort" />
+								<FormPassword label="Neues Passwort" />
+							</Grid>
+						</div>
 					</fieldset>
 
 					<Grid variant="row" gap="S" marginBelow="M" wrapBelowScreen="md">

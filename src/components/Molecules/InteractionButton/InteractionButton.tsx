@@ -29,33 +29,29 @@ export const InteractionButton: FC<Props> = ({
 	const styles = ['flex items-center leading-none', ColorSchemeMap[colorScheme]];
 
 	return (
-		<div>
-			<button className={[styles].join(' ')}>
-				<div className={[styles, 'gap-1', 'py-2', 'px-3'].join(' ')}>
-					{count === 0 ? (
-						<>
-							<span className="leading-4 gap-2">
-								<Icon name={iconNameSingle} />
-							</span>
-							<Label as="span" size="M" className="leading-4 gap-2">
-								{buttonTextSingular}
-							</Label>
-						</>
-					) : (
-						<>
-							<span className={`text-${colorScheme}-600 leading-4`}>
-								<Icon name={iconNamePlural} />
-							</span>
-							<Label as="span" size="M" className="leading-4 gap-1">
-								{count}
-							</Label>
-							<Label as="span" size="M" className="leading-4 gap-0.5">
-								{count === 1 ? buttonTextSingular : buttonTextPlural}
-							</Label>
-						</>
-					)}
-				</div>
-			</button>
-		</div>
+		<button className={[styles, 'gap-1', 'py-2', 'px-3'].join(' ')}>
+			{count === 0 ? (
+				<>
+					<span className="leading-4 gap-2">
+						<Icon name={iconNameSingle} />
+					</span>
+					<Label as="span" size="M" className="leading-4 gap-2">
+						{buttonTextSingular}
+					</Label>
+				</>
+			) : (
+				<>
+					<span className={`text-${colorScheme}-600 leading-4`}>
+						<Icon name={iconNamePlural} />
+					</span>
+					<Label as="span" size="M" className="leading-4 gap-1">
+						{count}
+					</Label>
+					<Label as="span" size="M" className="leading-4 gap-0.5">
+						{count === 1 ? buttonTextSingular : buttonTextPlural}
+					</Label>
+				</>
+			)}
+		</button>
 	);
 };

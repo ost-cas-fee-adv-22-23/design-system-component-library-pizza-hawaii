@@ -23,30 +23,26 @@ export const ActiveButton: FC<Props> = ({ colorScheme, isActive, buttonInitialTe
 	};
 
 	return (
-		<div>
-			<button type="button" className={[styles].join(' ')} onClick={copyToText}>
-				<div className={[styles, 'gap-2 py-2 px-3'].join(' ')}>
-					{isActive ? (
-						<>
-							<span className="leanding-none">
-								<Icon name="share" />
-							</span>
-							<Label as="span" size="M" className="leading-4">
-								{buttonActiveText}
-							</Label>
-						</>
-					) : (
-						<>
-							<span className="leading-4">
-								<Icon name="share" />
-							</span>
-							<Label as="span" size="M" className="leading-4">
-								{buttonInitialText}
-							</Label>
-						</>
-					)}
-				</div>
-			</button>
-		</div>
+		<button type="button" className={[styles, 'gap-2 py-2 px-3'].join(' ')} onClick={copyToText}>
+			{isActive ? (
+				<>
+					<span className="leanding-none">
+						<Icon name="share" />
+					</span>
+					<Label as="span" size="M" className="leading-4">
+						{buttonActiveText}
+					</Label>
+				</>
+			) : (
+				<>
+					<span className="leading-4">
+						<Icon name="share" />
+					</span>
+					<Label as="span" size="M" className="leading-4">
+						{buttonInitialText}
+					</Label>
+				</>
+			)}
+		</button>
 	);
 };
