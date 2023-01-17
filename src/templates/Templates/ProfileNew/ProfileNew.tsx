@@ -40,7 +40,8 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 								avatar={user.avatar}
 								size="XL"
 								border={true}
-								profileLink="/"
+								href="/"
+								buttonLabel="Change Avatar"
 							/>
 						</div>
 					</div>

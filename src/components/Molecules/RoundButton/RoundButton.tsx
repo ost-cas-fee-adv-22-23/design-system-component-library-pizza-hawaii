@@ -8,7 +8,7 @@ import { ButtonBaseStyle, ButtonColorMap } from '../Button';
  */
 
 type BaseButtonProps = {
-	children: ReactNode;
+	buttonLabel: string;
 	as?: 'button' | 'a';
 	color: keyof typeof ButtonColorMap;
 	icon?: string;
@@ -19,13 +19,7 @@ type LinkButtonProps = BaseButtonProps & { as: 'a' } & AnchorHTMLAttributes<HTML
 
 type ButtonProps = HTMLButtonProps | LinkButtonProps;
 
-export const RoundButton: FC<ButtonProps> = ({
-	children,
-	as: Tag = 'button',
-	color = 'violet',
-	icon = 'mumble',
-	...props
-}) => {
+export const RoundButton: FC<ButtonProps> = ({ as: Tag = 'button', color = 'violet', icon = 'mumble', buttonLabel, ...props }) => {
 	const style = [...ButtonBaseStyle, 'p-4 rounded-full w-auto', ButtonColorMap[color]];
 
 	return (
@@ -34,7 +28,7 @@ export const RoundButton: FC<ButtonProps> = ({
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}
 		>
-			<span className="sr-only">{children}</span>
+			<span className="sr-only">{buttonLabel}</span>
 			{icon ? <Icon name={icon} /> : null}
 		</Tag>
 	);

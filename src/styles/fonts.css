@@ -24,6 +24,7 @@
 		/* Super Modern Browsers */ url('../assets/fonts/Poppins/poppins-v20-latin-600.woff') format('woff'),
 		/* Modern Browsers */ url('../assets/fonts/Poppins/poppins-v20-latin-600.ttf') format('truetype'),
 		/* Safari, Android, iOS */ url('../assets/fonts/Poppins/poppins-v20-latin-600.svg#Poppins') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }
 
 /* poppins-700 - latin */
@@ -37,4 +38,5 @@
 		/* Super Modern Browsers */ url('../assets/fonts/Poppins/poppins-v20-latin-700.woff') format('woff'),
 		/* Modern Browsers */ url('../assets/fonts/Poppins/poppins-v20-latin-700.ttf') format('truetype'),
 		/* Safari, Android, iOS */ url('../assets/fonts/Poppins/poppins-v20-latin-700.svg#Poppins') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }

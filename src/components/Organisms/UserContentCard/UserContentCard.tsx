@@ -45,7 +45,8 @@ export const UserContentCard: FC<TUserContentCard> = ({
 	const userProfileAttr = {
 		userName: user.userName,
 		avatar: user.avatar,
-		profileLink: user.profileLink,
+		href: user.href,
+		buttonLabel: 'Change Avatar',
 		border: border,
 		size: size as TUserProfileStyle['size'],
 	};

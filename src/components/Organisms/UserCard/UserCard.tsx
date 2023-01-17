@@ -24,7 +24,8 @@ export const UserCard: FC<BaseProps> = ({ user }) => {
 					avatar={user.avatar}
 					size="L"
 					border={true}
-					profileLink={`/user/${user.userName}`}
+					href={`/user/${user.userName}`}
+					buttonLabel="View Profile"
 				/>
 
 				<div className="flex flex-col gap-2">

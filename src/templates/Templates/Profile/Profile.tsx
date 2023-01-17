@@ -46,7 +46,8 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 								avatar={user.avatar}
 								size="XL"
 								border={true}
-								profileLink="/"
+								href="/"
+								buttonLabel="Profil bearbeiten"
 							/>
 						</div>
 					</div>
