@@ -62,7 +62,7 @@ export const UserProfile: FC<TUserProfile> = ({ size = 'M', border, href, userNa
 						<Image src={avatar || noAvatar} alt={userName} width={imgMap[size]} height={imgMap[size]} />
 					</div>
 					<div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 sm:-bottom-4 sm:-right-4">
-						<RoundButton as="a" icon="edit" colorScheme="slate" buttonLabel={buttonLabel} />
+						<RoundButton as="a" href={href} icon="edit" colorScheme="slate" buttonLabel={buttonLabel} />
 					</div>
 				</div>
 			);
