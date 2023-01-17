@@ -19,7 +19,7 @@ export const Register: FC<RegisterType> = () => {
 				<FormInput label="User Name" type="text" />
 				<FormInput label="E-Mail" type="email" />
 				<FormInput label="Passwort" type="password" />
-				<Button as="button" size="L" type="submit" color="gradient">
+				<Button as="button" size="L" type="submit" colorScheme="gradient">
 					Let’s mumble
 				</Button>
 			</Form>

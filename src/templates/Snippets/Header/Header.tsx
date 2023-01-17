@@ -141,10 +141,10 @@ export const Header: FC<BaseProps> = ({ user }) => {
 					</fieldset>
 
 					<Grid variant="row" gap="S" marginBelow="M" wrapBelowScreen="md">
-						<Button as="button" color="slate" icon="cross">
+						<Button as="button" colorScheme="slate" icon="cross">
 							Abbrechen
 						</Button>
-						<Button as="button" color="violet" icon="check">
+						<Button as="button" colorScheme="violet" icon="check">
 							Speichern
 						</Button>
 					</Grid>

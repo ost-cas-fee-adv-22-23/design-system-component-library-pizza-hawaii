@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { IconNames } from '../../Atoms/Icon/IconLib';
-import { Button as Component, ButtonSizeMap } from './Button';
+import { Button as Component, ButtonSizeMap, ButtonColorMap } from './Button';
 
 export default {
 	title: 'Components/Molecules/Button',
@@ -18,6 +18,10 @@ export default {
 				type: 'radio',
 				options: Object.keys(ButtonSizeMap),
 			},
+		},
+		colorScheme: {
+			control: { type: 'select' },
+			options: Object.keys(ButtonColorMap),
 		},
 	},
 } as ComponentMeta<typeof Component>;

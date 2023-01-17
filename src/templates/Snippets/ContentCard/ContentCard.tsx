@@ -67,7 +67,7 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 			</Label>
 			<Grid variant="row" gap="S">
 				<UserName href={post.author.profileLink}>{post.author.userName}</UserName>
-				<IconLink as="span" icon="calendar" color="slate" size="S">
+				<IconLink as="span" icon="calendar" colorScheme="slate" size="S">
 					<TimeStamp date={post.createdAt} />
 				</IconLink>
 			</Grid>

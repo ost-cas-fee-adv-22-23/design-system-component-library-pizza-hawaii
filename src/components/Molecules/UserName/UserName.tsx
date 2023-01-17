@@ -12,7 +12,7 @@ type TUserName = {
 
 export const UserName: FC<TUserName> = ({ children, href }) => {
 	return (
-		<IconLink as="a" href={href} icon="profile" color="violet" size="S">
+		<IconLink as="a" href={href} icon="profile" colorScheme="violet" size="S">
 			{children}
 		</IconLink>
 	);

@@ -7,11 +7,14 @@ import { Label } from '../../Atoms/Label';
  * Type
  */
 
-type TButton = {
+export type TButtonSize = keyof typeof ButtonSizeMap;
+export type TButtonColor = keyof typeof ButtonColorMap;
+
+export type TButton = {
 	children: ReactNode;
 	as?: 'button' | 'a' | 'span';
 	size?: keyof typeof ButtonSizeMap;
-	color: keyof typeof ButtonColorMap;
+	colorScheme: keyof typeof ButtonColorMap;
 	icon?: TIconName;
 };
 
@@ -47,12 +50,12 @@ export const ButtonColorMap: Record<string, string> = {
 export const Button: FC<TButtonProps> = ({
 	children,
 	as: Tag = 'button',
-	color = 'violet',
+	colorScheme = 'violet',
 	size = 'M',
 	icon = 'mumble',
 	...props
 }) => {
-	const style = [...ButtonBaseStyle, ButtonSizeMap[size], ButtonColorMap[color]];
+	const style = [...ButtonBaseStyle, ButtonSizeMap[size], ButtonColorMap[colorScheme]];
 
 	return (
 		<Tag

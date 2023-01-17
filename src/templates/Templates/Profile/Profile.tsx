@@ -57,11 +57,11 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 					<span className="flex flex-row align-baseline gap-3 mb-3">
 						<UserName href={`/user/${user.userName}`}>{user.userName}</UserName>
 
-						<IconLink as="span" icon="location" color="slate" size="S">
+						<IconLink as="span" icon="location" colorScheme="slate" size="S">
 							{user.city}
 						</IconLink>
 
-						<IconLink as="span" icon="calendar" color="slate" size="S">
+						<IconLink as="span" icon="calendar" colorScheme="slate" size="S">
 							<TimeStamp date={user.createdAt} prefix="Mitglied seit" />
 						</IconLink>
 					</span>

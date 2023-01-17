@@ -37,7 +37,7 @@ export const UserCard: FC<BaseProps> = ({ user }) => {
 					</span>
 				</div>
 
-				<Button as="a" href={`/user/${user.userName}`} size="M" color="violet" icon="mumble">
+				<Button as="a" href={`/user/${user.userName}`} size="M" colorScheme="violet" icon="mumble">
 					Follow
 				</Button>
 			</Grid>
