@@ -59,7 +59,9 @@ export const UserContentCard: FC<TUserContentCard> = ({
 						<UserProfile {...userProfileAttr} />
 					</div>
 					{Children.count(headline) === 1 && typeof headline === 'string' ? (
-						<Headline level={4}>{headline}</Headline>
+						<Headline level={4} as="span">
+							{headline}
+						</Headline>
 					) : (
 						headline
 					)}
