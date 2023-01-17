@@ -27,7 +27,7 @@ type ProfileNewType = {
 
 export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUsers }) => {
 	return (
-		<article className="bg-slate-100">
+		<div className="bg-slate-100">
 			<Header user={user} />
 
 			<main className="px-content">
@@ -40,7 +40,8 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 								avatar={user.avatar}
 								size="XL"
 								border={true}
-								profileLink="/"
+								href="/"
+								buttonLabel="Change Avatar"
 							/>
 						</div>
 					</div>
@@ -51,10 +52,10 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 
 					<span className="flex flex-row align-baseline gap-3 mb-3">
 						<UserName href={`/user/${user.userName}`}>{user.userName}</UserName>
-						<IconLink as="span" icon="location" color="slate" size="S">
+						<IconLink as="span" icon="location" colorScheme="slate" size="S">
 							{user.city || 'Location'}
 						</IconLink>
-						<IconLink as="span" icon="calendar" color="slate" size="S">
+						<IconLink as="span" icon="calendar" colorScheme="slate" size="S">
 							<TimeStamp date={user.createdAt} prefix="Mitglied seit" />
 						</IconLink>
 					</span>
@@ -103,6 +104,6 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 					</Grid>
 				</section>
 			</main>
-		</article>
+		</div>
 	);
 };

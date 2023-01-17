@@ -89,9 +89,13 @@ export const Header: FC<BaseProps> = ({ user }) => {
 					</a>
 					<nav className="">
 						<Navi>
-							<NaviButton as="a" icon="" href={`/user/${user.userName}`}>
-								<UserProfile size="S" userName={user.userName} avatar={user.avatar} />
-								<span className="sr-only">My Mumble</span>
+							<NaviButton as="a" icon="" href={`/user/${user.userName}`} title="My Mumble Profile">
+								<UserProfile
+									userName={user.userName}
+									avatar={user.avatar}
+									size="S"
+									buttonLabel="My Mumble Profile"
+								/>
 							</NaviButton>
 							<NaviButton as="button" icon="settings" onClick={handleSettingsModalClick}>
 								Settings
@@ -106,41 +110,41 @@ export const Header: FC<BaseProps> = ({ user }) => {
 			<Modal title="Einstellungen" isVisible={state.showSettingsModal} onClose={handleSettingsModalClick}>
 				<Form>
 					<fieldset>
-						<Grid variant="col" gap="M" marginBelow="M">
-							<div className="mb-4">
-								<Label as="legend" size="L">
-									Persönliche Einstellungen
-								</Label>
-							</div>
-							<FormInput
-								type="text"
-								label="UserName"
-								value={state.user.userName}
-								disabled={true}
-								icon="mumble"
-							/>
-							<FormInput type="text" label="Vorname Name" value={state.user.fullName} />
-							<FormInput type="email" label="E-Mail" value={state.user.email} />
-							<FormTextarea label="Bio" value={state.user.bio} />
-						</Grid>
+						<Label as="legend" size="XL">
+							Persönliche Einstellungen
+						</Label>
+						<div className="mt-4">
+							<Grid variant="col" gap="M" marginBelow="M">
+								<FormInput
+									type="text"
+									label="UserName"
+									value={state.user.userName}
+									disabled={true}
+									icon="mumble"
+								/>
+								<FormInput type="text" label="Vorname Name" value={state.user.fullName} />
+								<FormInput type="email" label="E-Mail" value={state.user.email} />
+								<FormTextarea label="Bio" value={state.user.bio} />
+							</Grid>
+						</div>
 					</fieldset>
 					<fieldset>
-						<Grid variant="col" gap="M" marginBelow="M">
-							<div className="mb-4">
-								<Label as="legend" size="L">
-									Passwort ändern
-								</Label>
-							</div>
-							<FormPassword label="Altes Passwort" />
-							<FormPassword label="Neues Passwort" />
-						</Grid>
+						<Label as="legend" size="XL">
+							Passwort ändern
+						</Label>
+						<div className="mt-4">
+							<Grid variant="col" gap="M" marginBelow="M">
+								<FormPassword label="Altes Passwort" />
+								<FormPassword label="Neues Passwort" />
+							</Grid>
+						</div>
 					</fieldset>
 
 					<Grid variant="row" gap="S" marginBelow="M" wrapBelowScreen="md">
-						<Button as="button" color="slate" icon="cross">
+						<Button as="button" colorScheme="slate" icon="cross">
 							Abbrechen
 						</Button>
-						<Button as="button" color="violet" icon="check">
+						<Button as="button" colorScheme="violet" icon="check">
 							Speichern
 						</Button>
 					</Grid>

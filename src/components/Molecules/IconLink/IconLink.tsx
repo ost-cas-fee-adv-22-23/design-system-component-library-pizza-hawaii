@@ -6,13 +6,14 @@ import { Icon, TIconSize, TIconName } from '../../Atoms/Icon/Icon';
  * Type
  */
 
-type TIconLinkSize = keyof typeof IconLinkSizeMap;
+export type TIconLinkSize = keyof typeof IconLinkSizeMap;
+export type TIconLinkColor = keyof typeof IconLinkColorMap;
 
 type TIconLink = {
 	children: ReactNode;
 	as: 'a' | 'button' | 'span';
 	size?: TIconLinkSize;
-	color: 'slate' | 'violet' | 'pink';
+	colorScheme: TIconLinkColor;
 	icon: TIconName;
 };
 
@@ -25,6 +26,8 @@ type TIconLinkProps = TSpanButtonProps | THTMLButtonProps | TLinkButtonProps;
 /*
  * Style
  */
+
+export const IconLinkBaseStyle: string[] = ['flex items-center', 'leading-none'];
 
 export const IconLinkSizeMap: Record<string, string> = {
 	S: 'text-sm gap-1',
@@ -45,16 +48,15 @@ export const IconLinkColorMap: Record<string, string> = {
 export const IconLink: FC<TIconLinkProps> = ({
 	children = 'NaviButton',
 	as: Tag = 'a',
-	color = 'slate',
+	colorScheme = 'slate',
 	size = 'M',
 	icon,
 	...props
 }) => {
 	const styles = [
-		'flex items-center',
-		'leading-none',
+		...IconLinkBaseStyle,
 		IconLinkSizeMap[size],
-		IconLinkColorMap[color],
+		IconLinkColorMap[colorScheme],
 		'group',
 		'hover: cursor-pointer',
 		'transition-all',

@@ -1,4 +1,4 @@
-import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
+import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 
 import { Icon } from '../../Atoms/Icon';
 import { ButtonBaseStyle, ButtonColorMap } from '../Button';
@@ -6,27 +6,35 @@ import { ButtonBaseStyle, ButtonColorMap } from '../Button';
 /*
  * Type
  */
+export type TRoundButtonColor = keyof typeof ButtonColorMap;
 
-type BaseButtonProps = {
-	children: ReactNode;
+type TButton = {
+	buttonLabel: string;
 	as?: 'button' | 'a';
-	color: keyof typeof ButtonColorMap;
+	colorScheme: TRoundButtonColor;
 	icon?: string;
 };
 
-type HTMLButtonProps = BaseButtonProps & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
-type LinkButtonProps = BaseButtonProps & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
+type HTMLButtonProps = TButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
+type LinkButtonProps = TButton & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-type ButtonProps = HTMLButtonProps | LinkButtonProps;
+type TButtonProps = HTMLButtonProps | LinkButtonProps;
 
-export const RoundButton: FC<ButtonProps> = ({
-	children,
+/*
+ * Style
+ */
+
+export const RoundButtonBaseStyle: string[] = [...ButtonBaseStyle, 'inline-flex', 'p-4 rounded-full w-auto'];
+export const RoundButtonColorMap: Record<string, string> = ButtonColorMap;
+
+export const RoundButton: FC<TButtonProps> = ({
 	as: Tag = 'button',
-	color = 'violet',
+	colorScheme = 'violet',
 	icon = 'mumble',
+	buttonLabel,
 	...props
 }) => {
-	const style = [...ButtonBaseStyle, 'p-4 rounded-full w-auto', ButtonColorMap[color]];
+	const style = [...RoundButtonBaseStyle, RoundButtonColorMap[colorScheme]];
 
 	return (
 		<Tag
@@ -34,7 +42,7 @@ export const RoundButton: FC<ButtonProps> = ({
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}
 		>
-			<span className="sr-only">{children}</span>
+			<span className="sr-only">{buttonLabel}</span>
 			{icon ? <Icon name={icon} /> : null}
 		</Tag>
 	);

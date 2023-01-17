@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { IconNames } from '../../Atoms/Icon/IconLib';
-import { RoundButton as Component } from './RoundButton';
+import { RoundButton as Component, RoundButtonColorMap } from './RoundButton';
 
 export default {
 	title: 'Components/Molecules/RoundButton',
@@ -12,6 +12,10 @@ export default {
 		icon: {
 			options: IconNames,
 			control: { type: 'select' },
+		},
+		colorScheme: {
+			control: { type: 'select' },
+			options: Object.keys(RoundButtonColorMap),
 		},
 	},
 } as ComponentMeta<typeof Component>;

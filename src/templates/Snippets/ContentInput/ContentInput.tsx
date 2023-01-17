@@ -70,10 +70,10 @@ export const ContentInput: FC<TContentInputCard> = (props) => {
 			<FormTextarea label={placeHolderText} placeholder={placeHolderText} hideLabel={true} size="L" />
 
 			<Grid variant="row" gap="S" wrapBelowScreen="md">
-				<Button as="button" color="slate" icon="upload">
+				<Button as="button" colorScheme="slate" icon="upload">
 					Bild Hochladen
 				</Button>
-				<Button as="button" color="violet" icon="send">
+				<Button as="button" colorScheme="violet" icon="send">
 					Absenden
 				</Button>
 			</Grid>

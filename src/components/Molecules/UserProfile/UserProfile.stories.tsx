@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 export const Small = Template.bind({});
 Small.args = {
 	size: 'S',
-	profileLink: '/user/username',
+	href: '/user/username',
 	userName: Current.userName,
 	avatar: Current.avatar,
 };
@@ -23,7 +23,7 @@ Small.args = {
 export const Medium = Template.bind({});
 Medium.args = {
 	size: 'M',
-	profileLink: '/user/username',
+	href: '/user/username',
 	border: true,
 	userName: Current.userName,
 	avatar: Current.avatar,
@@ -40,7 +40,7 @@ Large.args = {
 export const ExtraLarge = Template.bind({});
 ExtraLarge.args = {
 	size: 'XL',
-	profileLink: '/user/username',
+	href: '/user/username',
 	border: true,
 	userName: Current.userName,
 	avatar: Current.avatar,

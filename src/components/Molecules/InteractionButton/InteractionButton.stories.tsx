@@ -31,7 +31,7 @@ Like.args = {
 	buttonTextSingular: 'Like',
 	buttonTextPlural: 'Likes',
 	iconNameSingle: 'heart_fillable',
-	iconNamePlural: 'heart_filled'
+	iconNamePlural: 'heart_filled',
 };
 
 Comment.args = {
