@@ -28,12 +28,12 @@ export const Header: FC<BaseProps> = ({ user }) => {
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
 	const onFieldChange: any = (e: any): void => {
-		const { field, value } = e.target;
+		const { name, value } = e.target;
 		setState({
 			...state,
 			user: {
 				...state.user,
-				[field]: value,
+				[name]: value,
 			},
 		});
 	};
@@ -118,13 +118,27 @@ export const Header: FC<BaseProps> = ({ user }) => {
 								<FormInput
 									type="text"
 									label="UserName"
+									name="userName"
 									value={state.user.userName}
 									disabled={true}
 									icon="mumble"
+									onChange={onFieldChange}
 								/>
-								<FormInput type="text" label="Vorname Name" value={state.user.fullName} />
-								<FormInput type="email" label="E-Mail" value={state.user.email} />
-								<FormTextarea label="Bio" value={state.user.bio} />
+								<FormInput
+									type="text"
+									label="Vorname Name"
+									name="fullName"
+									value={state.user.fullName}
+									onChange={onFieldChange}
+								/>
+								<FormInput
+									type="email"
+									label="E-Mail"
+									name="email"
+									value={state.user.email}
+									onChange={onFieldChange}
+								/>
+								<FormTextarea label="Bio" name="bio" value={state.user.bio} onChange={onFieldChange} />
 							</Grid>
 						</div>
 					</fieldset>
@@ -134,13 +148,13 @@ export const Header: FC<BaseProps> = ({ user }) => {
 						</Label>
 						<div className="mt-4">
 							<Grid variant="col" gap="M" marginBelow="M">
-								<FormPassword label="Altes Passwort" />
-								<FormPassword label="Neues Passwort" />
+								<FormPassword label="Altes Passwort" onChange={onFieldChange} />
+								<FormPassword label="Neues Passwort" onChange={onFieldChange} />
 							</Grid>
 						</div>
 					</fieldset>
 
-					<Grid variant="row" gap="S" marginBelow="M" wrapBelowScreen="md">
+					<Grid variant="row" gap="S" wrapBelowScreen="md">
 						<Button as="button" colorScheme="slate" icon="cross">
 							Abbrechen
 						</Button>
