@@ -28,6 +28,7 @@ const style = [
 	'p-2 sm:p-1 rounded-lg',
 	'text-white ',
 	'bg-violet-600 hover:bg-violet-700',
+	'group',
 ];
 
 export const NaviButton: FC<NaviButtonProps> = ({ as: Tag = 'a', children, icon, ...props }) => {

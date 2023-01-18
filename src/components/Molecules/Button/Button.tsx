@@ -28,7 +28,7 @@ type TButtonProps = THTMLButtonProps | TLinkButtonProps | TSpanButtonProps;
  * Styles
  */
 
-export const ButtonBaseStyle = ['flex items-center justify-center', 'w-full', 'transition-all'];
+export const ButtonBaseStyle = ['flex items-center justify-center', 'w-full', 'transition-all duration-300'];
 
 export const ButtonSizeMap: Record<string, string> = {
 	S: 'p-2 rounded-lg gap-y-0 gap-x-2 text-sm font-semibold',

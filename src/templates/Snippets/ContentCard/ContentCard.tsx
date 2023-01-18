@@ -77,7 +77,11 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 	return (
 		<UserContentCard
 			headline={headerSlotContent}
-			userProfile={post.author}
+			userProfile={{
+				avatar: post.author.avatar,
+				userName: post.author.userName,
+				href: post.author.profileLink,
+			}}
 			avatarVariant={setting.avatarVariant}
 			avatarSize={setting.avatarSize}
 		>

@@ -63,7 +63,11 @@ export const ContentInput: FC<TContentInputCard> = (props) => {
 	return (
 		<UserContentCard
 			headline={headerSlotContent}
-			userProfile={author}
+			userProfile={{
+				avatar: author.avatar,
+				userName: author.userName,
+				href: author.profileLink,
+			}}
 			avatarVariant={setting.avatarVariant}
 			avatarSize={setting.avatarSize}
 		>
