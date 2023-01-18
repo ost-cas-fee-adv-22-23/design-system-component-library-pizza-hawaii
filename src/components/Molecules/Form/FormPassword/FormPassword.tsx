@@ -42,7 +42,9 @@ export const FormPassword: FC<TFormPasswordType> = ({
 
 	const showPasswordButtonProps = {
 		title: showPassword ? showPasswordButtonLabels[1] : showPasswordButtonLabels[0],
-		className: `absolute right-4 top-1/2 -translate-y-1/2 flex ${errorMessage ? 'text-error-red ' : 'text-slate-600'}`,
+		className: `absolute right-4 top-1/2 -translate-y-1/2 inline-flex ${
+			errorMessage ? 'text-error-red ' : 'text-slate-600'
+		} p-4 -mx-4`,
 		onClick: onIconClick,
 	};
 

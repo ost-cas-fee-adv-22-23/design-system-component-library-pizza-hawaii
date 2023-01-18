@@ -37,10 +37,10 @@ export const ButtonSizeMap: Record<string, string> = {
 };
 
 export const ButtonColorMap: Record<string, string> = {
-	slate: 'text-white bg-slate-700 hover:bg-slate-800',
-	violet: 'text-white bg-violet-600 hover:bg-violet-700',
+	slate: 'text-white bg-slate-700 hover:bg-slate-800 focus:bg-slate-800 focus:ring-slate-800',
+	violet: 'text-white bg-violet-600 hover:bg-violet-700 focus:bg-violet-700 focus:ring-violet-700',
 	gradient:
-		'text-white bg-gradient-to-r from-violet-600 via-pink-500 to-violet-700 bg-pos-0 bg-size-200 hover:bg-pos-100 hover:bg-size-300',
+		'text-white bg-gradient-to-r from-violet-600 via-pink-500 to-violet-700 bg-pos-0 bg-size-200 hover:bg-pos-100 hover:bg-size-300 focus:bg-pos-100 focus:bg-size-300',
 };
 
 /*

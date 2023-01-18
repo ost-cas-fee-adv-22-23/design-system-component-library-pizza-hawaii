@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, HTMLAttributes } from 'react';
 
 /*
  * Type
@@ -12,6 +12,8 @@ export type THeadline = {
 	children: ReactNode;
 };
 
+export type THeadlineProps = THeadline & HTMLAttributes<HTMLElement>;
+
 /*
  * Styles
  */
@@ -23,7 +25,7 @@ export const HeadlineSizeMap: Record<number, string> = {
 	4: 'text-xl font-semibold',
 };
 
-export const Headline: FC<THeadline> = ({ children, level = 1, as: Tag = `h${level}` as THeadlineTag, ...props }) => (
+export const Headline: FC<THeadlineProps> = ({ children, level = 1, as: Tag = `h${level}` as THeadlineTag, ...props }) => (
 	<Tag className={['leading-tight', HeadlineSizeMap[level]].join(' ')} {...props}>
 		{children}
 	</Tag>
