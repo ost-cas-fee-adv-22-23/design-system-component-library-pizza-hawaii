@@ -37,10 +37,10 @@ export const ButtonSizeMap: Record<string, string> = {
 };
 
 export const ButtonColorMap: Record<string, string> = {
-	slate: 'text-white bg-slate-600 hover:bg-slate-700 focus:bg-slate-700 focus:outline-slate-200 focus:outline-4',
-	violet: 'text-white bg-violet-600 hover:bg-violet-700 focus:bg-violet-700 focus:outline-violet-200 focus:outline-4',
+	slate: 'text-white bg-slate-600 outline-none outline-offset-0 hover:bg-slate-700 hover:outline-slate-100, hover:outline-3  active:outline-4, active:outline-slate-200 focus:bg-slate-700 focus:outline-slate-200 focus:outline-4',
+	violet: 'text-white bg-violet-600 outline-none outline-offset-0 hover:bg-violet-700 hover:outline-3 hover:outline-violet-100 active:outline-4, active:outline-violet-100 focus:bg-violet-700 focus:outline-violet-200 focus:outline-4',
 	gradient:
-		'text-white bg-gradient-to-r from-violet-600 via-pink-500 to-violet-700 bg-pos-0 bg-size-200 hover:bg-pos-100 hover:bg-size-300 focus:bg-pos-100 focus:bg-size-300 focus:outline-violet-200 focus:outline-4',
+		'text-white bg-gradient-to-r from-violet-600 via-pink-500 to-violet-700 bg-pos-0 bg-size-200 outline-none outline-offset-0 hover:bg-pos-100 hover:bg-size-300 hover:outline-3 hover:outline-violet-100 active:outline-4, active:outline-violet-200 focus:bg-pos-100 focus:bg-size-300 focus:outline-violet-200 focus:outline-4',
 };
 
 /*
