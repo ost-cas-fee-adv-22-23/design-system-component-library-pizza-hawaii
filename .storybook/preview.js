@@ -13,19 +13,19 @@ export const parameters = {
 		expanded: true,
 	},
 	backgrounds: {
-    default: 'background',
-    values: [
-      {
-        name: 'surface',
-        value: '#dfdfdf',
-      },
-      {
-        name: 'background',
-        value: '#a7a7a7', // to display white components
-      },
-    ],
-    grid: {
-      disable: true,
-    },
-  },
+		default: 'background',
+		values: [
+			{
+				name: 'surface',
+				value: '#dfdfdf',
+			},
+			{
+				name: 'background',
+				value: '#EEEEEE', // to display white components
+			},
+		],
+		grid: {
+			disable: true,
+		},
+	},
 };
