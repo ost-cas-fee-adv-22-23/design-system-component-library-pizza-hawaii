@@ -1,7 +1,10 @@
 import React, { FC } from 'react';
 import { Grid } from '../Grid/Grid';
 
-type TColors = {
+export type TColors = {
+	/**
+	 * choose one of of these colorPalette Names:
+	 */
 	paletteName: 'pink' | 'violet' | 'slate';
 };
 

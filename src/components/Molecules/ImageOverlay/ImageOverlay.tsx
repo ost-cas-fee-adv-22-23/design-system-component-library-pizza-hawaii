@@ -6,8 +6,17 @@ import { Icon, TIconName } from '../../Atoms/Icon';
  */
 
 export type TImageOverlay = {
+	/**
+	 * children: React component image
+	 */
 	children: ReactNode;
+	/**
+	 * always provide a button label string for A11y screenreader reason.
+	 */
 	buttonLabel: string;
+	/**
+	 * onClick funcion is a empty function: edit this to your needs.
+	 */
 	onClick: () => void;
 };
 

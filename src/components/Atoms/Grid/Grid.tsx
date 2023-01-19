@@ -5,12 +5,33 @@ import React, { FC, ReactNode, Children } from 'react';
  */
 
 export type TGrid = {
+	/**
+	 * specify the html markup of your grid: 'div', 'ul','ol'
+	 */
 	as?: 'div' | 'ul' | 'ol';
+	/**
+	 * React Children nodes content of your grid
+	 */
 	children: ReactNode;
+	/**
+	 * variants of grid direction: row or col
+	 */
 	variant: keyof typeof GridVariantStyleMap;
+	/**
+	 * variants of grid gap: 'S', 'M', 'L', 'XL'
+	 */
 	gap?: keyof typeof GridGapStyleMap;
+	/**
+	 * optional: center the grid: boolean
+	 */
 	centerd?: boolean;
+	/**
+	 * optional: a wrap below screen: choose the size of that wrapper: 'sm', 'md', 'lg'
+	 */
 	wrapBelowScreen?: 'sm' | 'md' | 'lg';
+	/**
+	 * optional: a margin below the grid can be added: choose the size of the margin-below: 'XXS','XS','S','M','L'
+	 */
 	marginBelow?: keyof typeof GridMarginBelowStyleMap;
 };
 
@@ -88,6 +109,7 @@ function wrappChildrensInListItems(children: ReactNode): ReactNode {
 		}
 
 		if (child && typeof child === 'object' && 'type' in child) {
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			const childType = (child as any).type;
 
 			if (childType === 'li') {
