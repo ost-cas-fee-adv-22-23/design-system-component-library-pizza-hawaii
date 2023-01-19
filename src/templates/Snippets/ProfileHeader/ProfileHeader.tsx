@@ -15,7 +15,7 @@ export const ProfileHeader: FC<TProfileHeader> = ({ user }) => {
 	return (
 		<div className="relative mb-6">
 			<ImageOverlay
-				icon="edit"
+				preset="edit"
 				buttonLabel={'Hintergrundbild anpassen'}
 				onClick={function (): void {
 					throw new Error('Function not implemented.');

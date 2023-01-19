@@ -1,4 +1,4 @@
-import React, { FC, FormEventHandler, TextareaHTMLAttributes } from 'react';
+import React, { FC, ChangeEvent, TextareaHTMLAttributes } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem';
 
 import uid from '../../../../utils/uid';
@@ -13,6 +13,7 @@ type TFormTextarea = {
 	id?: string;
 	hideLabel?: boolean;
 	size?: 'M' | 'L';
+	onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => void;
 };
 
 type TFormTextareaType = TFormTextarea & TextareaHTMLAttributes<HTMLTextAreaElement>;

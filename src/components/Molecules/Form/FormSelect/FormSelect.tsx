@@ -1,4 +1,4 @@
-import React, { FC, SelectHTMLAttributes, FormEventHandler } from 'react';
+import React, { FC, SelectHTMLAttributes, ChangeEvent } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem';
 
 import uid from '../../../../utils/uid';
@@ -18,6 +18,7 @@ type TFormSelect = {
 	errorMessage?: string;
 	id?: string;
 	hideLabel?: boolean;
+	onChange?: (e: ChangeEvent<HTMLSelectElement>) => void;
 };
 
 type TFormSelectType = TFormSelect & SelectHTMLAttributes<HTMLSelectElement>;

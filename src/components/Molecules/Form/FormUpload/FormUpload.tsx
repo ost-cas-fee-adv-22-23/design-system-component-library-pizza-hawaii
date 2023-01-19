@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes, FormEventHandler } from 'react';
+import React, { FC, InputHTMLAttributes, ChangeEvent } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem';
 
 import { Icon } from '../../../Atoms/Icon';
@@ -19,6 +19,7 @@ type FormUpload = {
 	errorMessage?: string;
 	id?: string;
 	hideLabel?: boolean;
+	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 type FormUploadType = FormUpload & InputHTMLAttributes<HTMLInputElement>;
