@@ -1,4 +1,4 @@
-import React, { FC, InputHTMLAttributes, ChangeEvent } from 'react';
+import React, { FC, InputHTMLAttributes, FormEventHandler } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem';
 import { Icon } from '../../../Atoms/Icon';
 
@@ -14,7 +14,6 @@ type TFormInput = {
 	id?: string;
 	hideLabel?: boolean;
 	icon?: string;
-	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 type TFormInputType = TFormInput & InputHTMLAttributes<HTMLInputElement>;

@@ -1,8 +1,9 @@
-import React, { FC, InputHTMLAttributes, ChangeEvent } from 'react';
+import React, { FC, InputHTMLAttributes, FormEventHandler } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem';
 
 import { Icon } from '../../../Atoms/Icon';
 import { Label } from '../../../Atoms/Label';
+
 import { ButtonBaseStyle, ButtonSizeMap } from '../../../Molecules/Button';
 
 import uid from '../../../../utils/uid';
@@ -11,16 +12,16 @@ import uid from '../../../../utils/uid';
  * Type
  */
 
-type BaseProps = {
+type FormUpload = {
 	label: string;
 	hint?: string;
+	buttonTitle?: string;
 	errorMessage?: string;
 	id?: string;
 	hideLabel?: boolean;
-	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-type FormUploadType = BaseProps & InputHTMLAttributes<HTMLInputElement>;
+type FormUploadType = FormUpload & InputHTMLAttributes<HTMLInputElement>;
 
 /*
  * Style
@@ -38,6 +39,7 @@ const fieldStyle: string[] = [
 export const FormUpload: FC<FormUploadType> = ({
 	label,
 	title = 'Datei hierhin ziehen ...',
+	buttonTitle = '... oder Datei auswählen',
 	hint,
 	errorMessage,
 	id = uid('FormUpload'),
@@ -77,7 +79,7 @@ export const FormUpload: FC<FormUploadType> = ({
 				].join(' ')}
 				htmlFor={id}
 			>
-				... oder Datei auswählen
+				{buttonTitle}
 			</label>
 		</FormItem>
 	);

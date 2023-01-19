@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, ChangeEvent, useState, FormEvent } from 'react';
 
 import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Label } from '../../../components/Atoms/Label';
@@ -26,9 +26,9 @@ export const Header: FC<THeader> = ({ user }) => {
 		setState({ ...state, showSettingsModal: !state.showSettingsModal });
 	};
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-	const onFieldChange: any = (e: any): void => {
-		const { name, value } = e.target;
+	const onFieldChange = (e: FormEvent): void => {
+		const { name, value } = e.target as HTMLInputElement;
+
 		setState({
 			...state,
 			user: {
