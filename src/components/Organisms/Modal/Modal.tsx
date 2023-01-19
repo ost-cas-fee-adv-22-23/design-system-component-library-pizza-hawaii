@@ -10,7 +10,7 @@ import uid from '../../../utils/uid';
  * Type
  */
 
-type BaseProps = {
+type TModal = {
 	title: string;
 	children: ReactNode;
 	isVisible: boolean;
@@ -36,13 +36,7 @@ const ModalHeaderStyle = ['flex items-center justify-between gap-4', 'px-8 py-6'
  * Functional Component
  */
 
-export const Modal: FC<BaseProps> = ({
-	title,
-	children = 'Modal Content',
-	isVisible = false,
-	id = uid('Modal'),
-	onClose,
-}) => {
+export const Modal: FC<TModal> = ({ title, children = 'Modal Content', isVisible = false, id = uid('Modal'), onClose }) => {
 	const modalRef = useRef(null);
 
 	useEffect(() => {
@@ -87,29 +81,25 @@ export const Modal: FC<BaseProps> = ({
 
 	return createPortal(
 		<>
-			{isVisible ? (
-				<>
-					<dialog className={ModalBaseStyle.join(' ')} aria-labelledby={`${id}-title`} aria-modal="true">
-						<div className={ModalBodyStyle.join(' ')} ref={modalRef}>
-							<div className={ModalHeaderStyle.join(' ')}>
-								<Headline level={3} as="h2" id={`${id}-title`}>
-									{title}
-								</Headline>
-								<button
-									className="inline-flex items-center p-4 -m-4 transition hover:rotate-90"
-									onClick={onClose}
-								>
-									<Icon name="cancel" />
-									<span className="sr-only">Close Modal</span>
-								</button>
-							</div>
+			<dialog className={ModalBaseStyle.join(' ')} aria-labelledby={`${id}-title`} aria-modal="true">
+				<div className={ModalBodyStyle.join(' ')} ref={modalRef}>
+					<div className={ModalHeaderStyle.join(' ')}>
+						<Headline level={3} as="h2" id={`${id}-title`}>
+							{title}
+						</Headline>
+						<button className="inline-flex items-center p-4 -m-4 transition hover:rotate-90" onClick={onClose}>
+							<Icon name="cancel" />
+							<span className="sr-only">Close Modal</span>
+						</button>
+					</div>
 
-							<div className="relative p-8 flex-auto overflow-y-auto">{children}</div>
-						</div>
-					</dialog>
-					<div className={ModalOverlayStyle.join(' ')}></div>
-				</>
-			) : null}
+					<div className="relative p-8 flex-auto overflow-y-auto">{children}</div>
+					<button className="sr-only focus:not-sr-only bg-black p-2 text-white" onClick={onClose}>
+						Close Modal
+					</button>
+				</div>
+			</dialog>
+			<div className={ModalOverlayStyle.join(' ')}></div>
 		</>,
 		document.body
 	);
