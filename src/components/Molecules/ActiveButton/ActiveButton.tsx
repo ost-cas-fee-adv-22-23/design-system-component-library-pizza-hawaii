@@ -4,9 +4,21 @@ import { Icon } from '../../Atoms/Icon';
 import copy from 'copy-to-clipboard';
 
 export type Props = {
+	/**
+	 * Choose one of the color Scheme: 'slate', 'violet' or 'pink'
+	 */
 	colorScheme: string;
+	/**
+	 * default is false, but you can also define it a active
+	 */
 	isActive: boolean;
+	/**
+	 * inactive inital text of Button
+	 **/
 	buttonInitialText: string;
+	/**
+	 * activated Button text. if nothing should change, use the same term as in inactive button.
+	 */
 	buttonActiveText: string;
 };
 
