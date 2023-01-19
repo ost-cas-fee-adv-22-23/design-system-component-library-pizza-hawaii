@@ -26,6 +26,7 @@ spacing = {
 
 module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx,json}'],
+
 	theme: {
 		fontFamily: {
 			sans: ['Poppins', 'sans-serif'],
@@ -71,7 +72,7 @@ module.exports = {
 				...aspectRatio,
 			},
 			leading: {
-				'normal': '1.4',
+				normal: '1.4',
 			},
 		},
 	},
