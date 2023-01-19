@@ -25,7 +25,7 @@ Form.args = {
 			<FormPassword label="Form Password" />
 			<FormSelect
 				label="Form Select"
-				value="val2"
+				defaultValue="val2"
 				options={[
 					{ value: 'val1', label: 'Value 1' },
 					{ value: 'val2', label: 'Value 2' },

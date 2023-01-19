@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, InputHTMLAttributes, FormEventHandler, useState } from 'react';
+import React, { FC, InputHTMLAttributes, ChangeEvent, useState } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem/index';
 import { Icon } from '../../../Atoms/Icon/index';
 
@@ -16,6 +16,7 @@ type TFormPassword = {
 	id?: string;
 	hideLabel?: boolean;
 	showPasswordButtonLabels?: [string, string];
+	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 type TFormPasswordType = TFormPassword & InputHTMLAttributes<HTMLInputElement>;

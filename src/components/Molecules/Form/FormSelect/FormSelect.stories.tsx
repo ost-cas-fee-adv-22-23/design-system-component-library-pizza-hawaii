@@ -24,7 +24,6 @@ const exampleOptions = [
 		value: '',
 		label: 'Bitte wählen',
 		disabled: true,
-		selected: true,
 	},
 	{
 		value: '1',
@@ -43,12 +42,14 @@ const exampleOptions = [
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 export const FormSelect = Template.bind({});
 FormSelect.args = {
+	defaultValue: '2',
 	label: 'Form Select',
 	options: exampleOptions,
 };
 
 export const FormSelectError = Template.bind({});
 FormSelectError.args = {
+	defaultValue: '',
 	label: 'Form Select and Error',
 	options: exampleOptions,
 	errorMessage: 'Oh no, an error occurred',
