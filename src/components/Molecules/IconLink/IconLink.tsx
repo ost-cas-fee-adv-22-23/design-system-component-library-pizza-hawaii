@@ -58,7 +58,6 @@ export const IconLink: FC<TIconLinkProps> = ({
 		IconLinkSizeMap[size],
 		IconLinkColorMap[colorScheme],
 		'group',
-		'hover: cursor-pointer',
 		'transition-all duration-300',
 	];
 

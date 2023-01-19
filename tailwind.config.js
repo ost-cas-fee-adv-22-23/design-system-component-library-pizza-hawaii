@@ -76,5 +76,14 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		function ({ addVariant, e }) {
+			addVariant('containing-svg', '& svg');
+			addVariant('containing-svg-path', '& svg path');
+			addVariant('containing-svg-path-1', '& svg path:nth-child(1)');
+			addVariant('containing-svg-path-2', '& svg path:nth-child(2)');
+		},
+
+
+	],
 };
