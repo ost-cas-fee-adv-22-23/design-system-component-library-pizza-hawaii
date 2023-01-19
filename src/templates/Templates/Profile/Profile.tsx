@@ -11,8 +11,9 @@ import { UserName } from '../../../components/Molecules/UserName';
 import { TimeStamp } from '../../../components/Atoms/TimeStamp';
 import { IconLink } from '../../../components/Molecules/IconLink';
 
-import { ContentCard } from '../../Snippets/ContentCard/ContentCard';
 import { Header } from '../../Snippets/Header/Header';
+import { ProfileHeader } from '../../Snippets/ProfileHeader';
+import { ContentCard } from '../../Snippets/ContentCard';
 
 import { Post as PostType } from '../../../types/Post';
 import { User as UserType } from '../../../types/User';
@@ -38,24 +39,13 @@ export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 
 			<main className="px-content">
 				<section className="mx-auto w-full max-w-content">
-					<div className="relative mb-6">
-						<Image src={user.posterImage} alt={user.userName} preset="header" />
-						<div className="absolute right-8 bottom-0 translate-y-1/2">
-							<UserProfile
-								userName={user.userName}
-								avatar={user.avatar}
-								size="XL"
-								border={true}
-								href="/"
-								buttonLabel="Profil bearbeiten"
-							/>
-						</div>
-					</div>
+					<ProfileHeader user={user} />
+
 					<div className="mb-2 text-slate-900 pr-48">
 						<Headline level={3}>{user.fullName}</Headline>
 					</div>
 					<span className="flex flex-row align-baseline gap-3 mb-3">
-						<UserName href={`/user/${user.userName}`}>{user.userName}</UserName>
+						<UserName href={user.profileLink}>{user.userName}</UserName>
 
 						<IconLink as="span" icon="location" colorScheme="slate" size="S">
 							{user.city}

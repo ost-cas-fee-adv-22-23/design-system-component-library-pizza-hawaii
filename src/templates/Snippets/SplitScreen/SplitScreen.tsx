@@ -1,11 +1,11 @@
 import React, { FC, ReactNode } from 'react';
-import { Headline } from '../../Atoms/Headline/Headline';
+import { Headline } from '../../../components/Atoms/Headline/Headline';
 
-type BaseProps = {
+type TSplitScreen = {
 	children: ReactNode;
 };
 
-export const SplitScreen: FC<BaseProps> = ({ children }) => {
+export const SplitScreen: FC<TSplitScreen> = ({ children }) => {
 	return (
 		<div className="SplitScreen grid grid-rows-1 grid-cols-2 md:grid-cols-1 w-screen min-h-screen">
 			<header className="column-start-1 column-span-1 row-start-1 row-span-1 flex items-center justify-center bg-gradient-to-tl from-violet-600 to-pink-500">

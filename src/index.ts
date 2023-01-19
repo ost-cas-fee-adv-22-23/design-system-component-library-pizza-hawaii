@@ -20,7 +20,5 @@ export * from './components/Molecules/Switch';
 export * from './components/Molecules/UserName';
 export * from './components/Molecules/UserProfile';
 export * from './components/Organisms/Modal';
-export * from './components/Organisms/SplitScreen';
-export * from './components/Organisms/UserCard';
 export * from './components/Organisms/UserContentCard';
 export * from './utils';

@@ -18,6 +18,6 @@ export * from './Molecules/Switch';
 export * from './Molecules/UserName';
 export * from './Molecules/UserProfile';
 export * from './Organisms/Modal';
-export * from './Organisms/SplitScreen';
-export * from './Organisms/UserCard';
+export * from '../templates/Snippets/SplitScreen/index';
+export * from '../templates/Snippets/UserCard/index';
 export * from './Organisms/UserContentCard';

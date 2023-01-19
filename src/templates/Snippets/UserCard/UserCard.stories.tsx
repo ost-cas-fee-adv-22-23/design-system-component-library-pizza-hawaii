@@ -1,17 +1,17 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { SplitScreen as Component } from './SplitScreen';
+import { UserCard as Component } from './UserCard';
+import { Current } from '../../../mocks/User';
 
 export default {
-	title: 'Components/Organisms',
+	title: 'Examples/Snippets',
 	component: Component,
-	parameters: {},
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
-export const SplitScreen = Template.bind({});
 
-SplitScreen.args = {
-	children: `SplitScreen Content`,
+export const UserCard = Template.bind({});
+UserCard.args = {
+	user: Current,
 };

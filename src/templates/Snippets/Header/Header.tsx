@@ -12,11 +12,11 @@ import { Modal } from '../../../components/Organisms/Modal/Modal';
 
 import { User } from '../../../types/User';
 
-type BaseProps = {
+type THeader = {
 	user: User;
 };
 
-export const Header: FC<BaseProps> = ({ user }) => {
+export const Header: FC<THeader> = ({ user }) => {
 	const [state, setState] = useState({
 		showSettingsModal: false,
 		user: user,
@@ -89,7 +89,7 @@ export const Header: FC<BaseProps> = ({ user }) => {
 					</a>
 					<nav className="">
 						<Navi>
-							<NaviButton as="a" icon="" href={`/user/${user.userName}`} title="My Mumble Profile">
+							<NaviButton as="a" icon="" href={user.profileLink} title="My Mumble Profile">
 								<UserProfile
 									userName={user.userName}
 									avatar={user.avatar}

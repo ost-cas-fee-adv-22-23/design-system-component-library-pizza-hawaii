@@ -11,7 +11,7 @@ import { UserContentCard, TUserContentCard } from '../../../components/Organisms
 
 import { User } from '../../../types/User';
 
-type TContentInputCard = {
+type TContentInput = {
 	variant: 'newPost' | 'answerPost';
 	headline: string;
 	author: User;
@@ -25,7 +25,7 @@ type TContentCardvariantMap = {
 	avatarVariant: TUserContentCard['avatarVariant'];
 };
 
-const ContentInputCardVariantMap: Record<TContentInputCard['variant'], TContentCardvariantMap> = {
+const ContentInputCardVariantMap: Record<TContentInput['variant'], TContentCardvariantMap> = {
 	newPost: {
 		headlineSize: 'XL',
 		textSize: 'L',
@@ -40,7 +40,7 @@ const ContentInputCardVariantMap: Record<TContentInputCard['variant'], TContentC
 	},
 };
 
-export const ContentInput: FC<TContentInputCard> = (props) => {
+export const ContentInput: FC<TContentInput> = (props) => {
 	const { variant, placeHolderText, author } = props;
 
 	const setting = ContentInputCardVariantMap[variant] || ContentInputCardVariantMap.newPost;
