@@ -89,26 +89,22 @@ export const Modal: FC<BaseProps> = ({
 		<>
 			{isVisible ? (
 				<>
-					<dialog
-						className={ModalBaseStyle.join(' ')}
-						aria-labelledby={`${id}-title`}
-						aria-describedby={`${id}-description`}
-						aria-modal="true"
-					>
+					<dialog className={ModalBaseStyle.join(' ')} aria-labelledby={`${id}-title`} aria-modal="true">
 						<div className={ModalBodyStyle.join(' ')} ref={modalRef}>
 							<div className={ModalHeaderStyle.join(' ')}>
 								<Headline level={3} as="h2" id={`${id}-title`}>
 									{title}
 								</Headline>
-								<button className="inline-flex items-center p-4 -m-4 transition hover:rotate-90 -m-4" onClick={onClose}>
+								<button
+									className="inline-flex items-center p-4 -m-4 transition hover:rotate-90"
+									onClick={onClose}
+								>
 									<Icon name="cancel" />
 									<span className="sr-only">Close Modal</span>
 								</button>
 							</div>
 
-							<div id={`${id}-description`} className="relative p-8 flex-auto overflow-y-auto">
-								{children}
-							</div>
+							<div className="relative p-8 flex-auto overflow-y-auto">{children}</div>
 						</div>
 					</dialog>
 					<div className={ModalOverlayStyle.join(' ')}></div>
