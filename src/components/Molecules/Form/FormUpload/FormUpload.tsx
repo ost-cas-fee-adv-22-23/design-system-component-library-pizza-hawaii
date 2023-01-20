@@ -41,7 +41,7 @@ export const FormUpload: FC<FormUploadType> = ({
 	label,
 	title = 'Datei hierhin ziehen ...',
 	buttonTitle = '... oder Datei auswählen',
-	hint,
+	hint = 'JPEG oder PNG, maximal 50 MB',
 	errorMessage,
 	id = uid('FormUpload'),
 	hideLabel,
