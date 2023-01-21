@@ -44,7 +44,7 @@ export const HeadlineSizeMap: Record<number, string> = {
 };
 
 /**
- * Typography component for Headlines
+ * Typography for Headlines Component
  * @param {number} level Visual headline level (1-4)
  * @param {THeadlineTag} as HTML tag to render
  * @param {ReactNode} children Child Nodes
