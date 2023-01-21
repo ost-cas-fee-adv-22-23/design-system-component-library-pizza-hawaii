@@ -1,14 +1,29 @@
 import React, { FC, ReactNode, Children } from 'react';
+/*
+ * Settings
+ */
+
+export const possibleGridTags = ['div', 'ul', 'ol'] as const;
+export const possibleGridGapTags = ['S', 'M', 'L', 'XL'] as const;
+export const possibleGridVariantStyles = ['col', 'row'] as const;
+export const possibleGridwrapBelowScreenStyles = ['sm', 'md', 'lg'] as const;
+export const possibleGridMarginBelowStyles = ['XXS', 'XS', 'S', 'M', 'L'] as const;
 
 /*
  * Type
  */
 
+type TGridTag = typeof possibleGridTags[number];
+type TGridGapTag = typeof possibleGridGapTags[number];
+type TGridVariantStyle = typeof possibleGridVariantStyles[number];
+type TGridWrapBelowScreenStyles = typeof possibleGridwrapBelowScreenStyles[number];
+type TGridMarginBelowStyles = typeof possibleGridMarginBelowStyles[number];
+
 export type TGrid = {
 	/**
 	 * specify the html markup of your grid: 'div', 'ul','ol'
 	 */
-	as?: 'div' | 'ul' | 'ol';
+	as?: TGridTag;
 	/**
 	 * React Children nodes content of your grid
 	 */
@@ -16,23 +31,23 @@ export type TGrid = {
 	/**
 	 * variants of grid direction: row or col
 	 */
-	variant: keyof typeof GridVariantStyleMap;
+	variant: TGridVariantStyle;
 	/**
-	 * variants of grid gap: 'S', 'M', 'L', 'XL'
+	 * variants of grid gap (distance of differ)
 	 */
-	gap?: keyof typeof GridGapStyleMap;
+	gap?: TGridGapTag;
 	/**
-	 * optional: center the grid: boolean
+	 * optional: centers the Grid Component: boolean
 	 */
 	centerd?: boolean;
 	/**
 	 * optional: a wrap below screen: choose the size of that wrapper: 'sm', 'md', 'lg'
 	 */
-	wrapBelowScreen?: 'sm' | 'md' | 'lg';
+	wrapBelowScreen?: TGridWrapBelowScreenStyles;
 	/**
 	 * optional: a margin below the grid can be added: choose the size of the margin-below: 'XXS','XS','S','M','L'
 	 */
-	marginBelow?: keyof typeof GridMarginBelowStyleMap;
+	marginBelow?: TGridMarginBelowStyles;
 };
 
 /*
@@ -66,6 +81,17 @@ export const GridWrapBelowScreenStyleMap: Record<string, string> = {
 	md: 'md:flex-wrap',
 	lg: 'md:flex-wrap',
 };
+
+/**
+ * Typography for Grid Component
+ * @param { TGridTag } as HTML tag to render
+ * @param { ReactNode } children Child nodes
+ * @param { col row } Variants of Grid direction: col or row
+ * @param { GridGapStyleMap } gap distance between the grid elements
+ * @param { centerd } optional: if you like the grid centered of the parent component
+ * @param { wrapBelowScreen } optional: a wrap below screen: choose the size of that wrapper: 'sm', 'md', 'lg'
+ * @param { marginBelow } optional: optional: a margin below the grid can be added: choose the size of the margin-below: 'XXS','XS','S','M','L'
+ */
 
 export const Grid: FC<TGrid> = ({
 	as: Tag = 'div',
