@@ -3,10 +3,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ColorSchemeActiveButtonMap, ActiveButton as Component } from './ActiveButton';
 
 export default {
-	/* ActiveButton👇
-	 * The Usecase of this Button is to have one-clicked activate something Functionality
-	 *
-	 */
 	title: 'Components/Molecules/ActiveButton',
 	component: Component,
 	argTypes: {
@@ -15,8 +11,6 @@ export default {
 			control: { type: 'select' },
 			description: 'The usecase of this Button is to have one-clicked activate something functionality',
 		},
-		alt: { control: 'text' },
-		src: { control: 'text' },
 	},
 } as ComponentMeta<typeof Component>;
 
