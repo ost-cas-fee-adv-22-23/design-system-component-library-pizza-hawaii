@@ -4,24 +4,47 @@ import { Icon, TIconName } from '../../Atoms/Icon';
 import { Label } from '../../Atoms/Label';
 
 /*
+ * Settings
+ */
+
+export const possibleButtonTags = ['button', 'a', 'span'] as const;
+export const possibleButtonSizes = ['S', 'M', 'L'] as const;
+export const possibleButtonColorschemes = ['slate', 'violet', 'gradient'] as const;
+
+/*
  * Type
  */
 
-export type TButtonSize = keyof typeof ButtonSizeMap;
-export type TButtonColor = keyof typeof ButtonColorMap;
+export type TButtonSize = typeof possibleButtonSizes;
+export type TButtonColor = typeof possibleButtonColorschemes[number];
+export type TButtonTags = typeof possibleButtonTags[number];
 
 export type TButton = {
+	/**
+	 * render as: HTML Tag for the Button: 'button', 'a' or 'span'
+	 */
+	as?: TButtonTags;
+	/**
+	 * children: React Node (a.k.a. Button Text goes here).
+	 */
 	children: ReactNode;
-	as?: 'button' | 'a' | 'span';
+	/**
+	 * choose between 3 sizes: 'S', 'M', 'L'
+	 */
 	size?: keyof typeof ButtonSizeMap;
-	colorScheme: keyof typeof ButtonColorMap;
+	/**
+	 * choose between 3 colorSchemes: 'slate', 'violet', 'gradient'
+	 */
+	colorScheme: TButtonColor;
+	/**
+	 * choose a icon by Name from the IconLibrary
+	 */
 	icon?: TIconName;
 };
 
 type THTMLButtonProps = TButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
 type TLinkButtonProps = TButton & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
 type TSpanButtonProps = TButton & { as: 'span' } & HTMLAttributes<HTMLSpanElement>;
-
 type TButtonProps = THTMLButtonProps | TLinkButtonProps | TSpanButtonProps;
 
 /*
@@ -61,6 +84,20 @@ export const ButtonColorMap: Record<string, string> = {
 		'active:bg-pos-100 active:bg-size-300 active:outline-violet-200 active:outline-4',
 	].join(' '),
 };
+
+/**
+ * Typography for Button Component
+ * @param { size } sizes Visual size of button (3 sizes)
+ * @param { as } as HTML tag to render for button
+ * @param { colorScheme } ColorSchema of the Button
+ * @param { ReactNode } children Child Nodes
+ * @param { icon } icon name of IconLibrary
+ * @example
+ * return (
+ *   <Button icon="eye" size="M">ButtonText</Button>
+ * )
+ * /
+
 
 /*
  * Functional Component
