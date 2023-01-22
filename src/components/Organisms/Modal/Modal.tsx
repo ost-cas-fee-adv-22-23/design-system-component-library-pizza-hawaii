@@ -11,10 +11,25 @@ import uid from '../../../utils/uid';
  */
 
 type TModal = {
+	/**
+	 * title of modal window
+	 */
 	title: string;
+	/**
+	 * React node
+	 */
 	children: ReactNode;
+	/**
+	 * isVisible boolean to use visibility of modal component
+	 */
 	isVisible: boolean;
+	/**
+	 * optional us an id (string)
+	 */
 	id?: string;
+	/**
+	 * on Close method: empty function as standard for closing the modal window. change to something else if you like.
+	 */
 	onClose: () => void;
 };
 
