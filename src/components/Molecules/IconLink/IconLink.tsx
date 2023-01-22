@@ -3,17 +3,40 @@ import React, { FC, ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes, HTMLA
 import { Icon, TIconSize, TIconName } from '../../Atoms/Icon/Icon';
 
 /*
+ * Settings
+ */
+
+export const possibleIconLinkTags = ['a', 'button', 'span'] as const;
+
+/*
  * Type
  */
 
 export type TIconLinkSize = keyof typeof IconLinkSizeMap;
 export type TIconLinkColor = keyof typeof IconLinkColorMap;
+export type TIconLinkTag = typeof possibleIconLinkTags[number];
 
 type TIconLink = {
+	/**
+	 * chilren: React Node (a.k.a: Link Text)
+	 */
 	children: ReactNode;
-	as: 'a' | 'button' | 'span';
+	/**
+	 * choose between three HTML elements for the rendered Link
+	 * 'a', 'button', 'span'
+	 */
+	as: TIconLinkTag;
+	/**
+	 * choose between three sizes: 'S', 'M', 'L'
+	 */
 	size?: TIconLinkSize;
+	/**
+	 * choose between thee colorSchemes: 'slate', 'violet', 'pink'
+	 */
 	colorScheme: TIconLinkColor;
+	/**
+	 * choose an iconName string from our IconLib
+	 */
 	icon: TIconName;
 };
 
@@ -40,6 +63,20 @@ export const IconLinkColorMap: Record<string, string> = {
 	violet: 'text-violet-600 hover:text-violet-900 hover:bg-violet-50 ',
 	pink: ' text-pink-400 hover:text-pink-600 hover:bg-pink-50',
 };
+
+/**
+ * Typography for Button Component
+ * @param { size } sizes 3 levels of size
+ * @param { as } as HTML tag to render for IconLink
+ * @param { colorScheme } ColorSchema of the IconLink
+ * @param { ReactNode } children Child Nodes
+ * @param { icon } icon name of IconLibrary
+ * @example
+ * return (
+ *   <IconLink colorScheme="violet" icon="settings" size="M" />
+ * )
+ * /
+
 
 /*
  * State

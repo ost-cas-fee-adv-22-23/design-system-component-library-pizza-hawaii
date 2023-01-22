@@ -1,5 +1,11 @@
 import React, { FC, ReactNode, ButtonHTMLAttributes } from 'react';
 import { Icon, TIconName } from '../../Atoms/Icon';
+/*
+ * Image Overlay
+ * if a image has interaction functionality (like open in fullscreen, in a lightbox)
+ * you can specify an icon for the overlay here.
+ * also specify a preset for Dimension of the image
+ */
 
 /*
  * Type
@@ -7,7 +13,7 @@ import { Icon, TIconName } from '../../Atoms/Icon';
 
 export type TImageOverlay = {
 	/**
-	 * children: React component image
+	 * children: React component -> provide an image with the image component
 	 */
 	children: ReactNode;
 	/**
@@ -21,7 +27,13 @@ export type TImageOverlay = {
 };
 
 export type TImageOverlayPreset = {
+	/**
+	 * provide an icon Name string from the IconLibray
+	 */
 	icon: TIconName;
+	/**
+	 * provide an animation name string for the icon animation. example: 'enlarge'
+	 */
 	animation: string;
 };
 
@@ -57,6 +69,25 @@ const ImageOverlayTypeMap = {
 		].join(' '),
 	},
 };
+
+/**
+ * Typography for ImageOverlay Component
+ * @param { size } sizes Visual size of button (3 sizes)
+ * @param { buttonLabel } label for the the Button and screenreader
+ * @param { ReactNode } children means here <Image comonent>
+ * @param { icon } icon name of IconLibrary
+ * @param { animation } string for animation of icon. 
+ * @param { onClick } method for onclick handler to be implemented by yourself
+ * @example
+ * return ( 
+ * <ImageOverlay  icon="repost" onClick={() => {}} preset="edit" >
+  	<Image
+    	preset="post"
+    	src="//picsum.photos/id/28/1600/1587/"
+  	/>
+	</ImageOverlay>
+ * ) 
+*/
 
 export const ImageOverlay: FC<TImageOverlayProps> = ({ children, buttonLabel, ...props }) => {
 	const { preset, ...rest } = props;

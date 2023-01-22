@@ -5,10 +5,6 @@ import { IconNames } from '../../Atoms/Icon/IconLib';
 import { IconLink as Component, IconLinkSizeMap, IconLinkColorMap } from './IconLink';
 
 export default {
-	/* 👇 IconLink component.
-	 * select an icon by name
-	 * size options are 'S / M / L '
-	 */
 	title: 'Components/Molecules/IconLink',
 	component: Component,
 	argTypes: {
@@ -17,11 +13,11 @@ export default {
 			control: { type: 'select' },
 		},
 		size: {
+			control: { type: 'radio' },
 			options: Object.keys(IconLinkSizeMap),
-			control: { type: 'select' },
 		},
 		colorScheme: {
-			control: { type: 'select' },
+			control: { type: 'radio' },
 			options: Object.keys(IconLinkColorMap),
 		},
 	},
