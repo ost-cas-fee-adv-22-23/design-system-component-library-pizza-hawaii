@@ -1,6 +1,9 @@
 import 'tailwindcss/tailwind.css';
 import '../src/styles/main.css';
-import "@fontsource/poppins"
+
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
 
 export const parameters = {
 	actions: { argTypesRegex: '^on[A-Z].*' },
