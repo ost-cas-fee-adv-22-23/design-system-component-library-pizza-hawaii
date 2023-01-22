@@ -11,8 +11,8 @@ export const possibleCardSizes = ['S', 'M'] as const;
  * Type
  */
 
-export type TCardTag = typeof possibleCardTags[number];
-export type TCardSize = typeof possibleCardSizes[number];
+export type TCardTag = (typeof possibleCardTags)[number];
+export type TCardSize = (typeof possibleCardSizes)[number];
 
 type TCard = {
 	/**

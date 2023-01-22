@@ -10,7 +10,7 @@ export const possibleHeadlineTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'span'] 
  * Type
  */
 
-type THeadlineTag = typeof possibleHeadlineTags[number];
+type THeadlineTag = (typeof possibleHeadlineTags)[number];
 
 export type THeadline = {
 	/**

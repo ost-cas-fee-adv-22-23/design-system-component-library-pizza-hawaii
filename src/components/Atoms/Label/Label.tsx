@@ -9,8 +9,8 @@ export const possibleLabelSizes = ['S', 'M', 'L', 'XL'] as const;
  * Type
  */
 
-type TLabelTags = typeof possibleLabelTags[number];
-type TLabelsSizes = typeof possibleLabelSizes[number];
+type TLabelTags = (typeof possibleLabelTags)[number];
+type TLabelsSizes = (typeof possibleLabelSizes)[number];
 export type TLabel = {
 	/**
 	 * HTML tag to render a label

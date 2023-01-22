@@ -12,7 +12,7 @@ export const possibleNaviButtonTags = ['button', 'a'] as const;
  * Type
  */
 
-export type TNaviButtonTag = typeof possibleNaviButtonTags[number];
+export type TNaviButtonTag = (typeof possibleNaviButtonTags)[number];
 
 export type TNaviButton = {
 	/**

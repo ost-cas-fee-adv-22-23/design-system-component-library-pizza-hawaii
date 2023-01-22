@@ -8,7 +8,7 @@ export const possibleFormTextareaSizes = ['M', 'L'] as const;
  * Type
  */
 
-export type TFormTextareaSize = typeof possibleFormTextareaSizes[number];
+export type TFormTextareaSize = (typeof possibleFormTextareaSizes)[number];
 
 export type TFormTextarea = {
 	/**

@@ -16,8 +16,8 @@ export const possibleButtonColorschemes = ['slate', 'violet', 'gradient'] as con
  */
 
 export type TButtonSize = typeof possibleButtonSizes;
-export type TButtonColor = typeof possibleButtonColorschemes[number];
-export type TButtonTags = typeof possibleButtonTags[number];
+export type TButtonColor = (typeof possibleButtonColorschemes)[number];
+export type TButtonTags = (typeof possibleButtonTags)[number];
 
 export type TButton = {
 	/**

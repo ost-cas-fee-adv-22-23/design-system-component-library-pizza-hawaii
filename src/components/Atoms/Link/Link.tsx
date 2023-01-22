@@ -31,7 +31,7 @@ export type TLink = {
 type THTMLLinkProps = TLink & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
 type TSpanLinkProps = TLink & { as: 'span' } & HTMLAttributes<HTMLSpanElement>;
 type TLinkProps = THTMLLinkProps | TSpanLinkProps;
-type TLinkTag = typeof possibleLinkTags[number];
+type TLinkTag = (typeof possibleLinkTags)[number];
 
 /*
  * Style

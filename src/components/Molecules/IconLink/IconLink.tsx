@@ -14,7 +14,7 @@ export const possibleIconLinkTags = ['a', 'button', 'span'] as const;
 
 export type TIconLinkSize = keyof typeof IconLinkSizeMap;
 export type TIconLinkColor = keyof typeof IconLinkColorMap;
-export type TIconLinkTag = typeof possibleIconLinkTags[number];
+export type TIconLinkTag = (typeof possibleIconLinkTags)[number];
 
 type TIconLink = {
 	/**

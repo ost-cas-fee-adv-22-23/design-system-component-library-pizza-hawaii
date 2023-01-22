@@ -13,11 +13,11 @@ export const possibleGridMarginBelowStyles = ['XXS', 'XS', 'S', 'M', 'L'] as con
  * Type
  */
 
-type TGridTag = typeof possibleGridTags[number];
-type TGridGapTag = typeof possibleGridGapTags[number];
-type TGridVariantStyle = typeof possibleGridVariantStyles[number];
-type TGridWrapBelowScreenStyles = typeof possibleGridwrapBelowScreenStyles[number];
-type TGridMarginBelowStyles = typeof possibleGridMarginBelowStyles[number];
+type TGridTag = (typeof possibleGridTags)[number];
+type TGridGapTag = (typeof possibleGridGapTags)[number];
+type TGridVariantStyle = (typeof possibleGridVariantStyles)[number];
+type TGridWrapBelowScreenStyles = (typeof possibleGridwrapBelowScreenStyles)[number];
+type TGridMarginBelowStyles = (typeof possibleGridMarginBelowStyles)[number];
 
 export type TGrid = {
 	/**

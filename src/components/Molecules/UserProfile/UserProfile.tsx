@@ -12,7 +12,7 @@ export const possibleUserProfileSize = ['S', 'M', 'L', 'XL'] as const;
  * Type
  */
 
-export type TUserProfileSize = typeof possibleUserProfileSize[number];
+export type TUserProfileSize = (typeof possibleUserProfileSize)[number];
 
 export type TUserProfileStyle = {
 	/**

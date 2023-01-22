@@ -14,8 +14,8 @@ export const possibleRoundButtonColorschemes = ['slate', 'violent', 'gradient'] 
  * Type
  */
 
-export type TRoundButtonColor = typeof possibleRoundButtonColorschemes[number];
-export type TRoundButtonTags = typeof possibleRoundButtonTags[number];
+export type TRoundButtonColor = (typeof possibleRoundButtonColorschemes)[number];
+export type TRoundButtonTags = (typeof possibleRoundButtonTags)[number];
 
 type TButton = {
 	/**

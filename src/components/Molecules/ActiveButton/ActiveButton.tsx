@@ -13,7 +13,7 @@ export const possibleActiveButtonSchemas = ['slate', 'violet', 'pink'] as const;
  * Type
  */
 
-type TActiveButtonColorSchema = typeof possibleActiveButtonSchemas[number];
+type TActiveButtonColorSchema = (typeof possibleActiveButtonSchemas)[number];
 
 export type TActiveButton = {
 	/**

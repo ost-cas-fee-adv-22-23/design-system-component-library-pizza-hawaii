@@ -12,7 +12,7 @@ export const possibleImagePresets = ['header', 'post'] as const;
  * Type
  */
 
-type TImagePresets = typeof possibleImagePresets[number];
+type TImagePresets = (typeof possibleImagePresets)[number];
 
 export type TImage = ImgHTMLAttributes<HTMLImageElement> & {
 	/**

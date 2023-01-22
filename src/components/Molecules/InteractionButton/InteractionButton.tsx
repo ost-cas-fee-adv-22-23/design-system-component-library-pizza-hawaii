@@ -12,7 +12,7 @@ export const possibleInteractionButtonColors = ['slate', 'pink', 'violet'] as co
  * Type
  */
 
-export type TInteractionButtonColors = typeof possibleInteractionButtonColors[number];
+export type TInteractionButtonColors = (typeof possibleInteractionButtonColors)[number];
 
 export type Props = {
 	/**
