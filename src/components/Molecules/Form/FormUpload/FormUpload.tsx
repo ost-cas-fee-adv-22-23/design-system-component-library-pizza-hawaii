@@ -12,13 +12,34 @@ import uid from '../../../../utils/uid';
  * Type
  */
 
-type FormUpload = {
+export type FormUpload = {
+	/**
+	 * label: add a labeltext
+	 */
 	label: string;
+	/**
+	 * optional: stringtext for providing a context-hint to the user (example: 'max size: 10 MB')
+	 */
 	hint?: string;
+	/**
+	 * string for uploadButton text
+	 */
 	buttonTitle?: string;
+	/**
+	 * provide a error message text as user feedback if opload fails.
+	 */
 	errorMessage?: string;
+	/**
+	 * id to identify the form
+	 */
 	id?: string;
+	/**
+	 * boolean to hide the label
+	 */
 	hideLabel?: boolean;
+	/**
+	 * onChange method: empty function as standard. hook here in for your method happening onChange.
+	 */
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -26,6 +47,20 @@ type FormUploadType = FormUpload & InputHTMLAttributes<HTMLInputElement>;
 
 /*
  * Style
+ */
+
+/**
+ * Typography for Button Component
+ * @param { label } label text for upload form
+ * @param { errorMessage } string errorMessage text when form validation is not passed
+ * @param { id } id string for identifying the form
+ * @param { buttonTitle } text the upload button
+ * @param { hideLabel } hideLabel for hiding label visually
+ * @param { hint } text for hint user help
+ * @example
+ * return (
+ *  <FormUpload hint="JPEG or PNG" label="Form Upload" onChange={() => {}} />
+ * )
  */
 
 const fieldStyle: string[] = [
