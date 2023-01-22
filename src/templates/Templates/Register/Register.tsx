@@ -6,7 +6,7 @@ import { Link } from '../../../components/Atoms/Link';
 import { Button } from '../../../components/Molecules/Button';
 import { Form } from '../../../components/Molecules/Form';
 import { FormInput } from '../../../components/Molecules/Form/FormInput';
-import { SplitScreen } from '../../../components/Organisms/SplitScreen';
+import { SplitScreen } from '../../Snippets/SplitScreen/index';
 
 type RegisterType = object;
 

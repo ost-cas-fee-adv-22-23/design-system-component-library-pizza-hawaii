@@ -12,16 +12,69 @@ type TFormSelectOption = {
 	value: string;
 };
 
-type TFormSelect = {
+export type TFormSelect = {
+	/**
+	 * label: add a label to the form input
+	 */
 	label: string;
+	/**
+	 * options: Array with the object for each select-options entry:
+	 * label: display value
+	 * value: submit value
+	 * disabled: not submittable option.
+	 */
 	options: TFormSelectOption[];
+	/**
+	 * provide an errorMessage if the user forget to choose an option.
+	 */
 	errorMessage?: string;
+	/**
+	 * id of this select form in a string.
+	 */
 	id?: string;
+	/**
+	 * optional: hide label boolean
+	 */
 	hideLabel?: boolean;
+	/**
+	 * onChange method: empty function as standard. hook here in for your method happening onChange.
+	 */
 	onChange?: (e: ChangeEvent<HTMLSelectElement>) => void;
 };
 
 type TFormSelectType = TFormSelect & SelectHTMLAttributes<HTMLSelectElement>;
+/*
+ * Styles
+ */
+
+/**
+ * Typography for Button Component
+ * @param { label } label text for form input field
+ * @param { errorMessage } string errorMessage text when form validation is not passed
+ * @param { id } id string for identifying the form input
+ * @param { hideLabel } hideLabel for hiding label visually
+ * @param { options } Array with an options object
+ * @example
+ * return (
+ *   <FormSelect defaultValue="2" label="Form Select" onChange={() => {}}
+				options={[
+					{
+						disabled: true,
+						label: 'Bitte wählen',
+						value: ''
+					},
+					{
+						label: 'Option 1',
+						value: '1'
+					},
+					{
+						label: 'Option 2',
+						value: '2'
+					}
+				]}
+		/>
+ * )
+ */
 
 export const FormSelect: FC<TFormSelectType> = ({
 	label,

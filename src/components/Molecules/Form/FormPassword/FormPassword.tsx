@@ -11,11 +11,31 @@ import uid from '../../../../utils/uid';
  */
 
 type TFormPassword = {
+	/**
+	 * label: add a label to the form input
+	 */
 	label: string;
+	/**
+	 * optional: (but recommended) add errorMessage text if the form input is not valid or could not be submitted
+	 */
 	errorMessage?: string;
+	/**
+	 * optional: id is a string to identify the form Input
+	 */
 	id?: string;
+	/**
+	 * optional: hide the label visually.
+	 */
 	hideLabel?: boolean;
+	/**
+	 * add two strings in this array here to guide the user that there is a password preview functionality.
+	 * first: 'show your pasword'
+	 * second: 'hide your password'
+	 */
 	showPasswordButtonLabels?: [string, string];
+	/**
+	 * onChange: add and customize here your function for password submitting
+	 */
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -42,7 +62,9 @@ export const FormPassword: FC<TFormPasswordType> = ({
 
 	const showPasswordButtonProps = {
 		title: showPassword ? showPasswordButtonLabels[1] : showPasswordButtonLabels[0],
-		className: `absolute right-4 top-1/2 -translate-y-1/2 flex ${errorMessage ? 'text-error-red ' : 'text-slate-600'}`,
+		className: `absolute right-4 top-1/2 -translate-y-1/2 inline-flex ${
+			errorMessage ? 'text-error-red ' : 'text-slate-600'
+		} p-4 -mx-4`,
 		onClick: onIconClick,
 	};
 

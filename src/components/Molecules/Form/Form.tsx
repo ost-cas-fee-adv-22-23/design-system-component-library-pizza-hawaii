@@ -7,6 +7,9 @@ import { GridBaseStyle, GridVariantStyleMap, GridMarginBelowStyleMap, GridGapSty
  */
 
 type TForm = {
+	/**
+	 * children: React node
+	 */
 	children: ReactNode;
 };
 

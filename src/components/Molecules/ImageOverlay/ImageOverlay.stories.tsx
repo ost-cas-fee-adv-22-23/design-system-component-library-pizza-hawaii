@@ -12,6 +12,8 @@ export default {
 		icon: {
 			options: IconNames,
 			control: { type: 'select' },
+			description:
+				'you can specify an icon for the overlay here. all icons are defined within the <icon /> component.',
 		},
 	},
 } as ComponentMeta<typeof Component>;
@@ -24,11 +26,11 @@ export const ZoomOverlay = Template.bind({});
 const img = <Image preset="post" src="//picsum.photos/id/28/1600/1587/" />;
 
 EditOverlay.args = {
-	icon: 'edit',
+	preset: 'edit',
 	children: img,
 };
 
 ZoomOverlay.args = {
-	icon: 'fullscreen',
+	preset: 'enlarge',
 	children: img,
 };

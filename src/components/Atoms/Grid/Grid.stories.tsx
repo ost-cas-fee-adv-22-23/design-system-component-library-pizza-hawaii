@@ -10,12 +10,14 @@ export default {
 			control: {
 				type: 'radio',
 				options: Object.keys(GridVariantStyleMap),
+				description: 'choose one your grid-direction: columns (vertical) or row (horizontal)',
 			},
 		},
 		gap: {
 			control: {
 				type: 'radio',
 				options: Object.keys(GridGapStyleMap),
+				description: 'choose one your grid-gap variant: S, M, L, XL',
 			},
 		},
 	},

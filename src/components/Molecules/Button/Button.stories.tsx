@@ -2,13 +2,17 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { IconNames } from '../../Atoms/Icon/IconLib';
-import { Button as Component, ButtonSizeMap, ButtonColorMap } from './Button';
+import { Button as Component, ButtonSizeMap, ButtonColorMap, possibleButtonTags } from './Button';
 
 export default {
 	title: 'Components/Molecules/Button',
 
 	component: Component,
 	argTypes: {
+		as: {
+			options: possibleButtonTags,
+			control: { type: 'radio' },
+		},
 		icon: {
 			options: IconNames,
 			control: { type: 'select' },

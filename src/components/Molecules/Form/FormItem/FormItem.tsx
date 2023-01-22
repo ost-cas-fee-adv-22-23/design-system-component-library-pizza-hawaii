@@ -5,11 +5,26 @@ import uid from '../../../../utils/uid';
  * Type
  */
 
-type TFormItem = {
+export type TFormItem = {
+	/**
+	 * label: add a label to the form input
+	 */
 	label: string;
+	/**
+	 * children: React nodes
+	 */
 	children: ReactNode;
+	/**
+	 * optional: (but recommended) add errorMessage text if the form input is not valid or could not be submitted
+	 */
 	errorMessage?: string;
+	/**
+	 * optional: id is a string to identify the form Input
+	 */
 	id?: string;
+	/**
+	 * optional: hide the label visually.
+	 */
 	hideLabel?: boolean;
 };
 

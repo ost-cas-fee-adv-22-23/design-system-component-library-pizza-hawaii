@@ -19,26 +19,20 @@ This package, developed by Felix and Jürgen, is a component library for a ficti
 
 
 ## Installation Guide for Using the Library
-Run npm install @smartive-education/pizza-hawaii to install the package from the npm registry.
-Import the necessary components and styles from the package in your application.
-Include the output.css file in your HTML file to apply the tailwind styles to your application.
-Make sure to have the peer dependencies installed (react and react-dom)
-Start building your application with the components and styles provided by the Pizza Hawaii library.
-Please note that this package requires at least Node v16.14 to be used.
-
-## Installation Guide for Using the Library
 
 ### 1. Github Token
-This package is published to GitHub Package Registry, which requires a GitHub token with the `read:packages` permissions to be set in your environment to be able to publish and install the package. You can create a new token by going to your GitHub settings and navigating to the "Developer Settings" section, then "Personal access tokens".
+This package is published to GitHub Package Registry, which requires a GitHub token with the `read:packages` permissions to be set in your environment to be able to publish and install the package. You can create a new token by going to your GitHub settings and navigating to the "Developer Settings" section, then "Personal access tokens". 
 
-You can then set the token as an environment variable with the name `NPM_TOKEN` or add it to your `.npmrc` file
+Github settings for Token: https://github.com/settings/tokens
+Read more about Personal access tokens: https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
 
 ```
 @smartive-education:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=<NPM_TOKEN>
 ```
-
-Please make sure to keep your token secure and not to share it with anyone.
+Tip: You can then set the token as an environment variable with the name `NPM_TOKEN` or add it to your `.npmrc` file
+**Please make sure to keep your token secure and not to share it with anyone.**
 
 Also you should use the `npm ci` command instead of `npm install` when installing the package in a production environment, to ensure that the exact versions of dependencies are installed, and avoid potential security vulnerabilities caused by using non-deterministic dependency trees.
 
@@ -65,15 +59,17 @@ If you would like to test it without include to your App. You can create with th
 4. Add CSS Imports for testing to `_app.tsx` file
 
 ---
-## Deadend-lazy- Developper? This Guide is for you:
-
-do step 1. and 2. and just install our testing Lib Repo with next-js already backed for you. 
-
+## Deadend-lazy- Developer? This Guide is for you:
+1. Create a folder for the test project and move into it.
+```
+mkdir myProjectFolder && cd $_
+```
+2. Clone example project and install packages
 ```
 git clone https://github.com/smartive-education/pizza-test
 npm install
 ```
-Add Github Token
+3. Create Github Token https://github.com/settings/tokens and add `.npmrc` file. 
 ```
 npm run dev
 ```

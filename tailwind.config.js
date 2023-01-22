@@ -26,6 +26,7 @@ spacing = {
 
 module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx,json}'],
+
 	theme: {
 		fontFamily: {
 			sans: ['Poppins', 'sans-serif'],
@@ -71,9 +72,18 @@ module.exports = {
 				...aspectRatio,
 			},
 			leading: {
-				'normal': '1.4',
+				normal: '1.4',
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		function ({ addVariant, e }) {
+			addVariant('containing-svg', '& svg');
+			addVariant('containing-svg-path', '& svg path');
+			addVariant('containing-svg-path-1', '& svg path:nth-child(1)');
+			addVariant('containing-svg-path-2', '& svg path:nth-child(2)');
+		},
+
+
+	],
 };

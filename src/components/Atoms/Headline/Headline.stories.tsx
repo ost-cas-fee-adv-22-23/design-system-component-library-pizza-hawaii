@@ -1,11 +1,20 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Headline as Component } from './Headline';
+import { Headline as Component, possibleHeadlineTags, HeadlineSizeMap } from './Headline';
 
 export default {
 	title: 'Components/Atoms/Headline',
 	component: Component,
-	argTypes: {},
+	argTypes: {
+		level: {
+			control: { type: 'select' },
+			options: Object.keys(HeadlineSizeMap),
+		},
+		as: {
+			control: { type: 'select' },
+			options: possibleHeadlineTags,
+		},
+	},
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;

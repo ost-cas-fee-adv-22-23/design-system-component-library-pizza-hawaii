@@ -77,7 +77,11 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 	return (
 		<UserContentCard
 			headline={headerSlotContent}
-			userProfile={post.author}
+			userProfile={{
+				avatar: post.author.avatar,
+				userName: post.author.userName,
+				href: post.author.profileLink,
+			}}
 			avatarVariant={setting.avatarVariant}
 			avatarSize={setting.avatarSize}
 		>
@@ -85,7 +89,7 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 
 			{post.image && (
 				<ImageOverlay
-					icon="fullscreen"
+					preset="enlarge"
 					buttonLabel="Open image in fullscreen"
 					onClick={function (): void {
 						throw new Error('Function not implemented.');

@@ -9,6 +9,7 @@ export default {
 	argTypes: {
 		paletteName: {
 			control: { type: 'select' },
+			description: 'choose one of of these colorPalette Names',
 		},
 	},
 } as ComponentMeta<typeof Component>;

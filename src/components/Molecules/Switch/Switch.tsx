@@ -7,11 +7,28 @@ import uid from '../../../utils/uid';
 
 export type TSwitchOption = InputHTMLAttributes<HTMLInputElement> & { label: string };
 
-type TSwitch = {
+export type TSwitch = {
+	/**
+	 * label text: provide here a meaningfull text for screenreaders
+	 */
 	label: string;
+	/**
+	 * options Array: provide all options for the current switch Component for every key with value
+	 * label: string,
+	 * value: string
+	 */
 	options: TSwitchOption[];
+	/**
+	 * value: current field is checked (active). use this for initial state.
+	 */
 	value: string;
+	/**
+	 * name of the component
+	 */
 	name: string;
+	/**
+	 * onChange method: empty function as standard. hook here in for your method happening onChange.
+	 */
 	onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
 

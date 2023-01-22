@@ -2,14 +2,46 @@ import React, { FC, ImgHTMLAttributes } from 'react';
 import ProjectSettings from '../../../utils/ProjectSettings.json';
 import { ImageService, ImageServiceResult } from './ImageService';
 
+/**
+ * Settings
+ */
+
+export const possibleImagePresets = ['header', 'post'] as const;
+
 /*
  * Type
  */
 
-type TImage = ImgHTMLAttributes<HTMLImageElement> & {
-	preset?: keyof typeof ProjectSettings.images;
+type TImagePresets = (typeof possibleImagePresets)[number];
+
+export type TImage = ImgHTMLAttributes<HTMLImageElement> & {
+	/**
+	 * provide an image source path
+	 */
+	src?: string;
+	/**
+	 * optional preset: mumble-presets are:
+	 * `post`: 'width: 680, aspect-ratio: 2.125: 1, rounded boarder'
+	 * or:
+	 * `header`: 'width 584, aspect-ratio: 16: 9, rounded boarder'
+	 */
+	preset?: TImagePresets;
+	/**
+	 * optional: caption text of an image: string
+	 */
 	caption?: string;
 };
+
+/**
+ * Styles
+ */
+
+/**
+ * Controls for Image Component
+ * @param { src } source for image file
+ * @param { preset } preset form mumble image Variants
+ * @param { caption } string for optional text caption of the image
+ */
 
 /*
  * Helpers

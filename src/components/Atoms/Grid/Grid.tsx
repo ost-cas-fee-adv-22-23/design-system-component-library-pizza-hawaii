@@ -1,17 +1,53 @@
 import React, { FC, ReactNode, Children } from 'react';
+/*
+ * Settings
+ */
+
+export const possibleGridTags = ['div', 'ul', 'ol'] as const;
+export const possibleGridGapTags = ['S', 'M', 'L', 'XL'] as const;
+export const possibleGridVariantStyles = ['col', 'row'] as const;
+export const possibleGridwrapBelowScreenStyles = ['sm', 'md', 'lg'] as const;
+export const possibleGridMarginBelowStyles = ['XXS', 'XS', 'S', 'M', 'L'] as const;
 
 /*
  * Type
  */
 
+type TGridTag = (typeof possibleGridTags)[number];
+type TGridGapTag = (typeof possibleGridGapTags)[number];
+type TGridVariantStyle = (typeof possibleGridVariantStyles)[number];
+type TGridWrapBelowScreenStyles = (typeof possibleGridwrapBelowScreenStyles)[number];
+type TGridMarginBelowStyles = (typeof possibleGridMarginBelowStyles)[number];
+
 export type TGrid = {
-	as?: 'div' | 'ul' | 'ol';
+	/**
+	 * specify the html markup of your grid: 'div', 'ul','ol'
+	 */
+	as?: TGridTag;
+	/**
+	 * React Children nodes content of your grid
+	 */
 	children: ReactNode;
-	variant: keyof typeof GridVariantStyleMap;
-	gap?: keyof typeof GridGapStyleMap;
-	centerd?: boolean;
-	wrapBelowScreen?: 'sm' | 'md' | 'lg';
-	marginBelow?: keyof typeof GridMarginBelowStyleMap;
+	/**
+	 * variants of grid direction: row or col
+	 */
+	variant: TGridVariantStyle;
+	/**
+	 * variants of grid gap (distance of differ)
+	 */
+	gap?: TGridGapTag;
+	/**
+	 * optional: centers the Grid Component: boolean
+	 */
+	centered?: boolean;
+	/**
+	 * optional: a wrap below screen: choose the size of that wrapper: 'sm', 'md', 'lg'
+	 */
+	wrapBelowScreen?: TGridWrapBelowScreenStyles;
+	/**
+	 * optional: a margin below the grid can be added: choose the size of the margin-below: 'XXS','XS','S','M','L'
+	 */
+	marginBelow?: TGridMarginBelowStyles;
 };
 
 /*
@@ -46,12 +82,23 @@ export const GridWrapBelowScreenStyleMap: Record<string, string> = {
 	lg: 'md:flex-wrap',
 };
 
+/**
+ * Typography for Grid Component
+ * @param { TGridTag } as HTML tag to render
+ * @param { ReactNode } children Child nodes
+ * @param { col row } Variants of Grid direction: col or row
+ * @param { GridGapStyleMap } gap distance between the grid elements
+ * @param { centered } optional: if you like the grid centered of the parent component
+ * @param { wrapBelowScreen } optional: a wrap below screen: choose the size of that wrapper: 'sm', 'md', 'lg'
+ * @param { marginBelow } optional: optional: a margin below the grid can be added: choose the size of the margin-below: 'XXS','XS','S','M','L'
+ */
+
 export const Grid: FC<TGrid> = ({
 	as: Tag = 'div',
 	children,
 	variant = 'col',
 	gap = 'M',
-	centerd,
+	centered,
 	marginBelow,
 	wrapBelowScreen,
 	...rest
@@ -62,7 +109,7 @@ export const Grid: FC<TGrid> = ({
 		gap && GridGapStyleMap[gap],
 		marginBelow && GridMarginBelowStyleMap[marginBelow],
 		wrapBelowScreen && GridWrapBelowScreenStyleMap[wrapBelowScreen],
-		centerd && 'items-center',
+		centered && 'items-center',
 	].join(' ');
 
 	const props = {
@@ -88,6 +135,7 @@ function wrappChildrensInListItems(children: ReactNode): ReactNode {
 		}
 
 		if (child && typeof child === 'object' && 'type' in child) {
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			const childType = (child as any).type;
 
 			if (childType === 'li') {

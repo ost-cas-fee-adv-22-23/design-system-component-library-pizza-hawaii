@@ -4,9 +4,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ColorSchemeMap, InteractionButton as Component } from './InteractionButton';
 
 export default {
-	/* 👇 Does this comment have any outcome ? we do not know now..
-	 *
-	 */
 	title: 'Components/Molecules/InteractionButton',
 	component: Component,
 	argTypes: {

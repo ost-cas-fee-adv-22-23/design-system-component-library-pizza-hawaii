@@ -1,18 +1,15 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-
 import { ColorSchemeActiveButtonMap, ActiveButton as Component } from './ActiveButton';
 
 export default {
-	/* 👇 Does this comment have any outcome ? we do not know now..
-	 *
-	 */
 	title: 'Components/Molecules/ActiveButton',
 	component: Component,
 	argTypes: {
 		colorScheme: {
 			options: Object.keys(ColorSchemeActiveButtonMap),
 			control: { type: 'select' },
+			description: 'The usecase of this Button is to have one-clicked activate something functionality',
 		},
 	},
 } as ComponentMeta<typeof Component>;

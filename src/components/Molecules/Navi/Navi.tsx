@@ -7,12 +7,15 @@ import { Grid } from '../../Atoms/Grid/Grid';
  */
 
 type TNavi = {
+	/**
+	 * Children: React Node: here `NaviButton` Component.
+	 */
 	children: ReactNode;
 };
 
 export const Navi: FC<TNavi> = ({ children }) => {
 	return (
-		<Grid as="ul" variant="row" gap="S" centerd={true}>
+		<Grid as="ul" variant="row" gap="S" centered={true}>
 			{children}
 		</Grid>
 	);

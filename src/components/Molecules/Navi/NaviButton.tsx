@@ -3,19 +3,43 @@ import { Icon } from '../../Atoms/Icon';
 import { Label } from '../../Atoms/Label';
 
 /*
+ * Settings
+ */
+
+export const possibleNaviButtonTags = ['button', 'a'] as const;
+
+/*
  * Type
  */
 
-type TNaviButton = {
-	as: 'button' | 'a';
+export type TNaviButtonTag = (typeof possibleNaviButtonTags)[number];
+
+export type TNaviButton = {
+	/**
+	 * Choose a HTML tag as Navigation Button:
+	 */
+	as: TNaviButtonTag;
+	/**
+	 * Icon name from the Icon library
+	 */
 	icon?: string;
+	/**
+	 * React Node children: Buttontext
+	 */
 	children: ReactNode;
 };
-
+/**
+ * If the button is rendered as button tag, use this one
+ */
 type HTMLButtonProps = TNaviButton &
 	HTMLAttributes<HTMLElement> & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
+/**
+ * LinkButtonProps: if the button is rendered as a tag, use this
+ */
 type LinkButtonProps = TNaviButton & HTMLAttributes<HTMLElement> & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
-
+/**
+ * generic: LinkButton or HTML Button props
+ */
 type NaviButtonProps = LinkButtonProps | HTMLButtonProps;
 
 /*
@@ -28,6 +52,7 @@ const style = [
 	'p-2 sm:p-1 rounded-lg',
 	'text-white ',
 	'bg-violet-600 hover:bg-violet-700',
+	'group',
 ];
 
 export const NaviButton: FC<NaviButtonProps> = ({ as: Tag = 'a', children, icon, ...props }) => {
