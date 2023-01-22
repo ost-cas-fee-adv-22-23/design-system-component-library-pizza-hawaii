@@ -1,3 +1,4 @@
+'use client';
 import React, { FC, ReactNode, Children } from 'react';
 import dompurify from 'dompurify';
 
