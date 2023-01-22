@@ -18,7 +18,7 @@ export type TImage = ImgHTMLAttributes<HTMLImageElement> & {
 	/**
 	 * provide an image source path
 	 */
-	src: string;
+	src?: string;
 	/**
 	 * optional preset: mumble-presets are:
 	 * `post`: 'width: 680, aspect-ratio: 2.125: 1, rounded boarder'
