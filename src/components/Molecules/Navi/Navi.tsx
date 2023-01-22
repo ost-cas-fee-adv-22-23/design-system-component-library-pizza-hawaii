@@ -8,7 +8,7 @@ import { Grid } from '../../Atoms/Grid/Grid';
 
 type TNavi = {
 	/**
-	 * Children: React Node: here <NaviButton> Component.
+	 * Children: React Node: here `NaviButton` Component.
 	 */
 	children: ReactNode;
 };

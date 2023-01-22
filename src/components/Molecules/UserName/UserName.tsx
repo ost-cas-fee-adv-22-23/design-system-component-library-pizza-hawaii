@@ -6,7 +6,13 @@ import { IconLink } from '../IconLink';
  */
 
 type TUserName = {
+	/**
+	 * children React Node: here the name of the user.
+	 */
 	children: ReactNode;
+	/**
+	 * link string url
+	 */
 	href: string;
 };
 
