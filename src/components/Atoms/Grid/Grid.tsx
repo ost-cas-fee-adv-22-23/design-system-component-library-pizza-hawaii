@@ -39,7 +39,7 @@ export type TGrid = {
 	/**
 	 * optional: centers the Grid Component: boolean
 	 */
-	centerd?: boolean;
+	centered?: boolean;
 	/**
 	 * optional: a wrap below screen: choose the size of that wrapper: 'sm', 'md', 'lg'
 	 */
@@ -88,7 +88,7 @@ export const GridWrapBelowScreenStyleMap: Record<string, string> = {
  * @param { ReactNode } children Child nodes
  * @param { col row } Variants of Grid direction: col or row
  * @param { GridGapStyleMap } gap distance between the grid elements
- * @param { centerd } optional: if you like the grid centered of the parent component
+ * @param { centered } optional: if you like the grid centered of the parent component
  * @param { wrapBelowScreen } optional: a wrap below screen: choose the size of that wrapper: 'sm', 'md', 'lg'
  * @param { marginBelow } optional: optional: a margin below the grid can be added: choose the size of the margin-below: 'XXS','XS','S','M','L'
  */
@@ -98,7 +98,7 @@ export const Grid: FC<TGrid> = ({
 	children,
 	variant = 'col',
 	gap = 'M',
-	centerd,
+	centered,
 	marginBelow,
 	wrapBelowScreen,
 	...rest
@@ -109,7 +109,7 @@ export const Grid: FC<TGrid> = ({
 		gap && GridGapStyleMap[gap],
 		marginBelow && GridMarginBelowStyleMap[marginBelow],
 		wrapBelowScreen && GridWrapBelowScreenStyleMap[wrapBelowScreen],
-		centerd && 'items-center',
+		centered && 'items-center',
 	].join(' ');
 
 	const props = {

@@ -15,7 +15,7 @@ type TNavi = {
 
 export const Navi: FC<TNavi> = ({ children }) => {
 	return (
-		<Grid as="ul" variant="row" gap="S" centerd={true}>
+		<Grid as="ul" variant="row" gap="S" centered={true}>
 			{children}
 		</Grid>
 	);

@@ -14,11 +14,11 @@ import uid from '../../../../utils/uid';
 
 export type FormUpload = {
 	/**
-	 * label: add a labeltext
+	 * label: add a label to the form input
 	 */
 	label: string;
 	/**
-	 * optional: stringtext for providing a context-hint to the user (example: 'max size: 10 MB')
+	 * optional: string for providing a context-hint to the user (example: 'max size: 10 MB')
 	 */
 	hint?: string;
 	/**
@@ -26,7 +26,7 @@ export type FormUpload = {
 	 */
 	buttonTitle?: string;
 	/**
-	 * provide a error message text as user feedback if opload fails.
+	 * provide a error message text as user feedback if upload fails.
 	 */
 	errorMessage?: string;
 	/**

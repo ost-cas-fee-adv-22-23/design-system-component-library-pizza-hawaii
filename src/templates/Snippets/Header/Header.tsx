@@ -1,4 +1,4 @@
-import React, { FC, ChangeEvent, useState, FormEvent } from 'react';
+import React, { FC, useState, FormEvent } from 'react';
 
 import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Label } from '../../../components/Atoms/Label';

@@ -18,7 +18,7 @@ type TUserCard = {
 export const UserCard: FC<TUserCard> = ({ user }) => {
 	return (
 		<Card as="div" rounded={true} size="S">
-			<Grid variant="col" gap="M" centerd={true}>
+			<Grid variant="col" gap="M" centered={true}>
 				<UserProfile
 					userName={user.userName}
 					avatar={user.avatar}

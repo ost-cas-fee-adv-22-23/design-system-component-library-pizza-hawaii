@@ -24,7 +24,7 @@ type TCard = {
 	 */
 	children: ReactNode;
 	/**
-	 * optional: rounded corners of the card: if yes coose rounded
+	 * optional: rounded corners of the card: if true, the card will have rounded corners
 	 */
 	rounded?: boolean;
 	/**

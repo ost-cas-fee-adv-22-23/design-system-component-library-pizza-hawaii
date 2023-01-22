@@ -12,7 +12,7 @@ import uid from '../../../../utils/uid';
 
 type TFormPassword = {
 	/**
-	 * label: add a labeltext for Password Form
+	 * label: add a label to the form input
 	 */
 	label: string;
 	/**

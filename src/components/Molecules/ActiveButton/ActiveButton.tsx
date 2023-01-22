@@ -25,7 +25,7 @@ export type TActiveButton = {
 	 */
 	isActive: boolean;
 	/**
-	 * inactive inital text of Button
+	 * inactive initial text of Button
 	 */
 	buttonInitialText: string;
 	/**

@@ -7,7 +7,7 @@ import uid from '../../../../utils/uid';
 
 export type TFormItem = {
 	/**
-	 * form Label string
+	 * label: add a label to the form input
 	 */
 	label: string;
 	/**

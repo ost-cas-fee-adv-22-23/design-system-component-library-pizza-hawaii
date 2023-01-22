@@ -14,7 +14,7 @@ type TFormSelectOption = {
 
 export type TFormSelect = {
 	/**
-	 * label: add a labeltext
+	 * label: add a label to the form input
 	 */
 	label: string;
 	/**

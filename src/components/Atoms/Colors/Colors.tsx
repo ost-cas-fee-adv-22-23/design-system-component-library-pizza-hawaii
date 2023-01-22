@@ -18,7 +18,7 @@ export const Colors: FC<TColors> = (props) => {
 	const { paletteName } = props;
 
 	return (
-		<Grid variant="row" gap="S" centerd>
+		<Grid variant="row" gap="S" centered>
 			<div className={`bg-${paletteName}-50` + '  w-24 h-24'}> {props.paletteName}-50</div>
 			<div className={`bg-${paletteName}-100` + ' w-24 h-24'}> {props.paletteName}-100</div>
 			<div className={`bg-${paletteName}-200` + ' w-24 h-24'}> {props.paletteName}-200</div>

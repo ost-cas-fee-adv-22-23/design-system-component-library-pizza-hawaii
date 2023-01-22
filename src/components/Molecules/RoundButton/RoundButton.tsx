@@ -23,11 +23,11 @@ type TButton = {
 	 */
 	buttonLabel: string;
 	/**
-	 * choose HTML Tag to render the roundbutton
+	 * choose HTML Tag to render the RoundButton
 	 */
 	as?: TRoundButtonTags;
 	/**
-	 * colorscheme for Roundbutton background: slate, violet or gradient
+	 * colorscheme for RoundButton background: slate, violet or gradient
 	 */
 	colorScheme: TRoundButtonColor;
 	/**

@@ -12,7 +12,7 @@ export type TFormTextareaSize = typeof possibleFormTextareaSizes[number];
 
 export type TFormTextarea = {
 	/**
-	 * label: add a labeltext
+	 * label: add a label to the form input
 	 */
 	label: string;
 	/**
