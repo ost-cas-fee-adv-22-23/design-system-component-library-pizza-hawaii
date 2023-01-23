@@ -60,6 +60,7 @@ const contentCardvariantMap: Record<TContentCard['variant'], TContentCardvariant
 
 export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 	const setting = contentCardvariantMap[variant] || contentCardvariantMap.detailpage;
+
 	const headerSlotContent = (
 		<Grid variant="col" gap="S">
 			<Label as="span" size={setting.headlineSize}>
