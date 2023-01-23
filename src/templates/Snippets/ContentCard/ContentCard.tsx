@@ -15,7 +15,7 @@ import { UserContentCard, TUserContentCard } from '../../../components/Organisms
 
 import { Post } from '../../../types/Post';
 import { InteractionButton } from '../../../components/Molecules/InteractionButton';
-import { ActiveButton } from '../../../components/Molecules/ActiveButton';
+import { ShareButton } from '../../../components/Molecules/ShareButton/index';
 
 /*
  * Type
@@ -116,7 +116,7 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 					iconNameSingle="heart_fillable"
 					iconNamePlural="heart_filled"
 				/>
-				<ActiveButton
+				<ShareButton
 					colorScheme="slate"
 					buttonInitialText="Copy Link"
 					buttonActiveText="Link copied"

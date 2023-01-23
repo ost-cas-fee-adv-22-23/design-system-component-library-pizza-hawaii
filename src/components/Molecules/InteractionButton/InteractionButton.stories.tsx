@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ColorSchemeMap, InteractionButton as Component } from './InteractionButton';
 
 export default {
-	title: 'Components/Molecules/InteractionButton',
+	title: 'Components/Molecules',
 	component: Component,
 	argTypes: {
 		count: {
