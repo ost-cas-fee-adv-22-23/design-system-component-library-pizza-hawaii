@@ -48,7 +48,13 @@ Please note that this package requires at least Node v16.14 to be used.
 Start building your application with the components and styles provided by the Pizza Hawaii library.
 1. Import Components `import { Headline, Icon, ImageOverlay } from '@smartive-education/pizza-hawaii'`
 2. Import CSS `import '@smartive-education/pizza-hawaii/dist/bundle.css'`
-3. Import Font `import "@fontsource/poppins/500.css";import "@fontsource/poppins/600.css";import "@fontsource/poppins/700.css";`
+3. Install Font Poppins `npm install @fontsource/poppins`
+3. Import Font into your template 
+```
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+```
 > You are good to go!  🎉
 
 #### Setup a new Test-Application with React & Next
