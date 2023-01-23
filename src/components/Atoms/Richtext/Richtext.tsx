@@ -1,6 +1,5 @@
-'use client';
 import React, { FC, ReactNode, Children } from 'react';
-import dompurify from 'dompurify';
+import xss, { IWhiteList } from 'xss';
 
 /**
  * Settings
@@ -9,12 +8,17 @@ import dompurify from 'dompurify';
 export const possibleRichtextTags = ['div', 'section', 'article'] as const;
 export const possibleRichtextSizes = ['M', 'L'] as const;
 
+export const defaultAllowedTags: IWhiteList = {
+	p: [],
+	a: ['href', 'title', 'target'],
+};
+
 /*
  * Type
  */
 
-type TRichtextTag = (typeof possibleRichtextTags)[number];
-type TRichtextSize = (typeof possibleRichtextSizes)[number];
+type TRichtextTag = typeof possibleRichtextTags[number];
+type TRichtextSize = typeof possibleRichtextSizes[number];
 
 type TRichtext = {
 	/**
@@ -26,14 +30,14 @@ type TRichtext = {
 	 */
 	size: TRichtextSize;
 	/**
-	 * child nodes
+	 * child nodes or string
 	 */
 	children: ReactNode;
 	/**
-	 * optional: define allowed tags within an Allowed Tags Array
-	 * default: 'a' and 'p'.
+	 * optional: define allowed tags within an Allowed Tags/Attributes Map.
+	 * default: 'a': ['href', 'title', 'target'], 'p': [].
 	 */
-	allowedTags?: string[];
+	allowedTags?: IWhiteList;
 };
 
 /*
@@ -45,7 +49,7 @@ export const RichtextSizeMap: Record<string, string> = {
 	L: 'text-xl',
 };
 
-export const RichtextChildStyleMap: string[] = [
+export const RichtextChildStyles: string[] = [
 	// Paragraphs
 	'[&>p]:block [&>p]:mb-2 [&>p:last-child]:mb-0',
 
@@ -58,15 +62,18 @@ export const RichtextChildStyleMap: string[] = [
  * @param { TRichtextSize } sizes for text-sizes
  * @param { children } React children node
  * @param { allowedTags } stringArray for Allowed Tags to render within the RichtText.
- * @returns <Richtext allowedTags={["p", "a"]} size="M" as="p" >My Richtext goes here...</Richtext>
+ * @returns <Richtext size="M" as="div" >My Richtext goes here...</Richtext>
  */
 
 /*
  * Helpers
  */
 
-function sanitizeContent(content: string, allowedTags: string[]): string {
-	content = dompurify.sanitize(content, { ALLOWED_TAGS: allowedTags });
+function sanitizeContent(content: string, allowedTags: IWhiteList): string {
+	content = xss(content, {
+		whiteList: allowedTags,
+		stripIgnoreTag: true,
+	});
 
 	if (!/<\/?[a-z][\s\S]*>/i.test(content)) {
 		content = `<p>${content}</p>`;
@@ -75,11 +82,17 @@ function sanitizeContent(content: string, allowedTags: string[]): string {
 	return content;
 }
 
-export const Richtext: FC<TRichtext> = ({ children, as: Tag = 'div', size = 'M', allowedTags = ['p', 'a'], ...rest }) => {
+export const Richtext: FC<TRichtext> = ({
+	children,
+	as: Tag = 'div',
+	size = 'M',
+	allowedTags = defaultAllowedTags,
+	...rest
+}) => {
 	const style = [
 		'block font-medium leading-normal',
 		RichtextSizeMap[size], // Text size
-		...RichtextChildStyleMap, // Child styles
+		...RichtextChildStyles, // Child styles
 	].join(' ');
 
 	const props = {
