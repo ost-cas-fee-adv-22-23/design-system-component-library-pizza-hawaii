@@ -26,6 +26,14 @@ export type TTimeStamp = {
 	 * optional: show a title option. Boolean or undefined.
 	 */
 	showTitle?: boolean;
+	/**
+	 * optional: locale: string
+	 * @default: 'de-ch'
+	 * @see https://momentjs.com/docs/#/i18n/
+	 * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale
+	 */
+
+	locale?: string;
 };
 
 /*
@@ -43,7 +51,7 @@ export type TTimeStamp = {
  * )
  */
 
-export const TimeStamp: FC<TTimeStamp> = ({ date: inputDate, prefix, postfix, showTitle = true }) => {
+export const TimeStamp: FC<TTimeStamp> = ({ date: inputDate, prefix, postfix, showTitle = true, locale = 'de-ch' }) => {
 	const [dateTimeAgo, setDateTimeAgo] = useState('');
 	const [dateTime, setDateTime] = useState('');
 	const [dateTimeISOString, setDateTimeISOString] = useState('');
@@ -55,14 +63,14 @@ export const TimeStamp: FC<TTimeStamp> = ({ date: inputDate, prefix, postfix, sh
 		const dateTimeAgo = [
 			prefix,
 			moment(date)
-				.locale('de-ch')
+				.locale(locale)
 				.fromNow(!!prefix || !!postfix),
 			postfix,
 		].join(' ');
 		setDateTimeAgo(dateTimeAgo);
 
 		// Readable exact time
-		const dateTime = moment(date).locale('de').format('LLLL');
+		const dateTime = moment(date).locale(locale).format('LLLL');
 		setDateTime(dateTime);
 
 		// ISO String

@@ -1,17 +1,14 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ColorSchemeMap, InteractionButton as Component } from './InteractionButton';
+import { InteractionButtonColorSchemeMap, InteractionButton as Component } from './InteractionButton';
 
 export default {
-	title: 'Components/Molecules',
+	title: 'Components/Molecules/InteractionButton',
 	component: Component,
 	argTypes: {
-		count: {
-			control: { type: 'number', min: 0, max: 2000 },
-		},
 		colorScheme: {
-			options: Object.keys(ColorSchemeMap),
+			options: Object.keys(InteractionButtonColorSchemeMap.default),
 			control: { type: 'select' },
 		},
 	},
@@ -20,22 +17,50 @@ export default {
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
 export const Like = Template.bind({});
+export const LikeActive = Template.bind({});
 export const Comment = Template.bind({});
+export const CommentActive = Template.bind({});
+export const Share = Template.bind({});
 
 Like.args = {
-	count: 0,
+	as: 'button',
+	type: 'button',
+	isActive: false,
 	colorScheme: 'pink',
-	buttonTextSingular: 'Like',
-	buttonTextPlural: 'Likes',
-	iconNameSingle: 'heart_fillable',
-	iconNamePlural: 'heart_filled',
+	buttonText: 'Like',
+	iconName: 'heart_fillable',
+};
+
+LikeActive.args = {
+	as: 'button',
+	type: 'button',
+	isActive: true,
+	colorScheme: 'pink',
+	buttonText: '3 Likes',
+	iconName: 'heart_filled',
 };
 
 Comment.args = {
-	count: 0,
+	as: 'button',
+	type: 'button',
+	isActive: false,
 	colorScheme: 'violet',
-	buttonTextSingular: 'Comment',
-	buttonTextPlural: 'Comments',
-	iconNameSingle: 'comment_fillable',
-	iconNamePlural: 'comment_filled',
+	buttonText: 'Comment',
+	iconName: 'comment_fillable',
+};
+Comment.args = {
+	as: 'button',
+	type: 'button',
+	isActive: true,
+	colorScheme: 'violet',
+	buttonText: '7 Comments',
+	iconName: 'comment_filled',
+};
+
+Share.args = {
+	as: 'button',
+	type: 'button',
+	colorScheme: 'slate',
+	buttonText: 'Copy Link',
+	iconName: 'share',
 };

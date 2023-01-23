@@ -17,8 +17,8 @@ export const defaultAllowedTags: IWhiteList = {
  * Type
  */
 
-type TRichtextTag = typeof possibleRichtextTags[number];
-type TRichtextSize = typeof possibleRichtextSizes[number];
+type TRichtextTag = (typeof possibleRichtextTags)[number];
+type TRichtextSize = (typeof possibleRichtextSizes)[number];
 
 type TRichtext = {
 	/**

@@ -84,13 +84,13 @@ export const GridWrapBelowScreenStyleMap: Record<string, string> = {
 
 /**
  * Typography for Grid Component
- * @param { TGridTag } as HTML tag to render
+ * @param { TGridTag } TGridTag: `div`, `ol`, `ul` HTML tag to render
  * @param { ReactNode } children Child nodes
- * @param { col row } Variants of Grid direction: col or row
- * @param { GridGapStyleMap } gap distance between the grid elements
- * @param { centered } optional: if you like the grid centered of the parent component
- * @param { wrapBelowScreen } optional: a wrap below screen: choose the size of that wrapper: 'sm', 'md', 'lg'
- * @param { marginBelow } optional: optional: a margin below the grid can be added: choose the size of the margin-below: 'XXS','XS','S','M','L'
+ * @param { variant } variants: `col` or `row` of Grid direction
+ * @param { gap } gap: `S` | `M` | `L` | `XL` distance between the grid elements
+ * @param { centered } centered: booleant, if you like the grid centered of the parent component
+ * @param { wrapBelowScreen } wrapBelowScreen: `sm`, `md`, `lg`a wrap below screen: choose the size of that wrapper: 'sm', 'md', 'lg'
+ * @param { marginBelow } marginBelow optional: 'XXS','XS','S','M','L' optional: a margin below the grid can be added: choose the size of the margin-below: 'XXS','XS','S','M','L'
  */
 
 export const Grid: FC<TGrid> = ({

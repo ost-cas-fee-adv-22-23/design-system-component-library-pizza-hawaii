@@ -10,12 +10,12 @@ import { Label } from '../../../components/Atoms/Label';
 import { UserName } from '../../../components/Molecules/UserName';
 import { IconLink } from '../../../components/Molecules/IconLink';
 import { ImageOverlay } from '../../../components/Molecules/ImageOverlay';
+import { InteractionButton } from '../../../components/Molecules/InteractionButton';
 
+import { CopyToClipboardButton } from '../../../components/Organisms/CopyToClipboardButton';
 import { UserContentCard, TUserContentCard } from '../../../components/Organisms/UserContentCard/UserContentCard';
 
 import { Post } from '../../../types/Post';
-import { InteractionButton } from '../../../components/Molecules/InteractionButton';
-import { ShareButton } from '../../../components/Molecules/ShareButton/index';
 
 /*
  * Type
@@ -101,26 +101,46 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 
 			<Grid variant="row" gap="M">
 				<InteractionButton
-					count={post.comments?.length}
+					as="a"
+					href="/link/to/post"
+					isActive={post.comments && post.comments?.length > 0}
 					colorScheme="violet"
-					iconNameSingle="comment_fillable"
-					iconNamePlural="comment_filled"
-					buttonTextSingular="Comment"
-					buttonTextPlural="Comments"
+					buttonText={
+						post.comments && post.comments?.length > 0
+							? `${post.comments?.length} Comments`
+							: post.comments?.length === 0
+							? 'Comment'
+							: '1 Comment'
+					}
+					iconName={post.comments && post.comments?.length > 0 ? 'comment_filled' : 'comment_fillable'}
+					onClick={function (): void {
+						console.log('add comment');
+						throw new Error('Function not implemented.');
+					}}
 				/>
 				<InteractionButton
-					count={post.likes?.length}
+					as="button"
+					type="button"
+					isActive={post.likes && post.likes?.length > 0}
 					colorScheme="pink"
-					buttonTextSingular="Like"
-					buttonTextPlural="Likes"
-					iconNameSingle="heart_fillable"
-					iconNamePlural="heart_filled"
+					buttonText={
+						post.likes && post.likes?.length > 0
+							? `${post.likes?.length} Likes`
+							: post.likes?.length === 0
+							? 'Like'
+							: '1 Like'
+					}
+					iconName={post.likes && post.likes?.length > 0 ? 'heart_filled' : 'heart_fillable'}
+					onClick={function (): void {
+						console.log('add like');
+						throw new Error('Function not implemented.');
+					}}
 				/>
-				<ShareButton
-					colorScheme="slate"
-					buttonInitialText="Copy Link"
-					buttonActiveText="Link copied"
-					isActive={false}
+
+				<CopyToClipboardButton
+					defaultButtonText="Copy Link"
+					activeButtonText="Link copied"
+					shareText="/url/to/post"
 				/>
 			</Grid>
 		</UserContentCard>

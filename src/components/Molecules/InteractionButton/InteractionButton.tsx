@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 import { Label } from '../../Atoms/Label/Label.stories';
 
 import { Icon } from '../../Atoms/Icon';
@@ -6,106 +6,116 @@ import { Icon } from '../../Atoms/Icon';
  * Settings
  */
 
-export const possibleInteractionButtonColors = ['slate', 'pink', 'violet'] as const;
+export const possibleInteractionButtonColors = ['slate', 'violet', 'pink'] as const;
 
 /*
  * Type
  */
 
-export type TInteractionButtonColors = (typeof possibleInteractionButtonColors)[number];
-
-export type Props = {
+export type TInteractionButton = {
+	as: 'button' | 'a';
 	/**
 	 * choose a colorscheme for the button number and icon
 	 */
-	colorScheme: TInteractionButtonColors;
+	colorScheme: keyof typeof InteractionButtonColorSchemeMap.default;
 	/**
-	 * count: provide integer number or undefined. amount countable things
+	 * buttonText: text of the button
 	 */
-	count?: number;
+	buttonText: string;
 	/**
-	 * initial buttontext for singular or no counts 'comment'
+	 * iconName: icon name of IconLibrary
 	 */
-	buttonTextSingular: string;
+	iconName: string;
 	/**
-	 * buttontext if count is more than 1. example: 'comments'
+	 * isActive: boolean to set the button to active state
+	 * @default false
 	 */
-	buttonTextPlural: string;
+	isActive?: boolean;
 	/**
-	 * icon name to be displayed when state of count below 1.
+	 * onClick: function to handle click event
+	 * @default () => {}
 	 */
-	iconNameSingle: string;
-	/**
-	 * icon name to be displayed when state of count is equal or above 1
-	 */
-	iconNamePlural: string;
+	onClick: () => void;
 };
+
+type THTMLInteractionButtonProps = TInteractionButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
+type TLinkInteractionButtonProps = TInteractionButton & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
+
+type TInteractionButtonProps = THTMLInteractionButtonProps | TLinkInteractionButtonProps;
 
 /*
  * Styles
  */
 
-export const ColorSchemeMap: Record<string, string> = {
-	slate: 'text-slate-400 hover:text-slate-600 hover:bg-slate-100 hover:rounded-full',
-	violet: 'text-violet-600 hover:text-violet-600 hover:bg-violet-50 hover:rounded-full',
-	pink: ' text-pink-400 hover:text-pink-600 hover:bg-pink-50 hover:rounded-full',
+export const InteractionButtonBaseStyle = 'flex items-center gap-y-0 gap-x-2 rounded-full py-2 px-3 leading-none group';
+
+export const InteractionButtonColorSchemeMap: Record<string, Record<string, string>> = {
+	default: {
+		slate: ['text-slate-600', 'hover:text-slate-600 hover:bg-slate-100'].join(' '),
+		pink: ['text-slate-600', 'hover:text-pink-600 hover:bg-pink-50'].join(' '),
+		violet: ['text-slate-600', 'hover:text-violet-600 hover:bg-violet-50'].join(' '),
+	},
+	active: {
+		slate: ['text-slate-600', 'hover:text-slate-600 hover:bg-slate-100'].join(' '),
+		pink: ['text-pink-900', 'hover:text-pink-600 hover:bg-pink-50'].join(' '),
+		violet: ['text-slate-600', 'hover:text-violet-600 hover:bg-violet-50'].join(' '),
+	},
 };
 
+export const InteractionButtonIconColorSchemeMap: Record<string, Record<string, string>> = {
+	default: {
+		slate: [].join(' '),
+		pink: ['group-hover:text-pink-600'].join(' '),
+		violet: [].join(' '),
+	},
+	active: {
+		slate: [].join(' '),
+		pink: ['text-pink-600', 'group-hover:text-pink-600'].join(' '),
+		violet: ['text-violet-600', 'group-hover:text-violet-600'].join(' '),
+	},
+};
 /**
  * Typography for InteractionButton Component
- * @param { count } count number to be visualized before the button
- * @param { buttonTextSingular } string initial buttontext for singular or no counts 'comment'
- * @param { buttonTextPlural } string buttontext if count is more than 1. example: 'comments'
+ * @param { buttonText } string label of the button
  * @param { colorScheme } ColorSchema of the Button: pink, violet, or slate
- * @param { iconNameSingle } icon name to be displayed when state of count below 1
- * @param { iconNamePlural } icon name to be displayed when state of count is equal or above 1
+ * @param { iconName } icon name of IconLibrary
+ * @param { isActive } boolean to set the button to active state
  * @example
  * return (
- *   <InteractionButton 
-  buttonTextPlural="Likes"
-  buttonTextSingular="Like"
+ *   <InteractionButton
+  buttonText="Likes"
   colorScheme="violet"
-  count={3}
-  iconNamePlural="heart_filled"
-  iconNameSingle="heart_fillable"
+  iconName="heart_fillable"
+  isActive={true}
 />
 )
 */
 
-export const InteractionButton: FC<Props> = ({
-	count = 0,
+export const InteractionButton: FC<TInteractionButtonProps> = ({
+	as: Tag = 'button',
 	colorScheme,
-	buttonTextSingular,
-	buttonTextPlural,
-	iconNameSingle,
-	iconNamePlural,
+	buttonText,
+	iconName,
+	isActive = false,
+	...props
 }) => {
-	const styles = ['flex items-center leading-none', ColorSchemeMap[colorScheme]];
+	const style = [
+		InteractionButtonBaseStyle,
+		InteractionButtonColorSchemeMap[isActive ? 'active' : 'default'][colorScheme],
+	];
 
 	return (
-		<button className={[styles, 'gap-1', 'py-2', 'px-3'].join(' ')}>
-			{count === 0 ? (
-				<>
-					<span className="leading-4 gap-2">
-						<Icon name={iconNameSingle} />
-					</span>
-					<Label as="span" size="M" className="leading-4 gap-2">
-						{buttonTextSingular}
-					</Label>
-				</>
-			) : (
-				<>
-					<span className={`text-${colorScheme}-600 leading-4`}>
-						<Icon name={iconNamePlural} />
-					</span>
-					<Label as="span" size="M" className="leading-4 gap-1">
-						{count}
-					</Label>
-					<Label as="span" size="M" className="leading-4 gap-0.5">
-						{count === 1 ? buttonTextSingular : buttonTextPlural}
-					</Label>
-				</>
-			)}
-		</button>
+		<Tag
+			className={style.join(' ')}
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			{...(props as any)}
+		>
+			<span className={InteractionButtonIconColorSchemeMap[isActive ? 'active' : 'default'][colorScheme]}>
+				<Icon name={iconName} />
+			</span>
+			<Label as="span" size="M">
+				{buttonText}
+			</Label>
+		</Tag>
 	);
 };
