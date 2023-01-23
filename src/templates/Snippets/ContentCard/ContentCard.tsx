@@ -137,7 +137,11 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 					}}
 				/>
 
-				<CopyToClipboardButton defaultButtonText="Copy Link" activeButtonText="Link copied" shareText="/url/to/post" />
+				<CopyToClipboardButton
+					defaultButtonText="Copy Link"
+					activeButtonText="Link copied"
+					shareText="/url/to/post"
+				/>
 			</Grid>
 		</UserContentCard>
 	);
