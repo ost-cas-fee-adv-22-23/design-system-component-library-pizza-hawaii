@@ -34,6 +34,7 @@
 	"types": "dist/types/index.d.ts",
 	"devDependencies": {
 		"@babel/core": "^7.20.2",
+		"@fontsource/poppins": "^4.5.10",
 		"@smartive/eslint-config": "^3.1.1",
 		"@smartive/prettier-config": "^3.0.0",
 		"@storybook/addon-actions": "^6.5.13",
@@ -45,13 +46,13 @@
 		"@storybook/manager-webpack4": "^6.5.13",
 		"@storybook/react": "^6.1.21",
 		"@storybook/testing-library": "^0.0.13",
-		"@types/dompurify": "^2.4.0",
 		"@types/react": "^18.0.25",
 		"@types/react-dom": "^18.0.9",
 		"@typescript-eslint/eslint-plugin": "^5.47.0",
 		"@typescript-eslint/parser": "^5.47.0",
 		"autoprefixer": "^10.4.13",
 		"babel-loader": "^8.3.0",
+		"ctix": "^1.8.1",
 		"eslint": "^8.30.0",
 		"postcss": "^8.4.19",
 		"postcss-import": "^15.1.0",
@@ -62,9 +63,7 @@
 		"typescript": "^4.9.4"
 	},
 	"dependencies": {
-		"@fontsource/poppins": "^4.5.10",
 		"copy-to-clipboard": "^3.3.3",
-		"ctix": "^1.8.1",
 		"moment": "^2.29.4",
 		"xss": "^1.0.14"
 	}
