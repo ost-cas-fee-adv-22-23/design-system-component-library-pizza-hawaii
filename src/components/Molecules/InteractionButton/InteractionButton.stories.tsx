@@ -7,9 +7,6 @@ export default {
 	title: 'Components/Molecules/InteractionButton',
 	component: Component,
 	argTypes: {
-		count: {
-			control: { type: 'number', min: 0, max: 2000 },
-		},
 		colorScheme: {
 			options: Object.keys(InteractionButtonColorSchemeMap.default),
 			control: { type: 'select' },
