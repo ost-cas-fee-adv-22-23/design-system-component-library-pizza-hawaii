@@ -1,13 +1,13 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ColorSchemeShareButtonMap, ShareButton as Component } from './ShareButton';
+import { ShareButtonColorSchemeMap, ShareButton as Component } from './ShareButton';
 
 export default {
 	title: 'Components/Molecules',
 	component: Component,
 	argTypes: {
 		colorScheme: {
-			options: Object.keys(ColorSchemeShareButtonMap),
+			options: Object.keys(ShareButtonColorSchemeMap),
 			control: { type: 'select' },
 			description: 'The usecase of this Button is to have one-clicked activate something functionality',
 		},
