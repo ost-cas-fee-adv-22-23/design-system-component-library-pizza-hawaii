@@ -11,8 +11,8 @@ import { UserName } from '../../../components/Molecules/UserName';
 import { IconLink } from '../../../components/Molecules/IconLink';
 import { ImageOverlay } from '../../../components/Molecules/ImageOverlay';
 import { InteractionButton } from '../../../components/Molecules/InteractionButton';
-import { ShareButton } from '../../../components/Molecules/ShareButton/index';
 
+import { CopyToClipboardButton } from '../../../components/Organisms/CopyToClipboardButton';
 import { UserContentCard, TUserContentCard } from '../../../components/Organisms/UserContentCard/UserContentCard';
 
 import { Post } from '../../../types/Post';
@@ -137,7 +137,7 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 					}}
 				/>
 
-				<ShareButton defaultButtonText="Copy Link" activeButtonText="Link copied" shareText="/url/to/post" />
+				<CopyToClipboardButton defaultButtonText="Copy Link" activeButtonText="Link copied" shareText="/url/to/post" />
 			</Grid>
 		</UserContentCard>
 	);

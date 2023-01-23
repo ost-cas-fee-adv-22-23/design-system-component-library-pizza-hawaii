@@ -1,18 +1,18 @@
 import React, { FC, useState } from 'react';
-import { InteractionButton } from '../InteractionButton/InteractionButton';
+import { InteractionButton } from '../../Molecules/InteractionButton/InteractionButton';
 import copy from 'copy-to-clipboard';
 
 /*
  * Type
  */
 
-export type TShareButton = {
+export type TCopyToClipboardButton = {
 	/**
-	 * inactive initial text of Button
+	 * default Button text
 	 */
 	defaultButtonText: string;
 	/**
-	 * activated Button text. if nothing should change, use the same term as in inactive button.
+	 * active Button text
 	 */
 	activeButtonText: string;
 
@@ -21,9 +21,9 @@ export type TShareButton = {
 	 * @default window.location.href
 	 * @example
 	 * return (
-	 * <ShareButton shareText="https://www.google.com">
+	 * <CopyToClipboardButton shareText="https://www.google.com">
 	 * 	Share
-	 * </ShareButton>
+	 * </CopyToClipboardButton>
 	 * )
 	 */
 	shareText?: string;
@@ -39,17 +39,19 @@ export type TShareButton = {
  * @param { activeButtonText } text of Button in active state Child node
  * @example
  * return (
- *   <ShareButton activeButtonText="Link copied" defaultButtonText="Copy Link" colorScheme="pink" />
+ *   <CopyToClipboardButton activeButtonText="Link copied" defaultButtonText="Copy Link" colorScheme="pink" />
  * )
  */
 
-export const ShareButton: FC<TShareButton> = ({
+export const CopyToClipboardButton: FC<TCopyToClipboardButton> = ({
 	defaultButtonText,
 	activeButtonText,
 	shareText = window?.location?.href,
 }) => {
 	const [isActive, setIsActive] = useState(false);
+
 	let timeout: NodeJS.Timeout;
+
 	const copyToText = (): void => {
 		copy(shareText);
 		setIsActive(true);
