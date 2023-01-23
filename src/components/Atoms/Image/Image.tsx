@@ -38,9 +38,9 @@ export type TImage = ImgHTMLAttributes<HTMLImageElement> & {
 
 /**
  * Controls for Image Component
- * @param { src } source for image file
- * @param { preset } preset form mumble image Variants
- * @param { caption } string for optional text caption of the image
+ * @param { src } src for image file
+ * @param { preset } preset `header`, `post` for mumble image Variants -see storybook docs
+ * @param { caption } caption string for text caption of the image. optional
  * @example
  * return (
  * 	<Image src="//picsum.photos/id/28/1600/1587/" preset="post" />

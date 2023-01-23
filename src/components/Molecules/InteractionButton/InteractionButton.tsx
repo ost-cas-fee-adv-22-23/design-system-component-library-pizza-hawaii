@@ -76,10 +76,11 @@ export const InteractionButtonIconColorSchemeMap: Record<string, Record<string, 
 };
 /**
  * Typography for InteractionButton Component
- * @param { buttonText } string label of the button
- * @param { colorScheme } ColorSchema of the Button: pink, violet, or slate
- * @param { iconName } icon name of IconLibrary
- * @param { isActive } boolean to set the button to active state
+ * @param { buttonText } buttonText label of the button
+ * @param { colorScheme } colorScheme of the Button: `pink`, `violet`, or `slate`
+ * @param { iconName } iconName name of Icon -see Library
+ * @param { isActive } isActive boolean to set the button to active state
+ * @param { onClick } onClick handler to be implemented by yourself!
  * @example
  * return (
  *   <InteractionButton

@@ -35,8 +35,10 @@ export type TCopyToClipboardButton = {
 
 /**
  * Typography for Headlines Component
- * @param { defaultButtonText } text of Button in initial state Child nodes
- * @param { activeButtonText } text of Button in active state Child node
+ * @param { defaultButtonText } defaultButtonText text of Button in initial state Child nodes
+ * @param { activeButtonText } activeButtonText text of Button in active state Child node
+ * @param { shareText } shareText text to share
+ * @default window.location.href
  * @example
  * return (
  *   <CopyToClipboardButton activeButtonText="Link copied" defaultButtonText="Copy Link" colorScheme="pink" />
