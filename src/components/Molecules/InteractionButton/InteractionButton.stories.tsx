@@ -4,14 +4,14 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ColorSchemeMap, InteractionButton as Component } from './InteractionButton';
 
 export default {
-	title: 'Components/Molecules',
+	title: 'Components/Molecules/InteractionButton',
 	component: Component,
 	argTypes: {
 		count: {
 			control: { type: 'number', min: 0, max: 2000 },
 		},
 		colorScheme: {
-			options: Object.keys(ColorSchemeMap),
+			options: Object.keys(ColorSchemeMap.default),
 			control: { type: 'select' },
 		},
 	},

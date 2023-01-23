@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
 import { Label } from '../../Atoms/Label/Label';
 import { Icon } from '../../Atoms/Icon';
-
 import { ColorSchemeMap, IconColorSchemeMap } from '../InteractionButton/InteractionButton';
-
 import copy from 'copy-to-clipboard';
 
 /*
@@ -16,7 +14,7 @@ export const possibleShareButtonSchemas = ['slate', 'violet', 'pink'] as const;
  * Type
  */
 
-type TShareButtonColorSchema = typeof possibleShareButtonSchemas[number];
+export type TShareButtonColorSchema = (typeof possibleShareButtonSchemas)[number];
 
 export type TShareButton = {
 	/**
@@ -83,6 +81,7 @@ export const ShareButton: FC<TShareButton> = ({
 
 	return (
 		<button
+			onClick={copyToText}
 			className={[ShareButtonBaseStyle, ColorSchemeMap[isActive ? 'active' : 'default'][colorScheme]].join(' ')}
 			{...props}
 		>

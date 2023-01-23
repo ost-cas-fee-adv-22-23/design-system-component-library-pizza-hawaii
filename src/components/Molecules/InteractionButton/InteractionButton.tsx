@@ -6,13 +6,13 @@ import { Icon } from '../../Atoms/Icon';
  * Settings
  */
 
-export const possibleInteractionButtonColors = ['slate', 'pink', 'violet'] as const;
+export const possibleInteractionButtonColors = ['slate', 'violet', 'pink'] as const;
 
 /*
  * Type
  */
 
-export type TInteractionButtonColors = typeof possibleInteractionButtonColors[number];
+export type TInteractionButtonColors = (typeof possibleInteractionButtonColors)[number];
 
 export type Props = {
 	/**
