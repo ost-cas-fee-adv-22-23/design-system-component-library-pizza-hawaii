@@ -65,7 +65,7 @@
 		"@fontsource/poppins": "^4.5.10",
 		"copy-to-clipboard": "^3.3.3",
 		"ctix": "^1.8.1",
-		"dompurify": "^2.4.3",
-		"moment": "^2.29.4"
+		"moment": "^2.29.4",
+		"xss": "^1.0.14"
 	}
 }

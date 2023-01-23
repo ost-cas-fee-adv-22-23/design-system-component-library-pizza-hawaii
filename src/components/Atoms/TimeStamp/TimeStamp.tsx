@@ -47,6 +47,7 @@ export const TimeStamp: FC<TTimeStamp> = ({ date: inputDate, prefix, postfix, sh
 	const date = new Date(inputDate);
 	let dateTimeAgo;
 	let dateTime;
+	let dateTimeISOString;
 
 	// do this date only client-side
 	if (typeof window === 'object') {
@@ -60,12 +61,14 @@ export const TimeStamp: FC<TTimeStamp> = ({ date: inputDate, prefix, postfix, sh
 		].join(' ');
 
 		dateTime = moment(date).locale('de').format('LLLL');
+		dateTimeISOString = date.toISOString();
+
 	}
 
 	// Readable exact time
 
 	const props = {
-		dateTime: window && date.toISOString(),
+		dateTime: dateTimeISOString,
 		title: showTitle ? dateTime : undefined,
 	};
 
