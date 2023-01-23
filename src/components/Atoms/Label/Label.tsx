@@ -50,11 +50,11 @@ export const LabelSizeMap: Record<string, string> = {
 
 /**
  * Typography for Label Component
- * @param { as } HTML-Tag of Label
- * @param { size } text size of Label
+ * @param { as } as `span` `label`, `p`, `legend` - HTML-Tag of Label
+ * @param { TLabelsSizes } size `S`, `M`, `L`, `XL` - size of Label
  * @param { ReactNode } children Child Nodes.
- * @returns (
- * 	<Label as='span' size='M'>My Labeltext</Label>
+ * @example (
+ * 	<Label as='legend' size='M'>My Labeltext</Label>
  * )
  */
 

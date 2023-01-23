@@ -20,7 +20,7 @@ export const defaultAllowedTags: IWhiteList = {
 type TRichtextTag = (typeof possibleRichtextTags)[number];
 type TRichtextSize = (typeof possibleRichtextSizes)[number];
 
-type TRichtext = {
+export type TRichtext = {
 	/**
 	 * as: select HTML tags for rendering
 	 */
@@ -58,10 +58,10 @@ export const RichtextChildStyles: string[] = [
 ];
 
 /**
- * @param { TRichtextTag } HTML Element to render the Richttext Component
- * @param { TRichtextSize } sizes for text-sizes
+ * @param { TRichtextTag } as select HTML tags: `div`, `section`, `article`
+ * @param { TRichtextSize } sizes for text-sizes: `L`, `M`
  * @param { children } React children node
- * @param { allowedTags } stringArray for Allowed Tags to render within the RichtText.
+ * @param { allowedTags } allowedTags default: `a`: ['href, 'title', 'target'],  `p`: []
  * @returns <Richtext size="M" as="div" >My Richtext goes here...</Richtext>
  */
 

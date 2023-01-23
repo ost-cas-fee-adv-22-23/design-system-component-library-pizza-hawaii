@@ -72,12 +72,11 @@ const ImageOverlayTypeMap = {
 
 /**
  * Typography for ImageOverlay Component
- * @param { size } sizes Visual size of button (3 sizes)
- * @param { buttonLabel } label for the the Button and screenreader
+ * @param { buttonLabel } buttonLabel for the the Button and screenreader
  * @param { ReactNode } children means here <Image comonent>
- * @param { icon } icon name of IconLibrary
- * @param { animation } animation `edit` or `enlarge` for animation of icon.
- * @param { onClick } method for onclick handler to be implemented by yourself
+ * @param { icon } icon name of icon by IconLibrary
+ * @param { animation } animation `edit` or `enlarge` for animation of icon. (does not work with all icons)
+ * @param { onClick } onClick handler to be implemented by yourself!
  * @example
  * return (
  * <ImageOverlay  icon="repost" onClick={() => {}} preset="edit" >

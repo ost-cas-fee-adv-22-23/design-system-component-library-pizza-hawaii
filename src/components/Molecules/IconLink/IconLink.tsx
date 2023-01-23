@@ -66,10 +66,10 @@ export const IconLinkColorMap: Record<string, string> = {
 
 /**
  * Typography for Button Component
- * @param { size } sizes 3 levels of size
- * @param { as } as HTML tag to render for IconLink
- * @param { colorScheme } ColorSchema of the IconLink
- * @param { ReactNode } children Child Nodes
+ * @param { size } size  of button: `S`, `M`, `L`
+ * @param { as } as HTML tag to render for IconLink: `a`, `button`, `span`
+ * @param { TIconLinkColor } ColorSchema IconLink: `slate`, `violet`, `pink`
+ * @param { ReactNode } children Child Nodes1
  * @param { icon } icon name of IconLibrary
  * @example
  * return (
