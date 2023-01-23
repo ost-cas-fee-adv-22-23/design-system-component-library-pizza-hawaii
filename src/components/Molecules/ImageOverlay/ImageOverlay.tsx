@@ -76,7 +76,7 @@ const ImageOverlayTypeMap = {
  * @param { buttonLabel } label for the the Button and screenreader
  * @param { ReactNode } children means here <Image comonent>
  * @param { icon } icon name of IconLibrary
- * @param { animation } string for animation of icon.
+ * @param { animation } animation `edit` or `enlarge` for animation of icon.
  * @param { onClick } method for onclick handler to be implemented by yourself
  * @example
  * return (

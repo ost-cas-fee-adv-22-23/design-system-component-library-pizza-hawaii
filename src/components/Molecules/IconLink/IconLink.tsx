@@ -83,7 +83,7 @@ export const IconLinkColorMap: Record<string, string> = {
  */
 
 export const IconLink: FC<TIconLinkProps> = ({
-	children = 'NaviButton',
+	children = 'IconLink',
 	as: Tag = 'a',
 	colorScheme = 'slate',
 	size = 'M',

@@ -87,9 +87,9 @@ export const ButtonColorMap: Record<string, string> = {
 
 /**
  * Typography for Button Component
- * @param { size } sizes Visual size of button (3 sizes)
+ * @param { size } size Visual size of button (3 sizes)
  * @param { as } as HTML tag to render for button
- * @param { colorScheme } ColorSchema of the Button
+ * @param { colorScheme } colorScheme of the Button
  * @param { ReactNode } children Child Nodes
  * @param { icon } icon name of IconLibrary
  * @example

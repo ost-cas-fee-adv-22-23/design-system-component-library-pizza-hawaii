@@ -32,7 +32,7 @@ export type TImage = ImgHTMLAttributes<HTMLImageElement> & {
 	caption?: string;
 };
 
-/**
+/*
  * Styles
  */
 
@@ -41,6 +41,10 @@ export type TImage = ImgHTMLAttributes<HTMLImageElement> & {
  * @param { src } source for image file
  * @param { preset } preset form mumble image Variants
  * @param { caption } string for optional text caption of the image
+ * @example
+ * return (
+ * 	<Image src="//picsum.photos/id/28/1600/1587/" preset="post" />
+ * )
  */
 
 /*

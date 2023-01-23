@@ -45,21 +45,27 @@ export type TTimeStamp = {
 
 export const TimeStamp: FC<TTimeStamp> = ({ date: inputDate, prefix, postfix, showTitle = true }) => {
 	const date = new Date(inputDate);
+	let dateTimeAgo;
+	let dateTime;
 
-	// Date-Ago format
-	const dateTimeAgo = [
-		prefix,
-		moment(date)
-			.locale('de-ch')
-			.fromNow(!!prefix || !!postfix),
-		postfix,
-	].join(' ');
+	// do this date only client-side
+	if (typeof window === 'object') {
+		// Date-Ago format
+		dateTimeAgo = [
+			prefix,
+			moment(date)
+				.locale('de-ch')
+				.fromNow(!!prefix || !!postfix),
+			postfix,
+		].join(' ');
+
+		dateTime = moment(date).locale('de').format('LLLL');
+	}
 
 	// Readable exact time
-	const dateTime = moment(date).locale('de').format('LLLL');
 
 	const props = {
-		dateTime: date.toISOString(),
+		dateTime: window && date.toISOString(),
 		title: showTitle ? dateTime : undefined,
 	};
 
