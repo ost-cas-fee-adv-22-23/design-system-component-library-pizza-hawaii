@@ -17,7 +17,7 @@ export const possibleRoundButtonColorschemes = ['slate', 'violent', 'gradient'] 
 export type TRoundButtonColor = (typeof possibleRoundButtonColorschemes)[number];
 export type TRoundButtonTags = (typeof possibleRoundButtonTags)[number];
 
-type TButton = {
+export type TRoundButton = {
 	/**
 	 * provide also here a button label for A11y and Screenreader reason
 	 */
@@ -36,8 +36,8 @@ type TButton = {
 	icon?: string;
 };
 
-type HTMLButtonProps = TButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
-type LinkButtonProps = TButton & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
+type HTMLButtonProps = TRoundButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
+type LinkButtonProps = TRoundButton & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
 type TButtonProps = HTMLButtonProps | LinkButtonProps;
 
 /*
@@ -45,7 +45,7 @@ type TButtonProps = HTMLButtonProps | LinkButtonProps;
  */
 
 /**
- * Typography for Button Component
+ * Typography for Round Button Component
  * @param { buttonLabel } string for Button label or only-screenreader
  * @param { as } HTML tag to render for roundbutton
  * @param { colorScheme } ColorSchema of the Buttonbackground color
@@ -53,8 +53,8 @@ type TButtonProps = HTMLButtonProps | LinkButtonProps;
  * @example
  * return (
  *  <RoundButton icon="edit">
-  		Button Text
-		</RoundButton>
+ * 		Button Text
+ *	</RoundButton>
  * )
  */
 
