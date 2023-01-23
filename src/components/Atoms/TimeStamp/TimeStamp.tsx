@@ -1,5 +1,5 @@
 'use client';
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import moment from 'moment';
 
 /*
@@ -26,6 +26,14 @@ export type TTimeStamp = {
 	 * optional: show a title option. Boolean or undefined.
 	 */
 	showTitle?: boolean;
+	/**
+	 * optional: locale: string
+	 * @default: 'de-ch'
+	 * @see https://momentjs.com/docs/#/i18n/
+	 * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale
+	 */
+
+	locale?: string;
 };
 
 /*
@@ -43,29 +51,32 @@ export type TTimeStamp = {
  * )
  */
 
-export const TimeStamp: FC<TTimeStamp> = ({ date: inputDate, prefix, postfix, showTitle = true }) => {
-	const date = new Date(inputDate);
-	let dateTimeAgo;
-	let dateTime;
-	let dateTimeISOString;
+export const TimeStamp: FC<TTimeStamp> = ({ date: inputDate, prefix, postfix, showTitle = true, locale = 'de-ch' }) => {
+	const [dateTimeAgo, setDateTimeAgo] = useState('');
+	const [dateTime, setDateTime] = useState('');
+	const [dateTimeISOString, setDateTimeISOString] = useState('');
 
-	// do this date only client-side
-	if (typeof window === 'object') {
-		// Date-Ago format
-		dateTimeAgo = [
+	useEffect(() => {
+		const date = new Date(inputDate);
+
+		// Readable relative time
+		const dateTimeAgo = [
 			prefix,
 			moment(date)
-				.locale('de-ch')
+				.locale(locale)
 				.fromNow(!!prefix || !!postfix),
 			postfix,
 		].join(' ');
+		setDateTimeAgo(dateTimeAgo);
 
-		dateTime = moment(date).locale('de').format('LLLL');
-		dateTimeISOString = date.toISOString();
+		// Readable exact time
+		const dateTime = moment(date).locale(locale).format('LLLL');
+		setDateTime(dateTime);
 
-	}
-
-	// Readable exact time
+		// ISO String
+		const dateTimeISOString = date.toISOString();
+		setDateTimeISOString(dateTimeISOString);
+	}, []);
 
 	const props = {
 		dateTime: dateTimeISOString,

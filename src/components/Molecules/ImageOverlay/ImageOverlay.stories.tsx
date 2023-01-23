@@ -6,7 +6,7 @@ import { IconNames } from '../../Atoms/Icon/IconLib';
 import { Image } from '../../Atoms/Image';
 
 export default {
-	title: 'Components/Molecules/ImageOverlay',
+	title: 'Components/Molecules',
 	component: Component,
 	argTypes: {
 		icon: {
