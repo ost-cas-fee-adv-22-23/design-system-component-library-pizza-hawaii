@@ -35,18 +35,14 @@ Tip: You can then set the token as an environment variable with the name `NPM_TO
 
 ### 2. Install Package
 
-1.  Run `npm install @smartive-education/pizza-hawaii` to install the package.
-2.  Import the necessary components and styles from the package in your application (Create a Test-Application see below).
-3.  Include the output.css file in your HTML file to apply the tailwind styles to your application.
-4.  Make sure to have the peer dependencies installed (react and react-dom)
-Please note that this package requires at least Node v16.14 to be used.
+```npm install @smartive-education/pizza-hawaii```
 
 ### 3. Use Components
 Start building your application with the components and styles provided by the Pizza Hawaii library.
 1. Import Components `import { Headline, Icon, ImageOverlay } from '@smartive-education/pizza-hawaii'`
-2. Import CSS `import '@smartive-education/pizza-hawaii/dist/bundle.css'`
+2. Import CSS to template `import '@smartive-education/pizza-hawaii/dist/bundle.css'`
 3. Install Font Poppins `npm install @fontsource/poppins`
-3. Import Font into your template 
+4. Import Font into your template 
 ```
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
