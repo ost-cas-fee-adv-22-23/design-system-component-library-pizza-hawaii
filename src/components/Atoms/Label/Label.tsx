@@ -1,31 +1,21 @@
 import React, { FC, LabelHTMLAttributes, HTMLAttributes, ReactNode } from 'react';
-/*
- * Settings
- */
 
-export const possibleLabelTags = ['span', 'label', 'p', 'legend'] as const;
-export const possibleLabelSizes = ['S', 'M', 'L', 'XL'] as const;
 /*
  * Type
  */
 
-type TLabelTags = (typeof possibleLabelTags)[number];
-type TLabelsSizes = (typeof possibleLabelSizes)[number];
 export type TLabel = {
 	/**
-	 * HTML tag to render a label
-	 * @default: label
-	 * @type TLabel
-	 * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
+	 * HTML tag to render a label (span, label, p, legend)
+	 * @default: span
 	 */
-	/**
-	 * Choose a HTML tag in which Label should be rendered
-	 */
-	as?: TLabelTags;
+	as?: 'span' | 'label' | 'p' | 'legend';
+
 	/**
 	 * text size options of this label
 	 */
-	size: TLabelsSizes;
+	size: 'S' | 'M' | 'L' | 'XL';
+
 	/**
 	 * React Children: here most probably text
 	 */
@@ -50,12 +40,12 @@ export const LabelSizeMap: Record<string, string> = {
 
 /**
  * Typography for Label Component
- * @param { as } as `span` `label`, `p`, `legend` - HTML-Tag of Label
- * @param { TLabelsSizes } size `S`, `M`, `L`, `XL` - size of Label
- * @param { ReactNode } children Child Nodes.
- * @example (
- * 	<Label as='legend' size='M'>My Labeltext</Label>
- * )
+ *
+ * @param { string } as - HTML tag to render
+ * @param { string } size - text size options of this label
+ * @param { ReactNode } children - React Children: here most probably text
+ * @example	<Label as='legend' size='M'>My Labeltext</Label>
+ *
  */
 
 export const Label: FC<TLabelProps> = ({ children = 'Label', as: Tag = 'span', size, ...rest }) => {

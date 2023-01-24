@@ -8,26 +8,27 @@ import moment from 'moment';
 
 export type TTimeStamp = {
 	/**
-	 * provide a Date Object or a string
-	 * @default:
-	 * @type Date
-	 * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+	 * date: Date as a Date-object or a string - will be converted to a Date-object
 	 */
 	date: Date | string;
+
 	/**
-	 * optional: prefix: text-string rendered before the actual timestamp value (examples: 'vor', 'seit')
+	 *  optional: prefix: string rendered before the actual timestamp value (examples: 'Mitglied seit' => 'Mitglied seit 5 Stunden')
 	 */
 	prefix?: string;
+
 	/**
-	 * optional: postfix: text-sting rendered after the actual timestamp value (examples: 'bis zur Deadline')
+	 * optional: postfix: sting rendered after the actual timestamp value (examples: 'bis zur Deadline' => '5 Stunden bis zur Deadline')
 	 */
 	postfix?: string;
+
 	/**
-	 * optional: show a title option. Boolean or undefined.
+	 * optional: showTitle: true if you like to show a title on hover
 	 */
 	showTitle?: boolean;
+
 	/**
-	 * optional: locale: string
+	 * optional: locale: string for the moment.js locale
 	 * @default: 'de-ch'
 	 * @see https://momentjs.com/docs/#/i18n/
 	 * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale
@@ -36,19 +37,16 @@ export type TTimeStamp = {
 	locale?: string;
 };
 
-/*
- * Styles
- */
 /**
  * Typography for TimeStamp Component
- * @param { Date } Date as a Date-object or a string - will be converted to a string
- * @param { prefix } text -string rendered before the actual timestamp value
- * @param { postfix } text text-sting rendered after the actual timestamp value (examples: 'until doomsday')
- * @param { showTitle } boolean optional: if you like to add a title
- * @example
- * return (
- *		<TimeStamp date="2022-10-25T16:00:00Z" prefix="Deadline: " />
- * )
+ *
+ * @param {Date | string} date - date: Date as a Date-object or a string - will be converted to a Date-object
+ * @param {string} prefix - optional: prefix: string rendered before the actual timestamp value (examples: 'Mitglied seit' => 'Mitglied seit 5 Stunden')
+ * @param {string} postfix - optional: postfix: sting rendered after the actual timestamp value (examples: 'bis zur Deadline' => '5 Stunden bis zur Deadline')
+ * @param {boolean} showTitle - optional: showTitle: true if you like to show a title on hover
+ * @param {string} locale - optional: locale: string for the moment.js locale
+ *
+ * @example TimeStamp date={new Date()} prefix='Mitglied seit' postfix='bis zur Deadline' showTitle={true} locale='de-ch' />
  */
 
 export const TimeStamp: FC<TTimeStamp> = ({ date: inputDate, prefix, postfix, showTitle = true, locale = 'de-ch' }) => {

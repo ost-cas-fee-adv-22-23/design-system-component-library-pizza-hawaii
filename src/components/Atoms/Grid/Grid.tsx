@@ -1,53 +1,44 @@
 import React, { FC, ReactNode, Children } from 'react';
-/*
- * Settings
- */
-
-export const possibleGridTags = ['div', 'ul', 'ol'] as const;
-export const possibleGridGapTags = ['S', 'M', 'L', 'XL'] as const;
-export const possibleGridVariantStyles = ['col', 'row'] as const;
-export const possibleGridwrapBelowScreenStyles = ['sm', 'md', 'lg'] as const;
-export const possibleGridMarginBelowStyles = ['XXS', 'XS', 'S', 'M', 'L'] as const;
 
 /*
  * Type
  */
 
-type TGridTag = (typeof possibleGridTags)[number];
-type TGridGapTag = (typeof possibleGridGapTags)[number];
-type TGridVariantStyle = (typeof possibleGridVariantStyles)[number];
-type TGridWrapBelowScreenStyles = (typeof possibleGridwrapBelowScreenStyles)[number];
-type TGridMarginBelowStyles = (typeof possibleGridMarginBelowStyles)[number];
-
 export type TGrid = {
 	/**
-	 * specify the html markup of your grid: 'div', 'ul','ol'
+	 * HTML tag to render a grid (div, ul, ol)
 	 */
-	as?: TGridTag;
+	as?: 'div' | 'ul' | 'ol';
+
 	/**
-	 * React Children nodes content of your grid
+	 * Child Nodes
 	 */
 	children: ReactNode;
+
 	/**
-	 * variants of grid direction: row or col
+	 * variants of grid: row or col
 	 */
-	variant: TGridVariantStyle;
+	variant: 'row' | 'col';
+
 	/**
-	 * variants of grid gap (distance of differ)
+	 * optional: a gap between the grid items can be added: choose the size of the gap: 'S','M','L','XL'
 	 */
-	gap?: TGridGapTag;
+	gap?: 'S' | 'M' | 'L' | 'XL';
+
 	/**
-	 * optional: centers the Grid Component: boolean
+	 * optional: the grid can be centered
 	 */
 	centered?: boolean;
+
 	/**
-	 * optional: a wrap below screen: choose the size of that wrapper: 'sm', 'md', 'lg'
+	 * optional: the grid can be wrapped below a screen size: choose the screen size: 'sm','md','lg'
 	 */
-	wrapBelowScreen?: TGridWrapBelowScreenStyles;
+	wrapBelowScreen?: 'sm' | 'md' | 'lg';
+
 	/**
-	 * optional: a margin below the grid can be added: choose the size of the margin-below: 'XXS','XS','S','M','L'
+	 * optional: the grid can have a margin below: choose the size of the margin: 'XXS','XS','S','M','L'
 	 */
-	marginBelow?: TGridMarginBelowStyles;
+	marginBelow?: 'XXS' | 'XS' | 'S' | 'M' | 'L';
 };
 
 /*
@@ -75,7 +66,6 @@ export const GridMarginBelowStyleMap: Record<string, string> = {
 	L: 'mb-16',
 };
 
-// `${wrapBelowScreen}:flex-wrap` would be nicer, but it doesn't work with Tailwind
 export const GridWrapBelowScreenStyleMap: Record<string, string> = {
 	sm: 'md:flex-wrap',
 	md: 'md:flex-wrap',
@@ -84,18 +74,16 @@ export const GridWrapBelowScreenStyleMap: Record<string, string> = {
 
 /**
  * Typography for Grid Component
- * @param { TGridTag } TGridTag: `div`, `ol`, `ul` HTML tag to render
- * @param { ReactNode } children Child nodes
- * @param { variant } variant Grid direction `col` or `row` 
- * @param { GridGapStyleMap } gap choose `S`, `M`, `L`, `XL` distance between the grid elements
- * @param { centered } centered: boolean, if you like the grid centered of the parent component
- * @param { TGridWrapBelowScreenStyles } wrapBelowScreen: `sm`, `md`, `lg`, choose the size of that wrapper below screen.
- * @example
- * return (
- * <Grid as="div" gap="M" marginBelow="M" variant="col" wrapBelowScreen="md" >
-  	{{children}}
-	</Grid>
- * )
+ *
+ * @param { string } as - HTML tag to render a grid (div, ul, ol)
+ * @param { string } variant - variants of grid: row or col
+ * @param { string } [gap] - choose the size of the gap: 'S','M','L','XL'
+ * @param { boolean } [centered] - the grid can be centered
+ * @param { string } [marginBelow] - choose the size of the margin: 'XXS','XS','S','M','L'
+ * @param { string } [wrapBelowScreen] - choose the screen size: 'sm','md','lg'
+ * @param { string } children - Child Nodes
+ *
+ * @example <Grid as="div" gap="M" marginBelow="M" variant="col" wrapBelowScreen="md" >{{children}}</Grid>
  */
 
 export const Grid: FC<TGrid> = ({
@@ -126,6 +114,12 @@ export const Grid: FC<TGrid> = ({
 
 	return <Tag {...props}>{children}</Tag>;
 };
+
+/**
+ * Helpers
+ */
+
+// Parse children to wrap them in li tags if the grid is a list
 function parseChildren(children: ReactNode, tag: string): ReactNode {
 	if (tag === 'ul' || tag === 'ol') {
 		return wrappChildrensInListItems(children);
@@ -133,6 +127,7 @@ function parseChildren(children: ReactNode, tag: string): ReactNode {
 	return children;
 }
 
+// Wrap children in li tags
 function wrappChildrensInListItems(children: ReactNode): ReactNode {
 	return Children.map(children, (child) => {
 		if (typeof child === 'string') {

@@ -29,9 +29,9 @@ Icon.args = {
 
 export const ListAll: ComponentStory<typeof Component> = (): JSX.Element => (
 	<div>
-		{IconNames.map((iconName) => {
+		{IconNames.map((iconName, i) => {
 			return (
-				<div className="flex flex-center mb-2">
+				<div className="flex flex-center mb-2" key={i}>
 					<Icon name={iconName} />
 					<span className="ml-2">{iconName}</span>
 				</div>
