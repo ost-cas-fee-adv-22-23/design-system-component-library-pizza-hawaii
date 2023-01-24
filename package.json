@@ -1,7 +1,24 @@
 {
 	"name": "@smartive-education/pizza-hawaii",
-	"version": "0.0.2-development",
+	"version": "1.0.0-development",
 	"homepage": "https://smartive-education.github.io/design-system-component-library-pizza-hawaii",
+	"description": "Design System Component Library",
+	"author": "Team Pizza Hawaii",
+	"contributors": [
+		{
+			"name": "Felix Adam",
+			"url": "https://github.com/flxtag"
+		},
+		{
+			"name": "Jürgen Rudigier",
+			"url": "https://github.com/rudigier"
+		}
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/smartive-education/design-system-component-library-pizza-hawaii.git"
+	},
 	"publishConfig": {
 		"access": "public",
 		"registry": "https://npm.pkg.github.com",
