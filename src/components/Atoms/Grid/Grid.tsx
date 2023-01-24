@@ -81,7 +81,7 @@ export const GridWrapBelowScreenStyleMap: Record<string, string> = {
  * @param { boolean } [centered] - the grid can be centered
  * @param { string } [marginBelow] - choose the size of the margin: 'XXS','XS','S','M','L'
  * @param { string } [wrapBelowScreen] - choose the screen size: 'sm','md','lg'
- * @param { string } children - Child Nodes
+ * @param { ReactNode } children - Child Nodes
  *
  * @example <Grid as="div" gap="M" marginBelow="M" variant="col" wrapBelowScreen="md" >{{children}}</Grid>
  */
