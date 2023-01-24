@@ -11,6 +11,7 @@ export type TCopyToClipboardButton = {
 	 * default Button text
 	 */
 	defaultButtonText: string;
+
 	/**
 	 * active Button text
 	 */
@@ -18,31 +19,19 @@ export type TCopyToClipboardButton = {
 
 	/**
 	 * text to share
-	 * @default window.location.href
-	 * @example
-	 * return (
-	 * <CopyToClipboardButton shareText="https://www.google.com">
-	 * 	Share
-	 * </CopyToClipboardButton>
-	 * )
+	 * @default window.location.href (current url)
 	 */
 	shareText?: string;
 };
 
-/*
- * Style
- */
-
 /**
- * Typography for Headlines Component
- * @param { defaultButtonText } defaultButtonText text of Button in initial state Child nodes
- * @param { activeButtonText } activeButtonText text of Button in active state Child node
- * @param { shareText } shareText text to share
- * @default window.location.href
- * @example
- * return (
- *   <CopyToClipboardButton activeButtonText="Link copied" defaultButtonText="Copy Link" colorScheme="pink" />
- * )
+ * CopyToClipboardButton Component
+ *
+ * @param { string } defaultButtonText - default Button text
+ * @param { string } activeButtonText - active Button text
+ * @param { string } shareText - text to share
+ *
+ * @example <CopyToClipboardButton shareText="https://www.google.com">Share</CopyToClipboardButton>
  */
 
 export const CopyToClipboardButton: FC<TCopyToClipboardButton> = ({
@@ -65,11 +54,10 @@ export const CopyToClipboardButton: FC<TCopyToClipboardButton> = ({
 
 	const buttonProps = {
 		buttonText: isActive ? activeButtonText : defaultButtonText,
-		colorScheme: 'slate',
 		iconName: 'share',
 		isActive,
 		onClick: copyToText,
 	};
 
-	return <InteractionButton as="button" type="button" {...buttonProps} />;
+	return <InteractionButton as="button" type="button" colorScheme="slate" {...buttonProps} />;
 };

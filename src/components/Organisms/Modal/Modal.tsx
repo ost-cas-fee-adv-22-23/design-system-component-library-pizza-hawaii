@@ -48,8 +48,16 @@ const ModalOverlayStyle = ['fixed inset-0 z-40', 'opacity-25 bg-violet-600'];
 const ModalBodyStyle = ['relative flex flex-col w-full overflow-x-hidden max-w-screen max-h-screen min-w-full'];
 const ModalHeaderStyle = ['flex items-center justify-between gap-4', 'px-8 py-6', 'bg-violet-600 text-white'];
 
-/*
- * Functional Component
+/**
+ * Modal Component
+ *
+ * @param {string} title - title of modal window
+ * @param {ReactNode} children - React node
+ * @param {boolean} isVisible - isVisible boolean to use visibility of modal component
+ * @param {string} id - optional us an id (string)
+ * @param {function} onClose - on Close method: empty function as standard for closing the modal window. change to something else if you like.
+ *
+ * @example <Modal title="Modal Title" isVisible={true} onClose={() => {}}>Modal Content</Modal>
  */
 
 export const Modal: FC<TModal> = ({ title, children = 'Modal Content', isVisible = false, id = uid('Modal'), onClose }) => {

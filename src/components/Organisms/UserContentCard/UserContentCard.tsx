@@ -12,11 +12,31 @@ import { UserProfile, TUserProfileData, TUserProfileStyle } from '../../Molecule
  */
 
 export type TUserContentCard = {
+	/**
+	 * children: React node
+	 */
 	children: ReactNode;
+
+	/**
+	 * headline: React node (slot for headline position)
+	 */
 	headline: ReactNode;
+
+	/**
+	 * userProfile: User Profile Data (userName, avatar, href, buttonLabel)
+	 */
 	userProfile: TUserProfileData;
-	avatarVariant: keyof typeof UserProfileVariantMap;
-	avatarSize: keyof typeof UserProfileAvatarSizeMap;
+
+	/**
+	 * avatarVariant: Avatar variant (standalone, subcomponent)
+	 */
+	avatarVariant: 'standalone' | 'subcomponent';
+
+	/**
+	 * avatarSize: Avatar size (S, M)
+	 * @default M
+	 */
+	avatarSize: 'S' | 'M';
 };
 
 /*
@@ -32,6 +52,35 @@ const UserProfileAvatarSizeMap = {
 	S: { size: 'S', border: false },
 	M: { size: 'M', border: true },
 };
+
+/**
+ * User Content Card Component
+ *
+ * @param {string} headline - headline
+ * @param {object} userProfile - user profile data
+ * @param {string} userProfile.userName - user name
+ * @param {string} userProfile.avatar - user avatar
+ * @param {string} userProfile.href - user href
+ * @param {string} userProfile.buttonLabel - user button label
+ * @param {string} avatarVariant - avatar variant
+ * @param {string} avatarSize - avatar size
+ *
+ * @example
+ * <UserContentCard
+ * 	headline={headerSlotContent}
+ * 	userProfile={{
+ * 		avatar: author.avatar,
+ * 		userName: author.userName,
+ * 		href: author.profileLink,
+ * 		buttonLabel: 'Change Avatar',
+ * 	}}
+ * 	avatarVariant="standalone"
+ * 	avatarSize="M"
+ * >
+ * 	Content of the card
+ * </UserContentCard>
+ *
+ */
 
 export const UserContentCard: FC<TUserContentCard> = ({
 	headline,
