@@ -1,17 +1,13 @@
 import { Meta } from '@storybook/addon-docs';
-import Code from './assets/code-brackets.svg';
-import Colors from './assets/colors.svg';
-import Comments from './assets/comments.svg';
-import Direction from './assets/direction.svg';
-import Flow from './assets/flow.svg';
-import Plugin from './assets/plugin.svg';
-import Repo from './assets/repo.svg';
-import StackAlt from './assets/stackalt.svg';
 
 <Meta title="Welcome/Introduction" />
 
 <style>
 	{`
+	#docs-root {
+		overflow: hidden;
+		overflow-y: visible;
+	}
    .heroImg {
 	margin-bottom: 150px;
    }
@@ -52,7 +48,7 @@ import StackAlt from './assets/stackalt.svg';
 
 ## 🍕 Welcome to the Pizza Hawaii Design System!
 
-Here, you will find a variety of components that will help you create beautiful and tasty designs for your websites and apps.
+Here, you will find a variety of components that will help you create beautiful, accessible and tasty designs for your websites and apps.
 
 Our components are organized into three categories - **Atoms**, **Molecules**, and **Organisms**. Atoms are the smallest and most basic building blocks, such as text and icons. Molecules are larger and more complex, made up of several atoms. Finally, organisms are the largest and most complete, combining molecules and atoms to create functional sections of a user interface.
 
@@ -62,20 +58,26 @@ With the Pizza Hawaii Design System, you have everything you need to create deli
 
 ## 🍕 Install
 
-Our components are written in React and Typescript.
+Our components are written in React, Typescript and styled with TailwindCSS.
 
 Add the components to your project.
 
 `npm install --save @smartive-education/pizza-hawaii`
 
 ### **Use**
+Start building your application with the components and styles provided by the Pizza Hawaii library.
+1. Import Components `import { Headline, Icon, ImageOverlay } from '@smartive-education/pizza-hawaii'`
+2. Import CSS `import '@smartive-education/pizza-hawaii/dist/bundle.css'`
+3. Install Font Poppins `npm install @fontsource/poppins`
+3. Import Font into your template
+```
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+```
 
-Import components you want into your UI
 
-`import { Button, Icon } from '@smartive-education/pizza-hawaii';`
-
-and use them like so
-
+Now you can use them like this:
 ```
   const example = () => (
     <div>
@@ -84,6 +86,7 @@ and use them like so
     </div>
   )
 ```
+> Enjoy our components!  🎉
 
 ## 🍕 Pizzaiolos
 
