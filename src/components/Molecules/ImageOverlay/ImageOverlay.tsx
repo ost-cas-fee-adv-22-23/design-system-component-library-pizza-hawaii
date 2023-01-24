@@ -13,28 +13,19 @@ import { Icon, TIconName } from '../../Atoms/Icon';
 
 export type TImageOverlay = {
 	/**
-	 * children: React component -> provide an image with the image component
+	 * React Children: here most probably text
 	 */
 	children: ReactNode;
+
 	/**
-	 * always provide a button label string for A11y screenreader reason.
+	 * buttonLabel: string for the button because of accessibility
 	 */
 	buttonLabel: string;
+
 	/**
-	 * onClick function is a empty function: edit this to your needs.
+	 * onClick: function to execute on click
 	 */
 	onClick: () => void;
-};
-
-export type TImageOverlayPreset = {
-	/**
-	 * provide an icon Name string from the IconLibray
-	 */
-	icon: TIconName;
-	/**
-	 * provide an animation name string for the icon animation. example: 'enlarge'
-	 */
-	animation: string;
 };
 
 export type TImageOverlayProps = (TImageOverlay & { preset: keyof typeof ImageOverlayTypeMap }) &
@@ -72,21 +63,14 @@ const ImageOverlayTypeMap = {
 
 /**
  * Typography for ImageOverlay Component
- * @param { buttonLabel } buttonLabel for the the Button and screenreader
- * @param { ReactNode } children means here <Image comonent>
- * @param { icon } icon name of icon by IconLibrary
- * @param { animation } animation `edit` or `enlarge` for animation of icon. (does not work with all icons)
- * @param { onClick } onClick handler to be implemented by yourself!
- * @example
- * return (
- * <ImageOverlay  icon="repost" onClick={() => {}} preset="edit" >
-  	<Image
-    	preset="post"
-    	src="//picsum.photos/id/28/1600/1587/"
-  	/>
-	</ImageOverlay>
- * )
-*/
+ *
+ * @param {ReactNode} children - React Children
+ * @param {string} preset - preset for the image overlay
+ * @param {string} buttonLabel - label for the button
+ * @param {function} onClick - function to execute on click
+ *
+ * @example <ImageOverlay preset="edit" buttonLabel="edit" onClick={() => {}}><img src="https://picsum.photos/id/28/1600/1587/" alt="image" /></ImageOverlay>
+ */
 
 export const ImageOverlay: FC<TImageOverlayProps> = ({ children, buttonLabel, ...props }) => {
 	const { preset, ...rest } = props;

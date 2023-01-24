@@ -1,38 +1,41 @@
 import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 import { Label } from '../../Atoms/Label/Label.stories';
-
 import { Icon } from '../../Atoms/Icon';
-/*
- * Settings
- */
-
-export const possibleInteractionButtonColors = ['slate', 'violet', 'pink'] as const;
 
 /*
  * Type
  */
 
 export type TInteractionButton = {
-	as: 'button' | 'a';
 	/**
-	 * choose a colorscheme for the button number and icon
+	 * HTML tag to render a button (button, a)
+	 * @default 'button'
 	 */
-	colorScheme: keyof typeof InteractionButtonColorSchemeMap.default;
+	as: 'button' | 'a';
+
 	/**
-	 * buttonText: text of the button
+	 * color scheme options of this button (slate, violet, pink)
+	 */
+	colorScheme: 'slate' | 'violet' | 'pink';
+
+	/**
+	 * buttonText: text to render
 	 */
 	buttonText: string;
+
 	/**
-	 * iconName: icon name of IconLibrary
+	 * iconName: icon name to render
 	 */
 	iconName: string;
+
 	/**
-	 * isActive: boolean to set the button to active state
+	 * isActive: boolean to set active state
 	 * @default false
 	 */
 	isActive?: boolean;
+
 	/**
-	 * onClick: function to handle click event
+	 * onClick: callback function to handle click event
 	 * @default () => {}
 	 */
 	onClick: () => void;
@@ -74,6 +77,7 @@ export const InteractionButtonIconColorSchemeMap: Record<string, Record<string, 
 		violet: ['text-violet-600', 'group-hover:text-violet-600'].join(' '),
 	},
 };
+
 /**
  * Typography for InteractionButton Component
  * @param { buttonText } buttonText label of the button
