@@ -27,6 +27,12 @@ const FormBaseStyle: string[] = [
 	'text-slate-700',
 ];
 
+/**
+ * Form Component
+ * @param { ReactNode } children - Child Nodes of the form
+ * @example <Form>Form</Form>
+ */
+
 export const Form: FC<TFormType> = ({ children, ...props }) => (
 	<form className={FormBaseStyle.join(' ')} {...props}>
 		{children}

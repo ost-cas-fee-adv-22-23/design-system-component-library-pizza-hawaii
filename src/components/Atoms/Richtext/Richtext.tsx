@@ -5,9 +5,6 @@ import xss, { IWhiteList } from 'xss';
  * Settings
  */
 
-export const possibleRichtextTags = ['div', 'section', 'article'] as const;
-export const possibleRichtextSizes = ['M', 'L'] as const;
-
 export const defaultAllowedTags: IWhiteList = {
 	p: [],
 	a: ['href', 'title', 'target'],
@@ -17,22 +14,22 @@ export const defaultAllowedTags: IWhiteList = {
  * Type
  */
 
-type TRichtextTag = (typeof possibleRichtextTags)[number];
-type TRichtextSize = (typeof possibleRichtextSizes)[number];
-
 export type TRichtext = {
 	/**
-	 * as: select HTML tags for rendering
+	 * HTML tag to render a richtext (div, section, article)
 	 */
-	as?: TRichtextTag;
+	as?: 'div' | 'section' | 'article';
+
 	/**
-	 * size: select text size 'M' or 'L'
+	 * sizes for text-sizes: `L`, `M`
 	 */
-	size: TRichtextSize;
+	size: 'M' | 'L';
+
 	/**
-	 * child nodes or string
+	 * React Children or HTML string
 	 */
 	children: ReactNode;
+
 	/**
 	 * optional: define allowed tags within an Allowed Tags/Attributes Map.
 	 * default: 'a': ['href', 'title', 'target'], 'p': [].
@@ -58,29 +55,14 @@ export const RichtextChildStyles: string[] = [
 ];
 
 /**
- * @param { TRichtextTag } as select HTML tags: `div`, `section`, `article`
- * @param { TRichtextSize } sizes for text-sizes: `L`, `M`
- * @param { children } React children node
- * @param { allowedTags } allowedTags default: `a`: ['href, 'title', 'target'],  `p`: []
- * @returns <Richtext size="M" as="div" >My Richtext goes here...</Richtext>
+ * Richtext Component
+ *
+ * @param { string } as - HTML tag to render
+ * @param { string } size - text size options of this label
+ * @param { ReactNode } children - React Children or HTML string
+ *
+ * @example	<Richtext as='div' size='M'>My <a href="">Richtext</a> goes here...</Richtext>
  */
-
-/*
- * Helpers
- */
-
-function sanitizeContent(content: string, allowedTags: IWhiteList): string {
-	content = xss(content, {
-		whiteList: allowedTags,
-		stripIgnoreTag: true,
-	});
-
-	if (!/<\/?[a-z][\s\S]*>/i.test(content)) {
-		content = `<p>${content}</p>`;
-	}
-
-	return content;
-}
 
 export const Richtext: FC<TRichtext> = ({
 	children,
@@ -106,3 +88,20 @@ export const Richtext: FC<TRichtext> = ({
 
 	return <Tag {...props}>{children}</Tag>;
 };
+
+/*
+ * Helpers
+ */
+
+function sanitizeContent(content: string, allowedTags: IWhiteList): string {
+	content = xss(content, {
+		whiteList: allowedTags,
+		stripIgnoreTag: true,
+	});
+
+	if (!/<\/?[a-z][\s\S]*>/i.test(content)) {
+		content = `<p>${content}</p>`;
+	}
+
+	return content;
+}

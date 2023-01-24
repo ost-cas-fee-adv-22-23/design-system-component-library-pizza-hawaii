@@ -10,25 +10,30 @@ import uid from '../../../../utils/uid';
 
 export type TFormInput = {
 	/**
-	 * label: add a label to the form input
+	 * label text for form input field
 	 */
 	label: string;
+
 	/**
 	 * optional: (but recommended) add errorMessage text if the form input is not valid or could not be submitted
 	 */
 	errorMessage?: string;
+
 	/**
 	 * optional: id is a string to identify the form Input
 	 */
 	id?: string;
+
 	/**
 	 * optional: hide the label visually.
 	 */
 	hideLabel?: boolean;
+
 	/**
 	 * optional: display an icon within the form from the iconLibrary
 	 */
 	icon?: string;
+
 	/**
 	 * onChange method: empty function as standard. hook here in for your method happening onChange.
 	 */
@@ -36,21 +41,18 @@ export type TFormInput = {
 };
 
 type TFormInputType = TFormInput & InputHTMLAttributes<HTMLInputElement>;
-/*
- * Styles
- */
 
 /**
- * Typography for Button Component
- * @param { label } label text for form input field
- * @param { errorMessage } string errorMessage text when form validation is not passed
- * @param { id } id string for identifying the form input
- * @param { hideLabel } hideLabel for hiding label visually
- * @param { icon } icon name (string) of IconLibrary
- * @example
- * return (
- *   <FormInput label="Form Input" onChange={() => {}} />
- * )
+ * FormInput Component
+ *
+ * @param {label} - label text for form input field (required)
+ * @param {errorMessage} - optional: (but recommended) add errorMessage text if the form input is not valid or could not be submitted
+ * @param {id} - optional: id is a string to identify the form Input
+ * @param {hideLabel} - optional: hide the label visually.
+ * @param {icon} - optional: display an icon within the form from the iconLibrary
+ * @param {onChange} - onChange method: empty function as standard. hook here in for your method happening onChange.
+ *
+ * @example <FormInput label="Form Input" onChange={() => {}} />
  */
 
 export const FormInput: FC<TFormInputType> = ({ label, errorMessage, id = uid('FormInput'), hideLabel, icon, ...props }) => {

@@ -11,23 +11,18 @@ export type TUserName = {
 	 */
 	children: ReactNode;
 	/**
-	 * provide a link href string url
+	 * href string: here the link to the user profile.
 	 */
 	href: string;
 };
-/*
- * Styles
- */
+
 /**
+ * User Name Component
  *
- * @param { children } children Child Nodes
- * @param { href } url link href string
- * @example
- * return (
- * <UserName href="/user/johndoe">
- *	 John Doe
- * </UserName>
- * )
+ * @param { ReactNode } children - Child Nodes, here the name of the user.
+ * @param { string } href - here the link to the user profile.
+ *
+ * @example <UserName href="https://www.google.com">User Name</UserName>
  */
 
 export const UserName: FC<TUserName> = ({ children, href }) => {

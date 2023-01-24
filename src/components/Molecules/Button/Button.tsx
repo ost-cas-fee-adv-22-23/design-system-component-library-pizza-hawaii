@@ -4,40 +4,32 @@ import { Icon, TIconName } from '../../Atoms/Icon';
 import { Label } from '../../Atoms/Label';
 
 /*
- * Settings
- */
-
-export const possibleButtonTags = ['button', 'a', 'span'] as const;
-export const possibleButtonSizes = ['S', 'M', 'L'] as const;
-export const possibleButtonColorschemes = ['slate', 'violet', 'gradient'] as const;
-
-/*
  * Type
  */
 
-export type TButtonSize = typeof possibleButtonSizes;
-export type TButtonColor = (typeof possibleButtonColorschemes)[number];
-export type TButtonTags = (typeof possibleButtonTags)[number];
-
 export type TButton = {
 	/**
-	 * render as: HTML Tag for the Button: 'button', 'a' or 'span'
+	 * HTML tag to render a button (button, a, span)
 	 */
-	as?: TButtonTags;
+	as?: 'button' | 'a' | 'span';
+
 	/**
-	 * children: React Node (a.k.a. Button Text goes here).
+	 * React Children: here most probably text
 	 */
 	children: ReactNode;
+
 	/**
-	 * choose between 3 sizes: 'S', 'M', 'L'
+	 * text size options of this button (S, M, L)
 	 */
-	size?: keyof typeof ButtonSizeMap;
+	size?: 'S' | 'M' | 'L';
+
 	/**
-	 * choose between 3 colorSchemes: 'slate', 'violet', 'gradient'
+	 * color scheme options of this button (slate, violet, gradient)
 	 */
-	colorScheme: TButtonColor;
+	colorScheme: 'slate' | 'violet' | 'gradient';
+
 	/**
-	 * choose a icon by Name from the IconLibrary
+	 * icon name to render
 	 */
 	icon?: TIconName;
 };
@@ -86,20 +78,16 @@ export const ButtonColorMap: Record<string, string> = {
 };
 
 /**
- * Typography for Button Component
- * @param { size } size Visual size of button (3 sizes)
- * @param { as } as HTML tag to render for button
- * @param { colorScheme } colorScheme of the Button
- * @param { ReactNode } children Child Nodes
- * @param { icon } icon name of IconLibrary
- * @example
- * return (
- *   <Button icon="eye" size="M">ButtonText</Button>
- * )
- * /
-
-/*
- * Functional Component
+ * Button component
+ *
+ * @param { string } as - HTML tag to render
+ * @param { string } size - text size options of this button (S, M, L)
+ * @param { string } colorScheme - color scheme options of this button (slate, violet, gradient)
+ * @param { string } icon - icon name to render
+ * @param { ReactNode } children - React Children: here most probably text
+ * @param {any} props - all other props will be spreaded to the HTML Tag
+ *
+ * @example <Button as="button" size="M" colorScheme="violet" icon="mumble">Button</Button>
  */
 
 export const Button: FC<TButtonProps> = ({

@@ -18,6 +18,11 @@ export type FormUpload = {
 	 */
 	label: string;
 	/**
+	 * string for the dropzone title
+	 * @default 'Datei hierhin ziehen ...'
+	 */
+	dropzoneTitle?: string;
+	/**
 	 * optional: string for providing a context-hint to the user (example: 'max size: 10 MB')
 	 */
 	hint?: string;
@@ -50,17 +55,17 @@ type FormUploadType = FormUpload & InputHTMLAttributes<HTMLInputElement>;
  */
 
 /**
- * Typography for Button Component
- * @param { label } label text for upload form
- * @param { errorMessage } string errorMessage text when form validation is not passed
- * @param { id } id string for identifying the form
- * @param { buttonTitle } text the upload button
- * @param { hideLabel } hideLabel for hiding label visually
- * @param { hint } text for hint user help
- * @example
- * return (
- *  <FormUpload hint="JPEG or PNG" label="Form Upload" onChange={() => {}} />
- * )
+ * FormUpload Component
+ *
+ * @param {label} - label: add a label to the form input (required)
+ * @param {hint} - optional: string for providing a context-hint to the user (example: 'max size: 10 MB')
+ * @param {buttonTitle} - optional: string for uploadButton text
+ * @param {errorMessage} - optional: provide a error message text as user feedback if upload fails.
+ * @param {id} - optional: id is a string to identify the form Input
+ * @param {hideLabel} - optional: hide the label visually.
+ * @param {onChange} - onChange method: empty function as standard. hook here in for your method happening onChange.
+ *
+ * @example <FormUpload label="Form Upload" onChange={() => {}} />
  */
 
 const fieldStyle: string[] = [
@@ -74,7 +79,7 @@ const fieldStyle: string[] = [
 
 export const FormUpload: FC<FormUploadType> = ({
 	label,
-	title = 'Datei hierhin ziehen ...',
+	dropzoneTitle = 'Datei hierhin ziehen ...',
 	buttonTitle = '... oder Datei auswählen',
 	hint = 'JPEG oder PNG, maximal 50 MB',
 	errorMessage,
@@ -95,7 +100,7 @@ export const FormUpload: FC<FormUploadType> = ({
 				>
 					<Icon name="upload" size="L" />
 					<Label as="span" size="XL">
-						{title}
+						{dropzoneTitle}
 					</Label>
 					{hint && (
 						<span className="text-slate-400">

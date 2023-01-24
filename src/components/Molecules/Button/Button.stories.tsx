@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { IconNames } from '../../Atoms/Icon/IconLib';
-import { Button as Component, ButtonSizeMap, ButtonColorMap, possibleButtonTags } from './Button';
+import { Button as Component, ButtonSizeMap, ButtonColorMap } from './Button';
 
 export default {
 	title: 'Components/Molecules/Button',
@@ -10,7 +10,7 @@ export default {
 	component: Component,
 	argTypes: {
 		as: {
-			options: possibleButtonTags,
+			options: ['button', 'a', 'span'],
 			control: { type: 'radio' },
 		},
 		icon: {

@@ -3,39 +3,35 @@ import React, { FC, ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes, HTMLA
 import { Icon, TIconSize, TIconName } from '../../Atoms/Icon/Icon';
 
 /*
- * Settings
- */
-
-export const possibleIconLinkTags = ['a', 'button', 'span'] as const;
-
-/*
  * Type
  */
 
 export type TIconLinkSize = keyof typeof IconLinkSizeMap;
 export type TIconLinkColor = keyof typeof IconLinkColorMap;
-export type TIconLinkTag = (typeof possibleIconLinkTags)[number];
 
 type TIconLink = {
 	/**
-	 * chilren: React Node (a.k.a: Link Text)
+	 * React Children: here most probably text
 	 */
 	children: ReactNode;
+
 	/**
-	 * choose between three HTML elements for the rendered Link
-	 * 'a', 'button', 'span'
+	 * HTML tag to render a button (button, a, span)
 	 */
-	as: TIconLinkTag;
+	as: 'a' | 'button' | 'span';
+
 	/**
-	 * choose between three sizes: 'S', 'M', 'L'
+	 * text size options of this button (S, M, L)
 	 */
 	size?: TIconLinkSize;
+
 	/**
-	 * choose between thee colorSchemes: 'slate', 'violet', 'pink'
+	 * color scheme options of this button (slate, violet, gradient)
 	 */
 	colorScheme: TIconLinkColor;
+
 	/**
-	 * choose an iconName string from our IconLib
+	 * icon name to render
 	 */
 	icon: TIconName;
 };
@@ -65,16 +61,15 @@ export const IconLinkColorMap: Record<string, string> = {
 };
 
 /**
- * Typography for Button Component
- * @param { size } size  of button: `S`, `M`, `L`
- * @param { as } as HTML tag to render for IconLink: `a`, `button`, `span`
- * @param { TIconLinkColor } ColorSchema IconLink: `slate`, `violet`, `pink`
- * @param { ReactNode } children Child Nodes1
- * @param { icon } icon name of IconLibrary
- * @example
- * return (
- *   <IconLink colorScheme="violet" icon="settings" size="M" />
- * )
+ * IconLink component
+ *
+ * @param {string} children - React Children: here most probably text
+ * @param {string} as - HTML tag to render a button (button, a, span)
+ * @param {string} size - text size options of this button (S, M, L)
+ * @param {string} colorScheme - color scheme options of this button (slate, violet, gradient)
+ * @param {string} icon - icon name to render
+ *
+ * @example <IconLink icon="arrowRight" colorScheme="slate" size="M">IconLink</IconLink>
  * /
 
 

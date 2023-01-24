@@ -1,36 +1,29 @@
 import React, { FC, ReactNode } from 'react';
 
 /*
- * Settings
- */
-
-export const possibleCardTags = ['article', 'div', 'section'] as const;
-export const possibleCardSizes = ['S', 'M'] as const;
-
-/*
  * Type
  */
 
-export type TCardTag = (typeof possibleCardTags)[number];
-export type TCardSize = (typeof possibleCardSizes)[number];
-
 type TCard = {
 	/**
-	 * render as: HTML Tag for the Card Component
+	 * HTML tag to render a card (article, div, section)
 	 */
-	as?: TCardTag;
+	as?: 'article' | 'div' | 'section';
+
 	/**
-	 * React Nodes children
+	 * Child Nodes of the card
 	 */
 	children: ReactNode;
+
 	/**
-	 * optional: rounded corners of the card: if true, the card will have rounded corners
+	 * optional: the card can be rounded
 	 */
 	rounded?: boolean;
+
 	/**
-	 * optional: size of the card
+	 * optional: the card can have a size: choose the size: 'S','M'
 	 */
-	size?: TCardSize;
+	size?: 'S' | 'M';
 };
 
 /*
@@ -41,6 +34,17 @@ const sizeMap: Record<string, string> = {
 	S: 'py-s px-s',
 	M: 'py-l px-xl',
 };
+
+/**
+ * Card Component
+ *
+ * @param { string } as - HTML tag to render a card (article, div, section)
+ * @param { string } size - size of the card: 'S','M'
+ * @param { boolean } rounded - the card can be rounded
+ * @param { ReactNode } children - Child Nodes of the card
+ *
+ * @example <Card as="article" size="M" rounded={true}>Hello World</Card>
+ */
 
 export const Card: FC<TCard> = ({ as: Tag = 'div', children, size = 'M', rounded = true }) => {
 	return (
