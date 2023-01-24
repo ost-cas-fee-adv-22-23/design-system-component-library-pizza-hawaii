@@ -1,8 +1,8 @@
 # CAS FEE ADV Design System - Pizza Hawaii 🍕 
 
-This package, developed by [**Felix Adam**](https://github.com/flxtagi) and [**Jürgen Rudigier**](https://github.com/rudigier), is a component library for a fictional Twitter clone named "Mumble". It is created as a part of a Frontend Engineering Advanced (CAS) course, with the goal of providing a reusable and maintainable set of UI components that can be integrated into an React application. 
+This package, developed by [Felix Adam](https://github.com/flxtagi) and [Jürgen Rudigier](https://github.com/rudigier), is a component library for a fictional Twitter clone named "Mumble". It is created as a part of a Frontend Engineering Advanced (CAS) course, with the goal of providing a reusable and maintainable set of UI components that can be integrated into an React application. 
 
-[Here can find the latest published Storybook](https://smartive-education.github.io/design-system-component-library-pizza-hawaii/)
+[**> Preview Latest published Storybook**](https://smartive-education.github.io/design-system-component-library-pizza-hawaii/)
 
 **The package uses:**
 - `Storybook` for building and testing UI components, which allows us to build, visualize and test individual components in isolation
@@ -22,7 +22,7 @@ This package, developed by [**Felix Adam**](https://github.com/flxtagi) and [**J
 ## Installation Guide for Using the Library
 
 ### 1. Github Token
-This package is published to GitHub Package Registry, which requires a GitHub token with the `read:packages` permissions to be set in your environment to be able to publish and install the package. You can create a [https://github.com/settings/tokens](new token in your GitHub settings) ("Developer Settings" > "Personal access tokens") 
+This package is published to GitHub Package Registry, which requires a GitHub token with the `read:packages` permissions to be set in your environment to be able to publish and install the package. You can create a new token in your GitHub setting "Settings" > "Developer Settings" > "Personal access tokens" or [https://github.com/settings/tokens](Personal access tokens)
 
 Read more about Personal access tokens: [https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token](Link)
 
