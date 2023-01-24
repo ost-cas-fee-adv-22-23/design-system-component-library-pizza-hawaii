@@ -4,32 +4,25 @@ import { Icon } from '../../Atoms/Icon';
 import { ButtonBaseStyle, ButtonColorMap } from '../Button';
 
 /*
- * Settings
- */
-
-export const possibleRoundButtonTags = ['button', 'a'] as const;
-export const possibleRoundButtonColorschemes = ['slate', 'violent', 'gradient'] as const;
-
-/*
  * Type
  */
 
-export type TRoundButtonColor = (typeof possibleRoundButtonColorschemes)[number];
-export type TRoundButtonTags = (typeof possibleRoundButtonTags)[number];
-
 export type TRoundButton = {
 	/**
-	 * provide also here a button label for A11y and Screenreader reason
+	 * HTML tag to render a button (button, a)
+	 */
+	as?: 'button' | 'a';
+
+	/**
+	 * label for screenreaders
 	 */
 	buttonLabel: string;
-	/**
-	 * choose HTML Tag to render the RoundButton
-	 */
-	as?: TRoundButtonTags;
+
 	/**
 	 * colorscheme for RoundButton background: slate, violet or gradient
 	 */
-	colorScheme: TRoundButtonColor;
+	colorScheme: 'slate' | 'violet' | 'gradient';
+
 	/**
 	 * specify a Icon-name string from the IconLibrary
 	 */
@@ -44,22 +37,20 @@ type TButtonProps = HTMLButtonProps | LinkButtonProps;
  * Style
  */
 
-/**
- * Typography for Round Button Component
- * @param { buttonLabel } string for Button label or only-screenreader
- * @param { as } HTML tag to render for roundbutton
- * @param { colorScheme } ColorSchema of the Buttonbackground color
- * @param { icon } icon name of IconLibrary
- * @example
- * return (
- *  <RoundButton icon="edit">
- * 		Button Text
- *	</RoundButton>
- * )
- */
-
 export const RoundButtonBaseStyle: string[] = [...ButtonBaseStyle, 'inline-flex', 'p-4 rounded-full w-auto'];
 export const RoundButtonColorMap: Record<string, string> = ButtonColorMap;
+
+/**
+ * RoundButton Component
+ *
+ * @param {string} as - choose HTML Tag to render the RoundButton (button, a)
+ * @param {string} buttonLabel - label for screenreaders
+ * @param {string} colorScheme - colorscheme for RoundButton background: slate, violet or gradient
+ * @param {string} icon - specify a Icon-name string from the IconLibrary
+ * @param {any} props - all other props will be spreaded to the HTML Tag
+ *
+ * @example <RoundButton buttonLabel="Mumble" as="button" colorScheme="violet" icon="mumble" />
+ */
 
 export const RoundButton: FC<TButtonProps> = ({
 	as: Tag = 'button',

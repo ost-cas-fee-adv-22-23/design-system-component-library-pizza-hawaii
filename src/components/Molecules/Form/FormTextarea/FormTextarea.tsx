@@ -3,12 +3,9 @@ import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../Form
 
 import uid from '../../../../utils/uid';
 
-export const possibleFormTextareaSizes = ['M', 'L'] as const;
 /*
  * Type
  */
-
-export type TFormTextareaSize = (typeof possibleFormTextareaSizes)[number];
 
 export type TFormTextarea = {
 	/**
@@ -30,7 +27,7 @@ export type TFormTextarea = {
 	/**
 	 * optional: choose textarea size between 'M', 'L'
 	 */
-	size?: TFormTextareaSize;
+	size?: 'M' | 'L';
 	/**
 	 * onChange method: empty function as standard. hook here in for your method happening onChange.
 	 */
@@ -44,6 +41,19 @@ type TFormTextareaType = TFormTextarea & TextareaHTMLAttributes<HTMLTextAreaElem
  */
 
 const fieldStyle: string[] = ['h-40'];
+
+/**
+ * FormTextarea Component
+ *
+ * @param {label} - label: add a label to the form input
+ * @param {errorMessage} - optional: (but recommended) add errorMessage text if the form textarea is not valid or could not be submitted
+ * @param {id} - optional: id is a string to identify the form textarea
+ * @param {hideLabel} - optional: hide the label visually.
+ * @param {size} - optional: choose textarea size between 'M', 'L'
+ * @param {onChange} - onChange method: empty function as standard. hook here in for your method happening onChange.
+ *
+ * @example <FormTextarea label="Form Textarea" onChange={() => {}} />
+ */
 
 export const FormTextarea: FC<TFormTextareaType> = ({
 	label,

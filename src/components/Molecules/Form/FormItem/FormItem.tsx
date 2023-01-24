@@ -10,18 +10,22 @@ export type TFormItem = {
 	 * label: add a label to the form input
 	 */
 	label: string;
+
 	/**
 	 * children: React nodes
 	 */
 	children: ReactNode;
+
 	/**
 	 * optional: (but recommended) add errorMessage text if the form input is not valid or could not be submitted
 	 */
 	errorMessage?: string;
+
 	/**
 	 * optional: id is a string to identify the form Input
 	 */
 	id?: string;
+
 	/**
 	 * optional: hide the label visually.
 	 */
@@ -52,6 +56,17 @@ export const FormItem_InputErrorStyle = [
 	'focus:border-error-red/[.33] focus:outline-error-red/[.33]',
 ];
 
+/**
+ * FormItem Component
+ *
+ * @param {label} - label: add a label to the form input
+ * @param {children} - children: React nodes
+ * @param {errorMessage} - optional: (but recommended) add errorMessage text if the form input is not valid or could not be submitted
+ * @param {id} - optional: id is a string to identify the form Input
+ * @param {hideLabel} - optional: hide the label visually.
+ *
+ * @example <FormItem label="Form Input" errorMessage="This is an error message"><input type="text" /></FormItem>
+ */
 export const FormItem: FC<TFormItem> = ({ label, children, errorMessage, hideLabel, id = uid('FormItem'), ...props }) => {
 	return (
 		<div className="flex flex-col" {...props}>

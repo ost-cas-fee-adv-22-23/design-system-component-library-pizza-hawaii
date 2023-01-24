@@ -41,6 +41,20 @@ type TFormPassword = {
 
 type TFormPasswordType = TFormPassword & InputHTMLAttributes<HTMLInputElement>;
 
+/**
+ * FormPassword Component
+ *
+ * @param { label } - label: add a label to the form input
+ * @param { errorMessage } - optional: (but recommended) add errorMessage text if the form input is not valid or could not be submitted
+ * @param { id } - optional: id is a string to identify the form Input
+ * @param { hideLabel } - optional: `boolean` hide the label visually.
+ * @param { showPasswordButtonLabels } - add two strings in this array here to guide the user that there is a password preview functionality.
+ * @param { onChange } - onChange: add and customize here your function for password submitting
+ *
+ * @example <FormPassword label="Form Password" onChange={() => {}} />
+ * @example <FormPassword label="Form Password" showPasswordButtonLabels={['Show your password', 'Hide your password']} onChange={() => {}} />
+ */
+
 export const FormPassword: FC<TFormPasswordType> = ({
 	label,
 	errorMessage,
