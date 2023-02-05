@@ -30,7 +30,7 @@ export type TImageOverlay = {
 	/**
 	 * borderRadius: string for the border radius of the button
 	 */
-	borderRadius?: 'm' | 'l';
+	borderRadius?: 'M' | 'L';
 };
 
 export type TImageOverlayProps = (TImageOverlay & { preset: keyof typeof ImageOverlayTypeMap }) &
@@ -67,8 +67,8 @@ const ImageOverlayTypeMap = {
 };
 
 const ImageOverlayBorderRadiusMap = {
-	m: 'rounded-lg',
-	l: 'rounded-3xl',
+	M: 'rounded-lg',
+	L: 'rounded-3xl',
 };
 
 /**
@@ -83,7 +83,7 @@ const ImageOverlayBorderRadiusMap = {
  * @example <ImageOverlay preset="edit" buttonLabel="edit" onClick={() => {}}><img src="https://picsum.photos/id/28/1600/1587/" alt="image" /></ImageOverlay>
  */
 
-export const ImageOverlay: FC<TImageOverlayProps> = ({ children, buttonLabel, borderRadius = 'm', ...props }) => {
+export const ImageOverlay: FC<TImageOverlayProps> = ({ children, buttonLabel, borderRadius = 'M', ...props }) => {
 	const { preset, ...rest } = props;
 	const { icon, iconAnimationClass } = ImageOverlayTypeMap[preset];
 

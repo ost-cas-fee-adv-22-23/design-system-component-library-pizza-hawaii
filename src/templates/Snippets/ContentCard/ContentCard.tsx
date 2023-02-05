@@ -96,7 +96,7 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 					onClick={function (): void {
 						throw new Error('Function not implemented.');
 					}}
-					borderRadius="m"
+					borderRadius="M"
 				>
 					<Image
 						width={ProjectSettings.images.post.width}

@@ -21,7 +21,7 @@ export const ProfileHeader: FC<TProfileHeader> = ({ user }) => {
 				onClick={function (): void {
 					throw new Error('Function not implemented.');
 				}}
-				borderRadius="l"
+				borderRadius="L"
 			>
 				<Image
 					src={user.posterImage}
