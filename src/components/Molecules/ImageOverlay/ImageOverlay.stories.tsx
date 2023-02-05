@@ -5,8 +5,6 @@ import { ImageOverlay as Component } from './ImageOverlay';
 import { IconNames } from '../../Atoms/Icon/IconLib';
 import { Image } from '../../Atoms/Image';
 
-import ProjectSettings from '../../../utils/ProjectSettings.json';
-
 export default {
 	title: 'Components/Molecules/ImageOverlay',
 	component: Component,
@@ -25,14 +23,7 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 export const EditOverlay = Template.bind({});
 export const ZoomOverlay = Template.bind({});
 
-const img = (
-	<Image
-		width={ProjectSettings.images.post.width}
-		height={ProjectSettings.images.post.width / ProjectSettings.images.post.aspectRatio[0]}
-		src="//picsum.photos/id/28/1600/1587/"
-		alt={''}
-	/>
-);
+const img = <Image width={584} height={320} src="//picsum.photos/id/28/1600/1587/" alt={''} />;
 
 EditOverlay.args = {
 	preset: 'edit',

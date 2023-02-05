@@ -1,26 +1,4 @@
 {
-	"baseFontSize": 16,
-	"fontSizes": {
-		"l": 18,
-		"lg": 20,
-		"xl": 24,
-		"2xl": 32,
-		"3xl": 40,
-		"4xl": 48
-	},
-	"spaces": {
-		"xxs": 4,
-		"xs": 8,
-		"s": 16,
-		"m": 24,
-		"l": 32,
-		"xl": 48,
-		"xxl": 64
-	},
-	"content": {
-		"width": 680,
-		"padding": 48
-	},
 	"images": {
 		"header": {
 			"width": 680,

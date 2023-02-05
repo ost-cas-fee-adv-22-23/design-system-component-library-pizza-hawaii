@@ -5,21 +5,19 @@ import { ImageService } from './ImageService';
  * Type
  */
 
-export type TImage = ImgHTMLAttributes<HTMLImageElement> & {
+export type TImage = {
 	/**
 	 * src of the image
 	 */
 	src?: string;
 
 	/**
-	 * width of the image
-	 * required: if not set, the image will not be displayed
+	 * width of the displayed image in px
 	 */
 	width: number;
 
 	/**
-	 * height of the image
-	 * optional: if not set, the image will be scaled to the width
+	 * optional: height of the displayed image in px (if set, the image will be cropped to fit the aspect ratio)
 	 */
 	height?: number;
 
@@ -29,19 +27,19 @@ export type TImage = ImgHTMLAttributes<HTMLImageElement> & {
 	alt: string;
 
 	/**
-	 * optional: caption string for text caption of the image
+	 * optional: caption string for text caption of the image11
 	 */
 	caption?: string;
-};
+} & ImgHTMLAttributes<HTMLImageElement>;
 
 /**
  * Controls for Image Component
  *
  * @param { string } src for image
- * @param { number } width for image
- * @param { number } height for image
- * @param { string } alt for image
- * @param { string } caption for image
+ * @param { number } width display width for image
+ * @param { number } height display height for image (optional)
+ * @param { string } alt alternative text for image
+ * @param { string } caption caption text for image (optional)
  *
  * @example	<Image src="//picsum.photos/id/28/1600/1587/" alt="lemon tree" width="640" height="320" />
  */
