@@ -7,6 +7,8 @@ export type ImageServiceInterface = {
 export type ImageServiceResult = {
 	src: string;
 	srcSet?: string;
+	width: number;
+	height?: number;
 };
 
 export const ImageService = {
@@ -15,7 +17,7 @@ export const ImageService = {
 		height: number,
 		src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
 	): ImageServiceResult {
-		const options: string[] = [`url=${src}`, `w=${width}`, 'fit=cover'];
+		const options: string[] = [`url=${encodeURIComponent(src)}`, `w=${width}`, 'fit=cover'];
 
 		if (height) {
 			options.push(`h=${height}`);
@@ -28,6 +30,8 @@ export const ImageService = {
 			};
 
 			return {
+				width,
+				height,
 				src: images.x1,
 				srcSet: `${images.x1} 1x, ${images.x2} 2x`,
 			};
@@ -35,6 +39,8 @@ export const ImageService = {
 
 		return {
 			src: src,
+			width,
+			height,
 		};
 	},
 };

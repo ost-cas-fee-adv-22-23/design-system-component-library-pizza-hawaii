@@ -17,6 +17,7 @@ import { UserContentCard, TUserContentCard } from '../../../components/Organisms
 
 import { Post } from '../../../types/Post';
 
+import ProjectSettings from '../../../utils/ProjectSettings.json';
 /*
  * Type
  */
@@ -95,8 +96,17 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 					onClick={function (): void {
 						throw new Error('Function not implemented.');
 					}}
+					borderRadius="m"
 				>
-					<Image preset="post" src={post.image} />
+					<Image
+						width={ProjectSettings.images.post.width}
+						height={
+							(ProjectSettings.images.post.width / ProjectSettings.images.post.aspectRatio[0]) *
+							ProjectSettings.images.post.aspectRatio[1]
+						}
+						src={post.image}
+						alt={''}
+					/>
 				</ImageOverlay>
 			)}
 
