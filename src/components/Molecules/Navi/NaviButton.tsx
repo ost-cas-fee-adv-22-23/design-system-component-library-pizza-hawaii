@@ -6,7 +6,7 @@ import { Label } from '../../Atoms/Label';
  * Settings
  */
 
-export const possibleNaviButtonTags = ['button', 'a'] as const;
+const possibleNaviButtonTags = ['button', 'a'] as const;
 
 /*
  * Type

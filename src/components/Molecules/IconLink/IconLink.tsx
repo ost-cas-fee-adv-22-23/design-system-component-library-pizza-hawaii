@@ -46,7 +46,7 @@ type TIconLinkProps = TSpanButtonProps | THTMLButtonProps | TLinkButtonProps;
  * Style
  */
 
-export const IconLinkBaseStyle: string[] = ['flex items-center', 'leading-none'];
+const IconLinkBaseStyle: string[] = ['flex items-center', 'leading-none'];
 
 export const IconLinkSizeMap: Record<string, string> = {
 	S: 'text-sm gap-1',

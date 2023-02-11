@@ -50,7 +50,7 @@ type TInteractionButtonProps = THTMLInteractionButtonProps | TLinkInteractionBut
  * Styles
  */
 
-export const InteractionButtonBaseStyle = 'flex items-center gap-y-0 gap-x-2 rounded-full py-2 px-3 leading-none group';
+const InteractionButtonBaseStyle = 'flex items-center gap-y-0 gap-x-2 rounded-full py-2 px-3 leading-none group';
 
 export const InteractionButtonColorSchemeMap: Record<string, Record<string, string>> = {
 	default: {
@@ -65,7 +65,7 @@ export const InteractionButtonColorSchemeMap: Record<string, Record<string, stri
 	},
 };
 
-export const InteractionButtonIconColorSchemeMap: Record<string, Record<string, string>> = {
+const InteractionButtonIconColorSchemeMap: Record<string, Record<string, string>> = {
 	default: {
 		slate: [].join(' '),
 		pink: ['group-hover:text-pink-600'].join(' '),

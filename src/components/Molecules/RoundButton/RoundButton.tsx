@@ -37,7 +37,7 @@ type TButtonProps = HTMLButtonProps | LinkButtonProps;
  * Style
  */
 
-export const RoundButtonBaseStyle: string[] = [...ButtonBaseStyle, 'inline-flex', 'p-4 rounded-full w-auto'];
+const RoundButtonBaseStyle: string[] = [...ButtonBaseStyle, 'inline-flex', 'p-4 rounded-full w-auto'];
 export const RoundButtonColorMap: Record<string, string> = ButtonColorMap;
 
 /**

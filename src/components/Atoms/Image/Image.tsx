@@ -28,7 +28,7 @@ type TImage = ImgHTMLAttributes<HTMLImageElement> & {
  * Styles
  */
 
-export const BaseImageStyle = 'block object-cover h-full w-full';
+const BaseImageStyle = 'block object-cover h-full w-full';
 
 /**
  * Controls for Image Component

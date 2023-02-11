@@ -46,7 +46,7 @@ export const RichtextSizeMap: Record<string, string> = {
 	L: 'text-xl',
 };
 
-export const RichtextChildStyles: string[] = [
+const RichtextChildStyles: string[] = [
 	// Paragraphs
 	'[&>p]:block [&>p]:mb-2 [&>p:last-child]:mb-0',
 

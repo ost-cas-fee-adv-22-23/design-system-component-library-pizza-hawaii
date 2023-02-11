@@ -6,7 +6,7 @@ import { RoundButton } from '../RoundButton/RoundButton';
  * Settings
  */
 
-export const possibleUserProfileSize = ['S', 'M', 'L', 'XL'] as const;
+const possibleUserProfileSize = ['S', 'M', 'L', 'XL'] as const;
 
 /*
  * Type
