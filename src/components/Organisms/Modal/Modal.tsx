@@ -1,4 +1,3 @@
-'use client';
 import React, { FC, ReactNode, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
