@@ -28,6 +28,6 @@ TimestampPrefix.args = {
 
 export const TimestampPostfix = Template.bind({});
 TimestampPostfix.args = {
-	date: '2023-01-24T22:59:59Z',
-	postfix: 'bis zur Abgabe',
+	date: '2023-08-01T00:00:00Z',
+	postfix: 'bis zum 1. August',
 };
