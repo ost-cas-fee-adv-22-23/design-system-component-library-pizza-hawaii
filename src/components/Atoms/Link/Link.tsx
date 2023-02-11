@@ -4,7 +4,7 @@ import React, { FC, ReactNode, AnchorHTMLAttributes, HTMLAttributes } from 'reac
  * Type
  */
 
-export type TLink = {
+type TLink = {
 	/**
 	 * HTML tag to render a link (a or span)
 	 * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link

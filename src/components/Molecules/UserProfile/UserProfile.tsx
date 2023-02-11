@@ -12,7 +12,7 @@ export const possibleUserProfileSize = ['S', 'M', 'L', 'XL'] as const;
  * Type
  */
 
-export type TUserProfileSize = (typeof possibleUserProfileSize)[number];
+type TUserProfileSize = (typeof possibleUserProfileSize)[number];
 
 export type TUserProfileStyle = {
 	/**
@@ -45,7 +45,7 @@ export type TUserProfileData = {
 	href?: string;
 };
 
-export type TUserProfile = TUserProfileStyle & TUserProfileData;
+type TUserProfile = TUserProfileStyle & TUserProfileData;
 
 /*
  * Styles

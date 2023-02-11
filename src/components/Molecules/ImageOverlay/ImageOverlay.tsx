@@ -11,7 +11,7 @@ import { Icon, TIconName } from '../../Atoms/Icon';
  * Type
  */
 
-export type TImageOverlay = {
+type TImageOverlay = {
 	/**
 	 * React Children: here most probably text
 	 */
@@ -28,7 +28,7 @@ export type TImageOverlay = {
 	onClick: () => void;
 };
 
-export type TImageOverlayProps = (TImageOverlay & { preset: keyof typeof ImageOverlayTypeMap }) &
+type TImageOverlayProps = (TImageOverlay & { preset: keyof typeof ImageOverlayTypeMap }) &
 	ButtonHTMLAttributes<HTMLButtonElement>;
 
 /*

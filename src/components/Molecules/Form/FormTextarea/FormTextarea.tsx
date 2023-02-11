@@ -7,7 +7,7 @@ import uid from '../../../../utils/uid';
  * Type
  */
 
-export type TFormTextarea = {
+type TFormTextarea = {
 	/**
 	 * label: add a label to the form input
 	 */

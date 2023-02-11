@@ -7,7 +7,7 @@ import { ButtonBaseStyle, ButtonColorMap } from '../Button';
  * Type
  */
 
-export type TRoundButton = {
+type TRoundButton = {
 	/**
 	 * HTML tag to render a button (button, a)
 	 */

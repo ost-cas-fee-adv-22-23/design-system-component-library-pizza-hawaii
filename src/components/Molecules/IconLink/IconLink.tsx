@@ -6,8 +6,8 @@ import { Icon, TIconSize, TIconName } from '../../Atoms/Icon/Icon';
  * Type
  */
 
-export type TIconLinkSize = keyof typeof IconLinkSizeMap;
-export type TIconLinkColor = keyof typeof IconLinkColorMap;
+type TIconLinkSize = keyof typeof IconLinkSizeMap;
+type TIconLinkColor = keyof typeof IconLinkColorMap;
 
 type TIconLink = {
 	/**

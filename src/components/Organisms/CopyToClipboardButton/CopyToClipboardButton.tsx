@@ -6,7 +6,7 @@ import copy from 'copy-to-clipboard';
  * Type
  */
 
-export type TCopyToClipboardButton = {
+type TCopyToClipboardButton = {
 	/**
 	 * default Button text
 	 */

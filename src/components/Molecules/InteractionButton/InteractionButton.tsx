@@ -6,7 +6,7 @@ import { Icon } from '../../Atoms/Icon';
  * Type
  */
 
-export type TInteractionButton = {
+type TInteractionButton = {
 	/**
 	 * HTML tag to render a button (button, a)
 	 * @default 'button'

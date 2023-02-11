@@ -7,7 +7,7 @@ import { Label } from '../../Atoms/Label';
  * Type
  */
 
-export type TButton = {
+type TButton = {
 	/**
 	 * HTML tag to render a button (button, a, span)
 	 */

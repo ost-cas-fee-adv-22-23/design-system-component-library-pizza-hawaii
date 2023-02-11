@@ -6,7 +6,7 @@ import moment from 'moment';
  * Type
  */
 
-export type TTimeStamp = {
+type TTimeStamp = {
 	/**
 	 * date: Date as a Date-object or a string - will be converted to a Date-object
 	 */

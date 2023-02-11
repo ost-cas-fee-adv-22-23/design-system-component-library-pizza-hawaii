@@ -14,7 +14,7 @@ export const defaultAllowedTags: IWhiteList = {
  * Type
  */
 
-export type TRichtext = {
+type TRichtext = {
 	/**
 	 * HTML tag to render a richtext (div, section, article)
 	 */

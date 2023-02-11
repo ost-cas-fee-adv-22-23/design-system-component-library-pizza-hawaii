@@ -4,7 +4,7 @@ import React, { FC, LabelHTMLAttributes, HTMLAttributes, ReactNode } from 'react
  * Type
  */
 
-export type TLabel = {
+type TLabel = {
 	/**
 	 * HTML tag to render a label (span, label, p, legend)
 	 * @default: span
