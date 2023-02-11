@@ -43,12 +43,10 @@ export const IconSizeMap = {
 
 export const Icon: FC<TIcon> = ({ size = 'M', name = IcoNames[0], ...props }) => {
 	const style = [...(IconSizeMap[size] || IconSizeMap.M), 'containing-svg:fill-current containing-svg:w-[1em]'];
-
+	const Tag = IconLib[name];
 	return (
-		<span
-			className={['inline-flex', ...style].join(' ')}
-			{...props}
-			dangerouslySetInnerHTML={{ __html: IconLib[name] }}
-		></span>
+		<span className={['inline-flex', ...style].join(' ')}>
+			<Tag />
+		</span>
 	);
 };
