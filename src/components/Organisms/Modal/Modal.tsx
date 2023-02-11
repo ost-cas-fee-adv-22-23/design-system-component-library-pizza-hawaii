@@ -88,7 +88,6 @@ export const Modal: FC<TModal> = ({ title, children = 'Modal Content', isVisible
 			}
 			// Handle Tab key
 			if (e.key === 'Tab') {
-				console.log('Tab');
 				modalRef && modalRef.current && handleTabKey(e, focusableElements);
 			}
 		};
