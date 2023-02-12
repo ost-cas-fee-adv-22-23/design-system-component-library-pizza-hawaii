@@ -110,7 +110,7 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 				</ImageOverlay>
 			)}
 
-			<Grid variant="row" gap="M">
+			<Grid variant="row" gap="M" wrapBelowScreen="md">
 				<InteractionButton
 					as="a"
 					href="/link/to/post"
