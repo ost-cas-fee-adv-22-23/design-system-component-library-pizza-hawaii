@@ -12,7 +12,7 @@ import uid from '../../../../utils/uid';
  * Type
  */
 
-export type FormUpload = {
+type FormUpload = {
 	/**
 	 * label: add a label to the form input
 	 */

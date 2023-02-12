@@ -11,7 +11,7 @@ import { Icon } from '../../Atoms/Icon';
  * Type
  */
 
-export type TImageOverlay = {
+type TImageOverlay = {
 	/**
 	 * React Children: here most probably text
 	 */
@@ -33,7 +33,7 @@ export type TImageOverlay = {
 	borderRadius?: 'M' | 'L';
 };
 
-export type TImageOverlayProps = (TImageOverlay & { preset: keyof typeof ImageOverlayTypeMap }) &
+type TImageOverlayProps = (TImageOverlay & { preset: keyof typeof ImageOverlayTypeMap }) &
 	ButtonHTMLAttributes<HTMLButtonElement>;
 
 /*

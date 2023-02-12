@@ -8,7 +8,7 @@ import uid from '../../../../utils/uid';
  * Type
  */
 
-export type TFormInput = {
+type TFormInput = {
 	/**
 	 * label text for form input field
 	 */

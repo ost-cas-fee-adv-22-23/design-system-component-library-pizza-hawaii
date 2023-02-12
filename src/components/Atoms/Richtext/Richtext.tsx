@@ -14,7 +14,7 @@ export const defaultAllowedTags: IWhiteList = {
  * Type
  */
 
-export type TRichtext = {
+type TRichtext = {
 	/**
 	 * HTML tag to render a richtext (div, section, article)
 	 */
@@ -46,7 +46,7 @@ export const RichtextSizeMap: Record<string, string> = {
 	L: 'text-xl',
 };
 
-export const RichtextChildStyles: string[] = [
+const RichtextChildStyles: string[] = [
 	// Paragraphs
 	'[&>p]:block [&>p]:mb-2 [&>p:last-child]:mb-0',
 

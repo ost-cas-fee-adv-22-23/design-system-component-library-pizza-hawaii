@@ -1,10 +1,10 @@
-export type ImageServiceInterface = {
+type ImageServiceInterface = {
 	width: number;
 	height?: number;
 	src?: string;
 };
 
-export type ImageServiceResult = {
+export type TImageServiceResult = {
 	src: string;
 	srcSet?: string;
 	width: number;
@@ -18,10 +18,11 @@ export const ImageService = {
 		src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
 	): ImageServiceResult {
 		const options: string[] = [`url=${encodeURIComponent(src)}`, `w=${width}`, 'fit=cover'];
-
-		if (height) {
+		
+    if (height) {
 			options.push(`h=${height}`);
 		}
+    
 		if (['https://', 'http://', '//'].some((substr) => src.startsWith(substr))) {
 			src = src.replace('https://', '').replace('http://', '').replace('//', '');
 			const images = {

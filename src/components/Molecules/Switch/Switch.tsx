@@ -5,9 +5,9 @@ import uid from '../../../utils/uid';
  * Type
  */
 
-export type TSwitchOption = InputHTMLAttributes<HTMLInputElement> & { label: string };
+type TSwitchOption = InputHTMLAttributes<HTMLInputElement> & { label: string };
 
-export type TSwitch = {
+type TSwitch = {
 	/**
 	 * label text: provide here a meaningfull text for screenreaders
 	 */

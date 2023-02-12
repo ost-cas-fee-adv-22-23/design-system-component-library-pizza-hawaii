@@ -32,6 +32,7 @@ export type TImage = {
 	caption?: string;
 } & ImgHTMLAttributes<HTMLImageElement>;
 
+
 /**
  * Controls for Image Component
  *

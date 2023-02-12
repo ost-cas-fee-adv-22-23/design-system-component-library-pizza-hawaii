@@ -1,13 +1,14 @@
-import React, { FC, ReactNode, AnchorHTMLAttributes, HTMLAttributes } from 'react';
+import React, { FC, ReactNode, AnchorHTMLAttributes, HTMLAttributes, ButtonHTMLAttributes } from 'react';
 
 /*
  * Type
  */
 
-export type TLink = {
+type TLink = {
 	/**
 	 * HTML tag to render a link (a or span)
-	 * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link
+	 * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+	 * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span
 	 */
 	as?: 'a' | 'span';
 
@@ -33,22 +34,28 @@ type TLinkProps = THTMLLinkProps | TSpanLinkProps;
 
 const style = [
 	'inline-block font-semibold',
-	'text-violet-600 hover:text-violet-700',
-	'underline underline-offset-4 decoration-1 decoration-violet-600 hover:decoration-violet-200',
+	'text-violet-600',
+	'underline underline-offset-4 decoration-1 decoration-violet-600',
 ];
+
+const hoverStyle: Record<string, string> = {
+	a: 'hover:text-violet-700 hover:decoration-violet-200',
+	span: 'group-hover:text-violet-700 group-hover:decoration-violet-200',
+};
 
 /**
  * Link Component
  *
  * @param {string} as - Choose between the HTML tags 'a' or 'span'
- * @param {string} href - provide a link reference (target url) as string
+ * @param {string} href - provide a link reference (target url) as string for the 'a' tag
  * @param {ReactNode} children - Child Nodes
  *
- * @example Link as='span' href='https://www.google.com'>My Link</Link>
+ * @example <Link href='https://www.google.com'>Google</Link>
+ * @example <Link as="span">Google</Link>
  */
 
 export const Link: FC<TLinkProps> = ({ as: Tag = 'a', href, children = 'Link', ...props }) => (
-	<Tag className={style.join(' ')} {...props} href={href}>
+	<Tag className={[...style, hoverStyle[Tag]].join(' ')} {...props} href={href}>
 		{children}
 	</Tag>
 );

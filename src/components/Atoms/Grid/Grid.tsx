@@ -4,7 +4,7 @@ import React, { FC, ReactNode, Children } from 'react';
  * Type
  */
 
-export type TGrid = {
+type TGrid = {
 	/**
 	 * HTML tag to render a grid (div, ul, ol)
 	 */
