@@ -1,5 +1,27 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-const ProjectSettings = require('./src/utils/ProjectSettings.json');
+const ProjectSettings = {
+	baseFontSize: 16,
+	fontSizes: {
+		l: 18,
+		lg: 20,
+		xl: 24,
+		'2xl': 32,
+		'3xl': 40,
+		'4xl': 48,
+	},
+	spaces: {
+		xxs: 4,
+		xs: 8,
+		s: 16,
+		m: 24,
+		l: 32,
+		xl: 48,
+		xxl: 64,
+	},
+	content: {
+		width: 680,
+		padding: 48,
+	},
+};
 
 const toRem = (px) => `${px / ProjectSettings.baseFontSize}rem`;
 
@@ -13,11 +35,6 @@ let spacing = Object.keys(ProjectSettings.spaces).reduce((acc, size) => {
 	return acc;
 }, {});
 
-let aspectRatio = Object.keys(ProjectSettings.images).reduce((acc, size) => {
-	const ratio = ProjectSettings.images[size].aspectRatio;
-	acc[size] = `${ratio[0]} / ${ratio[1]}`;
-	return acc;
-}, {});
 
 spacing = {
 	...spacing,
@@ -68,9 +85,6 @@ module.exports = {
 			borderWidth: {
 				6: '6px',
 			},
-			aspectRatio: {
-				...aspectRatio,
-			},
 			leading: {
 				normal: '1.4',
 			},
@@ -83,7 +97,5 @@ module.exports = {
 			addVariant('containing-svg-path-1', '& svg path:nth-child(1)');
 			addVariant('containing-svg-path-2', '& svg path:nth-child(2)');
 		},
-
-
 	],
 };

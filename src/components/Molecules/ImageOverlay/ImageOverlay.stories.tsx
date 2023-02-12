@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 export const EditOverlay = Template.bind({});
 export const ZoomOverlay = Template.bind({});
 
-const img = <Image preset="post" src="//picsum.photos/id/28/1600/1587/" />;
+const img = <Image width={584} height={320} src="//picsum.photos/id/28/1600/1587/" alt={''} />;
 
 EditOverlay.args = {
 	preset: 'edit',

@@ -6,6 +6,7 @@ import { UserProfile } from '../../../components/Molecules/UserProfile';
 import { ImageOverlay } from '../../../components/Molecules/ImageOverlay';
 
 import { User } from '../../../types/User';
+import ProjectSettings from '../../../utils/ProjectSettings.json';
 
 type TProfileHeader = {
 	user: User;
@@ -20,8 +21,17 @@ export const ProfileHeader: FC<TProfileHeader> = ({ user }) => {
 				onClick={function (): void {
 					throw new Error('Function not implemented.');
 				}}
+				borderRadius="L"
 			>
-				<Image src={user.posterImage} alt={user.userName} preset="header" />
+				<Image
+					src={user.posterImage}
+					alt={user.userName}
+					width={ProjectSettings.images.header.width}
+					height={
+						(ProjectSettings.images.header.width / ProjectSettings.images.header.aspectRatio[0]) *
+						ProjectSettings.images.header.aspectRatio[1]
+					}
+				/>
 			</ImageOverlay>
 			<div className="absolute right-8 bottom-0 translate-y-1/2 z-10">
 				<UserProfile
