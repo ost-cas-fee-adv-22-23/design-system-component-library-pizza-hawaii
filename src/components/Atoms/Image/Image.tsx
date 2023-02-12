@@ -1,12 +1,12 @@
 import React, { FC, ImgHTMLAttributes } from 'react';
 import ProjectSettings from '../../../utils/ProjectSettings.json';
-import { ImageService, ImageServiceResult } from './ImageService';
+import { ImageService, TImageServiceResult } from './ImageService';
 
 /*
  * Type
  */
 
-export type TImage = ImgHTMLAttributes<HTMLImageElement> & {
+type TImage = ImgHTMLAttributes<HTMLImageElement> & {
 	/**
 	 * src of the image
 	 */
@@ -28,7 +28,7 @@ export type TImage = ImgHTMLAttributes<HTMLImageElement> & {
  * Styles
  */
 
-export const BaseImageStyle = 'block object-cover h-full w-full';
+const BaseImageStyle = 'block object-cover h-full w-full';
 
 /**
  * Controls for Image Component
@@ -69,7 +69,7 @@ export const Image: FC<TImage> = ({ src, alt = '', caption, preset, ...props }) 
  */
 
 type ImagePresetType = {
-	img: (src: string | undefined) => ImageServiceResult;
+	img: (src: string | undefined) => TImageServiceResult;
 	styleClasses: string;
 	aspectRatio: number[];
 };
@@ -92,7 +92,7 @@ const ImagePreset: ImagePresetListType = Object.keys(ProjectSettings.images).red
 		if (presetName && typeof presetName === 'string') {
 			acc[presetName] = {
 				...imgSetting,
-				img: (src: string | undefined): ImageServiceResult => {
+				img: (src: string | undefined): TImageServiceResult => {
 					return ImageService.imgAttr(
 						imgSetting.width,
 						Math.floor(

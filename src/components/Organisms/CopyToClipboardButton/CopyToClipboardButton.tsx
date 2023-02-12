@@ -6,7 +6,7 @@ import copy from 'copy-to-clipboard';
  * Type
  */
 
-export type TCopyToClipboardButton = {
+type TCopyToClipboardButton = {
 	/**
 	 * default Button text
 	 */
@@ -24,6 +24,8 @@ export type TCopyToClipboardButton = {
 	shareText?: string;
 };
 
+let timeout: NodeJS.Timeout;
+
 /**
  * CopyToClipboardButton Component
  *
@@ -40,8 +42,6 @@ export const CopyToClipboardButton: FC<TCopyToClipboardButton> = ({
 	shareText = window?.location?.href,
 }) => {
 	const [isActive, setIsActive] = useState(false);
-
-	let timeout: NodeJS.Timeout;
 
 	const copyToText = (): void => {
 		copy(shareText);

@@ -5,7 +5,7 @@ import { IconLink } from '../IconLink';
  * Type
  */
 
-export type TUserName = {
+type TUserName = {
 	/**
 	 * children React Node: here the name of the user.
 	 */
