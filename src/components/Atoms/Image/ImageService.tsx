@@ -1,9 +1,3 @@
-type ImageServiceInterface = {
-	width: number;
-	height?: number;
-	src?: string;
-};
-
 export type TImageServiceResult = {
 	src: string;
 	srcSet?: string;

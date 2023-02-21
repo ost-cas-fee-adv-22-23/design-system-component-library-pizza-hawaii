@@ -2,11 +2,9 @@ import React, { ChangeEvent, FC, useState } from 'react';
 
 import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Headline } from '../../../components/Atoms/Headline/Headline';
-import { Image } from '../../../components/Atoms/Image';
 import { Richtext } from '../../../components/Atoms/Richtext';
 
 import { Switch } from '../../../components/Molecules/Switch';
-import { UserProfile } from '../../../components/Molecules/UserProfile';
 import { UserName } from '../../../components/Molecules/UserName';
 import { TimeStamp } from '../../../components/Atoms/TimeStamp';
 import { IconLink } from '../../../components/Molecules/IconLink';
@@ -25,8 +23,6 @@ type ProfileType = {
 
 export const Profile: FC<ProfileType> = ({ user, posts = [] }) => {
 	const [currentPostType, setCurrentPostType] = useState('mumbles');
-
-	const setPostType = setCurrentPostType.bind(this);
 
 	const postsToRender: Record<string, PostType[]> = {
 		mumbles: posts.filter((p) => p.author === user),

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, AnchorHTMLAttributes, HTMLAttributes, ButtonHTMLAttributes } from 'react';
+import React, { FC, ReactNode, AnchorHTMLAttributes, HTMLAttributes } from 'react';
 
 /*
  * Type
