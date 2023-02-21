@@ -41,7 +41,7 @@ export const IconSizeMap = {
  * @example	<Icon name='arrow-right' size='M' />
  */
 
-export const Icon: FC<TIcon> = ({ size = 'M', name = IcoNames[0], ...props }) => {
+export const Icon: FC<TIcon> = ({ size = 'M', name = IcoNames[0] }) => {
 	const style = [...(IconSizeMap[size] || IconSizeMap.M), 'containing-svg:fill-current containing-svg:w-[1em]'];
 	const Tag = IconLib[name];
 	return (
