@@ -1,10 +1,8 @@
-import React, { FC, ReactNode, useRef, useEffect } from 'react';
+import React, { FC, ReactNode, useRef, useEffect, useId } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Headline } from '../../Atoms/Headline/Headline';
 import { Icon } from '../../Atoms/Icon';
-
-import uid from '../../../utils/uid';
 
 /*
  * Type
@@ -59,7 +57,7 @@ const ModalHeaderStyle = ['flex items-center justify-between gap-4', 'px-8 py-6'
  * @example <Modal title="Modal Title" isVisible={true} onClose={() => {}}>Modal Content</Modal>
  */
 
-export const Modal: FC<TModal> = ({ title, children = 'Modal Content', isVisible = false, id = uid('Modal'), onClose }) => {
+export const Modal: FC<TModal> = ({ title, children = 'Modal Content', isVisible = false, id = useId(), onClose }) => {
 	const modalRef = useRef(null);
 
 	useEffect(() => {

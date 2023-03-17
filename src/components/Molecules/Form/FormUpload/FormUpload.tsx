@@ -1,12 +1,10 @@
-import React, { FC, InputHTMLAttributes, ChangeEvent } from 'react';
+import React, { FC, InputHTMLAttributes, ChangeEvent, useId } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem';
 
 import { Icon } from '../../../Atoms/Icon';
 import { Label } from '../../../Atoms/Label';
 
 import { ButtonBaseStyle, ButtonSizeMap } from '../../../Molecules/Button';
-
-import uid from '../../../../utils/uid';
 
 /*
  * Type
@@ -83,7 +81,7 @@ export const FormUpload: FC<FormUploadType> = ({
 	buttonTitle = '... oder Datei auswählen',
 	hint = 'JPEG oder PNG, maximal 50 MB',
 	errorMessage,
-	id = uid('FormUpload'),
+	id = useId(),
 	hideLabel,
 	...props
 }) => {

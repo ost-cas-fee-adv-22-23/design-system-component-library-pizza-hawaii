@@ -1,5 +1,4 @@
-import React, { FC, ReactNode } from 'react';
-import uid from '../../../../utils/uid';
+import React, { FC, ReactNode, useId } from 'react';
 
 /*
  * Type
@@ -67,7 +66,7 @@ export const FormItem_InputErrorStyle = [
  *
  * @example <FormItem label="Form Input" errorMessage="This is an error message"><input type="text" /></FormItem>
  */
-export const FormItem: FC<TFormItem> = ({ label, children, errorMessage, hideLabel, id = uid('FormItem'), ...props }) => {
+export const FormItem: FC<TFormItem> = ({ label, children, errorMessage, hideLabel, id = useId(), ...props }) => {
 	return (
 		<div className="flex flex-col" {...props}>
 			<label

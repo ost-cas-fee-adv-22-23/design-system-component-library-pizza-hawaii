@@ -1,8 +1,6 @@
-import React, { FC, InputHTMLAttributes, ChangeEvent, useState } from 'react';
+import React, { FC, InputHTMLAttributes, ChangeEvent, useState, useId } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem/index';
 import { Icon } from '../../../Atoms/Icon/index';
-
-import uid from '../../../../utils/uid';
 
 /*
  * Type
@@ -56,7 +54,7 @@ type TFormPasswordType = TFormPassword & InputHTMLAttributes<HTMLInputElement>;
 export const FormPassword: FC<TFormPasswordType> = ({
 	label,
 	errorMessage,
-	id = uid('FormPassword'),
+	id = useId(),
 	hideLabel,
 	showPasswordButtonLabels = ['Click to show password', 'Click to hide password'],
 	...props

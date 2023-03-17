@@ -1,5 +1,4 @@
-import React, { FC, ChangeEvent, InputHTMLAttributes } from 'react';
-import uid from '../../../utils/uid';
+import React, { FC, ChangeEvent, InputHTMLAttributes, useId } from 'react';
 
 /*
  * Type
@@ -38,7 +37,7 @@ type TSwitch = {
 
 const fieldsetStyles = 'flex overflow-hidden bg-slate-200 rounded-lg p-1 w-fit';
 
-export const Switch: FC<TSwitch> = ({ options, name = uid('Switch'), label, value, onChange }) => {
+export const Switch: FC<TSwitch> = ({ options, name = useId(), label, value, onChange }) => {
 	return (
 		<fieldset className={fieldsetStyles}>
 			<legend className="sr-only">{label}</legend>
