@@ -1,7 +1,5 @@
-import React, { FC, SelectHTMLAttributes, ChangeEvent } from 'react';
+import React, { FC, SelectHTMLAttributes, ChangeEvent, useId } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem';
-
-import uid from '../../../../utils/uid';
 
 /*
  * Type
@@ -75,14 +73,7 @@ type TFormSelectType = TFormSelect & SelectHTMLAttributes<HTMLSelectElement>;
 		/>
  */
 
-export const FormSelect: FC<TFormSelectType> = ({
-	label,
-	options,
-	errorMessage,
-	id = uid('FormSelect'),
-	hideLabel,
-	...props
-}) => {
+export const FormSelect: FC<TFormSelectType> = ({ label, options, errorMessage, id = useId(), hideLabel, ...props }) => {
 	const selectProps = {
 		className: [
 			...FormItem_InputStyle,

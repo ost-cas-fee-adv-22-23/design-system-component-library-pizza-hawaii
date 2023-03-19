@@ -1,8 +1,6 @@
-import React, { FC, ChangeEvent, InputHTMLAttributes } from 'react';
+import React, { FC, ChangeEvent, InputHTMLAttributes, useId } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem';
 import { Icon } from '../../../Atoms/Icon';
-
-import uid from '../../../../utils/uid';
 
 /*
  * Type
@@ -55,7 +53,7 @@ type TFormInputType = TFormInput & InputHTMLAttributes<HTMLInputElement>;
  * @example <FormInput label="Form Input" onChange={() => {}} />
  */
 
-export const FormInput: FC<TFormInputType> = ({ label, errorMessage, id = uid('FormInput'), hideLabel, icon, ...props }) => {
+export const FormInput: FC<TFormInputType> = ({ label, errorMessage, id = useId(), hideLabel, icon, ...props }) => {
 	if (errorMessage) {
 		props['aria-invalid'] = true;
 		props['aria-describedby'] = `${id}-error`;

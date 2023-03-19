@@ -1,7 +1,5 @@
-import React, { FC, ChangeEvent, TextareaHTMLAttributes } from 'react';
+import React, { FC, ChangeEvent, TextareaHTMLAttributes, useId } from 'react';
 import { FormItem, FormItem_InputStyle, FormItem_InputErrorStyle } from '../FormItem';
-
-import uid from '../../../../utils/uid';
 
 /*
  * Type
@@ -55,14 +53,7 @@ const fieldStyle: string[] = ['h-40'];
  * @example <FormTextarea label="Form Textarea" onChange={() => {}} />
  */
 
-export const FormTextarea: FC<TFormTextareaType> = ({
-	label,
-	errorMessage,
-	id = uid('FormTextarea'),
-	hideLabel,
-	size,
-	...props
-}) => {
+export const FormTextarea: FC<TFormTextareaType> = ({ label, errorMessage, id = useId(), hideLabel, size, ...props }) => {
 	const style = [
 		...FormItem_InputStyle,
 		...(errorMessage ? FormItem_InputErrorStyle : []),
