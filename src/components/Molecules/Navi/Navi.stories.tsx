@@ -17,13 +17,31 @@ export const Navi = Template.bind({});
 Navi.args = {
 	children: (
 		<>
-			<NaviButton as="a" href="/" icon="settings" title="Settings">
+			<NaviButton
+				onClick={(): void => {
+					window.location.href = '/';
+				}}
+				icon="settings"
+				title="Settings"
+			>
 				Settings
 			</NaviButton>
-			<NaviButton as="a" href="/" icon="settings" title="Settings">
+			<NaviButton
+				onClick={(): void => {
+					window.location.href = '/';
+				}}
+				icon="settings"
+				title="Settings"
+			>
 				Settings
 			</NaviButton>
-			<NaviButton as="a" href="/" icon="settings" title="Settings">
+			<NaviButton
+				onClick={(): void => {
+					window.location.href = '/';
+				}}
+				icon="settings"
+				title="Settings"
+			>
 				Settings
 			</NaviButton>
 		</>

@@ -48,6 +48,7 @@ export function Link<
 		className?: string;
 		rel?: string;
 		target?: string;
+		title?: string;
 	} = LinkHTMLAttributes<HTMLElement>
 >({ children, as, ...props }: TLink<T>): JSX.Element {
 	const Tag = as || 'a';

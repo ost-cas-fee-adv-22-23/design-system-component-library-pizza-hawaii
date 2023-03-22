@@ -20,7 +20,6 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 export const NaviButton = Template.bind({});
 
 NaviButton.args = {
-	href: '/',
 	icon: 'settings',
 	title: 'Settings',
 	children: 'Settings',

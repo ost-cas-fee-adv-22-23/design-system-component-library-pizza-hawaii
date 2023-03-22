@@ -88,6 +88,7 @@ export function Button<
 	T extends {
 		className?: string;
 		type?: 'button' | 'submit' | 'reset';
+		title?: string;
 	} = ButtonHTMLAttributes<HTMLElement>
 >({ children, as, colorScheme = 'violet', size = 'M', icon = 'mumble', ...props }: TButton<T>): JSX.Element {
 	const Tag = as || 'button';

@@ -87,6 +87,7 @@ export function InteractionButton<
 	T extends {
 		className?: string;
 		type?: 'button' | 'submit' | 'reset';
+		title?: string;
 	} = ButtonHTMLAttributes<HTMLElement>
 >({ as, colorScheme, buttonText, iconName, isActive = false, ...props }: TInteractionButton<T>): JSX.Element {
 	const Tag = as || 'button';

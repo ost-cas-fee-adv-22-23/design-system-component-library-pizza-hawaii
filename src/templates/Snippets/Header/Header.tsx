@@ -90,7 +90,13 @@ export const Header: FC<THeader> = ({ user }) => {
 						</a>
 						<nav className="">
 							<Navi>
-								<NaviButton as="a" icon="" href={user.profileLink} title="My Mumble Profile">
+								<NaviButton
+									icon=""
+									onClick={(): void => {
+										window.location.href = user.profileLink;
+									}}
+									title="My Mumble Profile"
+								>
 									<UserProfile
 										userName={user.userName}
 										avatar={user.avatar}
@@ -98,10 +104,15 @@ export const Header: FC<THeader> = ({ user }) => {
 										buttonLabel="My Mumble Profile"
 									/>
 								</NaviButton>
-								<NaviButton as="button" icon="settings" onClick={handleSettingsModalClick}>
+								<NaviButton icon="settings" onClick={handleSettingsModalClick}>
 									Settings
 								</NaviButton>
-								<NaviButton as="a" icon="logout" href="/logout">
+								<NaviButton
+									icon="logout"
+									onClick={(): void => {
+										window.location.href = '/logout';
+									}}
+								>
 									Log out
 								</NaviButton>
 							</Navi>
