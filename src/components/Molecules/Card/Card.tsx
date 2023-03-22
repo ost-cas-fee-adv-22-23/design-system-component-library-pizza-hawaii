@@ -32,7 +32,7 @@ type TCard = {
 
 const sizeMap: Record<string, string> = {
 	S: 'py-s px-s',
-	M: 'py-l px-xl',
+	M: 'py-l px-xl sm:py-m sm:px-l',
 };
 
 /**
