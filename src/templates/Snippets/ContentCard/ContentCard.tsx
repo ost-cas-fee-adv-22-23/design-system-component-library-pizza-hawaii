@@ -112,8 +112,6 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 
 			<Grid variant="row" gap="M" wrapBelowScreen="md">
 				<InteractionButton
-					as="a"
-					href="/link/to/post"
 					isActive={post.comments && post.comments?.length > 0}
 					colorScheme="violet"
 					buttonText={
@@ -125,13 +123,10 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 					}
 					iconName={post.comments && post.comments?.length > 0 ? 'comment_filled' : 'comment_fillable'}
 					onClick={function (): void {
-						console.log('add comment');
-						throw new Error('Function not implemented.');
+						window.location.href = '/link/to/post';
 					}}
 				/>
 				<InteractionButton
-					as="button"
-					type="button"
 					isActive={post.likes && post.likes?.length > 0}
 					colorScheme="pink"
 					buttonText={

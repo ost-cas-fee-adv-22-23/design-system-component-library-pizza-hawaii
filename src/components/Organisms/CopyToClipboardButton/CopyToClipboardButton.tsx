@@ -59,5 +59,5 @@ export const CopyToClipboardButton: FC<TCopyToClipboardButton> = ({
 		onClick: copyToText,
 	};
 
-	return <InteractionButton as="button" type="button" colorScheme="slate" {...buttonProps} />;
+	return <InteractionButton type="button" colorScheme="slate" {...buttonProps} />;
 };

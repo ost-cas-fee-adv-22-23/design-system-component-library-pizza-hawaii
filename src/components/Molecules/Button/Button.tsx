@@ -32,7 +32,7 @@ type TButton<T> = {
 	 * icon name to render
 	 */
 	icon?: TIconName;
-} & Omit<T, 'className' | 'target' | 'rel'>;
+} & Omit<T, 'className'>;
 
 /*
  * Styles
@@ -87,15 +87,22 @@ export const ButtonColorMap: Record<string, string> = {
 export function Button<
 	T extends {
 		className?: string;
+		type?: 'button' | 'submit' | 'reset';
 	} = ButtonHTMLAttributes<HTMLElement>
 >({ children, as, colorScheme = 'violet', size = 'M', icon = 'mumble', ...props }: TButton<T>): JSX.Element {
 	const Tag = as || 'button';
+
+	if (Tag === 'button') {
+		props.type = 'button';
+	}
+
 	const style = [...ButtonBaseStyle, ButtonSizeMap[size], ButtonColorMap[colorScheme]];
+
 	return (
 		<Tag
-			className={style.join(' ')}
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}
+			className={style.join(' ')}
 		>
 			<Label as="span" size="M">
 				{children}

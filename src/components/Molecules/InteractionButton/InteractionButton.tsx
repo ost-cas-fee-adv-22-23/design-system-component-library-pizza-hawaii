@@ -6,12 +6,12 @@ import { Icon } from '../../Atoms/Icon';
  * Type
  */
 
-type TInteractionButton = {
+type TInteractionButton<T> = {
 	/**
 	 * HTML tag to render a button (button, a)
 	 * @default 'button'
 	 */
-	as: 'button' | 'a';
+	as?: FC<T>;
 
 	/**
 	 * color scheme options of this button (slate, violet, pink)
@@ -33,12 +33,7 @@ type TInteractionButton = {
 	 * @default false
 	 */
 	isActive?: boolean;
-};
-
-type THTMLInteractionButtonProps = TInteractionButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
-type TLinkInteractionButtonProps = TInteractionButton & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
-
-type TInteractionButtonProps = THTMLInteractionButtonProps | TLinkInteractionButtonProps;
+} & Omit<T, 'className'>;
 
 /*
  * Styles
@@ -88,15 +83,18 @@ const InteractionButtonIconColorSchemeMap: Record<string, Record<string, string>
 />
 )
 */
+export function InteractionButton<
+	T extends {
+		className?: string;
+		type?: 'button' | 'submit' | 'reset';
+	} = ButtonHTMLAttributes<HTMLElement>
+>({ as, colorScheme, buttonText, iconName, isActive = false, ...props }: TInteractionButton<T>): JSX.Element {
+	const Tag = as || 'button';
 
-export const InteractionButton: FC<TInteractionButtonProps> = ({
-	as: Tag = 'button',
-	colorScheme,
-	buttonText,
-	iconName,
-	isActive = false,
-	...props
-}) => {
+	if (Tag === 'button') {
+		props.type = 'button';
+	}
+
 	const style = [
 		InteractionButtonBaseStyle,
 		InteractionButtonColorSchemeMap[isActive ? 'active' : 'default'][colorScheme],
@@ -104,9 +102,9 @@ export const InteractionButton: FC<TInteractionButtonProps> = ({
 
 	return (
 		<Tag
-			className={style.join(' ')}
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}
+			className={style.join(' ')}
 		>
 			<span className={InteractionButtonIconColorSchemeMap[isActive ? 'active' : 'default'][colorScheme]}>
 				<Icon name={iconName} />
@@ -116,4 +114,4 @@ export const InteractionButton: FC<TInteractionButtonProps> = ({
 			</Label>
 		</Tag>
 	);
-};
+}
