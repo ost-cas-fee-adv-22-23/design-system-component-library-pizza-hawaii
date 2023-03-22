@@ -37,7 +37,7 @@ export const UserCard: FC<TUserCard> = ({ user }) => {
 					</span>
 				</div>
 
-				<Button as="a" href={user.profileLink} size="M" colorScheme="violet" icon="mumble">
+				<Button size="M" colorScheme="violet" icon="mumble">
 					{}
 					Follow
 				</Button>

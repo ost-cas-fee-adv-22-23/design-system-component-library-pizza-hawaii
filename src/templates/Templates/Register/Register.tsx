@@ -19,16 +19,13 @@ export const Register: FC<RegisterType> = () => {
 				<FormInput label="User Name" type="text" />
 				<FormInput label="E-Mail" type="email" />
 				<FormInput label="Passwort" type="password" />
-				<Button as="button" size="L" type="submit" colorScheme="gradient">
+				<Button size="L" type="submit" colorScheme="gradient">
 					Let’s mumble
 				</Button>
 			</Form>
 			<div className="mt-3 text-center">
 				<Label as="span" size="M">
-					Bereits registriert?{' '}
-					<Link as="a" href="/">
-						Jetzt anmelden
-					</Link>
+					Bereits registriert? <Link href="/">Jetzt anmelden</Link>
 				</Label>
 			</div>
 		</SplitScreen>

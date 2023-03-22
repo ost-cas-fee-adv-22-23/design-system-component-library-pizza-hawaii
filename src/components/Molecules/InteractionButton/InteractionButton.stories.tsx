@@ -23,8 +23,6 @@ export const CommentActive = Template.bind({});
 export const Share = Template.bind({});
 
 Like.args = {
-	as: 'button',
-	type: 'button',
 	isActive: false,
 	colorScheme: 'pink',
 	buttonText: 'Like',
@@ -32,8 +30,6 @@ Like.args = {
 };
 
 LikeActive.args = {
-	as: 'button',
-	type: 'button',
 	isActive: true,
 	colorScheme: 'pink',
 	buttonText: '3 Likes',
@@ -41,16 +37,12 @@ LikeActive.args = {
 };
 
 Comment.args = {
-	as: 'button',
-	type: 'button',
 	isActive: false,
 	colorScheme: 'violet',
 	buttonText: 'Comment',
 	iconName: 'comment_fillable',
 };
 Comment.args = {
-	as: 'button',
-	type: 'button',
 	isActive: true,
 	colorScheme: 'violet',
 	buttonText: '7 Comments',
@@ -58,8 +50,6 @@ Comment.args = {
 };
 
 Share.args = {
-	as: 'button',
-	type: 'button',
 	colorScheme: 'slate',
 	buttonText: 'Copy Link',
 	iconName: 'share',

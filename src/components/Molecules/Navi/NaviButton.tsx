@@ -1,24 +1,16 @@
-import React, { FC, ReactNode, HTMLAttributes, ButtonHTMLAttributes, AnchorHTMLAttributes, Children } from 'react';
+import React, { FC, ReactNode, ButtonHTMLAttributes, Children } from 'react';
 import { Icon } from '../../Atoms/Icon';
 import { Label } from '../../Atoms/Label';
-
-/*
- * Settings
- */
-
-const possibleNaviButtonTags = ['button', 'a'] as const;
 
 /*
  * Type
  */
 
-type TNaviButtonTag = (typeof possibleNaviButtonTags)[number];
-
-type TNaviButton = {
+type TNaviButton<T> = {
 	/**
 	 * Choose a HTML tag as Navigation Button:
 	 */
-	as: TNaviButtonTag;
+	as?: FC<T>;
 	/**
 	 * Icon name from the Icon library
 	 */
@@ -27,20 +19,7 @@ type TNaviButton = {
 	 * React Node children: Buttontext
 	 */
 	children: ReactNode;
-};
-/**
- * If the button is rendered as button tag, use this one
- */
-type HTMLButtonProps = TNaviButton &
-	HTMLAttributes<HTMLElement> & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
-/**
- * LinkButtonProps: if the button is rendered as a tag, use this
- */
-type LinkButtonProps = TNaviButton & HTMLAttributes<HTMLElement> & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
-/**
- * generic: LinkButton or HTML Button props
- */
-type NaviButtonProps = LinkButtonProps | HTMLButtonProps;
+} & Omit<T, 'className'>;
 
 /*
  * Styles
@@ -54,8 +33,19 @@ const style = [
 	'bg-violet-600 hover:bg-violet-700',
 	'group',
 ];
+export function NaviButton<
+	T extends {
+		className?: string;
+		type?: 'button' | 'submit' | 'reset';
+		title?: string;
+	} = ButtonHTMLAttributes<HTMLElement>
+>({ children, as, icon, ...props }: TNaviButton<T>): JSX.Element {
+	const Tag = as || 'button';
 
-export const NaviButton: FC<NaviButtonProps> = ({ as: Tag = 'a', children, icon, ...props }) => {
+	if (Tag === 'button') {
+		props.type = 'button';
+	}
+
 	if (Children.count(children) === 1 && typeof children === 'string') {
 		children = (
 			<span className="leading-none sm:sr-only">

@@ -6,12 +6,12 @@ import { Icon } from '../../Atoms/Icon';
  * Type
  */
 
-type TInteractionButton = {
+type TInteractionButton<T> = {
 	/**
 	 * HTML tag to render a button (button, a)
 	 * @default 'button'
 	 */
-	as: 'button' | 'a';
+	as?: FC<T>;
 
 	/**
 	 * color scheme options of this button (slate, violet, pink)
@@ -33,24 +33,13 @@ type TInteractionButton = {
 	 * @default false
 	 */
 	isActive?: boolean;
-
-	/**
-	 * onClick: callback function to handle click event
-	 * @default () => {}
-	 */
-	onClick: () => void;
-};
-
-type THTMLInteractionButtonProps = TInteractionButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
-type TLinkInteractionButtonProps = TInteractionButton & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
-
-type TInteractionButtonProps = THTMLInteractionButtonProps | TLinkInteractionButtonProps;
+} & Omit<T, 'className'>;
 
 /*
  * Styles
  */
 
-const InteractionButtonBaseStyle = 'flex items-center gap-y-0 gap-x-2 rounded-full py-2 px-3 leading-none group';
+const InteractionButtonBaseStyle = 'flex items-center gap-y-0 gap-x-2 rounded-full leading-none group';
 
 export const InteractionButtonColorSchemeMap: Record<string, Record<string, string>> = {
 	default: {
@@ -84,7 +73,6 @@ const InteractionButtonIconColorSchemeMap: Record<string, Record<string, string>
  * @param { colorScheme } colorScheme of the Button: `pink`, `violet`, or `slate`
  * @param { iconName } iconName name of Icon -see Library
  * @param { isActive } isActive boolean to set the button to active state
- * @param { onClick } onClick handler to be implemented by yourself!
  * @example
  * return (
  *   <InteractionButton
@@ -95,15 +83,19 @@ const InteractionButtonIconColorSchemeMap: Record<string, Record<string, string>
 />
 )
 */
+export function InteractionButton<
+	T extends {
+		className?: string;
+		type?: 'button' | 'submit' | 'reset';
+		title?: string;
+	} = ButtonHTMLAttributes<HTMLElement>
+>({ as, colorScheme, buttonText, iconName, isActive = false, ...props }: TInteractionButton<T>): JSX.Element {
+	const Tag = as || 'button';
 
-export const InteractionButton: FC<TInteractionButtonProps> = ({
-	as: Tag = 'button',
-	colorScheme,
-	buttonText,
-	iconName,
-	isActive = false,
-	...props
-}) => {
+	if (Tag === 'button') {
+		props.type = 'button';
+	}
+
 	const style = [
 		InteractionButtonBaseStyle,
 		InteractionButtonColorSchemeMap[isActive ? 'active' : 'default'][colorScheme],
@@ -111,9 +103,9 @@ export const InteractionButton: FC<TInteractionButtonProps> = ({
 
 	return (
 		<Tag
-			className={style.join(' ')}
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}
+			className={style.join(' ')}
 		>
 			<span className={InteractionButtonIconColorSchemeMap[isActive ? 'active' : 'default'][colorScheme]}>
 				<Icon name={iconName} />
@@ -123,4 +115,4 @@ export const InteractionButton: FC<TInteractionButtonProps> = ({
 			</Label>
 		</Tag>
 	);
-};
+}
