@@ -23,10 +23,7 @@ export const SignIn: FC<SignInType> = () => {
 			</Form>
 			<div className="mt-3 text-center">
 				<Label as="span" size="M">
-					Noch kein Account?{' '}
-					<Link as="a" href="/">
-						Jetzt registrieren
-					</Link>
+					Noch kein Account? <Link href="/">Jetzt registrieren</Link>
 				</Label>
 			</div>
 		</SplitScreen>

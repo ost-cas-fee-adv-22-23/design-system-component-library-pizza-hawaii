@@ -25,10 +25,7 @@ export const Register: FC<RegisterType> = () => {
 			</Form>
 			<div className="mt-3 text-center">
 				<Label as="span" size="M">
-					Bereits registriert?{' '}
-					<Link as="a" href="/">
-						Jetzt anmelden
-					</Link>
+					Bereits registriert? <Link href="/">Jetzt anmelden</Link>
 				</Label>
 			</div>
 		</SplitScreen>
