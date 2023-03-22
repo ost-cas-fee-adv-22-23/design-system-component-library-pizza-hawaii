@@ -33,12 +33,6 @@ type TInteractionButton = {
 	 * @default false
 	 */
 	isActive?: boolean;
-
-	/**
-	 * onClick: callback function to handle click event
-	 * @default () => {}
-	 */
-	onClick: () => void;
 };
 
 type THTMLInteractionButtonProps = TInteractionButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
@@ -84,7 +78,6 @@ const InteractionButtonIconColorSchemeMap: Record<string, Record<string, string>
  * @param { colorScheme } colorScheme of the Button: `pink`, `violet`, or `slate`
  * @param { iconName } iconName name of Icon -see Library
  * @param { isActive } isActive boolean to set the button to active state
- * @param { onClick } onClick handler to be implemented by yourself!
  * @example
  * return (
  *   <InteractionButton
