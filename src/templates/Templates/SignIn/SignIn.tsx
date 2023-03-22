@@ -17,7 +17,7 @@ export const SignIn: FC<SignInType> = () => {
 			<Form>
 				<FormInput label="E-Mail" type="email" />
 				<FormInput label="Passwort" type="password" />
-				<Button as="button" size="L" type="submit" colorScheme="gradient">
+				<Button size="L" type="submit" colorScheme="gradient">
 					Let’s mumble
 				</Button>
 			</Form>

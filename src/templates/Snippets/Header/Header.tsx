@@ -159,10 +159,10 @@ export const Header: FC<THeader> = ({ user }) => {
 						</fieldset>
 
 						<Grid variant="row" gap="S" wrapBelowScreen="md">
-							<Button as="button" colorScheme="slate" icon="cross">
+							<Button colorScheme="slate" icon="cross">
 								Abbrechen
 							</Button>
-							<Button as="button" colorScheme="violet" icon="check">
+							<Button colorScheme="violet" icon="check">
 								Speichern
 							</Button>
 						</Grid>

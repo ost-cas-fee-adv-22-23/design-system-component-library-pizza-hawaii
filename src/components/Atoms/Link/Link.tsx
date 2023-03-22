@@ -36,7 +36,7 @@ const hoverStyle = 'hover:text-violet-700 hover:decoration-violet-200';
 /**
  * Link Component
  *
- * @param {string} as - Choose between the HTML tags 'a' or 'span'
+ * @param {string} as - HTML tag to render a link
  * @param {string} href - provide a link reference (target url) as string for the 'a' tag
  * @param {ReactNode} children - Child Nodes
  *

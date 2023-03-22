@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes, ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, FC, ReactNode } from 'react';
 
 import { Icon, TIconName } from '../../Atoms/Icon';
 import { Label } from '../../Atoms/Label';
@@ -7,11 +7,11 @@ import { Label } from '../../Atoms/Label';
  * Type
  */
 
-type TButton = {
+type TButton<T> = {
 	/**
-	 * HTML tag to render a button (button, a, span)
+	 * HTML tag to render a button
 	 */
-	as?: 'button' | 'a' | 'span';
+	as?: FC<T>;
 
 	/**
 	 * React Children: here most probably text
@@ -32,12 +32,7 @@ type TButton = {
 	 * icon name to render
 	 */
 	icon?: TIconName;
-};
-
-type THTMLButtonProps = TButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
-type TLinkButtonProps = TButton & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
-type TSpanButtonProps = TButton & { as: 'span' } & HTMLAttributes<HTMLSpanElement>;
-type TButtonProps = THTMLButtonProps | TLinkButtonProps | TSpanButtonProps;
+} & Omit<T, 'className' | 'target' | 'rel'>;
 
 /*
  * Styles
@@ -87,19 +82,15 @@ export const ButtonColorMap: Record<string, string> = {
  * @param { ReactNode } children - React Children: here most probably text
  * @param {any} props - all other props will be spreaded to the HTML Tag
  *
- * @example <Button as="button" size="M" colorScheme="violet" icon="mumble">Button</Button>
+ * @example <Button size="M" colorScheme="violet" icon="mumble">Button</Button>
  */
-
-export const Button: FC<TButtonProps> = ({
-	children,
-	as: Tag = 'button',
-	colorScheme = 'violet',
-	size = 'M',
-	icon = 'mumble',
-	...props
-}) => {
+export function Button<
+	T extends {
+		className?: string;
+	} = ButtonHTMLAttributes<HTMLElement>
+>({ children, as, colorScheme = 'violet', size = 'M', icon = 'mumble', ...props }: TButton<T>): JSX.Element {
+	const Tag = as || 'button';
 	const style = [...ButtonBaseStyle, ButtonSizeMap[size], ButtonColorMap[colorScheme]];
-
 	return (
 		<Tag
 			className={style.join(' ')}
@@ -112,4 +103,4 @@ export const Button: FC<TButtonProps> = ({
 			{icon ? <Icon name={icon} /> : null}
 		</Tag>
 	);
-};
+}
