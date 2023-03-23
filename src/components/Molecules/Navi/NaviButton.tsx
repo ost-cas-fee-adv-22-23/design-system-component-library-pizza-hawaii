@@ -36,14 +36,9 @@ const style = [
 export function NaviButton<
 	T extends {
 		className?: string;
-		type?: 'button' | 'submit' | 'reset';
 	} = ButtonHTMLAttributes<HTMLElement>
 >({ children, component, icon, ...props }: TNaviButton<T>): JSX.Element {
 	const Tag = component || 'button';
-
-	if (Tag === 'button') {
-		props.type = 'button';
-	}
 
 	if (Children.count(children) === 1 && typeof children === 'string') {
 		children = (
@@ -65,4 +60,4 @@ export function NaviButton<
 			{children}
 		</Tag>
 	);
-};
+}

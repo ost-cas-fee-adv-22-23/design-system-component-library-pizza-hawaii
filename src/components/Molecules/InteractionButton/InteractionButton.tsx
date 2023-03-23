@@ -1,4 +1,4 @@
-import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
+import React, { FC, ButtonHTMLAttributes } from 'react';
 import { Label } from '../../Atoms/Label/Label.stories';
 import { Icon } from '../../Atoms/Icon';
 
@@ -33,6 +33,11 @@ type TInteractionButton<T> = {
 	 * @default false
 	 */
 	isActive?: boolean;
+
+	/**
+	 * title: title of the button
+	 */
+	title?: string;
 } & Omit<T, 'className'>;
 
 /*
@@ -86,14 +91,9 @@ const InteractionButtonIconColorSchemeMap: Record<string, Record<string, string>
 export function InteractionButton<
 	T extends {
 		className?: string;
-		type?: 'button' | 'submit' | 'reset';
 	} = ButtonHTMLAttributes<HTMLElement>
 >({ component, colorScheme, buttonText, iconName, isActive = false, ...props }: TInteractionButton<T>): JSX.Element {
 	const Tag = component || 'button';
-
-	if (Tag === 'button') {
-		props.type = 'button';
-	}
 
 	const style = [
 		InteractionButtonBaseStyle,
