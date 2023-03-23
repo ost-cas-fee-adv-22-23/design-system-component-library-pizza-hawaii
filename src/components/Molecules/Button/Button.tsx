@@ -11,7 +11,7 @@ type TButton<T> = {
 	/**
 	 * HTML tag to render a button
 	 */
-	as?: FC<T>;
+	component?: FC<T>;
 
 	/**
 	 * React Children: here most probably text
@@ -90,8 +90,8 @@ export function Button<
 		type?: 'button' | 'submit' | 'reset';
 		title?: string;
 	} = ButtonHTMLAttributes<HTMLElement>
->({ children, as, colorScheme = 'violet', size = 'M', icon = 'mumble', ...props }: TButton<T>): JSX.Element {
-	const Tag = as || 'button';
+>({ children, component, colorScheme = 'violet', size = 'M', icon = 'mumble', ...props }: TButton<T>): JSX.Element {
+	const Tag = component || 'button';
 
 	if (Tag === 'button') {
 		props.type = 'button';

@@ -11,7 +11,7 @@ type TInteractionButton<T> = {
 	 * HTML tag to render a button (button, a)
 	 * @default 'button'
 	 */
-	as?: FC<T>;
+	component?: FC<T>;
 
 	/**
 	 * color scheme options of this button (slate, violet, pink)
@@ -89,8 +89,8 @@ export function InteractionButton<
 		type?: 'button' | 'submit' | 'reset';
 		title?: string;
 	} = ButtonHTMLAttributes<HTMLElement>
->({ as, colorScheme, buttonText, iconName, isActive = false, ...props }: TInteractionButton<T>): JSX.Element {
-	const Tag = as || 'button';
+>({ component, colorScheme, buttonText, iconName, isActive = false, ...props }: TInteractionButton<T>): JSX.Element {
+	const Tag = component || 'button';
 
 	if (Tag === 'button') {
 		props.type = 'button';

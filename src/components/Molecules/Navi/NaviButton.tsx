@@ -10,7 +10,7 @@ type TNaviButton<T> = {
 	/**
 	 * Choose a HTML tag as Navigation Button:
 	 */
-	as?: FC<T>;
+	component?: FC<T>;
 	/**
 	 * Icon name from the Icon library
 	 */
@@ -39,8 +39,8 @@ export function NaviButton<
 		type?: 'button' | 'submit' | 'reset';
 		title?: string;
 	} = ButtonHTMLAttributes<HTMLElement>
->({ children, as, icon, ...props }: TNaviButton<T>): JSX.Element {
-	const Tag = as || 'button';
+>({ children, component, icon, ...props }: TNaviButton<T>): JSX.Element {
+	const Tag = component || 'button';
 
 	if (Tag === 'button') {
 		props.type = 'button';
