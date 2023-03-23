@@ -37,7 +37,6 @@ export function NaviButton<
 	T extends {
 		className?: string;
 		type?: 'button' | 'submit' | 'reset';
-		title?: string;
 	} = ButtonHTMLAttributes<HTMLElement>
 >({ children, component, icon, ...props }: TNaviButton<T>): JSX.Element {
 	const Tag = component || 'button';

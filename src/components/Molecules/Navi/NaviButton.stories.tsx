@@ -21,6 +21,5 @@ export const NaviButton = Template.bind({});
 
 NaviButton.args = {
 	icon: 'settings',
-	title: 'Settings',
 	children: 'Settings',
 };
