@@ -8,7 +8,7 @@ type TLink<T> = {
 	/**
 	 * HTML tag to render a link
 	 */
-	as?: FC<T>;
+	component?: FC<T>;
 
 	/**
 	 * provide a link reference (target url) as string
@@ -19,6 +19,12 @@ type TLink<T> = {
 	 * Child Nodes
 	 */
 	children: ReactNode;
+
+	/**
+	 * optional: open link in new tab
+	 * @default false
+	 */
+	newTab?: boolean;
 } & Omit<T, 'className' | 'target' | 'rel'>;
 
 /*
@@ -43,18 +49,23 @@ const hoverStyle = 'hover:text-violet-700 hover:decoration-violet-200';
  * @example <Link href='https://www.google.com'>Google</Link>
  * @example <Link as="span">Google</Link>
  */
+
 export function Link<
 	T extends {
 		className?: string;
 		rel?: string;
 		target?: string;
-		title?: string;
 	} = LinkHTMLAttributes<HTMLElement>
->({ children, as, ...props }: TLink<T>): JSX.Element {
-	const Tag = as || 'a';
+>({ children, component, newTab = false, ...props }: TLink<T>): JSX.Element {
+	const Tag = component || 'a';
+
 	return (
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		<Tag {...(props as any)} className={[...style, hoverStyle].join(' ')}>
+		<Tag
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			{...(props as any)}
+			className={[...style, hoverStyle].join(' ')}
+			{...(newTab ? { target: '_blank', rel: 'noreferrer' } : {})}
+		>
 			{children}
 		</Tag>
 	);
