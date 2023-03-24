@@ -2,10 +2,10 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { IconNames } from '../../Atoms/Icon/IconLib';
-import { IconLink as Component, IconLinkSizeMap, IconLinkColorMap } from './IconLink';
+import { IconText as Component, IconTextSizeMap, IconTextColorMap } from './IconText';
 
 export default {
-	title: 'Components/Molecules/IconLink',
+	title: 'Components/Molecules/IconText',
 	component: Component,
 	argTypes: {
 		icon: {
@@ -14,16 +14,16 @@ export default {
 		},
 		size: {
 			control: { type: 'radio' },
-			options: Object.keys(IconLinkSizeMap),
+			options: Object.keys(IconTextSizeMap),
 		},
 		colorScheme: {
 			control: { type: 'radio' },
-			options: Object.keys(IconLinkColorMap),
+			options: Object.keys(IconTextColorMap),
 		},
 	},
 } as ComponentMeta<typeof Component>;
 
 const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Component {...args} />;
 
-export const IconLink = Template.bind({});
-IconLink.args = {};
+export const IconText = Template.bind({});
+IconText.args = {};

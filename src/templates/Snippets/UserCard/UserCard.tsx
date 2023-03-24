@@ -2,12 +2,12 @@
 import React, { FC } from 'react';
 
 import { Grid } from '../../../components/Atoms/Grid/Grid';
-import { Label } from '../../../components/Atoms/Label/index';
+import { Label } from '../../../components/Atoms/Label';
 
 import { Card } from '../../../components/Molecules/Card/Card';
-import { UserName } from '../../../components/Molecules/UserName/index';
-import { UserProfile } from '../../../components/Molecules/UserProfile/index';
-import { Button } from '../../../components/Molecules/Button/index';
+import { IconText } from '../../../components/Molecules/IconText';
+import { UserProfile } from '../../../components/Molecules/UserProfile';
+import { Button } from '../../../components/Molecules/Button';
 
 import { User } from '../../../types/User';
 
@@ -33,7 +33,11 @@ export const UserCard: FC<TUserCard> = ({ user }) => {
 						{user.fullName}
 					</Label>
 					<span className="flex flex-row align-baseline gap-3">
-						<UserName href={user.profileLink}>{user.userName}</UserName>
+						<a href={user.profileLink}>
+							<IconText icon="profile" colorScheme="violet" size="S">
+								{user.userName}
+							</IconText>
+						</a>
 					</span>
 				</div>
 

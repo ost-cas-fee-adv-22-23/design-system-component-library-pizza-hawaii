@@ -7,8 +7,7 @@ import { Image } from '../../../components/Atoms/Image';
 import { Richtext } from '../../../components/Atoms/Richtext';
 import { Label } from '../../../components/Atoms/Label';
 
-import { UserName } from '../../../components/Molecules/UserName';
-import { IconLink } from '../../../components/Molecules/IconLink';
+import { IconText } from '../../../components/Molecules/IconText';
 import { ImageOverlay } from '../../../components/Molecules/ImageOverlay';
 import { InteractionButton } from '../../../components/Molecules/InteractionButton';
 
@@ -68,10 +67,14 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 				{post.author.fullName}
 			</Label>
 			<Grid variant="row" gap="S">
-				<UserName href={post.author.profileLink}>{post.author.userName}</UserName>
-				<IconLink as="span" icon="calendar" colorScheme="slate" size="S">
+				<a href={post.author.profileLink}>
+					<IconText icon="profile" colorScheme="violet" size="S">
+						{post.author.userName}
+					</IconText>
+				</a>
+				<IconText icon="calendar" colorScheme="slate" size="S">
 					<TimeStamp date={post.createdAt} />
-				</IconLink>
+				</IconText>
 			</Grid>
 		</Grid>
 	);

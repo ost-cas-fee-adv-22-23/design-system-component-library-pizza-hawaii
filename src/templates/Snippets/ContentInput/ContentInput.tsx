@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Label } from '../../../components/Atoms/Label';
 
-import { UserName } from '../../../components/Molecules/UserName';
+import { IconText } from '../../../components/Molecules/IconText';
 import { Button } from '../../../components/Molecules/Button';
 import { FormTextarea } from '../../../components/Molecules/Form/FormTextarea';
 
@@ -54,7 +54,11 @@ export const ContentInput: FC<TContentInput> = (props) => {
 					{author.fullName}
 				</Label>
 				<Grid variant="row" gap="S">
-					<UserName href={author.profileLink}>{author.userName}</UserName>
+					<a href={author.profileLink}>
+						<IconText icon="profile" colorScheme="violet" size="S">
+							{author.userName}
+						</IconText>
+					</a>
 				</Grid>
 			</Grid>
 		</Grid>

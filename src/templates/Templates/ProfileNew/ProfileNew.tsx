@@ -5,8 +5,7 @@ import { Headline } from '../../../components/Atoms/Headline/Headline';
 import { Richtext } from '../../../components/Atoms/Richtext';
 import { TimeStamp } from '../../../components/Atoms/TimeStamp';
 
-import { UserName } from '../../../components/Molecules/UserName';
-import { IconLink } from '../../../components/Molecules/IconLink';
+import { IconText } from '../../../components/Molecules/IconText';
 
 import { Header } from '../../Snippets/Header';
 import { ProfileHeader } from '../../Snippets/ProfileHeader';
@@ -25,25 +24,29 @@ type ProfileNewType = {
 
 export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUsers }) => {
 	return (
-		<div className="bg-slate-100">
+		<>
 			<Header user={user} />
 
 			<main className="px-content">
 				<section className="mx-auto w-full max-w-content">
 					<ProfileHeader user={user} />
 
-					<div className="mb-2 text-slate-900 pr-48">
+					<div className="mb-2 pr-48">
 						<Headline level={3}>{user.fullName}</Headline>
 					</div>
 
 					<span className="flex flex-row align-baseline gap-3 mb-3">
-						<UserName href={user.profileLink}>{user.userName}</UserName>
-						<IconLink as="span" icon="location" colorScheme="slate" size="S">
+						<a href={user.profileLink}>
+							<IconText icon="profile" colorScheme="violet" size="S">
+								{user.userName}
+							</IconText>
+						</a>
+						<IconText icon="location" colorScheme="slate" size="S">
 							{user.city || 'Location'}
-						</IconLink>
-						<IconLink as="span" icon="calendar" colorScheme="slate" size="S">
+						</IconText>
+						<IconText icon="calendar" colorScheme="slate" size="S">
 							<TimeStamp date={user.createdAt} prefix="Mitglied seit" />
-						</IconLink>
+						</IconText>
 					</span>
 
 					<div className="text-slate-400 mb-8">
@@ -90,6 +93,6 @@ export const ProfileNew: FC<ProfileNewType> = ({ user, promotedPosts, promotedUs
 					</Grid>
 				</section>
 			</main>
-		</div>
+		</>
 	);
 };

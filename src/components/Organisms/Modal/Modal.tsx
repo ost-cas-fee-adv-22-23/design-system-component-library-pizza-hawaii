@@ -42,7 +42,9 @@ const ModalBaseStyle = [
 	'bg-white rounded-2xl shadow-lg sm:rounded-none sm:shadow-none ',
 ];
 const ModalOverlayStyle = ['fixed inset-0 z-40', 'opacity-25 bg-violet-600'];
-const ModalBodyStyle = ['relative flex flex-col w-full overflow-x-hidden max-w-screen max-h-screen min-w-full'];
+const ModalBodyStyle = [
+	'relative flex flex-col w-full overflow-x-hidden max-w-screen max-h-screen min-w-full sm:rounded-none sm:shadow-none sm:h-full',
+];
 const ModalHeaderStyle = ['flex items-center justify-between gap-4', 'px-8 py-6', 'bg-violet-600 text-white'];
 
 /**
