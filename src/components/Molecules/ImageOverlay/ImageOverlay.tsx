@@ -88,19 +88,19 @@ export const ImageOverlay: FC<TImageOverlayProps> = ({ children, buttonLabel, bo
 	const { icon, iconAnimationClass } = ImageOverlayTypeMap[preset];
 
 	const ImageOverlayStyle = [
-		'block relative overflow-hidden',
+		'grid relative overflow-hidden',
 		borderRadius && ImageOverlayBorderRadiusMap[borderRadius],
 	].join(' ');
 
 	return (
 		<div className={ImageOverlayStyle}>
+			{children}
 			<button type="button" className={[...ImageOverlayButtonStyle].join(' ')} {...rest}>
 				<span className={iconAnimationClass}>
 					<Icon name={icon} size="XL" />
 				</span>
 				<span className="sr-only">{buttonLabel}</span>
 			</button>
-			{children}
 		</div>
 	);
 };

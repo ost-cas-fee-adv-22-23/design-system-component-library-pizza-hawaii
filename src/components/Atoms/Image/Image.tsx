@@ -57,7 +57,7 @@ export function Image<T = ImgHTMLAttributes<HTMLImageElement>>({
 }: Omit<TImage<T>, 'className'>): JSX.Element {
 	const ImageComponent = imageComponent || 'img';
 	return (
-		<figure className="bg-purple-200">
+		<figure className="bg-purple-200 overflow-hidden">
 			<ImageComponent
 				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 				{...(props as any)}

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { Image } from '../../Atoms/Image';
-import { RoundButton } from '../RoundButton/RoundButton';
-import { ImageService } from '../../Atoms/Image/ImageService';
+import { Image } from '../../../components/Atoms/Image/index';
+import { RoundButton } from '../../../components/Molecules/RoundButton/RoundButton';
+import { ImageService } from '../../../components/Atoms/Image/ImageService';
 
 /*
  * Settings

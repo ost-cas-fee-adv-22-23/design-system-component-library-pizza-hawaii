@@ -6,7 +6,7 @@ import { Label } from '../../../components/Atoms/Label';
 
 import { Card } from '../../../components/Molecules/Card/Card';
 import { IconText } from '../../../components/Molecules/IconText';
-import { UserProfile } from '../../../components/Molecules/UserProfile';
+import { UserProfile } from '../UserProfile/index';
 import { Button } from '../../../components/Molecules/Button';
 
 import { User } from '../../../types/User';

@@ -2,7 +2,7 @@
 import React, { FC } from 'react';
 
 import { Image } from '../../../components/Atoms/Image';
-import { UserProfile } from '../../../components/Molecules/UserProfile';
+import { UserProfile } from '../UserProfile/index';
 import { ImageOverlay } from '../../../components/Molecules/ImageOverlay';
 
 import { User } from '../../../types/User';

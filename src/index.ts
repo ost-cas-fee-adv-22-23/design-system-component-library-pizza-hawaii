@@ -16,7 +16,7 @@ export * from './components/Molecules/InteractionButton';
 export * from './components/Molecules/Navi';
 export * from './components/Molecules/RoundButton';
 export * from './components/Molecules/Switch';
-export * from './components/Molecules/UserProfile';
+export * from './templates/Snippets/UserProfile/index';
 export * from './components/Organisms/CopyToClipboardButton';
 export * from './components/Organisms/Modal';
 export * from './components/Organisms/UserContentCard';

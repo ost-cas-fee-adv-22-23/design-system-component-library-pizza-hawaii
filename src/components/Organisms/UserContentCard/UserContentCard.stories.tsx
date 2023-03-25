@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { UserContentCard as Component } from './UserContentCard';
 import { Current as User } from '../../../mocks/User';
-import { TUserProfileData } from '../../Molecules/UserProfile';
+import { TUserProfileData } from '../../../templates/Snippets/UserProfile/index';
 
 export default {
 	title: 'Components/Organisms/UserContentCard',

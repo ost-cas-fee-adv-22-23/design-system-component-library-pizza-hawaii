@@ -3,7 +3,7 @@ import React, { FC, useState, FormEvent } from 'react';
 import { Grid } from '../../../components/Atoms/Grid/Grid';
 import { Label } from '../../../components/Atoms/Label';
 
-import { UserProfile } from '../../../components/Molecules/UserProfile';
+import { UserProfile } from '../UserProfile/index';
 import { Navi, NaviButton } from '../../../components/Molecules/Navi';
 import { Form, FormPassword, FormInput, FormTextarea } from '../../../components/Molecules/Form';
 import { Button } from '../../../components/Molecules/Button';

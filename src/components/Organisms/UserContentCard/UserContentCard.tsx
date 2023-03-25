@@ -5,7 +5,7 @@ import { Headline } from '../../Atoms/Headline/Headline';
 import { Grid } from '../../Atoms/Grid/Grid';
 
 import { Card } from '../../Molecules/Card/Card';
-import { UserProfile, TUserProfileData, TUserProfileStyle } from '../../Molecules/UserProfile';
+import { UserProfile, TUserProfileData, TUserProfileStyle } from '../../../templates/Snippets/UserProfile/index';
 
 /*
  * Type
