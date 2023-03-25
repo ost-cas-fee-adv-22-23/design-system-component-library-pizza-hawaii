@@ -1,4 +1,4 @@
-import React, { FC, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
+import React, { FC, ButtonHTMLAttributes } from 'react';
 
 import { Icon } from '../../Atoms/Icon';
 import { ButtonBaseStyle, ButtonColorMap } from '../Button';
@@ -7,11 +7,11 @@ import { ButtonBaseStyle, ButtonColorMap } from '../Button';
  * Type
  */
 
-type TRoundButton = {
+type TRoundButton<T> = {
 	/**
-	 * HTML tag to render a button (button, a)
+	 * HTML tag to render a button
 	 */
-	as?: 'button' | 'a';
+	component?: FC<T>;
 
 	/**
 	 * label for screenreaders
@@ -27,11 +27,7 @@ type TRoundButton = {
 	 * specify a Icon-name string from the IconLibrary
 	 */
 	icon?: string;
-};
-
-type HTMLButtonProps = TRoundButton & { as: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>;
-type LinkButtonProps = TRoundButton & { as: 'a' } & AnchorHTMLAttributes<HTMLAnchorElement>;
-type TButtonProps = HTMLButtonProps | LinkButtonProps;
+} & Omit<T, 'className'>;
 
 /*
  * Style
@@ -43,7 +39,7 @@ export const RoundButtonColorMap: Record<string, string> = ButtonColorMap;
 /**
  * RoundButton Component
  *
- * @param {string} as - choose HTML Tag to render the RoundButton (button, a)
+ * @param {string} component - Component to render a link (e.g. NextLink)
  * @param {string} buttonLabel - label for screenreaders
  * @param {string} colorScheme - colorscheme for RoundButton background: slate, violet or gradient
  * @param {string} icon - specify a Icon-name string from the IconLibrary
@@ -51,14 +47,12 @@ export const RoundButtonColorMap: Record<string, string> = ButtonColorMap;
  *
  * @example <RoundButton buttonLabel="Mumble" as="button" colorScheme="violet" icon="mumble" />
  */
-
-export const RoundButton: FC<TButtonProps> = ({
-	as: Tag = 'button',
-	colorScheme = 'violet',
-	icon = 'mumble',
-	buttonLabel,
-	...props
-}) => {
+export function RoundButton<
+	T extends {
+		className?: string;
+	} = ButtonHTMLAttributes<HTMLElement>
+>({ component, colorScheme = 'violet', icon = 'mumble', buttonLabel, ...props }: TRoundButton<T>): JSX.Element {
+	const Tag = component || 'button';
 	const style = [...RoundButtonBaseStyle, RoundButtonColorMap[colorScheme]];
 
 	return (

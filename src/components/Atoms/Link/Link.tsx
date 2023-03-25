@@ -27,6 +27,8 @@ type TLink<T> = {
 	newTab?: boolean;
 } & Omit<T, 'className' | 'target' | 'rel'>;
 
+
+
 /*
  * Style
  */
@@ -42,7 +44,7 @@ const hoverStyle = 'hover:text-violet-700 hover:decoration-violet-200';
 /**
  * Link Component
  *
- * @param {string} as - HTML tag to render a link
+ * @param {string} component - Component to render a link (e.g. NextLink)
  * @param {string} href - provide a link reference (target url) as string for the 'a' tag
  * @param {ReactNode} children - Child Nodes
  *

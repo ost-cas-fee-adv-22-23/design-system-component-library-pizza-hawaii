@@ -75,7 +75,7 @@ export const ButtonColorMap: Record<string, string> = {
 /**
  * Button component
  *
- * @param { string } as - HTML tag to render
+ * @param { string } component - Component to render a link (e.g. NextLink)
  * @param { string } size - text size options of this button (S, M, L)
  * @param { string } colorScheme - color scheme options of this button (slate, violet, gradient)
  * @param { string } icon - icon name to render

@@ -25,5 +25,5 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 export const RoundButton = Template.bind({});
 RoundButton.args = {
 	icon: 'edit',
-	children: 'Button Round',
+	buttonLabel: 'Button Round',
 };

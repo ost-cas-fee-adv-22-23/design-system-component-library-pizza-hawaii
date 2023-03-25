@@ -74,6 +74,7 @@ const InteractionButtonIconColorSchemeMap: Record<string, Record<string, string>
 
 /**
  * Typography for InteractionButton Component
+ * @param { string } component - Component to render a link (e.g. NextLink)
  * @param { buttonText } buttonText label of the button
  * @param { colorScheme } colorScheme of the Button: `pink`, `violet`, or `slate`
  * @param { iconName } iconName name of Icon -see Library
