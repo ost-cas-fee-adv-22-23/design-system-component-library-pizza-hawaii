@@ -6,6 +6,7 @@ import { UserProfile } from '../../../components/Molecules/UserProfile';
 import { ImageOverlay } from '../../../components/Molecules/ImageOverlay';
 
 import { User } from '../../../types/User';
+import { ImageService } from '../../../components/Atoms/Image/ImageService';
 import ProjectSettings from '../../../utils/ProjectSettings.json';
 
 type TProfileHeader = {
@@ -13,6 +14,14 @@ type TProfileHeader = {
 };
 
 export const ProfileHeader: FC<TProfileHeader> = ({ user }) => {
+	const imgProps = {
+		...ImageService.imgAttr(
+			ProjectSettings.images.header.width,
+			(ProjectSettings.images.header.width / ProjectSettings.images.header.aspectRatio[0]) *
+				ProjectSettings.images.header.aspectRatio[1],
+			user.posterImage
+		),
+	};
 	return (
 		<div className="relative mb-6">
 			<ImageOverlay
@@ -23,15 +32,7 @@ export const ProfileHeader: FC<TProfileHeader> = ({ user }) => {
 				}}
 				borderRadius="L"
 			>
-				<Image
-					src={user.posterImage}
-					alt={user.userName}
-					width={ProjectSettings.images.header.width}
-					height={
-						(ProjectSettings.images.header.width / ProjectSettings.images.header.aspectRatio[0]) *
-						ProjectSettings.images.header.aspectRatio[1]
-					}
-				/>
+				<Image {...imgProps} alt={''} />
 			</ImageOverlay>
 			<div className="absolute right-8 bottom-0 translate-y-1/2 z-10">
 				<UserProfile

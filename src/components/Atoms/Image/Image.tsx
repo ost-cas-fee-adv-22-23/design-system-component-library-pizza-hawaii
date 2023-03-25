@@ -1,11 +1,15 @@
 import React, { FC, ImgHTMLAttributes } from 'react';
-import { ImageService } from './ImageService';
 
 /*
  * Type
  */
 
-export type TImage = {
+type TImage<T> = {
+	/**
+	 * optional: HTML tag to render an image (e.g. NextImage)
+	 */
+	imageComponent?: FC<T>;
+
 	/**
 	 * src of the image
 	 */
@@ -30,11 +34,12 @@ export type TImage = {
 	 * optional: caption string for text caption of the image11
 	 */
 	caption?: string;
-} & ImgHTMLAttributes<HTMLImageElement>;
+} & Omit<T, 'className' | 'src' | 'alt'>;
 
 /**
  * Controls for Image Component
  *
+ * @param { string } imageComponent - HTML tag to render an image (e.g. NextImage)
  * @param { string } src for image
  * @param { number } width display width for image
  * @param { number } height display height for image (optional)
@@ -43,15 +48,24 @@ export type TImage = {
  *
  * @example	<Image src="//picsum.photos/id/28/1600/1587/" alt="lemon tree" width="640" height="320" />
  */
-
-export const Image: FC<TImage> = ({ src, alt = '', caption, ...props }) => {
-	props = {
-		...ImageService.imgAttr(props.width as number, props.height as number, src as string),
-	};
+export function Image<T = ImgHTMLAttributes<HTMLImageElement>>({
+	imageComponent,
+	src,
+	alt,
+	caption,
+	...props
+}: Omit<TImage<T>, 'className'>): JSX.Element {
+	const ImageComponent = imageComponent || 'img';
 	return (
 		<figure className="bg-purple-200">
-			<img className="block object-cover h-full w-full" src={src} alt={alt} {...props} />
+			<ImageComponent
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
+				{...(props as any)}
+				className="block object-cover h-full w-full"
+				src={src}
+				alt={alt}
+			/>
 			{caption ? <figcaption>{caption}</figcaption> : null}
 		</figure>
 	);
-};
+}

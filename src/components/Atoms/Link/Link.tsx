@@ -27,8 +27,6 @@ type TLink<T> = {
 	newTab?: boolean;
 } & Omit<T, 'className' | 'target' | 'rel'>;
 
-
-
 /*
  * Style
  */

@@ -7,6 +7,7 @@ import { Image } from '../../../components/Atoms/Image';
 import { Richtext } from '../../../components/Atoms/Richtext';
 import { Label } from '../../../components/Atoms/Label';
 
+import { ImageService } from '../../../components/Atoms/Image/ImageService';
 import { IconText } from '../../../components/Molecules/IconText';
 import { ImageOverlay } from '../../../components/Molecules/ImageOverlay';
 import { InteractionButton } from '../../../components/Molecules/InteractionButton';
@@ -79,6 +80,15 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 		</Grid>
 	);
 
+	const imgProps = {
+		...ImageService.imgAttr(
+			ProjectSettings.images.post.width,
+			(ProjectSettings.images.post.width / ProjectSettings.images.post.aspectRatio[0]) *
+				ProjectSettings.images.post.aspectRatio[1],
+			post.image || ''
+		),
+	};
+
 	return (
 		<UserContentCard
 			headline={headerSlotContent}
@@ -101,15 +111,7 @@ export const ContentCard: FC<TContentCard> = ({ variant, post }) => {
 					}}
 					borderRadius="M"
 				>
-					<Image
-						width={ProjectSettings.images.post.width}
-						height={
-							(ProjectSettings.images.post.width / ProjectSettings.images.post.aspectRatio[0]) *
-							ProjectSettings.images.post.aspectRatio[1]
-						}
-						src={post.image}
-						alt={''}
-					/>
+					<Image {...imgProps} alt={''} />
 				</ImageOverlay>
 			)}
 

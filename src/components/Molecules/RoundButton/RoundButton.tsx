@@ -65,4 +65,4 @@ export function RoundButton<
 			{icon ? <Icon name={icon} /> : null}
 		</Tag>
 	);
-};
+}

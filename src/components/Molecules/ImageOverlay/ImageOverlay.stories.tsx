@@ -3,7 +3,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ImageOverlay as Component } from './ImageOverlay';
 import { IconNames } from '../../Atoms/Icon/IconLib';
-import { Image } from '../../Atoms/Image';
 
 export default {
 	title: 'Components/Molecules/ImageOverlay',
@@ -23,7 +22,7 @@ const Template: ComponentStory<typeof Component> = (args): JSX.Element => <Compo
 export const EditOverlay = Template.bind({});
 export const ZoomOverlay = Template.bind({});
 
-const img = <Image width={584} height={320} src="//picsum.photos/id/28/1600/1587/" alt={''} />;
+const img = <img width={584} height={320} src="//picsum.photos/id/28/1600/1587/" alt={''} />;
 
 EditOverlay.args = {
 	preset: 'edit',

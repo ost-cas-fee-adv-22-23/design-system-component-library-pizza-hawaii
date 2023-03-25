@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Image } from '../../Atoms/Image';
 import { RoundButton } from '../RoundButton/RoundButton';
+import { ImageService } from '../../Atoms/Image/ImageService';
 
 /*
  * Settings
@@ -85,12 +86,15 @@ const noAvatar =
 export const UserProfile: FC<TUserProfile> = ({ size = 'M', border, href, userName, avatar, buttonLabel }) => {
 	const baseStyle = ['inline-flex', 'rounded-full', 'self-center', 'bg-purple-200', border && 'border-6'];
 
+	const imgProps = {
+		...ImageService.imgAttr(imgMap[size], imgMap[size], avatar || noAvatar),
+	};
 	if (href) {
 		if (size !== 'XL') {
 			return (
 				<div className={[...baseStyle, 'overflow-hidden', sizeMap[size]].join(' ')}>
 					<a href={href} className="transition duration-300 ease-in-out hover:scale-110">
-						<Image src={avatar || noAvatar} alt={userName} width={imgMap[size]} height={imgMap[size]} />
+						<Image alt={userName} {...imgProps} />
 						<span className="sr-only">{buttonLabel}</span>
 					</a>
 				</div>
@@ -99,7 +103,7 @@ export const UserProfile: FC<TUserProfile> = ({ size = 'M', border, href, userNa
 			return (
 				<div className={[...baseStyle, sizeMap[size], 'relative'].join(' ')}>
 					<div className="rounded-full overflow-hidden">
-						<Image src={avatar || noAvatar} alt={userName} width={imgMap[size]} height={imgMap[size]} />
+						<Image alt={userName} {...imgProps} />
 					</div>
 					<div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 sm:-bottom-4 sm:-right-4">
 						<RoundButton icon="edit" colorScheme="slate" buttonLabel={buttonLabel} />
@@ -111,7 +115,7 @@ export const UserProfile: FC<TUserProfile> = ({ size = 'M', border, href, userNa
 
 	return (
 		<div className={[...baseStyle, 'overflow-hidden', sizeMap[size]].join(' ')}>
-			<Image src={avatar} alt={userName} width={imgMap[size]} height={imgMap[size]} />
+			<Image alt={userName} {...imgProps} />
 		</div>
 	);
 };
