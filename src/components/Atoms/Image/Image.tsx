@@ -16,9 +16,9 @@ type TImage<T> = {
 	src?: string;
 
 	/**
-	 * width of the displayed image in px
+	 * optional width of the displayed image in px
 	 */
-	width: number;
+	width?: number;
 
 	/**
 	 * optional: height of the displayed image in px (if set, the image will be cropped to fit the aspect ratio)
@@ -41,8 +41,8 @@ type TImage<T> = {
  *
  * @param { string } imageComponent - HTML tag to render an image (e.g. NextImage)
  * @param { string } src for image
- * @param { number } width display width for image
- * @param { number } height display height for image (optional)
+ * @param { number } optional: width display width for image
+ * @param { number } optional: height display height for image (optional)
  * @param { string } alt alternative text for image
  * @param { string } caption caption text for image (optional)
  *
