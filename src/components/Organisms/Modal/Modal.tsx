@@ -45,7 +45,7 @@ const ModalOverlayStyle = ['fixed inset-0 z-40', 'opacity-25 bg-violet-600'];
 const ModalBodyStyle = [
 	'relative flex flex-col w-full overflow-x-hidden max-w-screen max-h-screen min-w-full sm:rounded-none sm:shadow-none sm:h-full',
 ];
-const ModalHeaderStyle = ['flex items-center justify-between gap-4', 'px-8 py-6', 'bg-violet-600 text-white'];
+const ModalHeaderStyle = ['flex items-center justify-between gap-4', 'px-8 py-6 sm:px-4 sm:py-4', 'bg-violet-600 text-white'];
 
 /**
  * Modal Component
@@ -106,16 +106,22 @@ export const Modal: FC<TModal> = ({ title, children = 'Modal Content', isVisible
 			<dialog className={ModalBaseStyle.join(' ')} aria-labelledby={`${id}-title`} aria-modal="true">
 				<div className={ModalBodyStyle.join(' ')} ref={modalRef}>
 					<div className={ModalHeaderStyle.join(' ')}>
-						<Headline level={3} as="h2" id={`${id}-title`}>
-							{title}
-						</Headline>
+						{title ? (
+							<Headline level={3} as="h2" id={`${id}-title`}>
+								{title}
+							</Headline>
+						) : (
+							<div>
+								<span className="sr-only">Modal</span>
+							</div>
+						)}
 						<button className="inline-flex items-center p-4 -m-4 transition hover:rotate-90" onClick={onClose}>
 							<Icon name="cancel" />
 							<span className="sr-only">Close Modal</span>
 						</button>
 					</div>
 
-					<div className="relative p-8 flex-auto overflow-y-auto">{children}</div>
+					<div className="relative p-8 sm:p-4 flex-auto overflow-y-auto">{children}</div>
 					<button className="sr-only focus:not-sr-only bg-black p-2 text-white" onClick={onClose}>
 						Close Modal
 					</button>
