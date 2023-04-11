@@ -10,9 +10,9 @@ import { Icon } from '../../Atoms/Icon';
 
 type TModal = {
 	/**
-	 * title of modal window
+	 * optional title of modal window
 	 */
-	title: string;
+	title?: string;
 	/**
 	 * React node
 	 */
@@ -45,7 +45,11 @@ const ModalOverlayStyle = ['fixed inset-0 z-40', 'opacity-25 bg-violet-600'];
 const ModalBodyStyle = [
 	'relative flex flex-col w-full overflow-x-hidden max-w-screen max-h-screen min-w-full sm:rounded-none sm:shadow-none sm:h-full',
 ];
-const ModalHeaderStyle = ['flex items-center justify-between gap-4', 'px-8 py-6 sm:px-4 sm:py-4', 'bg-violet-600 text-white'];
+const ModalHeaderStyle = [
+	'flex items-center justify-between gap-4',
+	'px-8 py-6 sm:px-4 sm:py-4',
+	'bg-violet-600 text-white',
+];
 
 /**
  * Modal Component
