@@ -44,7 +44,7 @@ export const IconTextSizeMap: Record<string, string> = {
 };
 
 export const IconTextColorMap: Record<string, string> = {
-	slate: 'text-slate-400 hover:text-slate-600 hover:bg-slate-100 ',
+	slate: 'text-slate-500 hover:text-slate-600 hover:bg-slate-100 ',
 	violet: 'text-violet-600 hover:text-violet-900 hover:bg-violet-50 ',
 	pink: ' text-pink-400 hover:text-pink-600 hover:bg-pink-50',
 };
