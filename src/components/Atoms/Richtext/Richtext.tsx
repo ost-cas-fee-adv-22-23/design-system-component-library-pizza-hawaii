@@ -52,6 +52,10 @@ const RichtextChildStyles: string[] = [
 
 	// Links
 	'[&>p>a]:inline-block [&>p>a]:text-violet-600 [&>p>a:hover]:text-violet-400',
+
+	// Overflow & Ellipsis
+	'[&>p]:overflow-hidden [&>p]:text-ellipsis',
+	'[&>p>a]:overflow-hidden [&>p>a]:text-ellipsis',
 ];
 
 /**
