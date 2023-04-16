@@ -53,7 +53,7 @@ export const HeadlineSizeMap: Record<THeadline['level'], string> = {
  */
 
 export const Headline: FC<THeadlineProps> = ({ children, level = 1, as: Tag = `h${level}`, ...props }) => (
-	<Tag className={['leading-tight', 'overflow-hidden text-ellipsis' HeadlineSizeMap[level]].join(' ')} {...props}>
+	<Tag className={['leading-tight', 'overflow-hidden text-ellipsis', HeadlineSizeMap[level]].join(' ')} {...props}>
 		{children}
 	</Tag>
 );
