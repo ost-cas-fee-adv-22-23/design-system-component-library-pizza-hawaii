@@ -44,7 +44,7 @@ type TGrid = {
 /*
  * Styles
  */
-export const GridBaseStyle = 'flex w-full overflow-hidden';
+export const GridBaseStyle = 'flex w-full';
 
 export const GridVariantStyleMap: Record<string, string> = {
 	row: 'flex-row',
