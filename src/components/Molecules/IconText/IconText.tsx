@@ -35,7 +35,12 @@ type TIconText = {
  * Style
  */
 
-const IconTextBaseStyle: string[] = ['flex items-center', 'leading-none', 'rounded-full'];
+const IconTextBaseStyle: string[] = [
+	'flex items-center',
+	'leading-none',
+	'rounded-full',
+	'overflow-hidden text-ellipsis mb-[-0.2em] pb-[0.2em]',
+];
 
 export const IconTextSizeMap: Record<string, string> = {
 	S: 'text-sm gap-1 px-2 py-1',

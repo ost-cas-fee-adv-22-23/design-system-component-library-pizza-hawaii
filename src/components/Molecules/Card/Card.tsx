@@ -32,7 +32,7 @@ type TCard = {
 
 const sizeMap: Record<string, string> = {
 	S: 'py-s px-s',
-	M: 'py-l px-xl sm:py-m sm:px-l',
+	M: 'py-l px-xl sm:py-m sm:px-m',
 };
 
 /**
@@ -50,7 +50,7 @@ export const Card: FC<TCard> = ({ as: Tag = 'div', children, size = 'M', rounded
 	return (
 		<Tag
 			className={[
-				'relative after:flex flex-start justify-center items-start bg-white text-slate-900',
+				'relative flex-start justify-center items-start bg-white text-slate-900',
 				rounded ? 'rounded-3xl' : '',
 				sizeMap[size],
 			].join(' ')}

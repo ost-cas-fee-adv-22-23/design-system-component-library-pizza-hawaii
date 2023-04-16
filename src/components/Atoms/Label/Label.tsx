@@ -49,7 +49,11 @@ export const LabelSizeMap: Record<string, string> = {
  */
 
 export const Label: FC<TLabelProps> = ({ children = 'Label', as: Tag = 'span', size, ...rest }) => {
-	const style = ['inline-block leading-none font-semibold', LabelSizeMap[size]].join(' ');
+	const style = [
+		'inline-block font-semibold',
+		'overflow-hidden text-ellipsis mb-[-0.2em] pb-[0.2em]',
+		LabelSizeMap[size],
+	].join(' ');
 
 	const props = {
 		...rest,

@@ -48,10 +48,10 @@ export const RichtextSizeMap: Record<string, string> = {
 
 const RichtextChildStyles: string[] = [
 	// Paragraphs
-	'[&>p]:block [&>p]:mb-2 [&>p:last-child]:mb-0',
+	'[&>p]:inline-flex [&>p]:mb-2 [&>p:last-child]:mb-0',
 
 	// Links
-	'[&>p>a]:inline-block [&>p>a]:text-violet-600 [&>p>a:hover]:text-violet-400',
+	'[&>p>a]:inline-block [&>p>a]:align-middle [&>p>a]:text-violet-600 [&>p>a:hover]:text-violet-400',
 
 	// Overflow & Ellipsis
 	'[&>p]:overflow-hidden [&>p]:text-ellipsis',
