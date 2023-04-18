@@ -24,7 +24,7 @@ const FormBaseStyle: string[] = [
 	GridVariantStyleMap.col,
 	GridMarginBelowStyleMap.M,
 	GridGapStyleMap.M,
-	'text-slate-700',
+	'text-slate-700 dark:text-slate-300',
 ];
 
 /**

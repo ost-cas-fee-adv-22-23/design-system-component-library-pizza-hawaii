@@ -50,6 +50,7 @@ export const Card: FC<TCard> = ({ as: Tag = 'div', children, size = 'M', rounded
 	return (
 		<Tag
 			className={[
+				'Card',
 				'relative flex-start justify-center items-start bg-white text-slate-900',
 				rounded ? 'rounded-3xl' : '',
 				sizeMap[size],

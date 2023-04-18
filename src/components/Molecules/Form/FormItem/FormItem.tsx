@@ -70,7 +70,7 @@ export const FormItem: FC<TFormItem> = ({ label, children, errorMessage, hideLab
 	return (
 		<div className="flex flex-col" {...props}>
 			<label
-				className={['text-slate-800 font-semibold text-base mb-xxs', hideLabel ? 'sr-only' : ''].join(' ')}
+				className={['text-slate-800 dark:text-slate-200 font-semibold text-base mb-xxs', hideLabel ? 'sr-only' : ''].join(' ')}
 				htmlFor={id}
 			>
 				{label}
