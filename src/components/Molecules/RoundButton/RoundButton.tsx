@@ -27,6 +27,11 @@ type TRoundButton<T> = {
 	 * specify a Icon-name string from the IconLibrary
 	 */
 	icon?: string;
+
+	/**
+	 * disabled: boolean to set disabled state
+	 */
+	disabled?: boolean;
 } & Omit<T, 'className'>;
 
 /*
@@ -57,7 +62,7 @@ export function RoundButton<
 
 	return (
 		<Tag
-			className={[...style].join(' ')}
+			className={[...style, props.disabled ? 'opacity-50' : ''].join(' ')}
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}
 		>

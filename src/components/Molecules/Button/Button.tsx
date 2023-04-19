@@ -32,6 +32,12 @@ type TButton<T> = {
 	 * icon name to render
 	 */
 	icon?: TIconName;
+
+	/**
+	 * disabled: boolean to set disabled state
+	 */
+	disabled?: boolean;
+
 } & Omit<T, 'className'>;
 
 /*
@@ -91,7 +97,7 @@ export function Button<
 >({ children, component, colorScheme = 'violet', size = 'M', icon = 'mumble', ...props }: TButton<T>): JSX.Element {
 	const Tag = component || 'button';
 
-	const style = [...ButtonBaseStyle, ButtonSizeMap[size], ButtonColorMap[colorScheme]];
+	const style = [...ButtonBaseStyle, ButtonSizeMap[size], ButtonColorMap[colorScheme], props.disabled ? 'opacity-50' : ''];
 
 	return (
 		<Tag

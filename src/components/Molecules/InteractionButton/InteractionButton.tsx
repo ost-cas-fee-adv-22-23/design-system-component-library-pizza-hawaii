@@ -38,6 +38,11 @@ type TInteractionButton<T> = {
 	 * title: title of the button
 	 */
 	title?: string;
+
+	/**
+	 * disabled: boolean to set disabled state
+	 */
+	disabled?: boolean;
 } & Omit<T, 'className'>;
 
 /*
@@ -99,6 +104,7 @@ export function InteractionButton<
 	const style = [
 		InteractionButtonBaseStyle,
 		InteractionButtonColorSchemeMap[isActive ? 'active' : 'default'][colorScheme],
+		props.disabled ? 'opacity-50' : '',
 	];
 
 	return (

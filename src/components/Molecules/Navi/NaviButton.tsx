@@ -19,6 +19,11 @@ type TNaviButton<T> = {
 	 * React Node children: Buttontext
 	 */
 	children: ReactNode;
+
+	/**
+	 * disabled: boolean to set disabled state
+	 */
+	disabled?: boolean;
 } & Omit<T, 'className'>;
 
 /*
@@ -52,9 +57,9 @@ export function NaviButton<
 
 	return (
 		<Tag
-			className={style.join(' ')}
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			{...(props as any)}
+			className={[...style, props.disabled ? 'opacity-50' : ''].join(' ')}
 		>
 			{icon && <Icon name={icon} />}
 			{children}
