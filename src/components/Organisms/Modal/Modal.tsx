@@ -39,7 +39,8 @@ const ModalBaseStyle = [
 	'fixed inset-0 z-50',
 	'flex justify-center items-center',
 	'min-w-[600px] p-0 overflow-hidden mx-auto sm:m-0 sm:w-screen sm:h-screen sm:min-w-0',
-	'bg-white rounded-2xl shadow-lg sm:rounded-none sm:shadow-none ',
+	'rounded-2xl shadow-lg sm:rounded-none sm:shadow-none',
+	'bg-white dark:bg-slate-900 text-slate-900 dark:text-white',
 ];
 const ModalOverlayStyle = ['fixed inset-0 z-40', 'opacity-25 bg-violet-600'];
 const ModalBodyStyle = [
