@@ -1,0 +1,6 @@
+{
+	"**/*.stories.tsx": "*",
+	"**/templates/**/*.tsx": "*",
+	"**/mocks/**/*.ts": "*",
+	"**/types/**/*.ts": "*"
+}

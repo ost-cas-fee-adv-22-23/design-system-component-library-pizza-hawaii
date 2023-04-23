@@ -1,15 +1,87 @@
 {
-  "name": "@smartive-education/todo-insert-package-name-here",
-  "version": "0.0.0-development",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com",
-    "tag": "latest"
-  },
-  "scripts": {
-    "build": "echo 'build'",
-    "build-storybook": "echo 'build storybook'"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+	"name": "@smartive-education/pizza-hawaii",
+	"version": "1.0.0-development",
+	"homepage": "https://smartive-education.github.io/design-system-component-library-pizza-hawaii",
+	"description": "Design System Component Library",
+	"author": "Team Pizza Hawaii",
+	"contributors": [
+		{
+			"name": "Felix Adam",
+			"url": "https://github.com/flxtag"
+		},
+		{
+			"name": "Jürgen Rudigier",
+			"url": "https://github.com/rudigier"
+		}
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/smartive-education/design-system-component-library-pizza-hawaii.git"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://npm.pkg.github.com",
+		"tag": "latest"
+	},
+	"scripts": {
+		"build": "rm -rf ./dist && ctix create --overwrite --useRootDir --noBackup --p ./tsconfig.json -a ./src/ && npx tailwindcss -i ./src/styles/main.css -o ./dist/bundle.css && tsc",
+		"build-storybook": "rm -rf ./dist && npx tailwindcss -i ./src/styles/main.css -o ./dist/bundle.css && build-storybook",
+		"format": "$npm_execpath run lint && $npm_execpath run prettier",
+		"format:fix": "$npm_execpath run lint:fix && $npm_execpath run prettier:fix",
+		"lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
+		"lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
+		"prettier": "prettier --list-different src/",
+		"prettier:fix": "prettier --write src/",
+		"storybook": "start-storybook -p 6006"
+	},
+	"files": [
+		"dist",
+		"tailwind.config.js"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/index.js"
+		},
+		"./dist/bundle.css": {
+			"import": "./dist/bundle.css"
+		},
+		"./tailwind": "./tailwind.config.js"
+	},
+	"types": "dist/types/index.d.ts",
+	"devDependencies": {
+		"@babel/core": "^7.20.2",
+		"@fontsource/poppins": "^4.5.10",
+		"@smartive/eslint-config": "^3.1.1",
+		"@smartive/prettier-config": "^3.0.0",
+		"@storybook/addon-actions": "^6.5.13",
+		"@storybook/addon-essentials": "^6.4.22",
+		"@storybook/addon-interactions": "^6.5.13",
+		"@storybook/addon-links": "^6.5.13",
+		"@storybook/addon-postcss": "^2.0.0",
+		"@storybook/builder-webpack4": "^6.5.13",
+		"@storybook/manager-webpack4": "^6.5.13",
+		"@storybook/react": "^6.1.21",
+		"@storybook/testing-library": "^0.0.13",
+		"@types/react": "^18.0.25",
+		"@types/react-dom": "^18.0.9",
+		"@typescript-eslint/eslint-plugin": "^5.47.0",
+		"@typescript-eslint/parser": "^5.47.0",
+		"autoprefixer": "^10.4.13",
+		"babel-loader": "^8.3.0",
+		"ctix": "^1.8.1",
+		"eslint": "^8.30.0",
+		"postcss": "^8.4.19",
+		"postcss-import": "^15.1.0",
+		"prettier": "^2.8.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"tailwindcss": "^3.2.4",
+		"typescript": "^4.9.4"
+	},
+	"dependencies": {
+		"copy-to-clipboard": "^3.3.3",
+		"date-fns": "^2.29.3",
+		"xss": "^1.0.14"
+	}
 }

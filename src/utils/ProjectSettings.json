@@ -1,0 +1,14 @@
+{
+	"images": {
+		"header": {
+			"width": 680,
+			"aspectRatio": [2.125, 1],
+			"styleClasses": "rounded-2xl aspect-header"
+		},
+		"post": {
+			"width": 584,
+			"aspectRatio": [16, 9],
+			"styleClasses": "rounded-2xl aspect-post"
+		}
+	}
+}

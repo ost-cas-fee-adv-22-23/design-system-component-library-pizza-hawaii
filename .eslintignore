@@ -1,0 +1,5 @@
+# Ignore artifacts:
+dist
+storybook-static
+node_modules
+tailwind.config.js
